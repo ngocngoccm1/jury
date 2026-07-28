@@ -1,0 +1,2836 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#39412f">
+  <meta name="description" content="Juri Restaurant in Hameln - traditionelle vietnamesische Phở, Sushi, vegane Gerichte und Asian Fusion am Kastanienwall 32. Geöffnet von 11:00 bis 22:00 Uhr. Tischreservierung und Bestellung bequem über WhatsApp.">
+  <title>Juri Restaurant Hameln | Phở, Sushi &amp; Asian Fusion</title>
+  <link rel="icon" href="assets/jury-logo.jpg">
+  <link rel="preload" href="assets/jury-logo.jpg" as="image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Juri",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Kastanienwall 32",
+      "postalCode": "31785",
+      "addressLocality": "Hameln",
+      "addressCountry": "DE"
+    },
+    "servesCuisine": ["Vietnamese", "Japanese", "Asian Fusion"],
+    "openingHours": "11:00-22:00"
+  }
+  </script>
+  <style>
+    :root {
+      color-scheme: dark;
+      --olive-950: #252b20;
+      --olive-900: #303829;
+      --olive: #39412f;
+      --olive-700: #4c5740;
+      --olive-card: #444d39;
+      --ivory: #f4f1de;
+      --ivory-muted: #d8d4c3;
+      --gold: #d2ad5a;
+      --red: #f51b27;
+      --line: rgba(244, 241, 222, .18);
+      --shadow: 0 22px 70px rgba(22, 27, 18, .36);
+      --radius: 16px;
+      --header-h: 64px;
+      --bottom-h: 68px;
+      --page-pad: clamp(20px, 5.8vw, 28px);
+      --content: 1180px;
+      --sans: Manrope, "Avenir Next", Avenir, "Segoe UI", sans-serif;
+      --serif: "Cormorant Garamond", Garamond, Georgia, serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--olive-950);
+      overflow-x: clip;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--ivory);
+      background:
+        linear-gradient(rgba(244, 241, 222, .025) 1px, transparent 1px),
+        var(--olive);
+      background-size: 100% 48px;
+      font: 400 16px/1.6 var(--sans);
+      overflow-x: clip;
+    }
+
+    body.is-locked { overflow: hidden; }
+
+    img { display: block; max-width: 100%; }
+    button, input, select, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { color: inherit; }
+    a { color: inherit; text-decoration: none; }
+    [hidden] { display: none !important; }
+
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .skip-link {
+      position: fixed;
+      z-index: 100;
+      top: 8px;
+      left: 8px;
+      padding: 10px 14px;
+      color: var(--olive-950);
+      background: var(--ivory);
+      transform: translateY(-140%);
+    }
+
+    .skip-link:focus { transform: translateY(0); }
+
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0 0 0 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
+    .shell {
+      width: min(100% - (var(--page-pad) * 2), var(--content));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: fixed;
+      z-index: 40;
+      inset: 0 0 auto;
+      height: calc(var(--header-h) + env(safe-area-inset-top));
+      padding-top: env(safe-area-inset-top);
+      transition: background-color .22s ease, border-color .22s ease;
+    }
+
+    .site-header.is-solid {
+      border-bottom: 1px solid var(--line);
+      background: rgba(37, 43, 32, .94);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: var(--header-h);
+      gap: 14px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 42px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .brand-name {
+      font: 700 20px/1 var(--serif);
+      letter-spacing: .02em;
+    }
+
+    .header-actions { display: flex; align-items: center; gap: 8px; }
+    .desktop-nav, .desktop-reserve { display: none; }
+
+    .icon-button {
+      display: inline-grid;
+      place-items: center;
+      width: 44px;
+      min-width: 44px;
+      height: 44px;
+      padding: 0;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(37, 43, 32, .42);
+      cursor: pointer;
+    }
+
+    .hamburger {
+      display: grid;
+      width: 20px;
+      gap: 5px;
+    }
+
+    .hamburger::before,
+    .hamburger::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1.5px;
+      background: currentColor;
+    }
+
+    main { overflow: clip; }
+
+    .hero {
+      position: relative;
+      display: grid;
+      align-items: center;
+      min-height: max(720px, 100svh);
+      padding: calc(var(--header-h) + env(safe-area-inset-top) + 32px) 0 52px;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      z-index: -2;
+      inset: 0;
+      background:
+        radial-gradient(circle at 92% 16%, rgba(245, 27, 39, .16) 0 10px, transparent 11px),
+        radial-gradient(circle at 88% 18%, transparent 0 86px, rgba(210, 173, 90, .28) 87px 88px, transparent 89px),
+        linear-gradient(145deg, var(--olive-950), var(--olive) 62%, var(--olive-700));
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      right: -100px;
+      bottom: 13%;
+      width: 300px;
+      aspect-ratio: 1;
+      border: 1px solid rgba(244, 241, 222, .15);
+      border-radius: 50%;
+    }
+
+    .hero-content {
+      display: grid;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .hero-logo {
+      width: min(150px, 40vw);
+      max-height: 128px;
+      object-fit: contain;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1, h2, h3 {
+      font-family: var(--serif);
+      font-weight: 600;
+      text-wrap: balance;
+    }
+
+    h1 {
+      max-width: 11ch;
+      margin-bottom: 16px;
+      font-size: clamp(42px, 12.8vw, 68px);
+      line-height: .98;
+      letter-spacing: -.035em;
+    }
+
+    h2 {
+      margin-bottom: 18px;
+      font-size: clamp(34px, 10vw, 58px);
+      line-height: 1.03;
+      letter-spacing: -.025em;
+    }
+
+    h3 { font-size: 24px; line-height: 1.15; }
+
+    .hero-copy {
+      max-width: 35ch;
+      margin-bottom: 24px;
+      color: var(--ivory-muted);
+      font-size: 17px;
+    }
+
+    .button-row {
+      display: grid;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 12px 18px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 800;
+      line-height: 1.2;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: transform .16s ease, background-color .16s ease, border-color .16s ease;
+    }
+
+    .btn:active { transform: scale(.98); }
+    .btn-primary { color: var(--olive-950); background: var(--ivory); }
+    .btn-gold { color: var(--olive-950); background: var(--gold); }
+    .btn-outline { border-color: rgba(244, 241, 222, .48); background: rgba(57, 65, 47, .38); }
+    .btn-small { min-height: 44px; padding: 10px 14px; }
+    .btn[disabled] { opacity: .46; cursor: not-allowed; }
+    .desktop-reserve { display: none; }
+
+    .hero-meta {
+      display: grid;
+      gap: 4px;
+      margin: 20px 0 0;
+      color: var(--ivory-muted);
+      font-size: 14px;
+    }
+
+    .section {
+      position: relative;
+      padding: 82px 0;
+      scroll-margin-top: calc(var(--header-h) + 28px);
+    }
+
+    .section-heading { max-width: 680px; }
+    .section-copy { max-width: 62ch; color: var(--ivory-muted); }
+
+    .story {
+      background: rgba(37, 43, 32, .46);
+      border-block: 1px solid var(--line);
+    }
+
+    .story-grid { display: grid; gap: 34px; }
+
+    .story-points {
+      display: grid;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .story-points li {
+      padding-left: 18px;
+      border-left: 2px solid var(--gold);
+      color: var(--ivory-muted);
+    }
+
+    .chips {
+      display: flex;
+      gap: 8px;
+      padding: 4px 0;
+      overflow-x: auto;
+      scroll-snap-type: x proximity;
+      scrollbar-width: thin;
+    }
+
+    .info-chip {
+      flex: 0 0 auto;
+      padding: 9px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--ivory-muted);
+      font-size: 14px;
+      scroll-snap-align: start;
+    }
+
+    .signature-track {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 86%;
+      gap: 14px;
+      margin: 28px calc(var(--page-pad) * -1) 0;
+      padding: 0 var(--page-pad) 14px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+    }
+
+    .signature-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 370px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--olive-card);
+      scroll-snap-align: start;
+      overflow: hidden;
+    }
+
+    .signature-card::after {
+      content: "";
+      position: absolute;
+      right: -40px;
+      bottom: -72px;
+      width: 190px;
+      aspect-ratio: 1;
+      border: 1px solid rgba(210, 173, 90, .35);
+      border-radius: 50%;
+    }
+
+    .dish-code { color: var(--gold); font-size: 13px; font-weight: 800; }
+    .dish-category { color: var(--ivory-muted); font-size: 13px; }
+    .signature-card h3 { margin: 32px 0 10px; font-size: 30px; }
+    .signature-card p { color: var(--ivory-muted); }
+    .signature-card .price { margin: auto 0 16px; font-size: 20px; font-weight: 800; }
+    .vegan-badge { color: var(--gold); font-size: 12px; font-weight: 800; text-transform: uppercase; }
+
+    .menu-app {
+      background: var(--ivory);
+      color: var(--olive-950);
+    }
+
+    .menu-app .section-copy { color: #596050; }
+
+    .menu-toolbar {
+      position: sticky;
+      z-index: 20;
+      top: calc(var(--header-h) + env(safe-area-inset-top));
+      margin: 28px calc(var(--page-pad) * -1) 22px;
+      padding: 12px var(--page-pad);
+      border-block: 1px solid rgba(37, 43, 32, .12);
+      background: rgba(244, 241, 222, .96);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+    }
+
+    .search-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; }
+
+    .search-wrap { position: relative; }
+
+    .search-input {
+      width: 100%;
+      min-height: 48px;
+      padding: 11px 48px 11px 14px;
+      border: 1px solid rgba(37, 43, 32, .24);
+      border-radius: 12px;
+      color: var(--olive-950);
+      background: #fffdf2;
+      font-size: 16px;
+    }
+
+    .search-clear {
+      position: absolute;
+      right: 2px;
+      top: 2px;
+      width: 44px;
+      height: 44px;
+      border: 0;
+      background: transparent;
+      color: var(--olive-700);
+      cursor: pointer;
+    }
+
+    .filter-button {
+      min-height: 48px;
+      padding: 0 14px;
+      border: 1px solid rgba(37, 43, 32, .24);
+      border-radius: 12px;
+      color: var(--olive-950);
+      background: #fffdf2;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .category-chips {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+      overflow-x: auto;
+      scrollbar-width: thin;
+      scroll-behavior: smooth;
+    }
+
+    .category-chip {
+      flex: 0 0 auto;
+      min-height: 42px;
+      padding: 9px 14px;
+      border: 1px solid rgba(37, 43, 32, .25);
+      border-radius: 999px;
+      color: var(--olive-950);
+      background: transparent;
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .category-chip.is-active {
+      color: var(--ivory);
+      border-color: var(--olive);
+      background: var(--olive);
+    }
+
+    .filter-summary {
+      min-height: 24px;
+      margin: 0 0 16px;
+      color: #596050;
+      font-size: 14px;
+    }
+
+    .menu-groups { display: grid; gap: 12px; }
+
+    .menu-group {
+      border: 1px solid rgba(37, 43, 32, .18);
+      border-radius: var(--radius);
+      background: #fffdf2;
+      overflow: hidden;
+      scroll-margin-top: 220px;
+    }
+
+    .group-toggle {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto auto;
+      align-items: center;
+      width: 100%;
+      min-height: 64px;
+      padding: 14px 16px;
+      border: 0;
+      color: var(--olive-950);
+      background: transparent;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .group-toggle strong { font: 700 21px/1.1 var(--serif); }
+    .group-count { color: #6d7465; font-size: 13px; }
+    .chevron { margin-left: 12px; transition: transform .2s ease; }
+    .menu-group.is-open .chevron { transform: rotate(180deg); }
+
+    .group-items { padding: 0 16px 8px; }
+
+    .menu-item {
+      padding: 22px 0;
+      border-top: 1px solid rgba(37, 43, 32, .13);
+    }
+
+    .item-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 10px;
+      align-items: start;
+    }
+
+    .item-identity {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      min-width: 0;
+    }
+
+    .item-code {
+      flex: 0 0 auto;
+      color: #707866;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .item-name {
+      margin: 0;
+      font: 700 20px/1.2 var(--serif);
+      overflow-wrap: anywhere;
+    }
+
+    .item-price {
+      font-size: 16px;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+
+    .item-description {
+      display: -webkit-box;
+      margin: 10px 0;
+      color: #596050;
+      font-size: 14px;
+      line-height: 1.55;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
+      overflow: hidden;
+    }
+
+    .item-description.is-expanded { display: block; }
+
+    .text-button {
+      min-height: 38px;
+      padding: 0;
+      border: 0;
+      color: var(--olive-700);
+      background: transparent;
+      font-size: 13px;
+      font-weight: 800;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .options-list {
+      display: grid;
+      gap: 7px;
+      margin: 12px 0;
+    }
+
+    .option-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      padding: 9px 10px;
+      border-radius: 10px;
+      background: rgba(57, 65, 47, .06);
+      font-size: 14px;
+    }
+
+    .item-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      color: #68705f;
+      font-size: 12px;
+    }
+
+    .meta-button {
+      min-height: 36px;
+      padding: 6px 9px;
+      border: 1px solid rgba(37, 43, 32, .22);
+      border-radius: 9px;
+      color: var(--olive-950);
+      background: transparent;
+      font-size: 12px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .item-actions { display: flex; justify-content: flex-end; margin-top: 12px; }
+
+    .select-dish {
+      min-height: 44px;
+      padding: 9px 15px;
+      border: 0;
+      border-radius: 10px;
+      color: var(--ivory);
+      background: var(--olive);
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .empty-state {
+      padding: 52px 20px;
+      border: 1px dashed rgba(37, 43, 32, .28);
+      border-radius: var(--radius);
+      text-align: center;
+    }
+
+    .floating-category {
+      position: sticky;
+      z-index: 18;
+      bottom: calc(var(--bottom-h) + env(safe-area-inset-bottom) + 14px);
+      display: flex;
+      justify-content: center;
+      width: max-content;
+      margin: 24px auto 0;
+      box-shadow: var(--shadow);
+    }
+
+    .pho-feature {
+      overflow: hidden;
+    }
+
+    .pho-feature::before {
+      content: "";
+      position: absolute;
+      top: 92px;
+      right: -82px;
+      width: 240px;
+      height: 120px;
+      border: 2px solid var(--gold);
+      border-top: 0;
+      border-radius: 0 0 150px 150px;
+      opacity: .25;
+    }
+
+    .pho-grid { display: grid; gap: 34px; }
+
+    .pho-facts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .pho-fact {
+      min-height: 116px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(37, 43, 32, .28);
+    }
+
+    .pho-fact strong { display: block; color: var(--gold); font-size: 24px; }
+    .pho-fact span { color: var(--ivory-muted); font-size: 14px; }
+
+    .location { background: rgba(37, 43, 32, .46); border-top: 1px solid var(--line); }
+    .location-grid { display: grid; gap: 32px; }
+    address { color: var(--ivory-muted); font-style: normal; }
+    address strong { display: block; margin-bottom: 6px; color: var(--ivory); font: 700 26px var(--serif); }
+
+    .site-footer {
+      padding: 54px 0 calc(var(--bottom-h) + env(safe-area-inset-bottom) + 40px);
+      background: var(--olive-950);
+    }
+
+    .footer-grid { display: grid; gap: 28px; }
+    .footer-logo { width: 90px; height: 76px; object-fit: contain; border-radius: 12px; }
+    .footer-copy { max-width: 42ch; color: var(--ivory-muted); font-size: 14px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 10px 18px; font-size: 14px; }
+
+    .mobile-nav {
+      position: fixed;
+      z-index: 35;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      min-height: calc(var(--bottom-h) + env(safe-area-inset-bottom));
+      padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
+      border-top: 1px solid var(--line);
+      background: rgba(37, 43, 32, .96);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+    }
+
+    .mobile-nav-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 520px;
+      margin: auto;
+    }
+
+    .mobile-nav button,
+    .mobile-nav a {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 52px;
+      padding: 4px;
+      border: 0;
+      color: var(--ivory-muted);
+      background: transparent;
+      font-size: 11px;
+      cursor: pointer;
+    }
+
+    .nav-glyph { font-size: 18px; line-height: 1; }
+
+    .cart-badge {
+      position: absolute;
+      top: 0;
+      right: calc(50% - 22px);
+      display: grid;
+      place-items: center;
+      min-width: 18px;
+      height: 18px;
+      padding: 0 4px;
+      border-radius: 999px;
+      color: white;
+      background: var(--red);
+      font-size: 10px;
+      font-weight: 900;
+    }
+
+    .order-fab {
+      position: fixed;
+      z-index: 34;
+      right: var(--page-pad);
+      bottom: calc(var(--bottom-h) + env(safe-area-inset-bottom) + 12px);
+      left: var(--page-pad);
+      min-height: 50px;
+      border: 0;
+      border-radius: 12px;
+      color: var(--olive-950);
+      background: var(--gold);
+      box-shadow: var(--shadow);
+      font-size: 14px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .overlay {
+      position: fixed;
+      z-index: 60;
+      inset: 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-top: env(safe-area-inset-top);
+      background: rgba(18, 22, 15, .7);
+    }
+
+    .sheet {
+      width: 100%;
+      max-height: 85dvh;
+      border: 1px solid var(--line);
+      border-bottom: 0;
+      border-radius: 22px 22px 0 0;
+      color: var(--ivory);
+      background: var(--olive-900);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .sheet-handle {
+      width: 48px;
+      height: 4px;
+      margin: 9px auto 3px;
+      border-radius: 999px;
+      background: rgba(244, 241, 222, .34);
+    }
+
+    .sheet-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px var(--page-pad);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .sheet-header h2 { margin: 0; font-size: 29px; }
+    .sheet-body { max-height: calc(85dvh - 82px); padding: 20px var(--page-pad) calc(28px + env(safe-area-inset-bottom)); overflow-y: auto; }
+
+    .drawer-overlay { align-items: stretch; justify-content: flex-end; }
+
+    .drawer {
+      width: min(88vw, 420px);
+      height: 100dvh;
+      padding: calc(18px + env(safe-area-inset-top)) 22px calc(24px + env(safe-area-inset-bottom));
+      background: var(--olive-900);
+      overflow-y: auto;
+    }
+
+    .drawer-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 34px; }
+    .drawer-nav { display: grid; gap: 2px; }
+    .drawer-nav a { display: flex; align-items: center; min-height: 54px; border-bottom: 1px solid var(--line); font: 600 24px var(--serif); }
+    .drawer-actions { display: grid; gap: 10px; margin-top: 32px; }
+
+    .form-grid { display: grid; gap: 15px; }
+    .field { display: grid; gap: 6px; }
+    .field label { font-size: 14px; font-weight: 800; }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      min-height: 48px;
+      padding: 11px 12px;
+      border: 1px solid rgba(244, 241, 222, .32);
+      border-radius: 10px;
+      color: var(--ivory);
+      background: #252b20;
+    }
+
+    .field textarea { min-height: 90px; resize: vertical; }
+    .field input::placeholder, .field textarea::placeholder { color: #a9ad9f; }
+    .form-note { color: var(--ivory-muted); font-size: 13px; }
+    .dev-note { margin-top: 10px; color: var(--gold); font-size: 12px; }
+
+    .filter-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+    .check-card {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      min-height: 48px;
+      padding: 9px 11px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .sheet-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
+
+    .allergen-list { display: grid; gap: 10px; }
+    .allergen-row { display: grid; grid-template-columns: 34px 1fr; gap: 10px; color: var(--ivory-muted); }
+    .allergen-row strong { color: var(--gold); }
+
+    .category-list { display: grid; gap: 8px; }
+    .category-list button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 48px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      color: var(--ivory);
+      background: transparent;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .choice-list { display: grid; gap: 9px; margin: 15px 0; }
+    .choice-row {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 9px 11px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+
+    .cart-list { display: grid; gap: 14px; }
+    .cart-item { padding: 16px; border: 1px solid var(--line); border-radius: var(--radius); background: rgba(68, 77, 57, .48); }
+    .cart-head { display: flex; justify-content: space-between; gap: 12px; }
+    .cart-head h3 { margin: 0; font-size: 20px; }
+    .cart-meta { margin: 5px 0 12px; color: var(--ivory-muted); font-size: 13px; }
+    .cart-controls { display: flex; align-items: center; gap: 8px; }
+    .qty-button { width: 40px; height: 40px; border: 1px solid var(--line); border-radius: 9px; background: transparent; cursor: pointer; }
+    .remove-button { min-height: 40px; margin-left: auto; border: 0; color: var(--ivory-muted); background: transparent; text-decoration: underline; cursor: pointer; }
+    .cart-total { display: flex; justify-content: space-between; margin: 22px 0; padding-top: 18px; border-top: 1px solid var(--line); font-size: 19px; font-weight: 900; }
+
+    .toast {
+      position: fixed;
+      z-index: 90;
+      left: 50%;
+      bottom: calc(var(--bottom-h) + env(safe-area-inset-bottom) + 18px);
+      width: min(calc(100% - 40px), 420px);
+      padding: 12px 16px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      color: var(--ivory);
+      background: var(--olive-950);
+      box-shadow: var(--shadow);
+      text-align: center;
+      transform: translateX(-50%);
+    }
+
+    @media (min-width: 430px) {
+      .button-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .signature-track { grid-auto-columns: 78%; }
+    }
+
+    @media (min-width: 768px) {
+      :root { --page-pad: 32px; }
+      .hero-content, .story-grid, .pho-grid, .location-grid { grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr); }
+      .hero-logo { justify-self: end; width: min(300px, 32vw); max-height: 250px; }
+      .hero-text { grid-column: 1; grid-row: 1; }
+      .signature-track {
+        grid-auto-flow: initial;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-inline: 0;
+        padding-inline: 0;
+        overflow: visible;
+      }
+      .menu-group { scroll-margin-top: 184px; }
+      .options-list { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: .8fr 1.2fr 1fr; align-items: start; }
+      .sheet { width: min(720px, calc(100% - 40px)); margin-bottom: 22px; border-bottom: 1px solid var(--line); border-radius: 22px; }
+    }
+
+    @media (min-width: 1024px) {
+      :root { --header-h: 72px; }
+      h1 { max-width: 10.5em; font-size: clamp(58px, 5vw, 68px); }
+      .desktop-nav { display: flex; align-items: center; gap: clamp(14px, 1.7vw, 24px); font-size: 14px; }
+      .desktop-nav a { white-space: nowrap; }
+      .desktop-reserve { display: inline-flex; }
+      .menu-toggle { display: none; }
+      .hero { min-height: 780px; }
+      .hero-content { grid-template-columns: 1.15fr .85fr; }
+      .mobile-nav, .floating-category { display: none; }
+      .order-fab { right: 30px; bottom: 30px; left: auto; width: auto; padding-inline: 22px; }
+      .site-footer { padding-bottom: 54px; }
+      .signature-track { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .menu-toolbar { top: var(--header-h); margin-inline: 0; padding-inline: 0; }
+      .menu-group { scroll-margin-top: 176px; }
+      .group-items { display: grid; grid-template-columns: 1fr 1fr; column-gap: 28px; }
+      .menu-item:nth-child(2) { border-top: 1px solid rgba(37, 43, 32, .13); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+
+    /* Taste-led redesign: editorial structure, restrained materiality. */
+    :root {
+      --olive-950: #20271d;
+      --olive-900: #293226;
+      --olive: #39412f;
+      --olive-700: #58624c;
+      --olive-card: transparent;
+      --ivory: #f1efdf;
+      --ivory-muted: #c9c9bb;
+      --gold: #d2ad5a;
+      --red: #f51b27;
+      --line: rgba(241, 239, 223, .2);
+      --shadow: 0 18px 50px rgba(14, 18, 12, .24);
+      --radius: 3px;
+      --display: "Arial Narrow", "Avenir Next Condensed", "Helvetica Neue", Arial, sans-serif;
+      --sans: "Avenir Next", Avenir, "Segoe UI", Helvetica, Arial, sans-serif;
+      --serif: Georgia, serif;
+    }
+
+    body {
+      background: var(--olive);
+      background-image: none;
+      letter-spacing: -.006em;
+    }
+
+    .shell {
+      width: min(100% - (var(--page-pad) * 2), 1240px);
+    }
+
+    .site-header {
+      background: linear-gradient(to bottom, rgba(65, 72, 55, .94), transparent);
+    }
+
+    .site-header.is-solid {
+      background: rgba(32, 39, 29, .97);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+    }
+
+    .brand { gap: 12px; }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      border-radius: 0;
+      mix-blend-mode: normal;
+    }
+
+    .brand-name {
+      font: 650 18px/1 var(--display);
+      letter-spacing: -.02em;
+    }
+
+    .icon-button {
+      border-radius: 2px;
+      background: transparent;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--display);
+      font-weight: 650;
+      text-wrap: balance;
+    }
+
+    h1 {
+      max-width: 12ch;
+      margin-bottom: 20px;
+      font-size: clamp(39px, 11vw, 62px);
+      line-height: .98;
+      letter-spacing: -.055em;
+    }
+
+    h2 {
+      max-width: 15ch;
+      margin-bottom: 20px;
+      font-size: clamp(34px, 9vw, 56px);
+      line-height: 1;
+      letter-spacing: -.05em;
+    }
+
+    h3 {
+      font-size: 22px;
+      line-height: 1.08;
+      letter-spacing: -.025em;
+    }
+
+    .eyebrow {
+      margin-bottom: 18px;
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: .1em;
+    }
+
+    .section-label {
+      margin: 0 0 16px;
+      color: var(--ivory-muted);
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .hero {
+      min-height: max(700px, 100svh);
+      padding-top: calc(var(--header-h) + env(safe-area-inset-top) + 28px);
+      padding-bottom: 34px;
+      background: #414837;
+    }
+
+    .hero::before,
+    .hero::after {
+      display: none;
+    }
+
+    .hero-content {
+      align-content: center;
+      gap: 24px;
+    }
+
+    .hero-logo {
+      justify-self: end;
+      width: 104px;
+      height: 92px;
+      max-height: none;
+      border-radius: 0;
+      box-shadow: none;
+      object-fit: contain;
+    }
+
+    .hero-copy {
+      max-width: 31ch;
+      margin-bottom: 24px;
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    .button-row { gap: 8px; }
+
+    .btn {
+      min-height: 50px;
+      border-radius: 2px;
+      letter-spacing: -.01em;
+      box-shadow: none;
+    }
+
+    .btn-primary {
+      color: var(--olive-950);
+      background: var(--ivory);
+    }
+
+    .btn-gold {
+      color: var(--olive-950);
+      background: var(--gold);
+    }
+
+    .btn-outline {
+      border-color: rgba(241, 239, 223, .36);
+      background: transparent;
+    }
+
+    .hero-meta {
+      grid-template-columns: 1fr;
+      gap: 1px;
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .hero-meta a {
+      width: max-content;
+      margin-top: 7px;
+      color: var(--ivory);
+      text-underline-offset: 4px;
+    }
+
+    .section {
+      padding: 92px 0;
+    }
+
+    .section-heading {
+      max-width: 720px;
+    }
+
+    .section-copy {
+      max-width: 56ch;
+      line-height: 1.65;
+    }
+
+    .story {
+      border-block: 1px solid var(--line);
+      background: var(--olive-900);
+    }
+
+    .story-grid { gap: 48px; }
+
+    .story-points {
+      gap: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .story-points li {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+      border-left: 0;
+      color: var(--ivory-muted);
+    }
+
+    .chips {
+      gap: 0;
+      margin-top: 34px;
+      padding: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .info-chip {
+      padding: 14px 18px 14px 0;
+      border: 0;
+      border-radius: 0;
+      font-size: 13px;
+    }
+
+    .info-chip + .info-chip {
+      padding-left: 18px;
+      border-left: 1px solid var(--line);
+    }
+
+    .signature-track {
+      gap: 0;
+      margin-top: 40px;
+      padding-bottom: 8px;
+    }
+
+    .signature-card {
+      min-height: 356px;
+      padding: 24px 22px;
+      border: 0;
+      border-top: 1px solid var(--line);
+      border-radius: 0;
+      background: transparent;
+    }
+
+    .signature-card + .signature-card {
+      border-left: 1px solid var(--line);
+    }
+
+    .signature-card::after { display: none; }
+
+    .dish-code {
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .08em;
+    }
+
+    .dish-category {
+      color: var(--ivory-muted);
+      font-size: 12px;
+    }
+
+    .signature-card h3 {
+      margin: 38px 0 14px;
+      font-size: 27px;
+    }
+
+    .signature-card .price {
+      margin-top: auto;
+      margin-bottom: 12px;
+      font-size: 18px;
+    }
+
+    .vegan-badge {
+      color: var(--gold);
+      letter-spacing: .06em;
+    }
+
+    .menu-app {
+      border-block: 1px solid var(--line);
+      color: var(--ivory);
+      background: var(--olive-900);
+    }
+
+    .menu-app .section-copy,
+    .filter-summary {
+      color: var(--ivory-muted);
+    }
+
+    .menu-toolbar {
+      margin-top: 34px;
+      border-color: var(--line);
+      background: rgba(41, 50, 38, .97);
+    }
+
+    .search-input,
+    .filter-button {
+      border-color: rgba(241, 239, 223, .25);
+      border-radius: 2px;
+      color: var(--ivory);
+      background: var(--olive-950);
+    }
+
+    .search-input::placeholder { color: #aeb1a5; }
+    .search-clear { color: var(--ivory-muted); }
+
+    .category-chips {
+      gap: 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .category-chip {
+      min-height: 44px;
+      padding: 9px 14px;
+      border: 0;
+      border-bottom: 2px solid transparent;
+      border-radius: 0;
+      color: var(--ivory-muted);
+      background: transparent;
+    }
+
+    .category-chip.is-active {
+      color: var(--ivory);
+      border-color: var(--gold);
+      background: transparent;
+    }
+
+    .menu-groups {
+      gap: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .menu-group {
+      border: 0;
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      background: transparent;
+    }
+
+    .group-toggle {
+      min-height: 70px;
+      padding: 16px 0;
+      color: var(--ivory);
+    }
+
+    .group-toggle strong {
+      font: 650 20px/1.1 var(--display);
+      letter-spacing: -.03em;
+    }
+
+    .group-count,
+    .item-code,
+    .item-description,
+    .item-meta {
+      color: var(--ivory-muted);
+    }
+
+    .group-items { padding: 0; }
+
+    .menu-item {
+      padding: 24px 0;
+      border-top-color: var(--line);
+    }
+
+    .item-name {
+      font: 650 20px/1.15 var(--display);
+      letter-spacing: -.025em;
+    }
+
+    .item-price { color: var(--gold); }
+
+    .item-description {
+      max-width: 58ch;
+      line-height: 1.6;
+    }
+
+    .text-button {
+      color: var(--ivory);
+      text-underline-offset: 3px;
+    }
+
+    .options-list { gap: 0; }
+
+    .option-row {
+      padding: 8px 0;
+      border-radius: 0;
+      background: transparent;
+    }
+
+    .option-row + .option-row { border-top: 1px solid var(--line); }
+
+    .meta-button {
+      border-color: var(--line);
+      border-radius: 2px;
+      color: var(--ivory-muted);
+      background: transparent;
+    }
+
+    .select-dish {
+      border: 1px solid rgba(241, 239, 223, .34);
+      border-radius: 2px;
+      color: var(--ivory);
+      background: transparent;
+    }
+
+    .select-dish:active { background: rgba(241, 239, 223, .08); }
+
+    .empty-state {
+      border-color: var(--line);
+      border-radius: 0;
+    }
+
+    .floating-category {
+      border-radius: 2px;
+      box-shadow: var(--shadow);
+      min-height: 44px;
+      margin-right: 0;
+      margin-left: auto;
+      padding: 9px 13px;
+      font-size: 13px;
+    }
+
+    .pho-feature {
+      background: var(--olive);
+    }
+
+    .pho-feature::before { display: none; }
+
+    .pho-grid { gap: 46px; }
+
+    .pho-facts {
+      gap: 0;
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .pho-fact {
+      min-height: 112px;
+      padding: 18px;
+      border: 0;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      background: transparent;
+    }
+
+    .pho-fact strong {
+      color: var(--ivory);
+      font: 650 21px/1.1 var(--display);
+      letter-spacing: -.03em;
+    }
+
+    .location {
+      border-top: 1px solid var(--line);
+      background: var(--olive-900);
+    }
+
+    address strong {
+      font: 650 25px var(--display);
+      letter-spacing: -.03em;
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--line);
+      background: var(--olive-950);
+    }
+
+    .footer-logo {
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .mobile-nav {
+      background: rgba(32, 39, 29, .98);
+    }
+
+    .order-fab {
+      border-radius: 2px;
+    }
+
+    .sheet {
+      border-radius: 14px 14px 0 0;
+      background: var(--olive-900);
+    }
+
+    .drawer { background: var(--olive-900); }
+
+    .field input,
+    .field select,
+    .field textarea {
+      border-radius: 2px;
+      background: var(--olive-950);
+    }
+
+    .check-card,
+    .category-list button,
+    .choice-row,
+    .cart-item,
+    .qty-button,
+    .toast {
+      border-radius: 2px;
+    }
+
+    .cart-item { background: transparent; }
+
+    @media (min-width: 430px) {
+      .hero-content { gap: 30px; }
+      .signature-track { grid-auto-columns: 72%; }
+    }
+
+    @media (min-width: 768px) {
+      .hero-content {
+        grid-template-columns: minmax(0, 1.25fr) minmax(220px, .75fr);
+        column-gap: 56px;
+      }
+
+      .hero-logo {
+        width: min(260px, 27vw);
+        height: auto;
+        max-height: 230px;
+      }
+
+      .story-grid {
+        grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      }
+
+      .signature-track {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .signature-card:first-child {
+        grid-column: 1 / -1;
+        min-height: 280px;
+        padding-right: 38%;
+      }
+
+      .signature-card:nth-child(2n) { border-left: 0; }
+      .signature-card:nth-child(2n + 1) { border-left: 1px solid var(--line); }
+
+      .pho-grid,
+      .location-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(300px, .85fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      h1 {
+        max-width: 11.5em;
+        font-size: clamp(54px, 5vw, 66px);
+      }
+
+      .desktop-nav {
+        font-size: 13px;
+        letter-spacing: -.01em;
+      }
+
+      .hero {
+        min-height: min(820px, 100svh);
+      }
+
+      .hero-content {
+        grid-template-columns: minmax(0, 1.35fr) minmax(320px, .65fr);
+      }
+
+      .signature-track {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .signature-card {
+        min-height: 300px;
+      }
+
+      .signature-card:first-child {
+        min-height: 320px;
+      }
+
+      .group-items {
+        column-gap: 46px;
+      }
+    }
+
+    /* Restrained text controls still need a comfortable 44px touch target. */
+    .brand,
+    .desktop-nav a,
+    .hero-meta a,
+    .footer-links a,
+    .meta-button,
+    .text-button {
+      display: inline-flex;
+      min-width: 44px;
+      min-height: 44px;
+      align-items: center;
+    }
+
+    /* Real food photography, placed as editorial moments rather than card decoration. */
+    .hero {
+      overflow: hidden;
+    }
+
+    .hero-food-photo {
+      position: absolute;
+      z-index: 0;
+      top: var(--header-h);
+      right: 0;
+      width: 62vw;
+      height: 44%;
+      object-fit: cover;
+      object-position: 50% 48%;
+      opacity: .48;
+      filter: saturate(.72) contrast(1.08);
+      -webkit-mask-image: linear-gradient(110deg, transparent 0%, #000 48%);
+      mask-image: linear-gradient(110deg, transparent 0%, #000 48%);
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 1;
+    }
+
+    .pho-aside {
+      display: grid;
+      gap: 24px;
+    }
+
+    .pho-photo {
+      margin: 0;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+    }
+
+    .pho-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 58%;
+      filter: saturate(.78) contrast(1.04);
+    }
+
+    .signature-card.has-photo {
+      position: relative;
+      padding-top: 242px;
+      overflow: hidden;
+    }
+
+    .signature-photo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      object-position: 50% 46%;
+      filter: saturate(.72) contrast(1.05);
+    }
+
+    /* A working-kitchen interlude: five real moments, composed as one editorial spread. */
+    .culinary-gallery {
+      padding-top: 28px;
+      background: #171b15;
+    }
+
+    .gallery-heading {
+      display: grid;
+      gap: 18px;
+      margin-bottom: 34px;
+    }
+
+    .gallery-heading .section-copy {
+      margin: 0;
+    }
+
+    .food-gallery {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      grid-auto-rows: 190px;
+      gap: 8px;
+    }
+
+    .gallery-frame {
+      min-width: 0;
+      margin: 0;
+      overflow: hidden;
+      background: #20261d;
+    }
+
+    .gallery-frame:first-child {
+      grid-column: 1 / -1;
+      grid-row: span 2;
+    }
+
+    .gallery-frame:nth-child(4),
+    .gallery-frame:nth-child(5) {
+      grid-column: span 1;
+    }
+
+    .gallery-frame:nth-child(6) {
+      grid-column: 1 / -1;
+    }
+
+    .gallery-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(.78) contrast(1.06);
+      transition: transform .55s cubic-bezier(.2, .7, .2, 1), filter .55s ease;
+    }
+
+    .gallery-frame:first-child img {
+      object-position: 50% 44%;
+    }
+
+    .gallery-frame:nth-child(2) img {
+      object-position: 50% 52%;
+    }
+
+    .gallery-frame:nth-child(3) img {
+      object-position: 50% 56%;
+    }
+
+    .gallery-frame:nth-child(5) img {
+      object-position: 50% 38%;
+    }
+
+    @media (hover: hover) {
+      .gallery-frame:hover img {
+        transform: scale(1.025);
+        filter: saturate(.9) contrast(1.04);
+      }
+    }
+
+    @media (min-width: 768px) {
+      .hero-food-photo {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        height: min(58vh, 540px);
+        opacity: .9;
+        filter: saturate(.68) contrast(1.08);
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 18%);
+        mask-image: linear-gradient(to right, transparent 0%, #000 18%);
+      }
+
+      .pho-photo {
+        aspect-ratio: 5 / 4;
+      }
+
+      .gallery-heading {
+        grid-template-columns: minmax(0, .9fr) minmax(280px, .55fr);
+        align-items: end;
+      }
+
+      .food-gallery {
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-auto-rows: 220px;
+        gap: 10px;
+      }
+
+      .gallery-frame:first-child {
+        grid-column: 1 / span 4;
+        grid-row: 1 / span 3;
+      }
+
+      .gallery-frame:nth-child(2) {
+        grid-column: 5 / span 5;
+        grid-row: 1;
+      }
+
+      .gallery-frame:nth-child(3) {
+        grid-column: 10 / span 3;
+        grid-row: 1;
+      }
+
+      .gallery-frame:nth-child(4) {
+        grid-column: 5 / span 4;
+        grid-row: 2;
+      }
+
+      .gallery-frame:nth-child(5) {
+        grid-column: 9 / span 4;
+        grid-row: 2;
+      }
+
+      .gallery-frame:nth-child(6) {
+        grid-column: 5 / span 8;
+        grid-row: 3;
+      }
+
+      .signature-card:first-child.has-photo {
+        padding-top: 24px;
+        padding-right: 48%;
+      }
+
+      .signature-card:first-child.has-photo .signature-photo {
+        right: 0;
+        left: auto;
+        width: 44%;
+        height: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <header class="site-header" id="siteHeader">
+    <div class="shell header-inner">
+      <a class="brand" href="#start" aria-label="Juri Startseite">
+        <img src="assets/jury-logo.jpg" alt="Juri Restaurant Hameln." width="96" height="84">
+        <span class="brand-name">Juri</span>
+      </a>
+      <nav class="desktop-nav" aria-label="Hauptnavigation">
+        <a href="#start">Startseite</a>
+        <a href="#ueber-uns">Über uns</a>
+        <a href="#speisekarte">Speisekarte</a>
+        <a href="#pho">Phở</a>
+        <a href="#speisekarte" data-category-link="sushi">Sushi</a>
+        <a href="#speisekarte" data-category-link="vegan">Vegan</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <div class="header-actions">
+        <button class="btn btn-primary btn-small desktop-reserve" type="button" data-open-sheet="reservation">Tisch reservieren</button>
+        <button class="icon-button menu-toggle" type="button" aria-label="Menü öffnen" aria-controls="drawer" aria-expanded="false">
+          <span class="hamburger" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="start">
+      <div class="shell hero-content">
+        <img class="hero-food-photo" src="assets/juri-spring-rolls.jpg" alt="Vietnamesische Frühlingsrollen mit Dip." width="1400" height="1960" fetchpriority="high">
+        <div class="hero-text">
+          <p class="eyebrow">Phở Restaurant · Hameln</p>
+          <h1>Vietnamesische Seele. Japanische Präzision.</h1>
+          <p class="hero-copy">Traditionelle vietnamesische Aromen, modern interpretiert im Herzen von Hameln.</p>
+          <div class="button-row">
+            <button class="btn btn-primary" type="button" data-open-sheet="reservation">Tisch reservieren</button>
+            <button class="btn btn-outline" type="button" data-order-entry>Essen bestellen</button>
+          </div>
+          <div class="hero-meta">
+            <span>Kastanienwall 32 · 31785 Hameln</span>
+            <span>Öffnungszeiten: 11:00-22:00 Uhr</span>
+            <a href="#speisekarte"><u>Speisekarte entdecken</u></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section story" id="ueber-uns">
+      <div class="shell story-grid">
+        <div>
+          <h2>Die Seele Vietnams. Die Präzision Japans.</h2>
+          <p class="section-copy">Juri verbindet die Wärme vietnamesischer Küche mit klarer japanischer Handwerkskunst. Im Mittelpunkt steht Phở, begleitet von Sushi, Wokgerichten und pflanzlichen Optionen.</p>
+        </div>
+        <ul class="story-points">
+          <li>Unsere Brühe wird über viele Stunden mit Rinderknochen, geröstetem Ingwer, Zwiebeln, Zimt, Sternanis und Gewürzen gekocht.</li>
+          <li>Die Zutaten werden täglich frisch vorbereitet und mit Ruhe, Präzision und Respekt vor ihrer Herkunft verarbeitet.</li>
+          <li>Vietnamesische Tradition trifft auf japanische Einflüsse, ohne die klare Identität der einzelnen Gerichte zu verlieren.</li>
+        </ul>
+      </div>
+      <div class="shell chips" aria-label="Besonderheiten">
+        <span class="info-chip">Täglich frisch</span>
+        <span class="info-chip">Brühe über Stunden gekocht</span>
+        <span class="info-chip">Vietnamesisch · Japanische Fusion</span>
+        <span class="info-chip">Vegane Auswahl</span>
+      </div>
+    </section>
+
+    <section class="section culinary-gallery" aria-labelledby="galleryTitle">
+      <div class="shell">
+        <div class="gallery-heading">
+          <h2 id="galleryTitle">Frisch. Heiß. Präzise.</h2>
+          <p class="section-copy">Kräuter, Brühe, Wok und Sushi bestimmen den Rhythmus unserer Küche – vom ersten Schnitt bis zum fertigen Teller.</p>
+        </div>
+        <div class="food-gallery" aria-label="Einblicke in Küche und Gerichte">
+          <figure class="gallery-frame">
+            <img src="assets/juri-wok-fire.jpg" alt="Ein Gericht wird über offener Wokflamme zubereitet." width="1600" height="2131" loading="lazy">
+          </figure>
+          <figure class="gallery-frame">
+            <img src="assets/juri-herbs.jpg" alt="Frische vietnamesische Kräuter in einem geflochtenen Korb." width="1400" height="933" loading="lazy">
+          </figure>
+          <figure class="gallery-frame">
+            <img src="assets/juri-noodles.jpg" alt="Duftende Nudeln werden mit Stäbchen aus einer Schale gehoben." width="1400" height="2100" loading="lazy">
+          </figure>
+          <figure class="gallery-frame">
+            <img src="assets/juri-sushi-craft.jpg" alt="Ein Sushi-Koch formt frische Rollen von Hand." width="1400" height="934" loading="lazy">
+          </figure>
+          <figure class="gallery-frame">
+            <img src="assets/juri-vietnamese-spread.jpg" alt="Eine farbenfrohe Auswahl vietnamesischer Gerichte mit frischen Kräutern." width="1600" height="2133" loading="lazy">
+          </figure>
+          <figure class="gallery-frame">
+            <img src="assets/juri-vegan-bowl.jpg" alt="Eine farbenfrohe Bowl mit Tofu, Reis und frischem Gemüse." width="1400" height="933" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="signatureTitle">
+      <div class="shell">
+        <div class="section-heading">
+          <h2 id="signatureTitle">Signaturen aus unserer Küche.</h2>
+          <p class="section-copy">Eine Auswahl aus der offiziellen Speisekarte. Preise und Varianten werden direkt aus den Menüdaten übernommen.</p>
+        </div>
+        <div class="signature-track" id="signatureTrack" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section menu-app" id="speisekarte" aria-labelledby="menuTitle">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="section-label">Speisekarte</p>
+          <h2 id="menuTitle">Finden Sie Ihr Gericht.</h2>
+          <p class="section-copy">Suchen Sie nach Name oder Nummer, filtern Sie nach Vorlieben und wählen Sie Ihre Variante direkt aus.</p>
+        </div>
+
+        <div class="menu-toolbar">
+          <div class="search-row">
+            <div class="search-wrap">
+              <label class="visually-hidden" for="menuSearch">Gericht suchen</label>
+              <input class="search-input" id="menuSearch" type="search" placeholder="Gericht suchen..." autocomplete="off">
+              <button class="search-clear" id="searchClear" type="button" aria-label="Suche löschen" hidden>×</button>
+            </div>
+            <button class="filter-button" type="button" data-open-sheet="filters">Filter</button>
+          </div>
+          <div class="category-chips" id="categoryChips" aria-label="Kategorien"></div>
+        </div>
+
+        <p class="filter-summary" id="filterSummary" aria-live="polite"></p>
+        <div class="menu-groups" id="menuGroups"></div>
+        <div class="empty-state" id="emptyState" hidden>
+          <h3>Keine Gerichte gefunden.</h3>
+          <p>Versuchen Sie einen anderen Suchbegriff oder setzen Sie die Filter zurück.</p>
+          <button class="btn btn-gold" type="button" id="resetFiltersEmpty">Filter zurücksetzen</button>
+        </div>
+        <button class="btn btn-primary floating-category" type="button" data-open-sheet="categories">Kategorien</button>
+      </div>
+    </section>
+
+    <section class="section pho-feature" id="pho">
+      <div class="shell pho-grid">
+        <div>
+          <p class="section-label">Phở</p>
+          <h2>Die Seele der vietnamesischen Küche.</h2>
+          <p class="section-copy">Eine klare, aromatische Brühe bildet das Herz jeder Schale. Reisbandnudeln, frische Kräuter und sorgfältig gewählte Zutaten bringen Tiefe und Leichtigkeit zusammen.</p>
+          <button class="btn btn-outline" type="button" data-category-link="pho">Phở in der Speisekarte</button>
+        </div>
+        <div class="pho-aside">
+          <figure class="pho-photo">
+            <img src="assets/juri-pho.jpg" alt="Eine aromatische Nudelsuppe mit frischen Kräutern, Limette und Chili." width="1800" height="2700" loading="lazy">
+          </figure>
+          <div class="pho-facts">
+            <div class="pho-fact"><strong>Viele</strong><span>Stunden sanft gekocht</span></div>
+            <div class="pho-fact"><strong>Frisch</strong><span>Kräuter und Zutaten</span></div>
+            <div class="pho-fact"><strong>Würzig</strong><span>Ingwer, Zimt und Sternanis</span></div>
+            <div class="pho-fact"><strong>Klar</strong><span>Ausgewogen und aromatisch</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section location" id="kontakt">
+      <div class="shell location-grid">
+        <div>
+          <h2>Mitten in Hameln.</h2>
+          <address>
+            <strong>Juri</strong>
+            Kastanienwall 32<br>
+            31785 Hameln<br>
+            Deutschland
+          </address>
+          <p>Öffnungszeiten: 11:00-22:00 Uhr</p>
+        </div>
+        <div class="button-row">
+          <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query=Kastanienwall%2032%2C%2031785%20Hameln" target="_blank" rel="noopener">Route planen</a>
+          <button class="btn btn-outline" type="button" id="copyAddress">Adresse kopieren</button>
+          <button class="btn btn-outline" type="button" data-open-sheet="reservation">Tisch reservieren</button>
+          <button class="btn btn-outline" type="button" data-order-entry>Über WhatsApp bestellen</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <img class="footer-logo" src="assets/jury-logo.jpg" alt="Juri Restaurant Hameln." width="180" height="152" loading="lazy">
+      <div>
+        <p class="footer-copy">Phở Restaurant · Asiatische Küche<br>Vietnamese · Japanese Fusion<br>Kastanienwall 32, 31785 Hameln</p>
+        <p class="footer-copy">Öffnungszeiten: 11:00-22:00 Uhr</p>
+      </div>
+      <nav class="footer-links" aria-label="Fußnavigation">
+        <a href="#ueber-uns">Über uns</a>
+        <a href="#speisekarte">Speisekarte</a>
+        <a href="#pho">Phở</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </div>
+  </footer>
+
+  <nav class="mobile-nav" aria-label="Schnellzugriff">
+    <div class="mobile-nav-inner">
+      <a href="#speisekarte"><span class="nav-glyph" aria-hidden="true">≡</span><span>Menü</span></a>
+      <button type="button" data-open-sheet="reservation"><span class="nav-glyph" aria-hidden="true">□</span><span>Reservieren</span></button>
+      <button type="button" data-order-entry><span class="nav-glyph" aria-hidden="true">＋</span><span>Bestellen</span><span class="cart-badge" data-cart-badge hidden>0</span></button>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Kastanienwall%2032%2C%2031785%20Hameln" target="_blank" rel="noopener"><span class="nav-glyph" aria-hidden="true">◇</span><span>Route</span></a>
+    </div>
+  </nav>
+
+  <button class="order-fab" id="orderFab" type="button" hidden>Bestellung ansehen</button>
+
+  <div class="overlay drawer-overlay" id="drawerOverlay" hidden>
+    <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+      <div class="drawer-top">
+        <span class="brand-name" id="drawerTitle">Juri</span>
+        <button class="icon-button" type="button" data-close-overlay aria-label="Menü schließen">×</button>
+      </div>
+      <nav class="drawer-nav" aria-label="Mobile Navigation">
+        <a href="#start">Startseite</a>
+        <a href="#ueber-uns">Über uns</a>
+        <a href="#speisekarte">Speisekarte</a>
+        <a href="#pho">Phở</a>
+        <a href="#speisekarte" data-category-link="sushi">Sushi</a>
+        <a href="#speisekarte" data-category-link="vegan">Vegan</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <div class="drawer-actions">
+        <button class="btn btn-primary" type="button" data-open-sheet="reservation">Tisch reservieren</button>
+        <button class="btn btn-outline" type="button" data-order-entry>Essen bestellen</button>
+      </div>
+    </aside>
+  </div>
+
+  <div class="overlay" id="sheetOverlay" hidden>
+    <section class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+      <div class="sheet-handle" aria-hidden="true"></div>
+      <header class="sheet-header">
+        <h2 id="sheetTitle">Dialog</h2>
+        <button class="icon-button" type="button" data-close-overlay aria-label="Dialog schließen">×</button>
+      </header>
+      <div class="sheet-body" id="sheetBody"></div>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" hidden></div>
+
+  <template id="reservationTemplate">
+    <form class="form-grid" id="reservationForm">
+      <div class="field"><label for="reservationName">Name *</label><input id="reservationName" name="name" required autocomplete="name"></div>
+      <div class="field"><label for="reservationPeople">Anzahl der Personen *</label><input id="reservationPeople" name="people" type="number" min="1" value="2" required inputmode="numeric"></div>
+      <div class="field"><label for="reservationDate">Datum *</label><input id="reservationDate" name="date" type="date" required></div>
+      <div class="field"><label for="reservationTime">Uhrzeit *</label><input id="reservationTime" name="time" type="time" min="11:00" max="22:00" required></div>
+      <div class="field"><label for="reservationPhone">Telefonnummer</label><input id="reservationPhone" name="phone" type="tel" autocomplete="tel"></div>
+      <div class="field"><label for="reservationWishes">Besondere Wünsche</label><textarea id="reservationWishes" name="wishes"></textarea></div>
+      <p class="form-note">Ihre Reservierung ist erst nach der Bestätigung durch das Restaurant verbindlich.</p>
+      <button class="btn btn-gold" type="submit">Über WhatsApp anfragen</button>
+      <p class="dev-note" data-whatsapp-note hidden>WhatsApp-Nummer muss noch ergänzt werden.</p>
+    </form>
+  </template>
+
+  <script src="jury-menu-data.js"></script>
+  <script>
+    "use strict";
+
+    // TODO: Add verified WhatsApp number.
+    const WHATSAPP_NUMBER = "ADD_WHATSAPP_NUMBER_HERE";
+    const PLACEHOLDER_NUMBER = "ADD_WHATSAPP_NUMBER_HERE";
+    const hasWhatsAppNumber = /^\d{8,15}$/.test(WHATSAPP_NUMBER) && WHATSAPP_NUMBER !== PLACEHOLDER_NUMBER;
+
+    const state = {
+      query: "",
+      category: "all",
+      filters: new Set(),
+      cart: [],
+      lastFocus: null,
+      activeOverlay: null
+    };
+
+    const allItems = typeof juryFlattenMenu === "function" ? juryFlattenMenu() : [];
+    const itemMap = new Map(allItems.map((item, index) => [itemKey(item, index), item]));
+
+    const categories = [
+      { id: "all", label: "Alle" },
+      { id: "appetizers", label: "Vorspeisen" },
+      { id: "soups-salads", label: "Suppen" },
+      { id: "main-dishes", label: "Hauptgerichte" },
+      { id: "vegan", label: "Vegan" },
+      { id: "pho", label: "Phở" },
+      { id: "bun", label: "Bún" },
+      { id: "sushi", label: "Sushi" },
+      { id: "drinks", label: "Getränke" }
+    ];
+
+    const filterOptions = [
+      { id: "vegan", label: "Vegan" },
+      { id: "tofu", label: "Tofu" },
+      { id: "chicken", label: "Hähnchen" },
+      { id: "beef", label: "Rind" },
+      { id: "shrimp", label: "Garnelen" },
+      { id: "duck", label: "Ente" },
+      { id: "sushi", label: "Sushi" },
+      { id: "drinks", label: "Getränke" }
+    ].filter(option => allItems.some(item => matchesFilter(item, option.id)));
+
+    const signatureNames = [
+      "Phở Việt Nam",
+      "Phở Bát Đá",
+      "Bún Bò Huế",
+      "Bò Lúc Lắc",
+      "Saigon BBQ Kimchi Bowl"
+    ];
+
+    function escapeHTML(value) {
+      return String(value ?? "").replace(/[&<>"']/g, char => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
+      })[char]);
+    }
+
+    function itemKey(item, index = "") {
+      return `${item.type}-${item.code || item.id || index}`;
+    }
+
+    function codeOf(item) {
+      return item.code || item.id || "";
+    }
+
+    function normalize(value) {
+      return String(value || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    }
+
+    function formatEUR(value) {
+      return new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(Number(value));
+    }
+
+    function priceEntries(item) {
+      if (Array.isArray(item.variants) && item.variants.length) {
+        return item.variants.map(variant => ({
+          id: variant.code,
+          label: variant.name,
+          price: Number(variant.price),
+          allergens: variant.allergens || []
+        }));
+      }
+      if (item.sizes && typeof item.sizes === "object") {
+        return Object.entries(item.sizes).map(([label, price]) => ({
+          id: label,
+          label,
+          price: Number(price),
+          allergens: item.allergens || []
+        }));
+      }
+      return [{ id: "standard", label: "", price: Number(item.price), allergens: item.allergens || [] }];
+    }
+
+    function startingPrice(item) {
+      const prices = priceEntries(item).map(entry => entry.price).filter(Number.isFinite);
+      return prices.length ? Math.min(...prices) : null;
+    }
+
+    function displayPrice(item) {
+      const entries = priceEntries(item);
+      const price = startingPrice(item);
+      if (price === null) return "";
+      return entries.length > 1 ? `ab ${formatEUR(price)}` : formatEUR(price);
+    }
+
+    function itemDescription(item) {
+      if (item.descriptionDE) return item.descriptionDE;
+      if (item.content) return item.content.split(" / ")[0];
+      return item.ingredients || "";
+    }
+
+    function isVegan(item) {
+      return (item.tags || []).includes("vegan") || normalize(item.name).includes("vegan");
+    }
+
+    function allergenCodesFor(item) {
+      return [...new Set([
+        ...(item.allergens || []),
+        ...(item.variants || []).flatMap(variant => variant.allergens || [])
+      ])];
+    }
+
+    function searchableText(item) {
+      return normalize([
+        item.name, item.descriptionDE, item.descriptionEN, item.content, item.ingredients,
+        item.code, item.id, item.groupDE, item.sectionDE,
+        ...(item.variants || []).map(variant => variant.name)
+      ].filter(Boolean).join(" "));
+    }
+
+    function matchesCategory(item, category) {
+      if (category === "all") return true;
+      if (category === "vegan") return isVegan(item);
+      if (category === "sushi") return item.sectionId === "sushi";
+      if (category === "drinks") return item.sectionId === "drinks";
+      return item.sectionId === category;
+    }
+
+    function matchesFilter(item, filter) {
+      const haystack = searchableText(item);
+      const filterTerms = {
+        vegan: () => isVegan(item),
+        tofu: () => haystack.includes("tofu"),
+        chicken: () => haystack.includes("hahnchen"),
+        beef: () => haystack.includes("rind") || haystack.includes("beef"),
+        shrimp: () => haystack.includes("garnelen") || haystack.includes("shrimp") || haystack.includes("ebi"),
+        duck: () => haystack.includes("ente") || haystack.includes("duck"),
+        sushi: () => item.sectionId === "sushi",
+        drinks: () => item.sectionId === "drinks"
+      };
+      return filterTerms[filter]?.() || false;
+    }
+
+    function visibleItems() {
+      const query = normalize(state.query);
+      return allItems.filter(item => {
+        const queryMatch = !query || searchableText(item).includes(query);
+        const categoryMatch = matchesCategory(item, state.category);
+        const filtersMatch = !state.filters.size || [...state.filters].every(filter => matchesFilter(item, filter));
+        return queryMatch && categoryMatch && filtersMatch;
+      });
+    }
+
+    function renderCategories() {
+      const chips = document.getElementById("categoryChips");
+      chips.innerHTML = categories.map(category => `
+        <button class="category-chip${state.category === category.id ? " is-active" : ""}"
+          type="button" data-category="${category.id}" aria-pressed="${state.category === category.id}">
+          ${escapeHTML(category.label)}
+        </button>
+      `).join("");
+    }
+
+    function renderSignatures() {
+      const found = [];
+      for (const name of signatureNames) {
+        const match = allItems.find(item => normalize(item.name).includes(normalize(name)));
+        if (match && !found.includes(match)) found.push(match);
+      }
+      const vegan = allItems.find(item => isVegan(item) && Number.isFinite(startingPrice(item)));
+      const sushiSet = allItems.find(item => item.type === "sushi-set");
+      if (vegan) found.push(vegan);
+      if (sushiSet) found.push(sushiSet);
+
+      const signaturePhotos = [
+        { src: "assets/juri-pho.jpg", alt: "Eine dampfende Schale Phở mit Reisnudeln und frischen Kräutern.", width: 1800, height: 2700 },
+        null,
+        null,
+        null,
+        null,
+        { src: "assets/juri-spring-rolls.jpg", alt: "Knusprige Frühlingsrollen mit frischen Kräutern und Dip.", width: 1400, height: 1960 },
+        { src: "assets/juri-sushi.jpg", alt: "Eine Auswahl frisch angerichteter Sushi-Rollen.", width: 1600, height: 2400 }
+      ];
+
+      document.getElementById("signatureTrack").innerHTML = found.slice(0, 7).map((item, index) => {
+        const photo = signaturePhotos[index];
+        return `
+        <article class="signature-card${photo ? " has-photo" : ""}">
+          ${photo ? `<img class="signature-photo" src="${photo.src}" alt="${photo.alt}" width="${photo.width}" height="${photo.height}" loading="lazy">` : ""}
+          <span class="dish-code">${escapeHTML(codeOf(item))}</span>
+          <span class="dish-category">${escapeHTML(item.groupDE || item.sectionDE)}</span>
+          ${isVegan(item) ? '<span class="vegan-badge">Vegan</span>' : ""}
+          <h3>${escapeHTML(item.name)}</h3>
+          <p>${escapeHTML(itemDescription(item)).slice(0, 180)}${itemDescription(item).length > 180 ? "…" : ""}</p>
+          <div class="price">${escapeHTML(displayPrice(item))}</div>
+          ${allergenCodesFor(item).length ? `<p class="dish-category">Allergene: ${escapeHTML(allergenCodesFor(item).join(", "))}</p>` : ""}
+          <button class="btn btn-outline btn-small" type="button" data-show-menu-item="${escapeHTML(itemKey(item, allItems.indexOf(item)))}">Im Menü ansehen</button>
+        </article>
+      `;
+      }).join("");
+    }
+
+    function groupVisibleItems(items) {
+      const groups = new Map();
+      items.forEach(item => {
+        const key = item.groupId || item.sectionId;
+        if (!groups.has(key)) groups.set(key, {
+          id: key,
+          title: item.groupDE || item.sectionDE || "Speisekarte",
+          items: []
+        });
+        groups.get(key).items.push(item);
+      });
+      return [...groups.values()];
+    }
+
+    function renderOptions(item) {
+      const entries = priceEntries(item);
+      if (entries.length <= 1) return "";
+      return `<div class="options-list">${entries.map(entry => `
+        <div class="option-row">
+          <span>${escapeHTML(entry.label)}</span>
+          <strong>${escapeHTML(formatEUR(entry.price))}</strong>
+        </div>
+      `).join("")}</div>`;
+    }
+
+    function renderMenuItem(item) {
+      const key = itemKey(item, allItems.indexOf(item));
+      const description = itemDescription(item);
+      const metaCodes = [
+        ...allergenCodesFor(item).map(code => `A:${code}`),
+        ...(item.additives || []).map(code => `Z:${code}`)
+      ];
+      const pieces = item.pieces ? `${item.pieces} Stück` : "";
+      return `
+        <article class="menu-item" data-item-key="${escapeHTML(key)}">
+          <div class="item-head">
+            <div class="item-identity">
+              <span class="item-code">${escapeHTML(codeOf(item))}</span>
+              <h3 class="item-name">${escapeHTML(item.name)}</h3>
+            </div>
+            <span class="item-price">${escapeHTML(displayPrice(item))}</span>
+          </div>
+          ${description ? `<p class="item-description">${escapeHTML(description)}</p>
+            ${description.length > 155 ? '<button class="text-button" type="button" data-expand-description>Mehr anzeigen</button>' : ""}` : ""}
+          ${renderOptions(item)}
+          <div class="item-meta">
+            ${pieces ? `<span>${escapeHTML(pieces)}</span>` : ""}
+            ${isVegan(item) ? '<span class="vegan-badge">Vegan</span>' : ""}
+            ${metaCodes.length ? `<button class="meta-button" type="button" data-allergens="${escapeHTML(key)}">Allergene &amp; Zusatzstoffe ${escapeHTML(metaCodes.join(", "))}</button>` : ""}
+          </div>
+          <div class="item-actions">
+            <button class="select-dish" type="button" data-select-dish="${escapeHTML(key)}">Auswählen</button>
+          </div>
+        </article>
+      `;
+    }
+
+    function renderMenu() {
+      const items = visibleItems();
+      const groups = groupVisibleItems(items);
+      const container = document.getElementById("menuGroups");
+      const empty = document.getElementById("emptyState");
+      const summary = document.getElementById("filterSummary");
+
+      container.innerHTML = groups.map((group, index) => `
+        <section class="menu-group${index === 0 ? " is-open" : ""}" id="group-${escapeHTML(group.id)}" data-group="${escapeHTML(group.id)}">
+          <button class="group-toggle" type="button" aria-expanded="${index === 0}">
+            <strong>${escapeHTML(group.title)}</strong>
+            <span class="group-count">${group.items.length} ${group.items.length === 1 ? "Gericht" : "Gerichte"}</span>
+            <span class="chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div class="group-items"${index === 0 ? "" : " hidden"}>
+            ${group.items.map(renderMenuItem).join("")}
+          </div>
+        </section>
+      `).join("");
+
+      empty.hidden = items.length > 0;
+      container.hidden = items.length === 0;
+      summary.textContent = `${items.length} Einträge${state.filters.size ? ` · ${state.filters.size} Filter aktiv` : ""}`;
+      renderCategories();
+    }
+
+    function setCategory(category, shouldScroll = false) {
+      state.category = categories.some(item => item.id === category) ? category : "all";
+      renderMenu();
+      if (shouldScroll) document.getElementById("speisekarte").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function openDrawer() {
+      closeOverlays(false);
+      state.lastFocus = document.activeElement;
+      state.activeOverlay = document.getElementById("drawerOverlay");
+      state.activeOverlay.hidden = false;
+      document.body.classList.add("is-locked");
+      document.querySelector(".menu-toggle").setAttribute("aria-expanded", "true");
+      requestAnimationFrame(() => state.activeOverlay.querySelector("[data-close-overlay]").focus());
+    }
+
+    function openSheet(type, payload) {
+      closeOverlays(false);
+      state.lastFocus = document.activeElement;
+      const overlay = document.getElementById("sheetOverlay");
+      const title = document.getElementById("sheetTitle");
+      const body = document.getElementById("sheetBody");
+      const content = sheetContent(type, payload);
+      title.textContent = content.title;
+      body.innerHTML = content.html;
+      state.activeOverlay = overlay;
+      overlay.hidden = false;
+      document.body.classList.add("is-locked");
+      bindSheet(type, payload);
+      requestAnimationFrame(() => overlay.querySelector("[data-close-overlay]").focus());
+    }
+
+    function closeOverlays(restoreFocus = true) {
+      document.getElementById("drawerOverlay").hidden = true;
+      document.getElementById("sheetOverlay").hidden = true;
+      document.body.classList.remove("is-locked");
+      document.querySelector(".menu-toggle").setAttribute("aria-expanded", "false");
+      state.activeOverlay = null;
+      if (restoreFocus && state.lastFocus instanceof HTMLElement) state.lastFocus.focus();
+    }
+
+    function trapFocus(event) {
+      if (!state.activeOverlay || event.key !== "Tab") return;
+      const focusable = [...state.activeOverlay.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])')]
+        .filter(element => !element.hidden && element.offsetParent !== null);
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+
+    function sheetContent(type, payload) {
+      if (type === "reservation") {
+        return { title: "Tisch reservieren", html: document.getElementById("reservationTemplate").innerHTML };
+      }
+      if (type === "filters") {
+        return {
+          title: "Filter",
+          html: `
+            <div class="filter-options">
+              ${filterOptions.map(option => `
+                <label class="check-card">
+                  <input type="checkbox" value="${option.id}" ${state.filters.has(option.id) ? "checked" : ""}>
+                  <span>${escapeHTML(option.label)}</span>
+                </label>
+              `).join("")}
+            </div>
+            <div class="sheet-actions">
+              <button class="btn btn-outline" type="button" id="resetFilters">Zurücksetzen</button>
+              <button class="btn btn-gold" type="button" id="applyFilters">Anwenden</button>
+            </div>
+          `
+        };
+      }
+      if (type === "categories") {
+        return {
+          title: "Kategorien",
+          html: `<div class="category-list">${categories.map(category => `
+            <button type="button" data-sheet-category="${category.id}">
+              <span>${escapeHTML(category.label)}</span><span aria-hidden="true">›</span>
+            </button>
+          `).join("")}</div>`
+        };
+      }
+      if (type === "allergens") {
+        const item = itemMap.get(payload);
+        const allergenCodes = new Set([
+          ...(item?.allergens || []),
+          ...(item?.variants || []).flatMap(variant => variant.allergens || [])
+        ]);
+        const additiveCodes = new Set(item?.additives || []);
+        return {
+          title: "Allergene & Zusatzstoffe",
+          html: `
+            <h3>${escapeHTML(item?.name || "")}</h3>
+            <div class="allergen-list">
+              ${[...allergenCodes].map(code => `<div class="allergen-row"><strong>${escapeHTML(code)}</strong><span>${escapeHTML(JURY_MENU.allergens?.[code]?.de || code)}</span></div>`).join("")}
+              ${[...additiveCodes].map(code => `<div class="allergen-row"><strong>${escapeHTML(code)}</strong><span>${escapeHTML(JURY_MENU.additives?.[String(code)]?.de || code)}</span></div>`).join("")}
+              ${!allergenCodes.size && !additiveCodes.size ? "<p>Für diesen Eintrag sind keine Codes hinterlegt.</p>" : ""}
+            </div>
+          `
+        };
+      }
+      if (type === "dish") return dishSheet(payload);
+      if (type === "cart") return cartSheet();
+      return { title: "Juri", html: "" };
+    }
+
+    function dishSheet(key) {
+      const item = itemMap.get(key);
+      if (!item) return { title: "Gericht", html: "<p>Gericht nicht gefunden.</p>" };
+      const entries = priceEntries(item);
+      return {
+        title: "Auswahl",
+        html: `
+          <form id="dishForm">
+            <h3>${escapeHTML(item.name)}</h3>
+            <p class="form-note">${escapeHTML(itemDescription(item))}</p>
+            <div class="choice-list">
+              ${entries.map((entry, index) => `
+                <label class="choice-row">
+                  <input type="radio" name="choice" value="${escapeHTML(entry.id)}" ${index === 0 ? "checked" : ""}>
+                  <span>${escapeHTML(entry.label || "Standard")}</span>
+                  <strong>${escapeHTML(formatEUR(entry.price))}</strong>
+                </label>
+              `).join("")}
+            </div>
+            <div class="field">
+              <label for="dishNote">Hinweis zum Gericht</label>
+              <textarea id="dishNote" name="note" placeholder="Optional"></textarea>
+            </div>
+            <button class="btn btn-gold" type="submit">Zur Bestellung hinzufügen</button>
+          </form>
+        `
+      };
+    }
+
+    function cartSheet() {
+      if (!state.cart.length) {
+        return {
+          title: "Ihre Bestellung",
+          html: `<div class="empty-state"><h3>Noch keine Auswahl.</h3><p>Wählen Sie Gerichte aus der Speisekarte.</p><button class="btn btn-gold" type="button" data-close-overlay>Speisekarte ansehen</button></div>`
+        };
+      }
+      return {
+        title: "Ihre Bestellung",
+        html: `
+          <div class="cart-list">
+            ${state.cart.map((line, index) => `
+              <article class="cart-item">
+                <div class="cart-head">
+                  <h3>${escapeHTML(line.item.name)}</h3>
+                  <strong>${escapeHTML(formatEUR(line.price * line.quantity))}</strong>
+                </div>
+                <p class="cart-meta">${escapeHTML(codeOf(line.item))}${line.choiceLabel ? ` · ${escapeHTML(line.choiceLabel)}` : ""}<br>${line.note ? `Hinweis: ${escapeHTML(line.note)}` : ""}</p>
+                <div class="cart-controls">
+                  <button class="qty-button" type="button" data-cart-decrease="${index}" aria-label="Menge verringern">−</button>
+                  <strong>${line.quantity}</strong>
+                  <button class="qty-button" type="button" data-cart-increase="${index}" aria-label="Menge erhöhen">＋</button>
+                  <button class="remove-button" type="button" data-cart-remove="${index}">Entfernen</button>
+                </div>
+              </article>
+            `).join("")}
+          </div>
+          <div class="cart-total"><span>Gesamtsumme</span><span>${escapeHTML(formatEUR(cartTotal()))}</span></div>
+          <form class="form-grid" id="orderForm">
+            <div class="field"><label for="orderName">Name *</label><input id="orderName" name="name" required autocomplete="name"></div>
+            <div class="field"><label for="orderPhone">Telefonnummer *</label><input id="orderPhone" name="phone" type="tel" required autocomplete="tel"></div>
+            <div class="field">
+              <label for="orderType">Bestellart *</label>
+              <select id="orderType" name="type" required>
+                <option value="Abholung">Abholung</option>
+                <option value="Lieferung">Lieferung</option>
+              </select>
+            </div>
+            <div class="field" id="addressField" hidden><label for="orderAddress">Adresse *</label><input id="orderAddress" name="address" autocomplete="street-address"></div>
+            <div class="field"><label for="orderNotes">Anmerkungen</label><textarea id="orderNotes" name="notes"></textarea></div>
+            <p class="form-note">Bitte bestätigen Sie die Liefermöglichkeit und eventuelle Lieferkosten direkt über WhatsApp.</p>
+            <p class="form-note">Die Bestellung ist erst nach der Bestätigung durch das Restaurant verbindlich. Der angezeigte Gesamtpreis ist ein vorläufiger Wert auf Basis der Speisekarte.</p>
+            <button class="btn btn-gold" type="submit">Bestellung über WhatsApp senden</button>
+            <p class="dev-note" data-whatsapp-note hidden>WhatsApp-Nummer muss noch ergänzt werden.</p>
+          </form>
+        `
+      };
+    }
+
+    function bindSheet(type, payload) {
+      document.querySelectorAll("#sheetBody [data-close-overlay]").forEach(button => button.addEventListener("click", () => closeOverlays()));
+
+      if (type === "reservation") {
+        const form = document.getElementById("reservationForm");
+        const date = form.elements.date;
+        date.min = new Date().toISOString().slice(0, 10);
+        setWhatsAppState(form);
+        form.addEventListener("submit", handleReservation);
+      }
+
+      if (type === "filters") {
+        document.getElementById("resetFilters").addEventListener("click", () => {
+          state.filters.clear();
+          closeOverlays();
+          renderMenu();
+        });
+        document.getElementById("applyFilters").addEventListener("click", () => {
+          state.filters = new Set([...document.querySelectorAll('#sheetBody input[type="checkbox"]:checked')].map(input => input.value));
+          closeOverlays();
+          renderMenu();
+        });
+      }
+
+      if (type === "categories") {
+        document.querySelectorAll("[data-sheet-category]").forEach(button => button.addEventListener("click", () => {
+          closeOverlays(false);
+          setCategory(button.dataset.sheetCategory, true);
+        }));
+      }
+
+      if (type === "dish") {
+        document.getElementById("dishForm")?.addEventListener("submit", event => {
+          event.preventDefault();
+          const item = itemMap.get(payload);
+          const entry = priceEntries(item).find(option => option.id === event.currentTarget.elements.choice.value);
+          addToCart(item, entry, event.currentTarget.elements.note.value.trim());
+          closeOverlays();
+          showToast("Zur Bestellung hinzugefügt.");
+        });
+      }
+
+      if (type === "cart") bindCart();
+    }
+
+    function setWhatsAppState(form) {
+      const button = form.querySelector('button[type="submit"]');
+      const note = form.querySelector("[data-whatsapp-note]");
+      button.disabled = !hasWhatsAppNumber;
+      note.hidden = hasWhatsAppNumber;
+    }
+
+    function handleReservation(event) {
+      event.preventDefault();
+      if (!hasWhatsAppNumber) return;
+      const form = event.currentTarget;
+      if (!form.reportValidity()) return;
+      const data = new FormData(form);
+      const message = `Hallo Juri,
+
+ich möchte gerne einen Tisch reservieren.
+
+Name: ${data.get("name")}
+Anzahl der Personen: ${data.get("people")}
+Datum: ${data.get("date")}
+Uhrzeit: ${data.get("time")}
+Telefonnummer: ${data.get("phone") || "-"}
+Besondere Wünsche: ${data.get("wishes") || "-"}
+
+Bitte bestätigen Sie meine Reservierung.
+Vielen Dank!`;
+      openWhatsApp(message);
+    }
+
+    function addToCart(item, entry, note) {
+      const existing = state.cart.find(line =>
+        line.item === item && line.choiceId === entry.id && line.note === note
+      );
+      if (existing) existing.quantity += 1;
+      else state.cart.push({
+        item,
+        choiceId: entry.id,
+        choiceLabel: entry.label,
+        price: entry.price,
+        note,
+        quantity: 1
+      });
+      updateCartUI();
+    }
+
+    function cartCount() {
+      return state.cart.reduce((sum, line) => sum + line.quantity, 0);
+    }
+
+    function cartTotal() {
+      return state.cart.reduce((sum, line) => sum + line.price * line.quantity, 0);
+    }
+
+    function updateCartUI() {
+      const count = cartCount();
+      document.querySelectorAll("[data-cart-badge]").forEach(badge => {
+        badge.hidden = count === 0;
+        badge.textContent = count;
+      });
+      const fab = document.getElementById("orderFab");
+      fab.hidden = count === 0;
+      fab.textContent = `Bestellung ansehen · ${count} ${count === 1 ? "Artikel" : "Artikel"} · ${formatEUR(cartTotal())}`;
+    }
+
+    function bindCart() {
+      document.querySelectorAll("[data-cart-increase]").forEach(button => button.addEventListener("click", () => {
+        state.cart[Number(button.dataset.cartIncrease)].quantity += 1;
+        refreshCartSheet();
+      }));
+      document.querySelectorAll("[data-cart-decrease]").forEach(button => button.addEventListener("click", () => {
+        const line = state.cart[Number(button.dataset.cartDecrease)];
+        line.quantity -= 1;
+        if (line.quantity < 1) state.cart.splice(Number(button.dataset.cartDecrease), 1);
+        refreshCartSheet();
+      }));
+      document.querySelectorAll("[data-cart-remove]").forEach(button => button.addEventListener("click", () => {
+        state.cart.splice(Number(button.dataset.cartRemove), 1);
+        refreshCartSheet();
+      }));
+
+      const orderForm = document.getElementById("orderForm");
+      if (!orderForm) return;
+      const type = orderForm.elements.type;
+      const addressField = document.getElementById("addressField");
+      const address = orderForm.elements.address;
+      const syncAddress = () => {
+        const delivery = type.value === "Lieferung";
+        addressField.hidden = !delivery;
+        address.required = delivery;
+      };
+      type.addEventListener("change", syncAddress);
+      syncAddress();
+      setWhatsAppState(orderForm);
+      orderForm.addEventListener("submit", handleOrder);
+    }
+
+    function refreshCartSheet() {
+      updateCartUI();
+      if (!state.cart.length) {
+        closeOverlays();
+        return;
+      }
+      openSheet("cart");
+    }
+
+    function handleOrder(event) {
+      event.preventDefault();
+      if (!hasWhatsAppNumber || !state.cart.length) return;
+      const form = event.currentTarget;
+      if (!form.reportValidity()) return;
+      const data = new FormData(form);
+      const lines = state.cart.map(line => `${line.quantity} × ${line.item.name}
+Auswahl: ${line.choiceLabel || "Standard"}
+Einzelpreis: ${formatEUR(line.price)}
+Zwischensumme: ${formatEUR(line.price * line.quantity)}
+Hinweis: ${line.note || "-"}
+
+---`).join("\n\n");
+      const message = `Hallo Juri,
+
+ich möchte folgende Bestellung aufgeben:
+
+${lines}
+
+Bestellart: ${data.get("type")}
+Name: ${data.get("name")}
+Telefonnummer: ${data.get("phone")}
+Adresse: ${data.get("address") || "-"}
+Anmerkungen: ${data.get("notes") || "-"}
+
+Gesamtsumme: ${formatEUR(cartTotal())}
+
+Bitte bestätigen Sie die Bestellung, den Gesamtpreis und die voraussichtliche Abhol- oder Lieferzeit.
+
+Vielen Dank!`;
+      openWhatsApp(message);
+    }
+
+    function openWhatsApp(message) {
+      if (!hasWhatsAppNumber) return;
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank", "noopener");
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.hidden = false;
+      clearTimeout(showToast.timer);
+      showToast.timer = setTimeout(() => { toast.hidden = true; }, 2400);
+    }
+
+    function showMenuItem(key) {
+      const item = itemMap.get(key);
+      if (!item) return;
+      state.query = codeOf(item);
+      state.category = "all";
+      document.getElementById("menuSearch").value = state.query;
+      renderMenu();
+      document.getElementById("speisekarte").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    document.addEventListener("click", event => {
+      const openButton = event.target.closest("[data-open-sheet]");
+      if (openButton) openSheet(openButton.dataset.openSheet);
+
+      const orderEntry = event.target.closest("[data-order-entry]");
+      if (orderEntry) {
+        if (state.cart.length) openSheet("cart");
+        else document.getElementById("speisekarte").scrollIntoView({ behavior: "smooth" });
+      }
+
+      const categoryLink = event.target.closest("[data-category-link]");
+      if (categoryLink) {
+        event.preventDefault();
+        closeOverlays(false);
+        setCategory(categoryLink.dataset.categoryLink, true);
+      }
+
+      const categoryButton = event.target.closest("[data-category]");
+      if (categoryButton) setCategory(categoryButton.dataset.category);
+
+      const groupToggle = event.target.closest(".group-toggle");
+      if (groupToggle) {
+        const group = groupToggle.closest(".menu-group");
+        const content = group.querySelector(".group-items");
+        const open = group.classList.toggle("is-open");
+        groupToggle.setAttribute("aria-expanded", String(open));
+        content.hidden = !open;
+      }
+
+      const expand = event.target.closest("[data-expand-description]");
+      if (expand) {
+        const description = expand.previousElementSibling;
+        const expanded = description.classList.toggle("is-expanded");
+        expand.textContent = expanded ? "Weniger anzeigen" : "Mehr anzeigen";
+      }
+
+      const allergenButton = event.target.closest("[data-allergens]");
+      if (allergenButton) openSheet("allergens", allergenButton.dataset.allergens);
+
+      const selectButton = event.target.closest("[data-select-dish]");
+      if (selectButton) openSheet("dish", selectButton.dataset.selectDish);
+
+      const menuItemButton = event.target.closest("[data-show-menu-item]");
+      if (menuItemButton) showMenuItem(menuItemButton.dataset.showMenuItem);
+    });
+
+    document.querySelector(".menu-toggle").addEventListener("click", openDrawer);
+    document.querySelectorAll("[data-close-overlay]").forEach(button => button.addEventListener("click", () => closeOverlays()));
+    document.getElementById("drawerOverlay").addEventListener("click", event => { if (event.target === event.currentTarget) closeOverlays(); });
+    document.getElementById("sheetOverlay").addEventListener("click", event => { if (event.target === event.currentTarget) closeOverlays(); });
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && state.activeOverlay) closeOverlays();
+      trapFocus(event);
+    });
+
+    const search = document.getElementById("menuSearch");
+    const clearSearch = document.getElementById("searchClear");
+    search.addEventListener("input", () => {
+      state.query = search.value;
+      clearSearch.hidden = !state.query;
+      renderMenu();
+    });
+    clearSearch.addEventListener("click", () => {
+      search.value = "";
+      state.query = "";
+      clearSearch.hidden = true;
+      search.focus();
+      renderMenu();
+    });
+
+    document.getElementById("resetFiltersEmpty").addEventListener("click", () => {
+      state.query = "";
+      state.category = "all";
+      state.filters.clear();
+      search.value = "";
+      clearSearch.hidden = true;
+      renderMenu();
+    });
+
+    document.getElementById("orderFab").addEventListener("click", () => openSheet("cart"));
+
+    document.getElementById("copyAddress").addEventListener("click", async () => {
+      const address = "Kastanienwall 32, 31785 Hameln, Deutschland";
+      try {
+        await navigator.clipboard.writeText(address);
+        showToast("Adresse kopiert.");
+      } catch {
+        showToast(address);
+      }
+    });
+
+    const headerSentinel = document.getElementById("start");
+    const headerObserver = new IntersectionObserver(([entry]) => {
+      document.getElementById("siteHeader").classList.toggle("is-solid", entry.intersectionRatio < .9);
+    }, { threshold: [.9] });
+    headerObserver.observe(headerSentinel);
+
+    renderSignatures();
+    renderMenu();
+    updateCartUI();
+  </script>
+</body>
+</html>
