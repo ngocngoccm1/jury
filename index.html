@@ -1027,6 +1027,15 @@
       height: 42px;
       border-radius: 0;
       mix-blend-mode: normal;
+      transition: width .2s ease, opacity .16s ease, transform .2s ease;
+    }
+
+    /* Keep the compact scrolled header typographic; the logo is only for the hero state. */
+    .site-header.is-solid .brand { gap: 0; }
+    .site-header.is-solid .brand img {
+      width: 0;
+      opacity: 0;
+      transform: scale(.82);
     }
 
     .brand-name {
@@ -1617,7 +1626,7 @@
 
     .signature-card.has-photo {
       position: relative;
-      padding-top: 242px;
+      padding-top: 234px;
       overflow: hidden;
     }
 
@@ -1626,13 +1635,14 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 210px;
-      object-fit: cover;
-      object-position: 50% 46%;
+      height: 214px;
+      object-fit: contain;
+      object-position: center;
+      background: #151a13;
       filter: saturate(.72) contrast(1.05);
     }
 
-    /* A working-kitchen interlude: five real moments, composed as one editorial spread. */
+    /* A calm, even food grid: each dish keeps its complete framing. */
     .culinary-gallery {
       padding-top: 28px;
       background: #171b15;
@@ -1650,59 +1660,29 @@
 
     .food-gallery {
       display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      grid-auto-rows: 190px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 8px;
     }
 
     .gallery-frame {
       min-width: 0;
       margin: 0;
+      aspect-ratio: 4 / 3;
       overflow: hidden;
       background: #20261d;
-    }
-
-    .gallery-frame:first-child {
-      grid-column: 1 / -1;
-      grid-row: span 2;
-    }
-
-    .gallery-frame:nth-child(4),
-    .gallery-frame:nth-child(5) {
-      grid-column: span 1;
-    }
-
-    .gallery-frame:nth-child(6) {
-      grid-column: 1 / -1;
     }
 
     .gallery-frame img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
+      object-position: center;
       filter: saturate(.78) contrast(1.06);
       transition: transform .55s cubic-bezier(.2, .7, .2, 1), filter .55s ease;
     }
 
-    .gallery-frame:first-child img {
-      object-position: 50% 44%;
-    }
-
-    .gallery-frame:nth-child(2) img {
-      object-position: 50% 52%;
-    }
-
-    .gallery-frame:nth-child(3) img {
-      object-position: 50% 56%;
-    }
-
-    .gallery-frame:nth-child(5) img {
-      object-position: 50% 38%;
-    }
-
     @media (hover: hover) {
       .gallery-frame:hover img {
-        transform: scale(1.025);
         filter: saturate(.9) contrast(1.04);
       }
     }
@@ -1730,52 +1710,10 @@
       }
 
       .food-gallery {
-        grid-template-columns: repeat(12, minmax(0, 1fr));
-        grid-auto-rows: 220px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 10px;
       }
 
-      .gallery-frame:first-child {
-        grid-column: 1 / span 4;
-        grid-row: 1 / span 3;
-      }
-
-      .gallery-frame:nth-child(2) {
-        grid-column: 5 / span 5;
-        grid-row: 1;
-      }
-
-      .gallery-frame:nth-child(3) {
-        grid-column: 10 / span 3;
-        grid-row: 1;
-      }
-
-      .gallery-frame:nth-child(4) {
-        grid-column: 5 / span 4;
-        grid-row: 2;
-      }
-
-      .gallery-frame:nth-child(5) {
-        grid-column: 9 / span 4;
-        grid-row: 2;
-      }
-
-      .gallery-frame:nth-child(6) {
-        grid-column: 5 / span 8;
-        grid-row: 3;
-      }
-
-      .signature-card:first-child.has-photo {
-        padding-top: 24px;
-        padding-right: 48%;
-      }
-
-      .signature-card:first-child.has-photo .signature-photo {
-        right: 0;
-        left: auto;
-        width: 44%;
-        height: 100%;
-      }
     }
   </style>
 </head>
@@ -1809,7 +1747,7 @@
   <main id="main">
     <section class="hero" id="start">
       <div class="shell hero-content">
-        <img class="hero-food-photo" src="assets/juri-spring-rolls.jpg" alt="Vietnamesische Frühlingsrollen mit Dip." width="1400" height="1960" fetchpriority="high">
+        <img class="hero-food-photo" src="assets/juri-photo-05-goi-cuon.png" alt="Vietnamesische Sommerrollen mit Garnelen und Dip." width="1024" height="1536" fetchpriority="high">
         <div class="hero-text">
           <p class="eyebrow">Phở Restaurant · Hameln</p>
           <h1>Vietnamesische Seele. Japanische Präzision.</h1>
@@ -1855,23 +1793,37 @@
         </div>
         <div class="food-gallery" aria-label="Einblicke in Küche und Gerichte">
           <figure class="gallery-frame">
-            <img src="assets/juri-wok-fire.jpg" alt="Ein Gericht wird über offener Wokflamme zubereitet." width="1600" height="2131" loading="lazy">
+            <img src="assets/juri-photo-01-pho-bo.png" alt="Traditionelle vietnamesische Phở Bò mit klarer Rinderbrühe." width="1024" height="1536" loading="lazy">
           </figure>
           <figure class="gallery-frame">
-            <img src="assets/juri-herbs.jpg" alt="Frische vietnamesische Kräuter in einem geflochtenen Korb." width="1400" height="933" loading="lazy">
+            <img src="assets/juri-photo-02-pho-ga.png" alt="Vietnamesische Phở Gà mit klarer Hühnerbrühe." width="1024" height="1536" loading="lazy">
           </figure>
           <figure class="gallery-frame">
-            <img src="assets/juri-noodles.jpg" alt="Duftende Nudeln werden mit Stäbchen aus einer Schale gehoben." width="1400" height="2100" loading="lazy">
+            <img src="assets/juri-photo-03-bun-cha.png" alt="Vietnamesisches Bún Chả mit gegrilltem Schweinefleisch und Reisnudeln." width="1536" height="1024" loading="lazy">
           </figure>
           <figure class="gallery-frame">
-            <img src="assets/juri-sushi-craft.jpg" alt="Ein Sushi-Koch formt frische Rollen von Hand." width="1400" height="934" loading="lazy">
+            <img src="assets/juri-photo-04-bun-bo-hue.png" alt="Vietnamesische Bún Bò Huế mit Zitronengras und Kräutern." width="1024" height="1536" loading="lazy">
           </figure>
           <figure class="gallery-frame">
-            <img src="assets/juri-vietnamese-spread.jpg" alt="Eine farbenfrohe Auswahl vietnamesischer Gerichte mit frischen Kräutern." width="1600" height="2133" loading="lazy">
+            <img src="assets/juri-photo-05-goi-cuon.png" alt="Frische vietnamesische Sommerrollen mit Garnelen." width="1024" height="1536" loading="lazy">
           </figure>
           <figure class="gallery-frame">
-            <img src="assets/juri-vegan-bowl.jpg" alt="Eine farbenfrohe Bowl mit Tofu, Reis und frischem Gemüse." width="1400" height="933" loading="lazy">
+            <img src="assets/juri-photo-06-cha-gio.png" alt="Knusprige vietnamesische Frühlingsrollen mit Nước chấm." width="1536" height="1024" loading="lazy">
           </figure>
+          <figure class="gallery-frame"><img src="assets/juri-photo-07-sushi-moriawase.png" alt="Japanische Sushi-Auswahl auf Keramik." width="1536" height="1024" loading="lazy"></figure>
+          <figure class="gallery-frame"><img src="assets/juri-photo-08-salmon-aburi.png" alt="Leicht flambiertes Lachs-Nigiri." width="1024" height="1536" loading="lazy"></figure>
+          <figure class="gallery-frame"><img src="assets/juri-photo-09-dragon-roll.png" alt="Japanische Dragon Roll." width="1536" height="1024" loading="lazy"></figure>
+          <figure class="gallery-frame"><img src="assets/juri-photo-10-tuna-tataki.png" alt="Japanisches Thunfisch-Tataki." width="1536" height="1024" loading="lazy"></figure>
+          <figure class="gallery-frame"><img src="assets/juri-photo-11-tempura.png" alt="Knuspriges Tempura mit Dip." width="1024" height="1536" loading="lazy"></figure>
+          <figure class="gallery-frame"><img src="assets/juri-photo-12-gyoza.png" alt="Gebratene japanische Gyoza." width="1536" height="1024" loading="lazy"></figure>
+          <figure class="gallery-frame"><img src="assets/juri-photo-13-com-tam.png" alt="Vietnamesisches Cơm Tấm mit gegrilltem Schweinefleisch." width="1024" height="1536" loading="lazy"></figure>
+          <figure class="gallery-frame"><img src="assets/juri-photo-14-ca-kho.png" alt="Vietnamesischer karamellisierter Fisch im Tontopf." width="1536" height="1024" loading="lazy"></figure>
+          <figure class="gallery-frame"><img src="assets/juri-photo-15-tofu-lemongrass.png" alt="Vietnamesisches Zitronengras-Tofu-Gericht." width="1536" height="1024" loading="lazy"></figure>
+          <figure class="gallery-frame"><img src="assets/juri-photo-16-mango-salad.png" alt="Vietnamesischer Mangosalat mit Garnelen." width="1024" height="1536" loading="lazy"></figure>
+          <figure class="gallery-frame"><img src="assets/juri-photo-17-curry.png" alt="Japanisches Katsu Curry." width="1536" height="1024" loading="lazy"></figure>
+          <figure class="gallery-frame"><img src="assets/juri-photo-18-dessert.png" alt="Vietnamesisches Kokos-Pandan-Dessert." width="1024" height="1536" loading="lazy"></figure>
+          <figure class="gallery-frame"><img src="assets/juri-photo-19-banh-xeo.png" alt="Vietnamesisches Bánh Xèo mit Garnelen und Kräutern." width="1536" height="1024" loading="lazy"></figure>
+          <figure class="gallery-frame"><img src="assets/juri-photo-20-chirashi.png" alt="Japanische Chirashi Sushi Bowl." width="1024" height="1536" loading="lazy"></figure>
         </div>
       </div>
     </section>
@@ -1927,7 +1879,7 @@
         </div>
         <div class="pho-aside">
           <figure class="pho-photo">
-            <img src="assets/juri-pho.jpg" alt="Eine aromatische Nudelsuppe mit frischen Kräutern, Limette und Chili." width="1800" height="2700" loading="lazy">
+            <img src="assets/juri-photo-01-pho-bo.png" alt="Traditionelle vietnamesische Phở mit klarer Rinderbrühe." width="1024" height="1536" loading="lazy">
           </figure>
           <div class="pho-facts">
             <div class="pho-fact"><strong>Viele</strong><span>Stunden sanft gekocht</span></div>
@@ -2223,13 +2175,13 @@
       if (sushiSet) found.push(sushiSet);
 
       const signaturePhotos = [
-        { src: "assets/juri-pho.jpg", alt: "Eine dampfende Schale Phở mit Reisnudeln und frischen Kräutern.", width: 1800, height: 2700 },
-        null,
-        null,
-        null,
-        null,
-        { src: "assets/juri-spring-rolls.jpg", alt: "Knusprige Frühlingsrollen mit frischen Kräutern und Dip.", width: 1400, height: 1960 },
-        { src: "assets/juri-sushi.jpg", alt: "Eine Auswahl frisch angerichteter Sushi-Rollen.", width: 1600, height: 2400 }
+        { src: "assets/juri-photo-01-pho-bo.png", alt: "Eine traditionelle vietnamesische Phở Bò mit Reisnudeln und klarer Rinderbrühe.", width: 1024, height: 1536 },
+        { src: "assets/juri-photo-02-pho-ga.png", alt: "Eine vietnamesische Phở mit klarer Brühe und Reisnudeln.", width: 1024, height: 1536 },
+        { src: "assets/juri-photo-04-bun-bo-hue.png", alt: "Eine vietnamesische Bún Bò Huế mit Zitronengras und Kräutern.", width: 1024, height: 1536 },
+        { src: "assets/juri-photo-13-com-tam.png", alt: "Ein vietnamesisches Reisgericht mit gegrilltem Fleisch.", width: 1024, height: 1536 },
+        { src: "assets/juri-photo-17-curry.png", alt: "Eine großzügig angerichtete Bowl im Restaurantstil.", width: 1536, height: 1024 },
+        { src: "assets/juri-photo-06-cha-gio.png", alt: "Knusprige vietnamesische Frühlingsrollen mit Dip.", width: 1536, height: 1024 },
+        { src: "assets/juri-photo-07-sushi-moriawase.png", alt: "Eine Auswahl frisch angerichteter Sushi-Rollen.", width: 1536, height: 1024 }
       ];
 
       document.getElementById("signatureTrack").innerHTML = found.slice(0, 7).map((item, index) => {
