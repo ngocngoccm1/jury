@@ -1,0 +1,90 @@
+/* ========== css/tokens.css — Jury Phở design tokens ========== */
+:root{
+  /* ---------- PRIMITIVE: OLIVE → nay là NEUTRAL DARK (giữ tên biến) ----------
+     Đổi nền olive → đen-xám trung tính hơi ấm (thêm chút nâu, không lạnh như xanh-điện),
+     giống taumi (~#191B24/#0d0d12) để ẢNH món màu rực nổi bật (pop).
+     Tên biến giữ nguyên để không phá các chỗ đang tham chiếu. */
+  --olive-950:#0b0d0f;
+  --olive-900:#0e1114;   /* footer / bg-deep */
+  --olive-850:#1a1f24;   /* section xen kẽ / lazy-img fill */
+  --olive-800:#171b1f;
+  --olive-700:#14181c;   /* NỀN CHỦ ĐẠO */
+  --olive-600:#20262b;
+  --olive-500:#2b323a;
+  --olive-400:#414a54;
+  --olive-300:#5a636e;
+
+  /* ---------- PRIMITIVE: IVORY ---------- */
+  --ivory-50:#f6f5ea;
+  --ivory-100:#f1efdf;
+  --ivory-300:#dcdbcb;
+  --ivory-500:#d8d6c8;   /* warm body grey (was cold #d8dad0) */
+  --ivory-700:#9a9a8c;
+
+  /* ---------- PRIMITIVE: GOLD ---------- */
+  --gold-300:#e3c986;
+  --gold-400:#dabd6f;
+  --gold-500:#d2ad5a;
+  --gold-600:#b8934a;
+  --gold-700:#8f6f37;
+
+  --red-500:#d64545;
+  --green-500:#7fa86a;
+  --white:#fff; --black:#000;
+
+  /* ---------- SEMANTIC ---------- */
+  --bg:var(--olive-700);
+  --bg-alt:var(--olive-850);
+  --bg-deep:var(--olive-900);
+  --surface:rgba(241,239,223,.04);
+  --surface-hover:rgba(241,239,223,.07);
+  --text:var(--ivory-100);
+  --text-muted:var(--ivory-500);
+  --text-faint:var(--ivory-700);
+  --accent:var(--gold-500);
+  --accent-hover:var(--gold-600);
+  --on-accent:#14181c;   /* chữ trên nút gold: nền tối trung tính cho hợp */
+  --line:rgba(241,239,223,.16);
+  --line-strong:rgba(241,239,223,.28);
+  --focus:var(--gold-400);
+  --overlay:linear-gradient(180deg,rgba(10,12,14,.15) 0%,rgba(10,12,14,.55) 55%,rgba(10,12,14,.9) 100%);
+
+  /* ---------- TYPE ---------- */
+  --font-display:"Fraunces","Georgia",serif;
+  --font-sans:"Archivo","Segoe UI",Helvetica,Arial,sans-serif;
+  --fs-hero:clamp(2.5rem,8.5vw,6.5rem);    /* 40 → 104px, low floor so "Vietnamesische" never breaks at 390px */
+  --fs-h1:clamp(2rem,5vw,3.5rem);
+  --fs-h2:clamp(2.5rem,4.5vw,4rem);        /* 40 → 64px */
+  --fs-h3:clamp(1.2rem,2vw,1.5rem);
+  --fs-lg:clamp(1.0625rem,1.4vw,1.125rem); --fs-base:1rem; --fs-sm:.875rem; --fs-xs:.8125rem;
+  --lh-tight:1.02; --lh-snug:1.3; --lh-body:1.75;
+  --tracking-display:-.02em;
+  --tracking-caps:.22em;
+
+  /* ---------- SPACING ---------- */
+  --sp-1:.25rem;--sp-2:.5rem;--sp-3:.75rem;--sp-4:1rem;--sp-5:1.5rem;
+  --sp-6:2rem;--sp-8:3rem;--sp-10:4rem;--sp-12:6rem;--sp-16:8rem;
+  --content:1180px;
+  --gutter:clamp(20px,5.8vw,28px);
+
+  --r-xs:2px; --r-sm:4px; --r-md:6px; --r-pill:999px;
+
+  --sh-sm:0 2px 8px rgba(6,8,10,.24);
+  --sh-md:0 8px 24px rgba(6,8,10,.34);
+  --sh-lg:0 18px 50px rgba(6,8,10,.42);
+
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --dur-1:.15s; --dur-2:.28s; --dur-3:.5s;
+
+  --header-h:64px; --bottom-h:68px;
+
+  /* ---------- COMPONENT ---------- */
+  --btn-primary-bg:var(--accent); --btn-primary-fg:var(--on-accent);
+  --btn-primary-bg-hover:var(--accent-hover);
+  --btn-ghost-border:var(--line-strong); --btn-ghost-fg:var(--text);
+  --chip-bg:var(--surface); --chip-border:var(--line); --chip-fg:var(--text-faint);
+  --card-bg:var(--surface); --card-border:var(--line);
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001s!important;transition-duration:.001s!important;scroll-behavior:auto!important}
+}

@@ -1,0 +1,4264 @@
+{
+  "categories": [
+    {
+      "id": "vorspeise",
+      "name_de": "Vorspeise",
+      "name_en": "Appetizers",
+      "items": [
+        {
+          "code": "1",
+          "name_de": "Sommerrollen (2 Stk.)",
+          "name_en": "Sommerrollen (2 Stk.)",
+          "desc_de": "Reispapier-Sommerrollen mit Salat, Gurke, Mango, Koriander, Reisnudeln und gerösteten Erdnüssen. Mit",
+          "desc_en": "hausgemachter Chili-Limetten-Sauce und Erdnuss-Sauce. Rice paper summer rolls with lettuce, cucumber, mango, coriander, rice noodles and roasted peanuts. With homemade chili-lime sauce and peanut sauce.",
+          "variants": [
+            {
+              "code": "A",
+              "label_de": "Tofu",
+              "label_en": "Tofu",
+              "allergens": [
+                "D",
+                "E",
+                "F"
+              ],
+              "price": "5,50 €"
+            },
+            {
+              "code": "B",
+              "label_de": "Hähnchen",
+              "label_en": "Chicken",
+              "allergens": [
+                "D",
+                "E",
+                "F"
+              ],
+              "price": "5,90 €"
+            },
+            {
+              "code": "C",
+              "label_de": "Garnelen",
+              "label_en": "Shrimp",
+              "allergens": [
+                "B",
+                "D",
+                "E",
+                "F"
+              ],
+              "price": "6,20 €"
+            },
+            {
+              "code": "D",
+              "label_de": "Schwein",
+              "label_en": "Pork",
+              "allergens": [
+                "D",
+                "E",
+                "F"
+              ],
+              "price": "5,90 €"
+            }
+          ]
+        },
+        {
+          "code": "2",
+          "name_de": "Frühlingsrollen (2 Stk.)",
+          "name_en": "Frühlingsrollen (2 Stk.)",
+          "desc_de": "Knusprige Frühlingsrollen gefüllt mit Hähnchen, Glasnudeln, Pilzen und Gemüse, serviert mit kleinem Salat mit gerösteten Erdnüssen und Chili-Limetten-Sauce.",
+          "desc_en": "Crispy spring rolls filled with chicken, glass noodles, mushrooms and vegetables, served with a small salad with roasted peanuts and chili-lime sauce.",
+          "allergens": [
+            "A",
+            "D",
+            "E",
+            "F"
+          ],
+          "price": "5,90 €"
+        },
+        {
+          "code": "3",
+          "name_de": "Mini Frühlingsrollen vegan (6 Stk.)",
+          "name_en": "Mini Frühlingsrollen vegan (6 Stk.)",
+          "desc_de": "Vegane Füllung, Salat und geröstete Erdnüsse.",
+          "desc_en": "Vegan filling, salad and roasted peanuts.",
+          "allergens": [
+            "A",
+            "E",
+            "F"
+          ],
+          "price": "4,90 €"
+        },
+        {
+          "code": "4",
+          "name_de": "Wantans (5 Stk.)",
+          "name_en": "Wantans (5 Stk.)",
+          "desc_de": "Knusprig frittierte Wantans gefüllt mit Hähnchen und Garnelen, mit kleinem Salat mit gerösteten Erdnüssen und süß-saurer Sauce.",
+          "desc_en": "Crispy fried wontons filled with chicken and shrimp, with a small salad with roasted peanuts and sweet-and-sour sauce.",
+          "allergens": [
+            "A",
+            "B",
+            "C",
+            "E",
+            "F"
+          ],
+          "price": "5,50 €"
+        },
+        {
+          "code": "5",
+          "name_de": "Gebratener Tofu im Cốm-Mantel (4 Stk.)",
+          "name_en": "Gebratener Tofu im Cốm-Mantel (4 Stk.)",
+          "desc_de": "Knusprig gebratener Tofu im Mantel aus vietnamesischem grünem Jungreis (Cốm xanh), serviert mit süß-saurer Sauce.",
+          "desc_en": "Crispy fried tofu coated in Vietnamese young green rice (Cốm xanh), served with sweet-and-sour sauce.",
+          "allergens": [
+            "F"
+          ],
+          "price": "5,50 €"
+        },
+        {
+          "code": "6",
+          "name_de": "Garnelen im Cốm-Mantel (2 Stk.)",
+          "name_en": "Garnelen im Cốm-Mantel (2 Stk.)",
+          "desc_de": "Garnelen im knusprigen Mantel aus vietnamesischem grünem Jungreis (Cốm xanh), serviert mit süß-saurer Sauce.",
+          "desc_en": "Shrimp in a crispy coating of Vietnamese young green rice (Cốm xanh), served with sweet-and-sour sauce.",
+          "allergens": [
+            "B",
+            "F"
+          ],
+          "price": "5,90 €"
+        },
+        {
+          "code": "7",
+          "name_de": "Dim Sum mit Garnelen (4 Stk.)",
+          "name_en": "Dim Sum mit Garnelen (4 Stk.)",
+          "desc_de": "Dim Sum mit Garnelen- und Gemüsefüllung, serviert mit Frühlingszwiebeln und hausgemachter Sojasauce.",
+          "desc_en": "Dim sum filled with shrimp and vegetables, served with spring onions and homemade soy sauce.",
+          "allergens": [
+            "A",
+            "B",
+            "F"
+          ],
+          "price": "5,90 €"
+        },
+        {
+          "code": "8",
+          "name_de": "Edamame (gedämpft)",
+          "name_en": "Edamame (gedämpft)",
+          "desc_de": "Gedämpfte junge Sojabohnen mit Meersalz.",
+          "desc_en": "Steamed young soybeans with sea salt.",
+          "allergens": [
+            "F"
+          ],
+          "price": "5,50 €"
+        },
+        {
+          "code": "9",
+          "name_de": "Yakitori (2 Stk.)",
+          "name_en": "Yakitori (2 Stk.)",
+          "desc_de": "Hähnchenspieße nach japanischer Art mariniert, mit Salat, gerösteten Sesamsamen und Erdnüssen.",
+          "desc_en": "Chicken skewers marinated Japanese style, with salad, roasted sesame seeds and peanuts.",
+          "allergens": [
+            "A",
+            "E",
+            "F",
+            "K"
+          ],
+          "price": "6,90 €"
+        },
+        {
+          "code": "10",
+          "name_de": "Schweinespieße (2 Stk.)",
+          "name_en": "Schweinespieße (2 Stk.)",
+          "desc_de": "Schweinespieße vom Holzkohlegrill, nach vietnamesischer Art mariniert, mit kleinem Salat und gerösteten Erdnüssen.",
+          "desc_en": "Charcoal-grilled pork skewers marinated Vietnamese style, with a small salad and roasted peanuts.",
+          "allergens": [
+            "D",
+            "E",
+            "F"
+          ],
+          "price": "5,90 €"
+        },
+        {
+          "code": "11",
+          "name_de": "Hähnchen Gyoza (4 Stk.)",
+          "name_en": "Hähnchen Gyoza (4 Stk.)",
+          "desc_de": "Japanische Gyoza mit Hähnchen- und Gemüsefüllung, knusprig gebraten, mit kleinem Salat und gerösteten Erdnüssen.",
+          "desc_en": "Japanese gyoza filled with chicken and vegetables, pan-fried until crispy, with a small salad and roasted peanuts.",
+          "allergens": [
+            "A",
+            "E",
+            "F"
+          ],
+          "price": "5,90 €"
+        },
+        {
+          "code": "12",
+          "name_de": "Vegane Gyoza (4 Stk.)",
+          "name_en": "Vegane Gyoza (4 Stk.)",
+          "desc_de": "Vegane Gyoza mit Tofu, Pilzen und Gemüse, knusprig gebraten, mit kleinem Salat und gerösteten Erdnüssen.",
+          "desc_en": "Vegan gyoza filled with tofu, mushrooms and vegetables, pan-fried until crispy, with a small salad and roasted peanuts.",
+          "allergens": [
+            "A",
+            "E",
+            "F"
+          ],
+          "price": "5,50 €"
+        },
+        {
+          "code": "13",
+          "name_de": "Kleine Pho Bowl",
+          "name_en": "Kleine Pho Bowl",
+          "desc_de": "Kleine Portion vietnamesische Reisbandnudelsuppe — perfekt als Vorspeise oder leichte Mahlzeit. Mit kräftiger Brühe, Sojasprossen, Frühlingszwiebeln und Koriander.",
+          "desc_en": "A small portion of Vietnamese rice noodle soup — perfect as a starter or light meal. With rich broth, bean sprouts, spring onions and coriander.",
+          "variants": [
+            {
+              "code": "A",
+              "label_de": "Tofu",
+              "label_en": "Tofu",
+              "allergens": [
+                "D",
+                "F"
+              ],
+              "price": "7,90 €"
+            },
+            {
+              "code": "B",
+              "label_de": "Hähnchen",
+              "label_en": "Chicken",
+              "allergens": [
+                "D"
+              ],
+              "price": "8,50 €"
+            },
+            {
+              "code": "C",
+              "label_de": "Rind",
+              "label_en": "Beef",
+              "allergens": [
+                "D"
+              ],
+              "price": "8,90 €"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sharing_sets",
+      "name_de": "Sharing Sets",
+      "name_en": "Sharing Sets",
+      "items": [
+        {
+          "code": "14",
+          "name_de": "Mix Set für 2 Personen",
+          "name_en": "Mix Set für 2 Personen",
+          "desc_de": "Ideal zum Kennenlernen vieler Gerichte. Enthält: 2 Schweinespieße · 2 Frühlingsrollen · 2 Sommerrollen · 2 Wantans · eingelegter Kohlrabi & Karotten. 3 Saucen: süß-sauer · Erdnuss · Chili-Limette.",
+          "desc_en": "Ideal for trying many dishes. Includes: 2 pork skewers · 2 spring rolls · 2 summer rolls · 2 wontons · pickled kohlrabi & carrots. 3 sauces: sweet-and-sour · peanut · chili-lime.",
+          "allergens": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F"
+          ],
+          "price": "18,50 €"
+        },
+        {
+          "code": "15",
+          "name_de": "Mix Set für 3 Personen",
+          "name_en": "Mix Set für 3 Personen",
+          "desc_de": "Für Gruppen oder Familien. Enthält: 3 Schweinespieße · 3 Frühlingsrollen · 3 Sommerrollen · 3 Wantans · eingelegter Kohlrabi & Karotten. 3 Saucen: süß-sauer · Erdnuss · Chili-Limette.",
+          "desc_en": "For groups or families. Includes: 3 pork skewers · 3 spring rolls · 3 summer rolls · 3 wontons · pickled kohlrabi & carrots. 3 sauces: sweet-and-sour · peanut · chili-lime.",
+          "allergens": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F"
+          ],
+          "price": "27,90 €"
+        },
+        {
+          "code": "16",
+          "name_de": "Vegan Set für 2 Personen",
+          "name_en": "Vegan Set für 2 Personen",
+          "desc_de": "100% pflanzlich. Enthält: 4 Mini Frühlingsrollen vegan · 2 vegane Sommerrollen · 2 vegane Wantan/Gyoza · Edamame · eingelegter Kohlrabi & Karotten. 3 Saucen: Erdnuss · süß-sauer · vegane Mayo.",
+          "desc_en": "100% plant-based. Includes: 4 vegan mini spring rolls · 2 vegan summer rolls · 2 vegan wontons/gyoza · edamame · pickled kohlrabi & carrots. 3 sauces: peanut · sweet-and-sour · vegan mayo.",
+          "allergens": [
+            "A",
+            "E",
+            "F",
+            "J"
+          ],
+          "price": "17,50 €"
+        },
+        {
+          "code": "17",
+          "name_de": "Vegan Set für 3 Personen",
+          "name_en": "Vegan Set für 3 Personen",
+          "desc_de": "100% pflanzlich, ausreichend für 3 Personen. Enthält: 6 Mini Frühlingsrollen vegan · 3 vegane Sommerrollen · 3 vegane Wantans · Edamame · eingelegter Kohlrabi & Karotten. 3 Saucen: Erdnuss · süß-sauer · vegane Mayo. 100% plant-based, enough for 3 people. Includes: 6 vegan mini spring rolls · 3 vegan summer rolls · 3 vegan wontons · edamame · pickled kohlrabi & carrots. 3 sauces: peanut · sweet-and-sour · vegan mayo.",
+          "desc_en": "S U P P E N & S A L AT / S O U P S & S A L A D S",
+          "allergens": [
+            "A",
+            "E",
+            "F",
+            "J"
+          ],
+          "price": "24,90 €"
+        }
+      ]
+    },
+    {
+      "id": "suppen_salat",
+      "name_de": "Suppen & Salat",
+      "name_en": "Soups & Salad",
+      "items": [
+        {
+          "code": "18",
+          "name_de": "Gemüse Suppe",
+          "name_en": "Gemüse Suppe",
+          "desc_de": "Kräftige Brühe mit Flaschenkürbis, Brokkoli, Blumenkohl, Paprika, grünen Bohnen, Pilzen und Karotten, dazu Glasnudeln und asiatische Kräuter.",
+          "desc_en": "Rich broth with bottle gourd, broccoli, cauliflower, bell pepper, green beans, mushrooms and carrots, with glass noodles and Asian herbs.",
+          "variants": [
+            {
+              "code": "A",
+              "label_de": "Tofu",
+              "label_en": "Tofu",
+              "allergens": [
+                "D",
+                "F"
+              ],
+              "price": "5,90 €"
+            },
+            {
+              "code": "B",
+              "label_de": "Hähnchen",
+              "label_en": "Chicken",
+              "allergens": [
+                "D"
+              ],
+              "price": "6,20 €"
+            },
+            {
+              "code": "C",
+              "label_de": "Garnelen",
+              "label_en": "Shrimp",
+              "allergens": [
+                "B",
+                "D"
+              ],
+              "price": "6,90 €"
+            }
+          ]
+        },
+        {
+          "code": "19",
+          "name_de": "Kokos Tom Yum Suppe",
+          "name_en": "Kokos Tom Yum Suppe",
+          "desc_de": "Kokosmilch, Tom Yum, Zitronengras, Gemüse, Pilze und asiatische Kräuter.",
+          "desc_en": "Coconut milk, tom yum, lemongrass, vegetables, mushrooms and Asian herbs.",
+          "variants": [
+            {
+              "code": "A",
+              "label_de": "Tofu",
+              "label_en": "Tofu",
+              "allergens": [
+                "B",
+                "D",
+                "F"
+              ],
+              "price": "6,50 €"
+            },
+            {
+              "code": "B",
+              "label_de": "Hähnchen",
+              "label_en": "Chicken",
+              "allergens": [
+                "B",
+                "D"
+              ],
+              "price": "6,90 €"
+            },
+            {
+              "code": "C",
+              "label_de": "Garnelen",
+              "label_en": "Shrimp",
+              "allergens": [
+                "B",
+                "D"
+              ],
+              "price": "7,50 €"
+            }
+          ]
+        },
+        {
+          "code": "20",
+          "name_de": "Wantan Suppe",
+          "name_en": "Wantan Suppe",
+          "desc_de": "Wantans gefüllt mit Hähnchen und Garnelen, Gemüse, asiatische Kräuter in kräftiger Brühe.",
+          "desc_en": "Wontons filled with chicken and shrimp, vegetables and Asian herbs in a rich broth.",
+          "allergens": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "price": "6,50 €"
+        },
+        {
+          "code": "21",
+          "name_de": "Regenbogen Salat (vegan)",
+          "name_en": "Regenbogen Salat (vegan)",
+          "desc_de": "Bunter Salat mit frischem Gemüse, Tomaten, Mais, Mango, Gurke, Salat, Kräutern, Erdnüssen und geröstetem Sesam.",
+          "desc_en": "Colorful salad with fresh vegetables, tomatoes, corn, mango, cucumber, lettuce, herbs, peanuts and roasted sesame.",
+          "allergens": [
+            "E",
+            "F",
+            "K"
+          ],
+          "price": "7,50 €"
+        },
+        {
+          "code": "22",
+          "name_de": "Seetang Salat",
+          "name_en": "Seetang Salat",
+          "desc_de": "Wakame-Seetang-Salat mit Salat, Sesam und hausgemachter Mayonnaise.",
+          "desc_en": "Wakame seaweed salad with lettuce, sesame and homemade mayonnaise.",
+          "allergens": [
+            "C",
+            "F",
+            "J",
+            "K"
+          ],
+          "price": "5,90 €"
+        },
+        {
+          "code": "23",
+          "name_de": "Mango Salat",
+          "name_en": "Mango Salat",
+          "desc_de": "Grüne Mango, Karotten, Gurke, Erdnüsse, Röstzwiebeln, Krabbenchips mit hausgemachter Thai-Sauce.",
+          "desc_en": "Green mango, carrots, cucumber, peanuts, fried onions, prawn crackers with homemade Thai sauce.",
+          "variants": [
+            {
+              "code": "A",
+              "label_de": "Hähnchen",
+              "label_en": "Chicken",
+              "allergens": [
+                "B",
+                "D",
+                "E"
+              ],
+              "price": "7,90 €"
+            },
+            {
+              "code": "B",
+              "label_de": "Rind",
+              "label_en": "Beef",
+              "allergens": [
+                "B",
+                "D",
+                "E"
+              ],
+              "price": "8,50 €"
+            },
+            {
+              "code": "C",
+              "label_de": "Garnelen",
+              "label_en": "Shrimp",
+              "allergens": [
+                "B",
+                "D",
+                "E"
+              ],
+              "price": "8,90 €"
+            }
+          ]
+        },
+        {
+          "code": "24",
+          "name_de": "Grüner Papaya Salat",
+          "name_en": "Grüner Papaya Salat",
+          "desc_de": "Grüne Papaya, geraspelte Karotten, geröstete Erdnüsse, Röstzwiebeln, Garnelen, Krabbenchips mit hausgemachter Sauce.",
+          "desc_en": "Green papaya, grated carrots, roasted peanuts, fried onions, shrimp, prawn crackers with homemade sauce. KINDERMENÜ / KIDS' MENU",
+          "allergens": [
+            "B",
+            "D",
+            "E"
+          ],
+          "price": "8,90 €"
+        }
+      ]
+    },
+    {
+      "id": "kindermenue",
+      "name_de": "Kindermenü",
+      "name_en": "Kids' Menu",
+      "items": [
+        {
+          "code": "25",
+          "name_de": "Pommes Frites",
+          "name_en": "Pommes Frites",
+          "desc_de": "Pommes Frites mit Meersalz, serviert mit Ketchup und Mayo.",
+          "desc_en": "French fries with sea salt, served with ketchup and mayo.",
+          "allergens": [
+            "C",
+            "J"
+          ],
+          "price": "5,90 €"
+        },
+        {
+          "code": "26",
+          "name_de": "Süßkartoffelpommes",
+          "name_en": "Süßkartoffelpommes",
+          "desc_de": "Knusprige Süßkartoffelpommes mit Ketchup oder Mayo.",
+          "desc_en": "Crispy sweet potato fries with ketchup or mayo.",
+          "allergens": [
+            "C",
+            "J"
+          ],
+          "price": "6,50 €"
+        },
+        {
+          "code": "27",
+          "name_de": "Schweinespieß mit Reis",
+          "name_en": "Schweinespieß mit Reis",
+          "desc_de": "Schweinespieß mit kleinem Salat, kleiner Portion Reis und Erdnusssauce.",
+          "desc_en": "Pork skewer with a small salad, a small portion of rice and peanut sauce.",
+          "allergens": [
+            "D",
+            "E",
+            "F"
+          ],
+          "price": "10,50 €"
+        },
+        {
+          "code": "28",
+          "name_de": "Hähnchenspieß mit Reis",
+          "name_en": "Hähnchenspieß mit Reis",
+          "desc_de": "Hähnchenspieß mit kleinem Salat, kleiner Portion Reis und Erdnusssauce.",
+          "desc_en": "Chicken skewer with a small salad, a small portion of rice and peanut sauce. HAUPTGERICHTE / MAIN DISHES DE Alle Hauptgerichte mit Jasminreis, Salat & gerösteten Erdnüssen · Protein 130g EN All main dishes with jasmine rice, salad & roasted peanuts · Protein 130g",
+          "allergens": [
+            "D",
+            "E",
+            "F"
+          ],
+          "price": "9,50 €"
+        }
+      ]
+    },
+    {
+      "id": "hauptgerichte",
+      "name_de": "Hauptgerichte",
+      "name_en": "Main Dishes",
+      "items": [
+        {
+          "code": "29",
+          "name_de": "Gemüse Pfanne",
+          "name_en": "Gemüse Pfanne",
+          "desc_de": "Gemüse aus dem Wok — Flaschenkürbis, Brokkoli, Blumenkohl, Paprika, grüne Bohnen, Pilze und Karotten — mit vietnamesischer Sauce, Knoblauch und Kräutern, auf einer heißen Gusseisenplatte serviert. Dazu Reis, Salat und geröstete Erdnüsse.",
+          "desc_en": "Wok-fried vegetables — bottle gourd, broccoli, cauliflower, bell pepper, green beans, mushrooms and carrots — with Vietnamese sauce, garlic and herbs, served on a sizzling hot cast-iron plate. With rice, salad and roasted peanuts.",
+          "variants": [
+            {
+              "code": "A",
+              "label_de": "Tofu",
+              "label_en": "Tofu",
+              "allergens": [
+                "D",
+                "E",
+                "F",
+                "N"
+              ],
+              "price": "15,90 €"
+            },
+            {
+              "code": "B",
+              "label_de": "Gebratenes Hähnchen",
+              "label_en": "Fried chicken",
+              "allergens": [
+                "D",
+                "E",
+                "F",
+                "N"
+              ],
+              "price": "15,90 €"
+            },
+            {
+              "code": "C",
+              "label_de": "Rind",
+              "label_en": "Beef",
+              "allergens": [
+                "D",
+                "E",
+                "F",
+                "N"
+              ],
+              "price": "16,90 €"
+            },
+            {
+              "code": "D",
+              "label_de": "Garnelen",
+              "label_en": "Shrimp",
+              "allergens": [
+                "B",
+                "D",
+                "E",
+                "F",
+                "N"
+              ],
+              "price": "16,90 €"
+            },
+            {
+              "code": "E",
+              "label_de": "Französische Ente",
+              "label_en": "French duck",
+              "allergens": [
+                "D",
+                "E",
+                "F",
+                "N"
+              ],
+              "price": "17,90 €"
+            },
+            {
+              "code": "F",
+              "label_de": "Lachs",
+              "label_en": "Salmon",
+              "allergens": [
+                "D",
+                "E",
+                "F",
+                "N"
+              ],
+              "price": "17,90 €"
+            },
+            {
+              "code": "G",
+              "label_de": "Hähnchenstreifen",
+              "label_en": "Chicken strips",
+              "allergens": [
+                "D",
+                "E",
+                "F",
+                "N"
+              ],
+              "price": "14,50 €"
+            }
+          ]
+        },
+        {
+          "code": "30",
+          "name_de": "Erdnuss Soße",
+          "name_en": "Erdnuss Soße",
+          "desc_de": "Erdnusssauce mit Kokosmilch und frischem Gemüse (Flaschenkürbis, Brokkoli, Blumenkohl, Paprika, grüne Bohnen, Pilze, Karotten). Serviert mit Reis, Salat und gerösteten Erdnüssen.",
+          "desc_en": "Peanut sauce with coconut milk and fresh vegetables (bottle gourd, broccoli, cauliflower, bell pepper, green beans, mushrooms, carrots). Served with rice, salad and roasted peanuts.",
+          "variants": [
+            {
+              "code": "A",
+              "label_de": "Tofu",
+              "label_en": "Tofu",
+              "allergens": [
+                "E",
+                "F"
+              ],
+              "price": "15,90 €"
+            },
+            {
+              "code": "B",
+              "label_de": "Gebratenes Hähnchen",
+              "label_en": "Fried chicken",
+              "allergens": [
+                "E",
+                "F"
+              ],
+              "price": "15,90 €"
+            },
+            {
+              "code": "C",
+              "label_de": "Rind",
+              "label_en": "Beef",
+              "allergens": [
+                "E",
+                "F"
+              ],
+              "price": "16,90 €"
+            },
+            {
+              "code": "D",
+              "label_de": "Garnelen",
+              "label_en": "Shrimp",
+              "allergens": [
+                "B",
+                "E",
+                "F"
+              ],
+              "price": "16,90 €"
+            },
+            {
+              "code": "E",
+              "label_de": "Französische Ente",
+              "label_en": "French duck",
+              "allergens": [
+                "E",
+                "F"
+              ],
+              "price": "17,90 €"
+            },
+            {
+              "code": "F",
+              "label_de": "Hähnchenstreifen",
+              "label_en": "Chicken strips",
+              "allergens": [
+                "E",
+                "F"
+              ],
+              "price": "14,50 €"
+            }
+          ]
+        },
+        {
+          "code": "31",
+          "name_de": "Zitronengras & Chili",
+          "name_en": "Zitronengras & Chili",
+          "desc_de": "Gemüse aus dem Wok mit Zitronengras, Chili, vietnamesischer Sauce, Knoblauch und Kräutern, auf einer heißen Gusseisenplatte serviert. Dazu Reis oder Reisnudeln, Salat und geröstete Erdnüsse.",
+          "desc_en": "Wok-fried vegetables with lemongrass, chili, Vietnamese sauce, garlic and herbs, served on a sizzling hot cast-iron plate. With rice or rice noodles, salad and roasted peanuts.",
+          "variants": [
+            {
+              "code": "A",
+              "label_de": "Tofu",
+              "label_en": "Tofu",
+              "allergens": [
+                "D",
+                "E",
+                "F",
+                "N"
+              ],
+              "price": "15,90 €"
+            },
+            {
+              "code": "B",
+              "label_de": "Gebratenes Hähnchen",
+              "label_en": "Fried chicken",
+              "allergens": [
+                "D",
+                "E",
+                "F",
+                "N"
+              ],
+              "price": "15,90 €"
+            },
+            {
+              "code": "C",
+              "label_de": "Rind",
+              "label_en": "Beef",
+              "allergens": [
+                "D",
+                "E",
+                "F",
+                "N"
+              ],
+              "price": "16,90 €"
+            },
+            {
+              "code": "D",
+              "label_de": "Garnelen",
+              "label_en": "Shrimp",
+              "allergens": [
+                "B",
+                "D",
+                "E",
+                "F",
+                "N"
+              ],
+              "price": "16,90 €"
+            },
+            {
+              "code": "E",
+              "label_de": "Französische Ente",
+              "label_en": "French duck",
+              "allergens": [
+                "D",
+                "E",
+                "F",
+                "N"
+              ],
+              "price": "17,90 €"
+            },
+            {
+              "code": "F",
+              "label_de": "Lachs",
+              "label_en": "Salmon",
+              "allergens": [
+                "D",
+                "E",
+                "F",
+                "N"
+              ],
+              "price": "17,90 €"
+            },
+            {
+              "code": "G",
+              "label_de": "Hähnchenstreifen",
+              "label_en": "Chicken strips",
+              "allergens": [
+                "D",
+                "E",
+                "F",
+                "N"
+              ],
+              "price": "14,50 €"
+            }
+          ]
+        },
+        {
+          "code": "32",
+          "name_de": "Grünes Curry",
+          "name_en": "Grünes Curry",
+          "desc_de": "Grünes Curry mit frischem Gemüse (Flaschenkürbis, Brokkoli, Blumenkohl, Paprika, grüne Bohnen, Pilze, Karotten), Avocado, Zitrone, Koriander und Zitronengras. Serviert mit Reis, Salat und gerösteten Erdnüssen.",
+          "desc_en": "Green curry with fresh vegetables (bottle gourd, broccoli, cauliflower, bell pepper, green beans, mushrooms, carrots), avocado, lemon, coriander and lemongrass. Served with rice, salad and roasted peanuts.",
+          "variants": [
+            {
+              "code": "A",
+              "label_de": "Tofu",
+              "label_en": "Tofu",
+              "allergens": [
+                "B",
+                "D",
+                "E",
+                "F"
+              ],
+              "price": "15,90 €"
+            },
+            {
+              "code": "B",
+              "label_de": "Gebratenes Hähnchen",
+              "label_en": "Fried chicken",
+              "allergens": [
+                "B",
+                "D",
+                "E",
+                "F"
+              ],
+              "price": "15,90 €"
+            },
+            {
+              "code": "C",
+              "label_de": "Rind",
+              "label_en": "Beef",
+              "allergens": [
+                "B",
+                "D",
+                "E",
+                "F"
+              ],
+              "price": "16,90 €"
+            },
+            {
+              "code": "D",
+              "label_de": "Garnelen",
+              "label_en": "Shrimp",
+              "allergens": [
+                "B",
+                "D",
+                "E",
+                "F"
+              ],
+              "price": "16,90 €"
+            },
+            {
+              "code": "E",
+              "label_de": "Französische Ente",
+              "label_en": "French duck",
+              "allergens": [
+                "B",
+                "D",
+                "E",
+                "F"
+              ],
+              "price": "17,90 €"
+            },
+            {
+              "code": "F",
+              "label_de": "Hähnchenstreifen",
+              "label_en": "Chicken strips",
+              "allergens": [
+                "B",
+                "D",
+                "E",
+                "F"
+              ],
+              "price": "14,50 €"
+            }
+          ]
+        },
+        {
+          "code": "33",
+          "name_de": "Süß-Sauer",
+          "name_en": "Süß-Sauer",
+          "desc_de": "Süß-saure Sauce mit frischem Gemüse — Flaschenkürbis, Brokkoli, Blumenkohl, Paprika, grüne Bohnen, Pilze und Karotten. Serviert mit Reis, Salat und gerösteten Erdnüssen.",
+          "desc_en": "Sweet-and-sour sauce with fresh vegetables — bottle gourd, broccoli, cauliflower, bell pepper, green beans, mushrooms and carrots. Served with rice, salad and roasted peanuts.",
+          "variants": [
+            {
+              "code": "A",
+              "label_de": "Tofu",
+              "label_en": "Tofu",
+              "allergens": [
+                "D",
+                "E",
+                "F"
+              ],
+              "price": "15,90 €"
+            },
+            {
+              "code": "B",
+              "label_de": "Gebratenes Hähnchen",
+              "label_en": "Fried chicken",
+              "allergens": [
+                "D",
+                "E",
+                "F"
+              ],
+              "price": "15,90 €"
+            },
+            {
+              "code": "C",
+              "label_de": "Rind",
+              "label_en": "Beef",
+              "allergens": [
+                "D",
+                "E",
+                "F"
+              ],
+              "price": "16,90 €"
+            },
+            {
+              "code": "D",
+              "label_de": "Garnelen",
+              "label_en": "Shrimp",
+              "allergens": [
+                "B",
+                "D",
+                "E",
+                "F"
+              ],
+              "price": "16,90 €"
+            },
+            {
+              "code": "E",
+              "label_de": "Französische Ente",
+              "label_en": "French duck",
+              "allergens": [
+                "D",
+                "E",
+                "F"
+              ],
+              "price": "17,90 €"
+            },
+            {
+              "code": "F",
+              "label_de": "Hähnchenstreifen",
+              "label_en": "Chicken strips",
+              "allergens": [
+                "D",
+                "E",
+                "F"
+              ],
+              "price": "14,50 €"
+            }
+          ]
+        },
+        {
+          "code": "34",
+          "name_de": "Rotes Curry",
+          "name_en": "Rotes Curry",
+          "desc_de": "Rotes Curry mit Kokosmilch und frischem Gemüse (Flaschenkürbis, Brokkoli, Blumenkohl, Paprika, grüne Bohnen, Pilze, Karotten). Serviert mit Reis, Salat und gerösteten Erdnüssen.",
+          "desc_en": "Red curry with coconut milk and fresh vegetables (bottle gourd, broccoli, cauliflower, bell pepper, green beans, mushrooms, carrots). Served with rice, salad and roasted peanuts.",
+          "variants": [
+            {
+              "code": "A",
+              "label_de": "Tofu",
+              "label_en": "Tofu",
+              "allergens": [
+                "B",
+                "D",
+                "E",
+                "F"
+              ],
+              "price": "15,90 €"
+            },
+            {
+              "code": "B",
+              "label_de": "Gebratenes Hähnchen",
+              "label_en": "Fried chicken",
+              "allergens": [
+                "B",
+                "D",
+                "E",
+                "F"
+              ],
+              "price": "15,90 €"
+            },
+            {
+              "code": "C",
+              "label_de": "Rind",
+              "label_en": "Beef",
+              "allergens": [
+                "B",
+                "D",
+                "E",
+                "F"
+              ],
+              "price": "16,90 €"
+            },
+            {
+              "code": "D",
+              "label_de": "Garnelen",
+              "label_en": "Shrimp",
+              "allergens": [
+                "B",
+                "D",
+                "E",
+                "F"
+              ],
+              "price": "16,90 €"
+            },
+            {
+              "code": "E",
+              "label_de": "Französische Ente",
+              "label_en": "French duck",
+              "allergens": [
+                "B",
+                "D",
+                "E",
+                "F"
+              ],
+              "price": "17,90 €"
+            },
+            {
+              "code": "F",
+              "label_de": "Hähnchenstreifen",
+              "label_en": "Chicken strips",
+              "allergens": [
+                "B",
+                "D",
+                "E",
+                "F"
+              ],
+              "price": "14,50 €"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reis_spezial",
+      "name_de": "Gebratener Reis · Spezial",
+      "name_en": "Fried Rice · Specials",
+      "items": [
+        {
+          "code": "35",
+          "name_de": "Gebratener Reis",
+          "name_en": "Gebratener Reis",
+          "desc_de": "Gebratener Reis mit Ei, Bohnen, Mais, Karotten und hausgemachter Spezialsauce. Mit Salat und gerösteten Erdnüssen.",
+          "desc_en": "Fried rice with egg, beans, corn, carrots and homemade special sauce. With salad and roasted peanuts.",
+          "variants": [
+            {
+              "code": "A",
+              "label_de": "Tofu",
+              "label_en": "Tofu",
+              "allergens": [
+                "A",
+                "C",
+                "D",
+                "E",
+                "F",
+                "N"
+              ],
+              "price": "15,90 €"
+            },
+            {
+              "code": "B",
+              "label_de": "Gebratenes Hähnchen",
+              "label_en": "Fried chicken",
+              "allergens": [
+                "A",
+                "C",
+                "D",
+                "E",
+                "F",
+                "N"
+              ],
+              "price": "15,90 €"
+            },
+            {
+              "code": "C",
+              "label_de": "Rind",
+              "label_en": "Beef",
+              "allergens": [
+                "A",
+                "C",
+                "D",
+                "E",
+                "F",
+                "N"
+              ],
+              "price": "16,90 €"
+            },
+            {
+              "code": "D",
+              "label_de": "Garnelen",
+              "label_en": "Shrimp",
+              "allergens": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E",
+                "F",
+                "N"
+              ],
+              "price": "16,90 €"
+            },
+            {
+              "code": "E",
+              "label_de": "Gegrilltes Hähnchen",
+              "label_en": "Grilled chicken",
+              "allergens": [
+                "A",
+                "C",
+                "D",
+                "E",
+                "F",
+                "N"
+              ],
+              "price": "16,90 €"
+            },
+            {
+              "code": "F",
+              "label_de": "Französische Ente",
+              "label_en": "French duck",
+              "allergens": [
+                "A",
+                "C",
+                "D",
+                "E",
+                "F",
+                "N"
+              ],
+              "price": "17,90 €"
+            },
+            {
+              "code": "G",
+              "label_de": "Lachs",
+              "label_en": "Salmon",
+              "allergens": [
+                "A",
+                "C",
+                "D",
+                "E",
+                "F",
+                "N"
+              ],
+              "price": "17,90 €"
+            },
+            {
+              "code": "H",
+              "label_de": "Hähnchenstreifen",
+              "label_en": "Chicken strips",
+              "allergens": [
+                "A",
+                "C",
+                "D",
+                "E",
+                "F",
+                "N"
+              ],
+              "price": "14,50 €"
+            }
+          ]
+        },
+        {
+          "code": "36",
+          "name_de": "Bò Lúc Lắc — Shaking Beef mit Pommes",
+          "name_en": "Bò Lúc Lắc — Shaking Beef mit Pommes",
+          "desc_de": "Würfelig geschnittenes Rindfleisch kurz angebraten, mit Paprika und Zwiebeln im Wok geschüttelt, auf einer heißen Gusseisenplatte serviert. Dazu Pommes Frites, Salat und geröstete Erdnüsse.",
+          "desc_en": "Diced beef quickly seared, tossed in the wok with bell peppers and onions, served on a sizzling hot cast- iron plate. With French fries, salad and roasted peanuts.",
+          "allergens": [
+            "A",
+            "D",
+            "E",
+            "F",
+            "N"
+          ],
+          "price": "17,90 €"
+        },
+        {
+          "code": "37",
+          "name_de": "Jury Chicken Tempura",
+          "name_en": "Jury Chicken Tempura",
+          "desc_de": "Knusprige Hähnchen-Tempura mit Salat, gerösteten Erdnüssen, Gurke, Kimchi und hausgemachter süß- saurer Sauce. Mit Reis serviert.",
+          "desc_en": "Crispy chicken tempura with salad, roasted peanuts, cucumber, kimchi and homemade sweet-and-sour sauce. Served with rice.",
+          "allergens": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F"
+          ],
+          "price": "15,90 €"
+        },
+        {
+          "code": "38",
+          "name_de": "Saigon BBQ Kimchi Bowl",
+          "name_en": "Saigon BBQ Kimchi Bowl",
+          "desc_de": "Saigon-style gegrilltes Schweinefleisch, Salat mit gerösteten Erdnüssen, Kimchi, Erdnuss- oder süß-saure Sauce. Mit Reis.",
+          "desc_en": "Saigon-style grilled pork, salad with roasted peanuts, kimchi, peanut or sweet-and-sour sauce. With rice.",
+          "allergens": [
+            "A",
+            "B",
+            "D",
+            "E",
+            "F"
+          ],
+          "price": "16,90 €"
+        },
+        {
+          "code": "39",
+          "name_de": "Sommer Bowl",
+          "name_en": "Sommer Bowl",
+          "desc_de": "Reis – Avocado – Mais – Gurke – grüne Bohnen – Salat – spezielle Mayo-Sauce.",
+          "desc_en": "Rice – avocado – corn – cucumber – green beans – salad – special mayo sauce.",
+          "variants": [
+            {
+              "code": "A",
+              "label_de": "Gebratenes Hähnchen",
+              "label_en": "Fried chicken",
+              "allergens": [
+                "C",
+                "E",
+                "F",
+                "J"
+              ],
+              "price": "15,90 €"
+            },
+            {
+              "code": "B",
+              "label_de": "Rind",
+              "label_en": "Beef",
+              "allergens": [
+                "C",
+                "E",
+                "F",
+                "J"
+              ],
+              "price": "15,90 €"
+            },
+            {
+              "code": "C",
+              "label_de": "Gegrilltes Hähnchen",
+              "label_en": "Grilled chicken",
+              "allergens": [
+                "C",
+                "E",
+                "F",
+                "J"
+              ],
+              "price": "16,90 €"
+            },
+            {
+              "code": "D",
+              "label_de": "Garnelen",
+              "label_en": "Shrimp",
+              "allergens": [
+                "B",
+                "C",
+                "E",
+                "F",
+                "J"
+              ],
+              "price": "16,90 €"
+            },
+            {
+              "code": "E",
+              "label_de": "Französische Ente",
+              "label_en": "French duck",
+              "allergens": [
+                "C",
+                "E",
+                "F",
+                "J"
+              ],
+              "price": "17,90 €"
+            },
+            {
+              "code": "F",
+              "label_de": "Lachs",
+              "label_en": "Salmon",
+              "allergens": [
+                "C",
+                "D",
+                "E",
+                "F",
+                "J"
+              ],
+              "price": "17,90 €"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gebratene_nudeln",
+      "name_de": "Gebratene Nudeln",
+      "name_en": "Fried Noodles",
+      "items": [
+        {
+          "code": "40",
+          "name_de": "Gebratene Udon Nudeln",
+          "name_en": "Gebratene Udon Nudeln",
+          "desc_de": "Gebratene Udon-Nudeln mit Ei, Chinakohl, Sojasprossen, Karotten, Zucchini, Röstzwiebeln. Mit Salat und gerösteten Erdnüssen.",
+          "desc_en": "Fried udon noodles with egg, Chinese cabbage, bean sprouts, carrots, zucchini, fried onions. With salad and roasted peanuts.",
+          "variants": [
+            {
+              "code": "A",
+              "label_de": "Tofu",
+              "label_en": "Tofu",
+              "allergens": [
+                "A",
+                "C",
+                "E",
+                "F",
+                "N"
+              ],
+              "price": "12,50 €"
+            },
+            {
+              "code": "B",
+              "label_de": "Hähnchen",
+              "label_en": "Chicken",
+              "allergens": [
+                "A",
+                "C",
+                "E",
+                "F",
+                "N"
+              ],
+              "price": "14,50 €"
+            },
+            {
+              "code": "C",
+              "label_de": "Rind",
+              "label_en": "Beef",
+              "allergens": [
+                "A",
+                "C",
+                "E",
+                "F",
+                "N"
+              ],
+              "price": "15,50 €"
+            },
+            {
+              "code": "D",
+              "label_de": "Garnelen",
+              "label_en": "Shrimp",
+              "allergens": [
+                "A",
+                "B",
+                "C",
+                "E",
+                "F",
+                "N"
+              ],
+              "price": "16,50 €"
+            },
+            {
+              "code": "E",
+              "label_de": "Französische Ente",
+              "label_en": "French duck",
+              "allergens": [
+                "A",
+                "C",
+                "E",
+                "F",
+                "N"
+              ],
+              "price": "16,90 €"
+            },
+            {
+              "code": "F",
+              "label_de": "Hähnchenstreifen",
+              "label_en": "Chicken strips",
+              "allergens": [
+                "A",
+                "C",
+                "E",
+                "F",
+                "N"
+              ],
+              "price": "14,50 €"
+            }
+          ]
+        },
+        {
+          "code": "41",
+          "name_de": "Glasnudelsalat",
+          "name_en": "Glasnudelsalat",
+          "desc_de": "Glasnudelsalat mit frischem Salat, Erdnüssen und Limetten-Dressing.",
+          "desc_en": "Glass noodle salad with fresh salad, peanuts and lime dressing.",
+          "variants": [
+            {
+              "code": "A",
+              "label_de": "Tofu",
+              "label_en": "Tofu",
+              "allergens": [
+                "D",
+                "E",
+                "F"
+              ],
+              "price": "12,50 €"
+            },
+            {
+              "code": "B",
+              "label_de": "Hähnchen",
+              "label_en": "Chicken",
+              "allergens": [
+                "D",
+                "E"
+              ],
+              "price": "14,50 €"
+            },
+            {
+              "code": "C",
+              "label_de": "Rind",
+              "label_en": "Beef",
+              "allergens": [
+                "D",
+                "E"
+              ],
+              "price": "15,50 €"
+            },
+            {
+              "code": "D",
+              "label_de": "Garnelen",
+              "label_en": "Shrimp",
+              "allergens": [
+                "B",
+                "D",
+                "E"
+              ],
+              "price": "16,50 €"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vegan",
+      "name_de": "Vegan Menü",
+      "name_en": "Vegan Menu",
+      "items": [
+        {
+          "code": "42",
+          "name_de": "Ente mit Wok-Gemüse vegan",
+          "name_en": "Ente mit Wok-Gemüse vegan",
+          "desc_de": "Gemüse aus dem Wok — Flaschenkürbis, Brokkoli, Blumenkohl, Paprika, grüne Bohnen, Pilze und Karotten — mit Knoblauch und vietnamesischer Sauce, auf einer heißen Gusseisenplatte serviert. Dazu gebratene vegane Ente, Reis, Salat und geröstete Erdnüsse.",
+          "desc_en": "Wok-fried vegetables — bottle gourd, broccoli, cauliflower, bell pepper, green beans, mushrooms and carrots — with garlic and Vietnamese sauce, served on a sizzling hot cast-iron plate. With fried vegan duck, rice, salad and roasted peanuts.",
+          "allergens": [
+            "A",
+            "E",
+            "F"
+          ],
+          "price": "15,90 €"
+        },
+        {
+          "code": "43",
+          "name_de": "Hähnchen mit Wok-Gemüse vegan",
+          "name_en": "Hähnchen mit Wok-Gemüse vegan",
+          "desc_de": "Gemüse aus dem Wok — Flaschenkürbis, Brokkoli, Blumenkohl, Paprika, grüne Bohnen, Pilze und Karotten — mit Knoblauch und vietnamesischer Sauce, auf einer heißen Gusseisenplatte serviert. Dazu veganes Hähnchen, Reis, Salat und geröstete Erdnüsse.",
+          "desc_en": "Wok-fried vegetables — bottle gourd, broccoli, cauliflower, bell pepper, green beans, mushrooms and carrots — with garlic and Vietnamese sauce, served on a sizzling hot cast-iron plate. With vegan chicken, rice, salad and roasted peanuts.",
+          "allergens": [
+            "A",
+            "E",
+            "F"
+          ],
+          "price": "15,90 €"
+        },
+        {
+          "code": "44",
+          "name_de": "Bún Đậu – Tofu mit Reisnudeln",
+          "name_en": "Bún Đậu – Tofu mit Reisnudeln",
+          "desc_de": "Frische Reisnudeln, frische Kräuter, Tofu mit Zitronengras gebraten, eingelegte Karotten, hausgemachte Sauce.",
+          "desc_en": "Fresh rice noodles, fresh herbs, lemongrass-fried tofu, pickled carrots, homemade sauce.",
+          "allergens": [
+            "E",
+            "F"
+          ],
+          "price": "15,90 €"
+        },
+        {
+          "code": "45",
+          "name_de": "Curry-Ente vegan",
+          "name_en": "Curry-Ente vegan",
+          "desc_de": "Gebratene vegane Ente, frisches Gemüse (Flaschenkürbis, Brokkoli, Blumenkohl, Paprika, grüne Bohnen, Pilze, Karotten), Reis. Serviert mit Salat und gerösteten Erdnüssen. Wahl zwischen grünem oder rotem Curry.",
+          "desc_en": "Fried vegan duck, fresh vegetables (bottle gourd, broccoli, cauliflower, bell pepper, green beans, mushrooms, carrots), rice. Served with salad and roasted peanuts. Choice of green or red curry.",
+          "allergens": [
+            "A",
+            "E",
+            "F"
+          ],
+          "price": "15,90 €"
+        },
+        {
+          "code": "46",
+          "name_de": "Erdnuss-Ente vegan",
+          "name_en": "Erdnuss-Ente vegan",
+          "desc_de": "Gebratene vegane Ente, frisches Gemüse (Flaschenkürbis, Brokkoli, Blumenkohl, Paprika, grüne Bohnen, Pilze, Karotten), Erdnusssauce. Serviert mit Reis, Salat und gerösteten Erdnüssen.",
+          "desc_en": "Fried vegan duck, fresh vegetables (bottle gourd, broccoli, cauliflower, bell pepper, green beans, mushrooms, carrots), peanut sauce. Served with rice, salad and roasted peanuts.",
+          "allergens": [
+            "A",
+            "E",
+            "F"
+          ],
+          "price": "16,90 €"
+        },
+        {
+          "code": "47",
+          "name_de": "Baby Buddha — Shaolin Seitan Spieße",
+          "name_en": "Baby Buddha — Shaolin Seitan Spieße",
+          "desc_de": "Gegrillte Shaolin-Seitan-Spieße, serviert mit Gemüse (Flaschenkürbis, Brokkoli, Blumenkohl, Paprika, grüne Bohnen, Pilze, Karotten) in Erdnusssauce, Salat, gerösteten Erdnüssen und Reis.",
+          "desc_en": "Grilled Shaolin seitan skewers, served with vegetables (bottle gourd, broccoli, cauliflower, bell pepper, green beans, mushrooms, carrots) in peanut sauce, salad, roasted peanuts and rice. PHỞ / RICE NOODLE SOUP DE Stundenlang gekochte Brühe mit Zimt, Sternanis und Gewürzen EN Broth simmered for hours with cinnamon, star anise and spices MIỀN BẮC · NORTHERN VIETNAM Phở gilt als die Seele der vietnamesischen Küche und ist das Herzstück unseres Hauses – nicht ohne Grund trägt unser Restaurant den Namen einer Phở-Küche. Die klare, aromatische Brühe wird über viele Stunden aus Rinderknochen, geröstetem Ingwer und Zwiebeln sowie Zimt, Sternanis und Kardamom gekocht. Serviert mit zarten Reisbandnudeln, feinem Rindfleisch und frischen Kräutern. Phở is considered the soul of Vietnamese cuisine and the heart of our restaurant — it is no coincidence that our restaurant bears the name of a Phở kitchen. The clear, aromatic broth is simmered for many hours from beef bones, roasted ginger and onions together with cinnamon, star anise and cardamom. Served with tender rice noodles, fine slices of beef and fresh herbs.",
+          "allergens": [
+            "A",
+            "E",
+            "F"
+          ],
+          "price": "16,90 €"
+        }
+      ]
+    },
+    {
+      "id": "pho",
+      "name_de": "Phở",
+      "name_en": "Rice Noodle Soup",
+      "items": [
+        {
+          "code": "48",
+          "name_de": "Phở Việt Nam — Traditionelle Phở",
+          "name_en": "Phở Việt Nam — Traditionelle Phở",
+          "desc_de": "Traditionelle vietnamesische Reisbandnudelsuppe in einer kräftig klaren Rinderbrühe mit Zimt, Chili, Sternanis, Ingwer, Sojasprossen, Frühlingszwiebeln und Koriander.",
+          "desc_en": "Traditional Vietnamese rice noodle soup in a rich, clear beef broth with cinnamon, chili, star anise, ginger, bean sprouts, spring onions and coriander.",
+          "variants": [
+            {
+              "code": "A",
+              "label_de": "Tofu",
+              "label_en": "Tofu",
+              "allergens": [
+                "D",
+                "F"
+              ],
+              "price": "12,50 €"
+            },
+            {
+              "code": "B",
+              "label_de": "Hähnchenfilet",
+              "label_en": "Chicken fillet",
+              "allergens": [
+                "D"
+              ],
+              "price": "14,50 €"
+            },
+            {
+              "code": "C",
+              "label_de": "Rohes Rind & Rinderbällchen",
+              "label_en": "Rare beef & beef balls",
+              "allergens": [
+                "A",
+                "D"
+              ],
+              "price": "16,90 €"
+            },
+            {
+              "code": "D",
+              "label_de": "Rind & Rinderbällchen",
+              "label_en": "Beef & beef balls",
+              "allergens": [
+                "A",
+                "D"
+              ],
+              "price": "16,90 €"
+            },
+            {
+              "code": "E",
+              "label_de": "Full Topping alle Beilagen",
+              "label_en": "Full Topping alle Beilagen",
+              "allergens": [
+                "A",
+                "D"
+              ],
+              "price": "18,50 €"
+            }
+          ]
+        },
+        {
+          "code": "49",
+          "name_de": "Phở Bát Đá — Phở in heißer Steinschale",
+          "name_en": "Phở Bát Đá — Phở in heißer Steinschale",
+          "desc_de": "Traditionelle vietnamesische Reisbandnudelsuppe in einer heißen Steinschale serviert, die die Suppe lange heiß hält.",
+          "desc_en": "Traditional Vietnamese rice noodle soup served in a hot stone bowl that keeps it hot for a long time.",
+          "variants": [
+            {
+              "code": "A",
+              "label_de": "Full Topping alle Beilagen",
+              "label_en": "Full Topping alle Beilagen",
+              "allergens": [
+                "A",
+                "D"
+              ],
+              "price": "18,90 €"
+            }
+          ]
+        },
+        {
+          "code": "50",
+          "name_de": "Phở Trộn — Reisbandnudelsalat",
+          "name_en": "Phở Trộn — Reisbandnudelsalat",
+          "desc_de": "Frisch gemischt mit Gemüse, Sojasprossen, Erdnüssen, Röstzwiebeln und hausgemachter Sauce. KEINE Suppe.",
+          "desc_en": "Freshly mixed with vegetables, bean sprouts, peanuts, fried onions and homemade sauce. NO broth.",
+          "variants": [
+            {
+              "code": "A",
+              "label_de": "Tofu",
+              "label_en": "Tofu",
+              "allergens": [
+                "D",
+                "E",
+                "F"
+              ],
+              "price": "12,50 €"
+            },
+            {
+              "code": "B",
+              "label_de": "Knuspriges Hähnchen",
+              "label_en": "Crispy chicken",
+              "allergens": [
+                "A",
+                "C",
+                "D",
+                "E"
+              ],
+              "price": "14,90 €"
+            },
+            {
+              "code": "C",
+              "label_de": "Rind",
+              "label_en": "Beef",
+              "allergens": [
+                "D",
+                "E"
+              ],
+              "price": "15,50 €"
+            },
+            {
+              "code": "D",
+              "label_de": "Vietnamesische Fleischwurst",
+              "label_en": "Vietnamese pork sausage",
+              "allergens": [
+                "D",
+                "E",
+                "F"
+              ],
+              "price": "14,90 €"
+            },
+            {
+              "code": "E",
+              "label_de": "Knusprige Ente",
+              "label_en": "Crispy duck",
+              "allergens": [
+                "A",
+                "C",
+                "D",
+                "E"
+              ],
+              "price": "16,90 €"
+            },
+            {
+              "code": "F",
+              "label_de": "Garnelen",
+              "label_en": "Shrimp",
+              "allergens": [
+                "B",
+                "D",
+                "E"
+              ],
+              "price": "16,50 €"
+            }
+          ]
+        },
+        {
+          "code": "51",
+          "name_de": "Phở Bò Sốt Vang — Rotwein-Rindergulasch Phở",
+          "name_en": "Phở Bò Sốt Vang — Rotwein-Rindergulasch Phở",
+          "desc_de": "Vietnamesische Reisbandnudeln mit aromatischem Rotwein-Rindergulasch in kräftiger Rinderbrühe, gekocht mit Zimt, Chili, Sternanis, Ingwer, Sojasprossen, Frühlingszwiebeln und Koriander.",
+          "desc_en": "Vietnamese rice noodles with aromatic red wine beef stew in a rich beef broth, cooked with cinnamon, chili, star anise, ginger, bean sprouts, spring onions and coriander. BÚN / NOODLE BOWLS MIỀN TRUNG · CENTRAL VIETNAM Bún Bò Huế stammt aus Huế, der einstigen Kaiserstadt Vietnams, und zählt zu den raffiniertesten Gerichten der vietnamesischen Küche. Die kräftige Brühe wird über Stunden mit Zitronengras, Rinderknochen und Gewürzen gekocht und erhält ihre unverwechselbare Tiefe durch eine feine Würzung und hausgemachtes Sa Tế. Serviert mit runden Reisnudeln, zartem Rindfleisch und vietnamesischer Fleischwurst – aromatischer und feuriger als die klassische Phở. Bún Bò Huế originates from Huế, the former imperial city of Vietnam, and is one of the most refined dishes of Vietnamese cuisine. The hearty broth is simmered for hours with lemongrass, beef bones and spices, gaining its distinctive depth from delicate seasoning and homemade Sa Tế. Served with round rice noodles, tender beef and Vietnamese pork sausage — more aromatic and fiery than the classic Phở.",
+          "allergens": [
+            "A",
+            "D",
+            "L"
+          ],
+          "price": "16,90 €"
+        }
+      ]
+    },
+    {
+      "id": "bun",
+      "name_de": "Bún",
+      "name_en": "Noodle Bowls",
+      "items": [
+        {
+          "code": "52",
+          "name_de": "Bún Bò Huế",
+          "name_en": "Bún Bò Huế",
+          "desc_de": "Traditionelle Bún Bò Huế mit kräftiger Brühe, Zitronengras, Rindfleisch, vietnamesischer Fleischwurst und frischen Kräutern. Sa Tế auf Wunsch separat.",
+          "desc_en": "Traditional Bún Bò Huế with rich broth, lemongrass, beef, Vietnamese pork sausage and fresh herbs. Sa Tế served separately on request.",
+          "allergens": [
+            "A",
+            "B",
+            "D"
+          ],
+          "price": "15,90 €"
+        },
+        {
+          "code": "53",
+          "name_de": "Bún Chả Hà Nội",
+          "name_en": "Bún Chả Hà Nội",
+          "desc_de": "Traditionelles Bún Chả Hà Nội mit aromatisch gegrilltem Schweinefleisch, hausgemachten Fleischbällchen, Reisnudeln und frischen Kräutern.",
+          "desc_en": "Traditional Bún Chả Hà Nội with aromatic grilled pork, homemade meatballs, rice noodles and fresh herbs.",
+          "allergens": [
+            "A",
+            "D",
+            "E"
+          ],
+          "price": "14,90 €"
+        },
+        {
+          "code": "54",
+          "name_de": "Bún Nem — Reisnudeln mit Frühlingsrollen",
+          "name_en": "Bún Nem — Reisnudeln mit Frühlingsrollen",
+          "desc_de": "Reisnudeln mit knusprigen, goldbraun gebratenen Frühlingsrollen, frischen Kräutern sowie eingelegtem Kohlrabi und Karotten, serviert mit hausgemachter vietnamesischer Sauce.",
+          "desc_en": "Rice noodles with crispy golden-fried spring rolls, fresh herbs, pickled kohlrabi and carrots, served with homemade Vietnamese sauce.",
+          "allergens": [
+            "A",
+            "D",
+            "E"
+          ],
+          "price": "13,90 €"
+        },
+        {
+          "code": "55",
+          "name_de": "Bún Trộn Chả Lụa",
+          "name_en": "Bún Trộn Chả Lụa",
+          "desc_de": "Reisnudeln mit vietnamesischer Fleischwurst, frischen Kräutern, Karotten, Gurken und Salat, serviert mit hausgemachter vietnamesischer Sauce.",
+          "desc_en": "Rice noodles with Vietnamese pork sausage, fresh herbs, carrots, cucumber and lettuce, served with homemade Vietnamese sauce. BÁNH MÌ SÀI GÒN DE Frisch jeden Tag gebacken · Authentisch Vietnamesisch EN Freshly baked every day · Authentically Vietnamese MIỀN NAM · SOUTHERN VIETNAM Bánh Mì ist Vietnams berühmtes Sandwich – ein Erbe der französischen Kolonialzeit, auf vietnamesische Art neu erfunden. Das luftige Baguette mit knuspriger Kruste wird mit gegrilltem Fleisch, vietnamesischer Fleischwurst, Haus-Pastete, eingelegtem Kohlrabi und Karotten sowie frischen Kräutern gefüllt. Bánh Mì is Vietnam's famous sandwich — a legacy of the French colonial era, reinvented the Vietnamese way. The airy baguette with a crispy crust is filled with grilled meat, Vietnamese pork sausage, house pâté, pickled kohlrabi and carrots, and fresh herbs.",
+          "allergens": [
+            "D",
+            "E",
+            "F"
+          ],
+          "price": "13,50 €"
+        }
+      ]
+    },
+    {
+      "id": "banh_mi",
+      "name_de": "Bánh Mì Sài Gòn",
+      "name_en": "Bánh Mì Saigon",
+      "items": [
+        {
+          "code": "56",
+          "name_de": "Bánh Mì Sài Gòn",
+          "name_en": "Bánh Mì Sài Gòn",
+          "desc_de": "Traditionelles Bánh Mì aus Saigon mit gegrilltem Fleisch, vietnamesischer Fleischwurst, Haus-Pastete, cremiger Eiersauce, frischen vietnamesischen Kräutern, eingelegtem Kohlrabi und Karotten.",
+          "desc_en": "Traditional Bánh Mì from Saigon with grilled meat, Vietnamese pork sausage, house pâté, creamy egg sauce, fresh Vietnamese herbs, pickled kohlrabi and carrots.",
+          "allergens": [
+            "A",
+            "C",
+            "D",
+            "G",
+            "J"
+          ],
+          "price": "9,90 €"
+        },
+        {
+          "code": "57",
+          "name_de": "Bánh Mì Sốt Vang",
+          "name_en": "Bánh Mì Sốt Vang",
+          "desc_de": "Bánh Mì mit geschmortem Rindfleisch in aromatischer Soße, verfeinert mit Zimt, Sternanis und Kardamom, serviert mit frischem Salat, vietnamesischen Kräutern, eingelegtem Kohlrabi und Karotten.",
+          "desc_en": "Bánh Mì with braised beef in an aromatic sauce, refined with cinnamon, star anise and cardamom, served with fresh salad, Vietnamese herbs, pickled kohlrabi and carrots.",
+          "allergens": [
+            "A",
+            "D",
+            "G",
+            "L"
+          ],
+          "price": "12,00 €"
+        },
+        {
+          "code": "58",
+          "name_de": "Bánh Mì Chảo",
+          "name_en": "Bánh Mì Chảo",
+          "desc_de": "Serviert in einer heißen Gusseisenpfanne mit Spiegelei, gebratenem Rindfleisch, Haus-Pastete, würziger Tomatensoße und frischen vietnamesischen Kräutern.",
+          "desc_en": "Served in a hot cast-iron pan with fried egg, seared beef, house pâté, spicy tomato sauce and fresh Vietnamese herbs.",
+          "allergens": [
+            "A",
+            "C",
+            "D",
+            "G"
+          ],
+          "price": "14,00 €"
+        }
+      ]
+    },
+    {
+      "id": "extra_beilagen",
+      "name_de": "Extra Beilagen",
+      "name_en": "Extra Sides",
+      "items": [
+        {
+          "code": "59",
+          "name_de": "Jasminreis",
+          "name_en": "Jasminreis",
+          "desc_de": "Portion",
+          "desc_en": "Portion",
+          "allergens": [],
+          "price": "3,50 €"
+        },
+        {
+          "code": "60",
+          "name_de": "Reisnudeln",
+          "name_en": "Reisnudeln",
+          "desc_de": "frisch / fresh, Portion",
+          "desc_en": "frisch / fresh, Portion",
+          "allergens": [],
+          "price": "3,50 €"
+        },
+        {
+          "code": "61",
+          "name_de": "Kleiner gebratener Reis",
+          "name_en": "Kleiner gebratener Reis",
+          "desc_de": "Ei + Gemüse / egg + vegetables",
+          "desc_en": "Ei + Gemüse / egg + vegetables",
+          "allergens": [
+            "A",
+            "C",
+            "F",
+            "N"
+          ],
+          "price": "8,50 €"
+        },
+        {
+          "code": "62",
+          "name_de": "Kleine gebr. Reisbandnudeln",
+          "name_en": "Kleine gebr. Reisbandnudeln",
+          "desc_de": "klein / small",
+          "desc_en": "klein / small",
+          "allergens": [
+            "A",
+            "C",
+            "F",
+            "N"
+          ],
+          "price": "8,50 €"
+        },
+        {
+          "code": "63",
+          "name_de": "Kleines gebr. Udon",
+          "name_en": "Kleines gebr. Udon",
+          "desc_de": "klein / small",
+          "desc_en": "klein / small",
+          "allergens": [
+            "A",
+            "C",
+            "F",
+            "N"
+          ],
+          "price": "9,00 €"
+        },
+        {
+          "code": "64",
+          "name_de": "Gebratene Ente",
+          "name_en": "Gebratene Ente",
+          "desc_de": "Topping 80g",
+          "desc_en": "Topping 80g",
+          "allergens": [
+            "A",
+            "F",
+            "N"
+          ],
+          "price": "7,90 €"
+        },
+        {
+          "code": "65",
+          "name_de": "Gebratenes Hähnchen",
+          "name_en": "Gebratenes Hähnchen",
+          "desc_de": "Topping 100g",
+          "desc_en": "Topping 100g",
+          "allergens": [
+            "A",
+            "F"
+          ],
+          "price": "5,90 €"
+        },
+        {
+          "code": "66",
+          "name_de": "Gegrilltes Hähnchen",
+          "name_en": "Gegrilltes Hähnchen",
+          "desc_de": "Topping 100g",
+          "desc_en": "Topping 100g",
+          "allergens": [
+            "D",
+            "F"
+          ],
+          "price": "6,90 €"
+        },
+        {
+          "code": "67",
+          "name_de": "Grillspieß (1 Stk.)",
+          "name_en": "Grillspieß (1 Stk.)",
+          "desc_de": "1 Schweinespieß / 1 pork skewer",
+          "desc_en": "1 Schweinespieß / 1 pork skewer",
+          "allergens": [
+            "D",
+            "F"
+          ],
+          "price": "2,50 €"
+        },
+        {
+          "code": "68",
+          "name_de": "Kimchi",
+          "name_en": "Kimchi",
+          "desc_de": "Portion 60g",
+          "desc_en": "Portion 60g",
+          "allergens": [
+            "B",
+            "D"
+          ],
+          "price": "3,50 €"
+        },
+        {
+          "code": "69",
+          "name_de": "Eingelegte Karotten & Kohlrabi",
+          "name_en": "Eingelegte Karotten & Kohlrabi",
+          "desc_de": "hausgemacht / homemade",
+          "desc_en": "hausgemacht / homemade",
+          "allergens": [],
+          "price": "3,50 €"
+        }
+      ]
+    },
+    {
+      "id": "saucen_extra",
+      "name_de": "Saucen Extra",
+      "name_en": "Extra Sauces",
+      "items": [
+        {
+          "code": "70",
+          "name_de": "Grünes Curry",
+          "name_en": "Grünes Curry",
+          "allergens": [
+            "B",
+            "D",
+            "F"
+          ],
+          "price": "4,00 €"
+        },
+        {
+          "code": "71",
+          "name_de": "Rotes Curry",
+          "name_en": "Rotes Curry",
+          "allergens": [
+            "B",
+            "D",
+            "F"
+          ],
+          "price": "4,00 €"
+        },
+        {
+          "code": "72",
+          "name_de": "Erdnuss-Sauce",
+          "name_en": "Erdnuss-Sauce",
+          "allergens": [
+            "E",
+            "F",
+            "K"
+          ],
+          "price": "4,00 €"
+        },
+        {
+          "code": "73",
+          "name_de": "Süß-Saure Sauce",
+          "name_en": "Süß-Saure Sauce",
+          "allergens": [
+            "A",
+            "F"
+          ],
+          "price": "4,00 €"
+        }
+      ]
+    },
+    {
+      "id": "maki",
+      "name_de": "Maki (8 Stk.)",
+      "name_en": "Maki (8 pcs)",
+      "items": [
+        {
+          "code": "M1",
+          "name_de": "California Maki",
+          "name_en": "California Maki",
+          "desc_de": "Surimi, Avocado",
+          "desc_en": "Surimi, Avocado",
+          "allergens": [
+            "A",
+            "C",
+            "D"
+          ],
+          "price": "4,50 €"
+        },
+        {
+          "code": "M2",
+          "name_de": "Kappa Maki",
+          "name_en": "Kappa Maki",
+          "desc_de": "Gurke / Cucumber",
+          "desc_en": "Gurke / Cucumber",
+          "allergens": [],
+          "price": "4,50 €"
+        },
+        {
+          "code": "M3",
+          "name_de": "Avocado Maki",
+          "name_en": "Avocado Maki",
+          "desc_de": "Avocado",
+          "desc_en": "Avocado",
+          "allergens": [],
+          "price": "4,50 €"
+        },
+        {
+          "code": "M4",
+          "name_de": "Mango Maki",
+          "name_en": "Mango Maki",
+          "desc_de": "Mango",
+          "desc_en": "Mango",
+          "allergens": [],
+          "price": "4,50 €"
+        },
+        {
+          "code": "M5",
+          "name_de": "Sake Maki",
+          "name_en": "Sake Maki",
+          "desc_de": "Lachs / Salmon",
+          "desc_en": "Lachs / Salmon",
+          "allergens": [
+            "D"
+          ],
+          "price": "5,20 €"
+        },
+        {
+          "code": "M6",
+          "name_de": "Tekka Maki",
+          "name_en": "Tekka Maki",
+          "desc_de": "Thunfisch / Tuna",
+          "desc_en": "Thunfisch / Tuna",
+          "allergens": [
+            "D"
+          ],
+          "price": "5,50 €"
+        },
+        {
+          "code": "M7",
+          "name_de": "Ebi Maki",
+          "name_en": "Ebi Maki",
+          "desc_de": "Garnelen / Shrimp",
+          "desc_en": "Garnelen / Shrimp",
+          "allergens": [
+            "B"
+          ],
+          "price": "5,50 €"
+        },
+        {
+          "code": "M8",
+          "name_de": "Ebi Avocado Maki",
+          "name_en": "Ebi Avocado Maki",
+          "desc_de": "Garnelen, Avocado / Shrimp, avocado",
+          "desc_en": "Garnelen, Avocado / Shrimp, avocado",
+          "allergens": [
+            "B"
+          ],
+          "price": "5,50 €"
+        },
+        {
+          "code": "M9",
+          "name_de": "Salmon Avocado Maki",
+          "name_en": "Salmon Avocado Maki",
+          "desc_de": "Lachs, Avocado / Salmon, avocado",
+          "desc_en": "Lachs, Avocado / Salmon, avocado",
+          "allergens": [
+            "D"
+          ],
+          "price": "5,50 €"
+        },
+        {
+          "code": "M10",
+          "name_de": "Salmon Skin Maki",
+          "name_en": "Salmon Skin Maki",
+          "desc_de": "Räucherlachs, Gurke / Smoked salmon, cucumber",
+          "desc_en": "Räucherlachs, Gurke / Smoked salmon, cucumber",
+          "allergens": [
+            "A",
+            "D",
+            "F"
+          ],
+          "price": "5,90 €"
+        },
+        {
+          "code": "M11",
+          "name_de": "Unagi Maki",
+          "name_en": "Unagi Maki",
+          "desc_de": "Aal, Unagi-Sauce / Eel, unagi sauce",
+          "desc_en": "Aal, Unagi-Sauce / Eel, unagi sauce",
+          "allergens": [
+            "A",
+            "D",
+            "F"
+          ],
+          "price": "6,50 €"
+        },
+        {
+          "code": "M12",
+          "name_de": "Ebi Tempura Maki",
+          "name_en": "Ebi Tempura Maki",
+          "desc_de": "Garnelen Tempura / Shrimp tempura",
+          "desc_en": "Garnelen Tempura / Shrimp tempura",
+          "allergens": [
+            "A",
+            "B",
+            "C"
+          ],
+          "price": "6,50 €"
+        }
+      ]
+    },
+    {
+      "id": "special_rolls",
+      "name_de": "Inside-Out & Special Rolls (8 Stk.)",
+      "name_en": "Inside-Out & Special Rolls (8 pcs)",
+      "items": [
+        {
+          "code": "R1",
+          "name_de": "Veggie Inside-Out",
+          "name_en": "Veggie Inside-Out",
+          "desc_de": "Avocado, Gurke, Mango, Sesam",
+          "desc_en": "Avocado, Gurke, Mango, Sesam",
+          "allergens": [
+            "K"
+          ],
+          "price": "9,90 €"
+        },
+        {
+          "code": "R2",
+          "name_de": "Kanihama Boko",
+          "name_en": "Kanihama Boko",
+          "desc_de": "Surimi, Avocado, Gurke, Tobiko",
+          "desc_en": "Surimi, Avocado, Gurke, Tobiko",
+          "allergens": [
+            "A",
+            "C",
+            "D"
+          ],
+          "price": "10,50 €"
+        },
+        {
+          "code": "R3",
+          "name_de": "Sake",
+          "name_en": "Sake",
+          "desc_de": "Lachs, Avocado, Tobiko, Frischkäse",
+          "desc_en": "Lachs, Avocado, Tobiko, Frischkäse",
+          "allergens": [
+            "D",
+            "G"
+          ],
+          "price": "11,50 €"
+        },
+        {
+          "code": "R4",
+          "name_de": "Ebi Tempura",
+          "name_en": "Ebi Tempura",
+          "desc_de": "Garnelen gebacken, Avocado, Sesam",
+          "desc_en": "Garnelen gebacken, Avocado, Sesam",
+          "allergens": [
+            "A",
+            "B",
+            "C",
+            "K"
+          ],
+          "price": "11,90 €"
+        },
+        {
+          "code": "R5",
+          "name_de": "Maguro",
+          "name_en": "Maguro",
+          "desc_de": "Thunfisch, Avocado, Tobiko",
+          "desc_en": "Thunfisch, Avocado, Tobiko",
+          "allergens": [
+            "D"
+          ],
+          "price": "11,90 €"
+        },
+        {
+          "code": "R6",
+          "name_de": "Ebi",
+          "name_en": "Ebi",
+          "desc_de": "Gekochte Garnelen, Avocado, Tobiko",
+          "desc_en": "Gekochte Garnelen, Avocado, Tobiko",
+          "allergens": [
+            "B",
+            "D"
+          ],
+          "price": "11,50 €"
+        },
+        {
+          "code": "R7",
+          "name_de": "Unagi Rolls",
+          "name_en": "Unagi Rolls",
+          "desc_de": "Aal, Avocado, Gurke, Unagi-Sauce, Sesam",
+          "desc_en": "Aal, Avocado, Gurke, Unagi-Sauce, Sesam",
+          "allergens": [
+            "A",
+            "D",
+            "F",
+            "K"
+          ],
+          "price": "12,50 €"
+        },
+        {
+          "code": "R8",
+          "name_de": "Chicken Rolls",
+          "name_en": "Chicken Rolls",
+          "desc_de": "Gebackenes Hähnchen, Avocado, Gurke, Frischkäse, Unagi-Sauce, Sesam",
+          "desc_en": "Gebackenes Hähnchen, Avocado, Gurke, Frischkäse, Unagi-Sauce, Sesam",
+          "allergens": [
+            "A",
+            "C",
+            "F",
+            "G",
+            "K"
+          ],
+          "price": "11,90 €"
+        },
+        {
+          "code": "R9",
+          "name_de": "Crispy Tiger",
+          "name_en": "Crispy Tiger",
+          "desc_de": "Frittierte panierte Garnelen, Avocado, Frischkäse, mit Lachs oder Thunfisch umwickelt",
+          "desc_en": "Frittierte panierte Garnelen, Avocado, Frischkäse, mit Lachs oder Thunfisch umwickelt",
+          "allergens": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "G"
+          ],
+          "price": "14,90 €"
+        },
+        {
+          "code": "R10",
+          "name_de": "California Inside-",
+          "name_en": "California Inside-",
+          "desc_de": "Surimi, Avocado, Gurke, Sesam Out",
+          "desc_en": "Surimi, Avocado, Gurke, Sesam Out",
+          "allergens": [
+            "A",
+            "C",
+            "D",
+            "K"
+          ],
+          "price": "9,90 €"
+        },
+        {
+          "code": "R11",
+          "name_de": "Orchidee Roll",
+          "name_en": "Orchidee Roll",
+          "desc_de": "Avocado, Gurke, Mango, Frischkäse, mit Avocado umwickelt",
+          "desc_en": "Avocado, Gurke, Mango, Frischkäse, mit Avocado umwickelt",
+          "allergens": [
+            "G"
+          ],
+          "price": "13,50 €"
+        },
+        {
+          "code": "R12",
+          "name_de": "Tiger Roll",
+          "name_en": "Tiger Roll",
+          "desc_de": "Ebi Tempura, Mango, Avocado, Frischkäse, mit Lachs umwickelt",
+          "desc_en": "Ebi Tempura, Mango, Avocado, Frischkäse, mit Lachs umwickelt",
+          "allergens": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "G"
+          ],
+          "price": "14,90 €"
+        },
+        {
+          "code": "R13",
+          "name_de": "Dragon Roll",
+          "name_en": "Dragon Roll",
+          "desc_de": "Ebi Tempura, Avocado, Frischkäse, mit Thunfisch umwickelt",
+          "desc_en": "Ebi Tempura, Avocado, Frischkäse, mit Thunfisch umwickelt",
+          "allergens": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "G"
+          ],
+          "price": "14,90 €"
+        },
+        {
+          "code": "R14",
+          "name_de": "Green Roll",
+          "name_en": "Green Roll",
+          "desc_de": "Lachs, Gurke, Avocado, Frischkäse, mit Avocado umwickelt",
+          "desc_en": "Lachs, Gurke, Avocado, Frischkäse, mit Avocado umwickelt",
+          "allergens": [
+            "D",
+            "G"
+          ],
+          "price": "13,50 €"
+        },
+        {
+          "code": "R15",
+          "name_de": "Baby Roll",
+          "name_en": "Baby Roll",
+          "desc_de": "Lachs, Avocado, Frischkäse, mit flambiertem Lachs umwickelt",
+          "desc_en": "Lachs, Avocado, Frischkäse, mit flambiertem Lachs umwickelt",
+          "allergens": [
+            "D",
+            "G"
+          ],
+          "price": "14,50 €"
+        },
+        {
+          "code": "R16",
+          "name_de": "Black Rolls",
+          "name_en": "Black Rolls",
+          "desc_de": "Gekochte Garnele, Mango, Avocado, Frischkäse, mit Aal umwickelt",
+          "desc_en": "Gekochte Garnele, Mango, Avocado, Frischkäse, mit Aal umwickelt",
+          "allergens": [
+            "A",
+            "B",
+            "D",
+            "F",
+            "G"
+          ],
+          "price": "14,90 €"
+        },
+        {
+          "code": "R17",
+          "name_de": "JURY Roll",
+          "name_en": "JURY Roll",
+          "desc_de": "Lachs, Thunfisch, Garnele, Surimi, Frischkäse, mit Garnelen & Tobiko umwickelt",
+          "desc_en": "Lachs, Thunfisch, Garnele, Surimi, Frischkäse, mit Garnelen & Tobiko umwickelt",
+          "allergens": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "G"
+          ],
+          "price": "15,90 €"
+        }
+      ]
+    },
+    {
+      "id": "futomaki",
+      "name_de": "Futomaki (6 Stk.)",
+      "name_en": "Futomaki (6 pcs)",
+      "items": [
+        {
+          "code": "B1",
+          "name_de": "Futo 1",
+          "name_en": "Futo 1",
+          "desc_de": "Lachs, Tobiko, Gurke, Avocado, Frischkäse",
+          "desc_en": "Lachs, Tobiko, Gurke, Avocado, Frischkäse",
+          "allergens": [
+            "D",
+            "G"
+          ],
+          "price": "11,50 €"
+        },
+        {
+          "code": "B2",
+          "name_de": "Futo 2",
+          "name_en": "Futo 2",
+          "desc_de": "Thunfisch, Tobiko, Gurke, Avocado, Frischkäse",
+          "desc_en": "Thunfisch, Tobiko, Gurke, Avocado, Frischkäse",
+          "allergens": [
+            "D",
+            "G"
+          ],
+          "price": "11,90 €"
+        },
+        {
+          "code": "B3",
+          "name_de": "Futo 3",
+          "name_en": "Futo 3",
+          "desc_de": "Garnelen, Tobiko, Avocado, Gurke, Frischkäse",
+          "desc_en": "Garnelen, Tobiko, Avocado, Gurke, Frischkäse",
+          "allergens": [
+            "B",
+            "D",
+            "G"
+          ],
+          "price": "11,50 €"
+        },
+        {
+          "code": "B4",
+          "name_de": "Futo 4",
+          "name_en": "Futo 4",
+          "desc_de": "Frittiertes Hähnchen, Gurke, Avocado, Frischkäse, Sesam",
+          "desc_en": "Frittiertes Hähnchen, Gurke, Avocado, Frischkäse, Sesam",
+          "allergens": [
+            "A",
+            "C",
+            "G",
+            "K"
+          ],
+          "price": "11,50 €"
+        },
+        {
+          "code": "B5",
+          "name_de": "Futo 5",
+          "name_en": "Futo 5",
+          "desc_de": "Frittierte Garnelen, Gurke, Avocado, Frischkäse, Sesam",
+          "desc_en": "Frittierte Garnelen, Gurke, Avocado, Frischkäse, Sesam",
+          "allergens": [
+            "A",
+            "B",
+            "C",
+            "G",
+            "K"
+          ],
+          "price": "11,90 €"
+        }
+      ]
+    },
+    {
+      "id": "fried_rolls",
+      "name_de": "Fried Rolls (6 Stk.)",
+      "name_en": "Fried Rolls (6 pcs)",
+      "items": [
+        {
+          "code": "F1",
+          "name_de": "Roll 1",
+          "name_en": "Roll 1",
+          "desc_de": "Panierte Rolle mit Lachs, Avocado, Gurke, Frischkäse",
+          "desc_en": "Panierte Rolle mit Lachs, Avocado, Gurke, Frischkäse",
+          "allergens": [
+            "A",
+            "C",
+            "D",
+            "G"
+          ],
+          "price": "12,50 €"
+        },
+        {
+          "code": "F2",
+          "name_de": "Roll 2",
+          "name_en": "Roll 2",
+          "desc_de": "Panierte Rolle mit Thunfisch, Gurke, Avocado, Frischkäse",
+          "desc_en": "Panierte Rolle mit Thunfisch, Gurke, Avocado, Frischkäse",
+          "allergens": [
+            "A",
+            "C",
+            "D",
+            "G"
+          ],
+          "price": "12,90 €"
+        },
+        {
+          "code": "F3",
+          "name_de": "Roll 3",
+          "name_en": "Roll 3",
+          "desc_de": "Panierte Rolle mit Garnelen, Surimi, Thunfisch, Gurke, Frischkäse",
+          "desc_en": "Panierte Rolle mit Garnelen, Surimi, Thunfisch, Gurke, Frischkäse",
+          "allergens": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "G"
+          ],
+          "price": "12,90 €"
+        },
+        {
+          "code": "F4",
+          "name_de": "Vegetarian-Roll",
+          "name_en": "Vegetarian-Roll",
+          "desc_de": "Gurke, Mango, Avocado",
+          "desc_en": "Gurke, Mango, Avocado",
+          "allergens": [
+            "A",
+            "C"
+          ],
+          "price": "10,90 €"
+        },
+        {
+          "code": "F5",
+          "name_de": "Chicken-Roll",
+          "name_en": "Chicken-Roll",
+          "desc_de": "Panierte Rolle mit Hähnchen, Gurke, Frischkäse",
+          "desc_en": "Panierte Rolle mit Hähnchen, Gurke, Frischkäse",
+          "allergens": [
+            "A",
+            "C",
+            "G"
+          ],
+          "price": "11,90 €"
+        },
+        {
+          "code": "F6",
+          "name_de": "Mini-Sake · 8 Stk.",
+          "name_en": "Mini-Sake · 8 Stk.",
+          "desc_de": "Klein panierte Rolle mit Lachs",
+          "desc_en": "Klein panierte Rolle mit Lachs",
+          "allergens": [
+            "A",
+            "C",
+            "D"
+          ],
+          "price": "9,90 €"
+        },
+        {
+          "code": "F7",
+          "name_de": "Mini-Maguro · 8 Stk.",
+          "name_en": "Mini-Maguro · 8 Stk.",
+          "desc_de": "Klein panierte Rolle mit Thunfisch",
+          "desc_en": "Klein panierte Rolle mit Thunfisch",
+          "allergens": [
+            "A",
+            "C",
+            "D"
+          ],
+          "price": "9,90 €"
+        }
+      ]
+    },
+    {
+      "id": "nigiri",
+      "name_de": "Nigiri (2 Stk.)",
+      "name_en": "Nigiri (2 pcs)",
+      "items": [
+        {
+          "code": "N1",
+          "name_de": "Flambierter Lachs",
+          "name_en": "Flambierter Lachs",
+          "desc_de": "Flambierter Lachs / Flambéed salmon",
+          "desc_en": "Flambierter Lachs / Flambéed salmon",
+          "allergens": [
+            "A",
+            "C",
+            "D",
+            "F"
+          ],
+          "price": "5,20 €"
+        },
+        {
+          "code": "N2",
+          "name_de": "Avocado",
+          "name_en": "Avocado",
+          "desc_de": "Avocado",
+          "desc_en": "Avocado",
+          "allergens": [],
+          "price": "4,20 €"
+        },
+        {
+          "code": "N3",
+          "name_de": "Surimi",
+          "name_en": "Surimi",
+          "desc_de": "Surimi",
+          "desc_en": "Surimi",
+          "allergens": [
+            "A",
+            "C",
+            "D"
+          ],
+          "price": "4,20 €"
+        },
+        {
+          "code": "N4",
+          "name_de": "Ebi",
+          "name_en": "Ebi",
+          "desc_de": "Gekochte Garnelen / Cooked shrimp",
+          "desc_en": "Gekochte Garnelen / Cooked shrimp",
+          "allergens": [
+            "B"
+          ],
+          "price": "5,50 €"
+        },
+        {
+          "code": "N5",
+          "name_de": "Maguro",
+          "name_en": "Maguro",
+          "desc_de": "Thunfisch / Tuna",
+          "desc_en": "Thunfisch / Tuna",
+          "allergens": [
+            "D"
+          ],
+          "price": "5,50 €"
+        },
+        {
+          "code": "N6",
+          "name_de": "Sake",
+          "name_en": "Sake",
+          "desc_de": "Lachs / Salmon",
+          "desc_en": "Lachs / Salmon",
+          "allergens": [
+            "D"
+          ],
+          "price": "5,20 €"
+        },
+        {
+          "code": "N7",
+          "name_de": "Unagi",
+          "name_en": "Unagi",
+          "desc_de": "Aal / Eel",
+          "desc_en": "Aal / Eel",
+          "allergens": [
+            "A",
+            "D",
+            "F"
+          ],
+          "price": "5,90 €"
+        }
+      ]
+    },
+    {
+      "id": "sashimi",
+      "name_de": "Sashimi",
+      "name_en": "Sashimi",
+      "items": [
+        {
+          "code": "S1",
+          "name_de": "Sashimi Sake · 10 Stk.",
+          "name_en": "Sashimi Sake · 10 Stk.",
+          "desc_de": "Lachs / Salmon",
+          "desc_en": "Lachs / Salmon",
+          "allergens": [
+            "D"
+          ],
+          "price": "21,00 €"
+        },
+        {
+          "code": "S2",
+          "name_de": "Sashimi Maguro · 10 Stk.",
+          "name_en": "Sashimi Maguro · 10 Stk.",
+          "desc_de": "Thunfisch / Tuna",
+          "desc_en": "Thunfisch / Tuna",
+          "allergens": [
+            "D"
+          ],
+          "price": "22,00 €"
+        },
+        {
+          "code": "S3",
+          "name_de": "Sashimi Sake-Maguro · 10 Stk.",
+          "name_en": "Sashimi Sake-Maguro · 10 Stk.",
+          "desc_de": "Lachs & Thunfisch / Salmon & tuna",
+          "desc_en": "Lachs & Thunfisch / Salmon & tuna",
+          "allergens": [
+            "D"
+          ],
+          "price": "22,00 €"
+        },
+        {
+          "code": "S4",
+          "name_de": "Sashimi Sake oder Maguro · 5 Stk.",
+          "name_en": "Sashimi Sake oder Maguro · 5 Stk.",
+          "desc_de": "Lachs oder Thunfisch / Salmon or tuna DE Erfrischend & hausgemacht EN Refreshing & homemade Ingwertee honey Kennzeichnung gemäß LMIV (EU) Nr. 1169/2011 & LMIDV C Eier D Fische Eggs Fish Peanuts Soybeans I Sellerie J Senf Celery Mustard Lupin Molluscs Contains quinine Zusatzstoffen wenden Sie sich bitte an unser Servicepersonal — wir beraten Sie gerne. D E : A l l e P r e i s e i n k l . M w S t . · E N : A l l p r i c e s i n c l . V A T.",
+          "desc_en": "Lachs oder Thunfisch / Salmon or tuna DE Erfrischend & hausgemacht EN Refreshing & homemade Ingwertee honey Kennzeichnung gemäß LMIV (EU) Nr. 1169/2011 & LMIDV C Eier D Fische Eggs Fish Peanuts Soybeans I Sellerie J Senf Celery Mustard Lupin Molluscs Contains quinine Zusatzstoffen wenden Sie sich bitte an unser Servicepersonal — wir beraten Sie gerne. D E : A l l e P r e i s e i n k l . M w S t . · E N : A l l p r i c e s i n c l . V A T.",
+          "allergens": [
+            "D"
+          ],
+          "price": "12,90 €"
+        }
+      ]
+    },
+    {
+      "id": "sushi_menues",
+      "name_de": "Sushi Menüs",
+      "name_en": "Sushi Sets",
+      "items": [
+        {
+          "code": "Menü 1",
+          "name_de": "Vegan",
+          "name_en": "Vegan",
+          "desc_de": "3 Maki: Avocado, Gurke, Mango (24 Stk.)",
+          "desc_en": "3 Maki: Avocado, Gurke, Mango (24 Stk.)",
+          "allergens": [],
+          "price": "14,90 €"
+        },
+        {
+          "code": "Menü 2",
+          "name_de": "Vegan Plus",
+          "name_en": "Vegan Plus",
+          "desc_de": "1 Inside-Out (8 Stk.) · 2 Nigiri Avocado · 1 Maki Gurke",
+          "desc_en": "1 Inside-Out (8 Stk.) · 2 Nigiri Avocado · 1 Maki Gurke",
+          "allergens": [
+            "F",
+            "K"
+          ],
+          "price": "18,90 €"
+        },
+        {
+          "code": "Menü 3",
+          "name_de": "Sake",
+          "name_en": "Sake",
+          "desc_de": "1 Inside-Out Lachs (8 Stk.) · 1 Maki Lachs (8 Stk.) · 2 Nigiri Lachs · 1 Fried Roll Lachs (6 Stk.)",
+          "desc_en": "1 Inside-Out Lachs (8 Stk.) · 1 Maki Lachs (8 Stk.) · 2 Nigiri Lachs · 1 Fried Roll Lachs (6 Stk.)",
+          "allergens": [
+            "A",
+            "C",
+            "D",
+            "G"
+          ],
+          "price": "31,90 €"
+        },
+        {
+          "code": "Menü 4",
+          "name_de": "Mixed Nigiri",
+          "name_en": "Mixed Nigiri",
+          "desc_de": "4 Nigiri: Thunfisch, Seeaal, Garnele, Lachs · 1 Fried Roll Thunfisch (6 Stk.)",
+          "desc_en": "4 Nigiri: Thunfisch, Seeaal, Garnele, Lachs · 1 Fried Roll Thunfisch (6 Stk.)",
+          "allergens": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "F",
+            "G"
+          ],
+          "price": "22,90 €"
+        },
+        {
+          "code": "Menü 5",
+          "name_de": "Tuna",
+          "name_en": "Tuna",
+          "desc_de": "4 Nigiri: Seeaal, Garnele, Lachs, Thunfisch · 1 Mini-Sake (8 Stk.)",
+          "desc_en": "4 Nigiri: Seeaal, Garnele, Lachs, Thunfisch · 1 Mini-Sake (8 Stk.)",
+          "allergens": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "F"
+          ],
+          "price": "20,90 €"
+        },
+        {
+          "code": "Menü 6",
+          "name_de": "Deluxe Solo",
+          "name_en": "Deluxe Solo",
+          "desc_de": "1 Inside-Out Lachs (8 Stk.) · 2 Nigiri · Seetang-Salat · 1 Fried-Roll Futo (Lachs) · 1 California Inside-Out (8 Stk.)",
+          "desc_en": "1 Inside-Out Lachs (8 Stk.) · 2 Nigiri · Seetang-Salat · 1 Fried-Roll Futo (Lachs) · 1 California Inside-Out (8 Stk.)",
+          "allergens": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "F",
+            "G",
+            "K"
+          ],
+          "price": "41,90 €"
+        },
+        {
+          "code": "Menü 7",
+          "name_de": "Für 2 Personen",
+          "name_en": "Für 2 Personen",
+          "desc_de": "2 Maki (16 Stk., Lachs + Thunfisch) · 1 California Inside-Out (8 Stk.) · 4 Nigiri (Lachs, Thunfisch, Garnele, Seeaal) · 2 Sashimi Lachs · 1 Fried-Roll Lachs (6 Stk.)",
+          "desc_en": "2 Maki (16 Stk., Lachs + Thunfisch) · 1 California Inside-Out (8 Stk.) · 4 Nigiri (Lachs, Thunfisch, Garnele, Seeaal) · 2 Sashimi Lachs · 1 Fried-Roll Lachs (6 Stk.)",
+          "allergens": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "F",
+            "G"
+          ],
+          "price": "56,90 €"
+        },
+        {
+          "code": "Menü 8",
+          "name_de": "Für 3 Personen",
+          "name_en": "Für 3 Personen",
+          "desc_de": "3 Maki (24 Stk., Lachs, Thunfisch, Avocado) · 1 California Inside-Out (8 Stk.) · 1 Inside-Out Lachs (8 Stk.) · 1 Fried-Roll Futo (Lachs, 6 Stk.) · 6 Nigiri · 6 Sashimi (3 Lachs, 3 Thunfisch) · 1 Special Roll · Seetang-Salat — gesamt ca. 65 Stk.",
+          "desc_en": "3 Maki (24 Stk., Lachs, Thunfisch, Avocado) · 1 California Inside-Out (8 Stk.) · 1 Inside-Out Lachs (8 Stk.) · 1 Fried-Roll Futo (Lachs, 6 Stk.) · 6 Nigiri · 6 Sashimi (3 Lachs, 3 Thunfisch) · 1 Special Roll · Seetang-Salat — gesamt ca. 65 Stk.",
+          "allergens": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "F",
+            "G",
+            "K"
+          ],
+          "price": "79,90 €"
+        },
+        {
+          "code": "Menü 9",
+          "name_de": "Für 4 Personen · Komplett",
+          "name_en": "Für 4 Personen · Komplett",
+          "desc_de": "10 Nigiri (je 2×: Flambierter Lachs, Avocado, Surimi, Ebi, Maguro) · 2 Inside-Out (California + Lachs, 16 Stk.) · 1 Special Roll (JURY Roll) · 1 Futo Maki (Lachs, 6 Stk.) · 2 Fried-Roll (Lachs, Thunfisch, 12 Stk.) · 3 Maki (Lachs, Thunfisch, Avocado, 24 Stk.) · 8 Sashimi (4 Lachs, 4 Thunfisch) · 2 Seetang-Salat — gesamt ca. 85 Stk.",
+          "desc_en": "10 Nigiri (je 2×: Flambierter Lachs, Avocado, Surimi, Ebi, Maguro) · 2 Inside-Out (California + Lachs, 16 Stk.) · 1 Special Roll (JURY Roll) · 1 Futo Maki (Lachs, 6 Stk.) · 2 Fried-Roll (Lachs, Thunfisch, 12 Stk.) · 3 Maki (Lachs, Thunfisch, Avocado, 24 Stk.) · 8 Sashimi (4 Lachs, 4 Thunfisch) · 2 Seetang-Salat — gesamt ca. 85 Stk.",
+          "allergens": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "F",
+            "G",
+            "K"
+          ],
+          "price": "104,90 €"
+        }
+      ]
+    },
+    {
+      "id": "softdrinks",
+      "name_de": "Alkoholfrei · Soft Drinks",
+      "name_en": "Soft Drinks",
+      "items": [
+        {
+          "code": "135",
+          "name_de": "Coca-Cola",
+          "name_en": "Coca-Cola",
+          "variants": [
+            {
+              "label_de": "0,3 L",
+              "label_en": "0.3 L",
+              "allergens": [],
+              "price": "3,50 €"
+            },
+            {
+              "label_de": "0,4 L",
+              "label_en": "0.4 L",
+              "allergens": [],
+              "price": "4,20 €"
+            }
+          ],
+          "allergens": []
+        },
+        {
+          "code": "136",
+          "name_de": "Coca-Cola Light",
+          "name_en": "Coca-Cola Light",
+          "variants": [
+            {
+              "label_de": "0,3 L",
+              "label_en": "0.3 L",
+              "allergens": [],
+              "price": "3,50 €"
+            },
+            {
+              "label_de": "0,4 L",
+              "label_en": "0.4 L",
+              "allergens": [],
+              "price": "4,20 €"
+            }
+          ],
+          "allergens": []
+        },
+        {
+          "code": "137",
+          "name_de": "Fanta",
+          "name_en": "Fanta",
+          "variants": [
+            {
+              "label_de": "0,3 L",
+              "label_en": "0.3 L",
+              "allergens": [],
+              "price": "3,50 €"
+            },
+            {
+              "label_de": "0,4 L",
+              "label_en": "0.4 L",
+              "allergens": [],
+              "price": "4,20 €"
+            }
+          ],
+          "allergens": []
+        },
+        {
+          "code": "138",
+          "name_de": "Sprite",
+          "name_en": "Sprite",
+          "variants": [
+            {
+              "label_de": "0,3 L",
+              "label_en": "0.3 L",
+              "allergens": [],
+              "price": "3,50 €"
+            },
+            {
+              "label_de": "0,4 L",
+              "label_en": "0.4 L",
+              "allergens": [],
+              "price": "4,20 €"
+            }
+          ],
+          "allergens": []
+        },
+        {
+          "code": "139",
+          "name_de": "Spezi",
+          "name_en": "Spezi",
+          "variants": [
+            {
+              "label_de": "0,3 L",
+              "label_en": "0.3 L",
+              "allergens": [],
+              "price": "3,50 €"
+            },
+            {
+              "label_de": "0,4 L",
+              "label_en": "0.4 L",
+              "allergens": [],
+              "price": "4,20 €"
+            }
+          ],
+          "allergens": []
+        },
+        {
+          "code": "140",
+          "name_de": "Tonic Water",
+          "name_en": "Tonic Water",
+          "variants": [
+            {
+              "label_de": "0,3 L",
+              "label_en": "0.3 L",
+              "allergens": [],
+              "price": "3,50 €"
+            },
+            {
+              "label_de": "0,4 L",
+              "label_en": "0.4 L",
+              "allergens": [],
+              "price": "4,20 €"
+            }
+          ],
+          "allergens": []
+        },
+        {
+          "code": "141",
+          "name_de": "Ginger Ale",
+          "name_en": "Ginger Ale",
+          "variants": [
+            {
+              "label_de": "0,3 L",
+              "label_en": "0.3 L",
+              "allergens": [],
+              "price": "3,50 €"
+            },
+            {
+              "label_de": "0,4 L",
+              "label_en": "0.4 L",
+              "allergens": [],
+              "price": "4,20 €"
+            }
+          ],
+          "allergens": []
+        },
+        {
+          "code": "142",
+          "name_de": "Wasser still/spritzig",
+          "name_en": "Wasser still/spritzig",
+          "variants": [
+            {
+              "label_de": "0,3 L",
+              "label_en": "0.3 L",
+              "allergens": [],
+              "price": "3,50 €"
+            },
+            {
+              "label_de": "0,4 L",
+              "label_en": "0.4 L",
+              "allergens": [],
+              "price": "4,20 €"
+            }
+          ],
+          "allergens": []
+        }
+      ]
+    },
+    {
+      "id": "saefte",
+      "name_de": "Säfte & Schorle",
+      "name_en": "Juices & Spritzers",
+      "items": [
+        {
+          "code": "143",
+          "name_de": "Apfelsaft",
+          "name_en": "Apfelsaft",
+          "variants": [
+            {
+              "label_de": "0,3 L",
+              "label_en": "0.3 L",
+              "allergens": [],
+              "price": "3,50 €"
+            },
+            {
+              "label_de": "0,4 L",
+              "label_en": "0.4 L",
+              "allergens": [],
+              "price": "4,20 €"
+            }
+          ],
+          "allergens": []
+        },
+        {
+          "code": "144",
+          "name_de": "Ananassaft",
+          "name_en": "Ananassaft",
+          "variants": [
+            {
+              "label_de": "0,3 L",
+              "label_en": "0.3 L",
+              "allergens": [],
+              "price": "3,50 €"
+            },
+            {
+              "label_de": "0,4 L",
+              "label_en": "0.4 L",
+              "allergens": [],
+              "price": "4,20 €"
+            }
+          ],
+          "allergens": []
+        },
+        {
+          "code": "145",
+          "name_de": "Maracujasaft",
+          "name_en": "Maracujasaft",
+          "variants": [
+            {
+              "label_de": "0,3 L",
+              "label_en": "0.3 L",
+              "allergens": [],
+              "price": "3,50 €"
+            },
+            {
+              "label_de": "0,4 L",
+              "label_en": "0.4 L",
+              "allergens": [],
+              "price": "4,20 €"
+            }
+          ],
+          "allergens": []
+        },
+        {
+          "code": "146",
+          "name_de": "Mangosaft",
+          "name_en": "Mangosaft",
+          "variants": [
+            {
+              "label_de": "0,3 L",
+              "label_en": "0.3 L",
+              "allergens": [],
+              "price": "3,50 €"
+            },
+            {
+              "label_de": "0,4 L",
+              "label_en": "0.4 L",
+              "allergens": [],
+              "price": "4,20 €"
+            }
+          ],
+          "allergens": []
+        },
+        {
+          "code": "147",
+          "name_de": "Orangensaft",
+          "name_en": "Orangensaft",
+          "variants": [
+            {
+              "label_de": "0,3 L",
+              "label_en": "0.3 L",
+              "allergens": [],
+              "price": "3,50 €"
+            },
+            {
+              "label_de": "0,4 L",
+              "label_en": "0.4 L",
+              "allergens": [],
+              "price": "4,20 €"
+            }
+          ],
+          "allergens": []
+        },
+        {
+          "code": "148",
+          "name_de": "KiBa",
+          "name_en": "KiBa",
+          "variants": [
+            {
+              "label_de": "0,3 L",
+              "label_en": "0.3 L",
+              "allergens": [],
+              "price": "3,50 €"
+            },
+            {
+              "label_de": "0,4 L",
+              "label_en": "0.4 L",
+              "allergens": [],
+              "price": "4,20 €"
+            }
+          ],
+          "allergens": []
+        },
+        {
+          "code": "149",
+          "name_de": "Litschisaft",
+          "name_en": "Litschisaft",
+          "variants": [
+            {
+              "label_de": "0,3 L",
+              "label_en": "0.3 L",
+              "allergens": [],
+              "price": "3,50 €"
+            },
+            {
+              "label_de": "0,4 L",
+              "label_en": "0.4 L",
+              "allergens": [],
+              "price": "4,20 €"
+            }
+          ],
+          "allergens": []
+        },
+        {
+          "code": "150",
+          "name_de": "Apfelschorle",
+          "name_en": "Apfelschorle",
+          "variants": [
+            {
+              "label_de": "0,3 L",
+              "label_en": "0.3 L",
+              "allergens": [],
+              "price": "3,50 €"
+            },
+            {
+              "label_de": "0,4 L",
+              "label_en": "0.4 L",
+              "allergens": [],
+              "price": "4,20 €"
+            }
+          ],
+          "allergens": []
+        },
+        {
+          "code": "151",
+          "name_de": "Ananasschorle",
+          "name_en": "Ananasschorle",
+          "variants": [
+            {
+              "label_de": "0,3 L",
+              "label_en": "0.3 L",
+              "allergens": [],
+              "price": "3,50 €"
+            },
+            {
+              "label_de": "0,4 L",
+              "label_en": "0.4 L",
+              "allergens": [],
+              "price": "4,20 €"
+            }
+          ],
+          "allergens": []
+        },
+        {
+          "code": "152",
+          "name_de": "Maracujaschorle",
+          "name_en": "Maracujaschorle",
+          "variants": [
+            {
+              "label_de": "0,3 L",
+              "label_en": "0.3 L",
+              "allergens": [],
+              "price": "3,50 €"
+            },
+            {
+              "label_de": "0,4 L",
+              "label_en": "0.4 L",
+              "allergens": [],
+              "price": "4,20 €"
+            }
+          ],
+          "allergens": []
+        },
+        {
+          "code": "153",
+          "name_de": "Mangoschorle",
+          "name_en": "Mangoschorle",
+          "variants": [
+            {
+              "label_de": "0,3 L",
+              "label_en": "0.3 L",
+              "allergens": [],
+              "price": "3,50 €"
+            },
+            {
+              "label_de": "0,4 L",
+              "label_en": "0.4 L",
+              "allergens": [],
+              "price": "4,20 €"
+            }
+          ],
+          "allergens": []
+        },
+        {
+          "code": "154",
+          "name_de": "Orangenschorle",
+          "name_en": "Orangenschorle",
+          "variants": [
+            {
+              "label_de": "0,3 L",
+              "label_en": "0.3 L",
+              "allergens": [],
+              "price": "3,50 €"
+            },
+            {
+              "label_de": "0,4 L",
+              "label_en": "0.4 L",
+              "allergens": [],
+              "price": "4,20 €"
+            }
+          ],
+          "allergens": []
+        },
+        {
+          "code": "155",
+          "name_de": "Litschischorle",
+          "name_en": "Litschischorle",
+          "variants": [
+            {
+              "label_de": "0,3 L",
+              "label_en": "0.3 L",
+              "allergens": [],
+              "price": "3,50 €"
+            },
+            {
+              "label_de": "0,4 L",
+              "label_en": "0.4 L",
+              "allergens": [],
+              "price": "4,20 €"
+            }
+          ],
+          "allergens": []
+        }
+      ]
+    },
+    {
+      "id": "lassi",
+      "name_de": "Lassi",
+      "name_en": "Yogurt Drinks",
+      "items": [
+        {
+          "code": "156",
+          "name_de": "Mango Lassi",
+          "name_en": "Mango Lassi",
+          "desc_de": "Mango, Kokos, Joghurt / Mango, coconut, yogurt",
+          "desc_en": "Mango, Kokos, Joghurt / Mango, coconut, yogurt",
+          "allergens": [
+            "G"
+          ],
+          "price": "7,50 €"
+        },
+        {
+          "code": "157",
+          "name_de": "Minz Lassi",
+          "name_en": "Minz Lassi",
+          "desc_de": "Minze, Zucker, Ananas, Joghurt / Mint, sugar, pineapple, yogurt",
+          "desc_en": "Minze, Zucker, Ananas, Joghurt / Mint, sugar, pineapple, yogurt",
+          "allergens": [
+            "G"
+          ],
+          "price": "6,50 €"
+        }
+      ]
+    },
+    {
+      "id": "limonade",
+      "name_de": "Limonade",
+      "name_en": "Lemonade",
+      "items": [
+        {
+          "code": "158",
+          "name_de": "Berry Dreams",
+          "name_en": "Berry Dreams",
+          "desc_de": "Beerenmix, Limette, Traubensaft, Erdbeersirup, Soda",
+          "desc_en": "Beerenmix, Limette, Traubensaft, Erdbeersirup, Soda",
+          "allergens": [],
+          "price": "6,90 €"
+        },
+        {
+          "code": "159",
+          "name_de": "Limetten Butterfly",
+          "name_en": "Limetten Butterfly",
+          "desc_de": "Limette, brauner Zucker, Schmetterlingserbse, Soda",
+          "desc_en": "Limette, brauner Zucker, Schmetterlingserbse, Soda",
+          "allergens": [],
+          "price": "6,90 €"
+        },
+        {
+          "code": "160",
+          "name_de": "Ipanema",
+          "name_en": "Ipanema",
+          "desc_de": "Limette, brauner Zucker, Minze, Maracujasaft, Soda",
+          "desc_en": "Limette, brauner Zucker, Minze, Maracujasaft, Soda",
+          "allergens": [],
+          "price": "6,90 €"
+        },
+        {
+          "code": "161",
+          "name_de": "Rose Lady",
+          "name_en": "Rose Lady",
+          "desc_de": "Himbeere, Litschisaft, Limette, Himbeersirup, Soda",
+          "desc_en": "Himbeere, Litschisaft, Limette, Himbeersirup, Soda",
+          "allergens": [],
+          "price": "6,90 €"
+        },
+        {
+          "code": "162",
+          "name_de": "Pink Ipanema",
+          "name_en": "Pink Ipanema",
+          "desc_de": "Limette, Erdbeersirup, Guavensaft, Soda",
+          "desc_en": "Limette, Erdbeersirup, Guavensaft, Soda",
+          "allergens": [],
+          "price": "6,90 €"
+        },
+        {
+          "code": "163",
+          "name_de": "Mango Green Tea",
+          "name_en": "Mango Green Tea",
+          "desc_de": "Mangosirup, Mango, Grüntee, Soda",
+          "desc_en": "Mangosirup, Mango, Grüntee, Soda",
+          "allergens": [],
+          "price": "6,90 €"
+        },
+        {
+          "code": "164",
+          "name_de": "Peach Eistee",
+          "name_en": "Peach Eistee",
+          "desc_de": "Pfirsichsirup, Pfirsichtee, Zitronengras, Orangensaft, Chiasamen",
+          "desc_en": "Pfirsichsirup, Pfirsichtee, Zitronengras, Orangensaft, Chiasamen",
+          "allergens": [],
+          "price": "6,90 €"
+        }
+      ]
+    },
+    {
+      "id": "cocktails_af",
+      "name_de": "Cocktails ohne Alkohol",
+      "name_en": "Non-Alcoholic Cocktails",
+      "items": [
+        {
+          "code": "165",
+          "name_de": "Blue Lagoon",
+          "name_en": "Blue Lagoon",
+          "desc_de": "Blue Curaçao, Limette, Ananassaft, Sprite",
+          "desc_en": "Blue Curaçao, Limette, Ananassaft, Sprite",
+          "allergens": [],
+          "price": "7,20 €"
+        },
+        {
+          "code": "166",
+          "name_de": "Virgin Sunrise",
+          "name_en": "Virgin Sunrise",
+          "desc_de": "Ananassaft, Orangensaft, Grenadine, Limette",
+          "desc_en": "Ananassaft, Orangensaft, Grenadine, Limette",
+          "allergens": [],
+          "price": "7,20 €"
+        },
+        {
+          "code": "167",
+          "name_de": "Love Potion",
+          "name_en": "Love Potion",
+          "desc_de": "Kirschsaft, Sprite, Glitzer (1)",
+          "desc_en": "Kirschsaft, Sprite, Glitzer (1)",
+          "allergens": [],
+          "price": "7,20 €"
+        },
+        {
+          "code": "168",
+          "name_de": "Tropical Kiss",
+          "name_en": "Tropical Kiss",
+          "desc_de": "Erdbeersirup, Erdbeere, Orangensaft, Maracujasaft, Glitzer (1)",
+          "desc_en": "Erdbeersirup, Erdbeere, Orangensaft, Maracujasaft, Glitzer (1)",
+          "allergens": [],
+          "price": "7,20 €"
+        },
+        {
+          "code": "169",
+          "name_de": "Kokos Sunset",
+          "name_en": "Kokos Sunset",
+          "desc_de": "Grenadine, Kokossirup, Sahne, Ananassaft",
+          "desc_en": "Grenadine, Kokossirup, Sahne, Ananassaft",
+          "allergens": [
+            "G"
+          ],
+          "price": "7,20 €"
+        },
+        {
+          "code": "170",
+          "name_de": "Strawberry Dreams",
+          "name_en": "Strawberry Dreams",
+          "desc_de": "Rosensirup, Limette, Erdbeersaft, Maracujasaft",
+          "desc_en": "Rosensirup, Limette, Erdbeersaft, Maracujasaft",
+          "allergens": [],
+          "price": "7,20 €"
+        }
+      ]
+    },
+    {
+      "id": "cocktails_alk",
+      "name_de": "Cocktails mit Alkohol",
+      "name_en": "Alcoholic Cocktails",
+      "items": [
+        {
+          "code": "171",
+          "name_de": "Mai Tai",
+          "name_en": "Mai Tai",
+          "desc_de": "Weißer Rum, brauner Rum, Orangensaft, Triple Sec, Limette, Mandelsirup",
+          "desc_en": "Weißer Rum, brauner Rum, Orangensaft, Triple Sec, Limette, Mandelsirup",
+          "allergens": [
+            "H"
+          ],
+          "price": "8,20 €"
+        },
+        {
+          "code": "172",
+          "name_de": "Piña Colada",
+          "name_en": "Piña Colada",
+          "desc_de": "Rum, Ananassaft, Limette, Kokos",
+          "desc_en": "Rum, Ananassaft, Limette, Kokos",
+          "allergens": [],
+          "price": "7,50 €"
+        },
+        {
+          "code": "173",
+          "name_de": "Patrick Day",
+          "name_en": "Patrick Day",
+          "desc_de": "Wodka, Ananassaft, Orangensaft, Limette, Blue Curaçao",
+          "desc_en": "Wodka, Ananassaft, Orangensaft, Limette, Blue Curaçao",
+          "allergens": [],
+          "price": "7,50 €"
+        },
+        {
+          "code": "174",
+          "name_de": "Swimming Pool",
+          "name_en": "Swimming Pool",
+          "desc_de": "Rum, Sahne, Kokossirup, Ananassaft, Blue Curaçao",
+          "desc_en": "Rum, Sahne, Kokossirup, Ananassaft, Blue Curaçao",
+          "allergens": [
+            "G"
+          ],
+          "price": "7,50 €"
+        },
+        {
+          "code": "175",
+          "name_de": "Mojito",
+          "name_en": "Mojito",
+          "desc_de": "Rum, Limette, Minze, Soda, brauner Zucker",
+          "desc_en": "Rum, Limette, Minze, Soda, brauner Zucker",
+          "allergens": [],
+          "price": "7,50 €"
+        },
+        {
+          "code": "176",
+          "name_de": "Lam Bada",
+          "name_en": "Lam Bada",
+          "desc_de": "Wodka, Apricot Brandy, Blue Curaçao, Mangosaft, Ananassaft",
+          "desc_en": "Wodka, Apricot Brandy, Blue Curaçao, Mangosaft, Ananassaft",
+          "allergens": [
+            "L"
+          ],
+          "price": "7,90 €"
+        },
+        {
+          "code": "177",
+          "name_de": "Hanoi Mule",
+          "name_en": "Hanoi Mule",
+          "desc_de": "Reisschnaps, Ingwer, Soda",
+          "desc_en": "Reisschnaps, Ingwer, Soda",
+          "allergens": [],
+          "price": "7,50 €"
+        },
+        {
+          "code": "178",
+          "name_de": "Red Berry",
+          "name_en": "Red Berry",
+          "desc_de": "Wodka, Rosensirup, Limette, Erdbeersaft, Maracujasaft",
+          "desc_en": "Wodka, Rosensirup, Limette, Erdbeersaft, Maracujasaft",
+          "allergens": [],
+          "price": "7,50 €"
+        }
+      ]
+    },
+    {
+      "id": "spritz",
+      "name_de": "Spritz · Longdrinks",
+      "name_en": "Spritz · Longdrinks",
+      "items": [
+        {
+          "code": "179",
+          "name_de": "Aperol Spritz",
+          "name_en": "Aperol Spritz",
+          "desc_de": "Aperol, Soda, Prosecco, Orange",
+          "desc_en": "Aperol, Soda, Prosecco, Orange",
+          "allergens": [
+            "L"
+          ],
+          "price": "7,50 €"
+        },
+        {
+          "code": "180",
+          "name_de": "Himbeer Spritz",
+          "name_en": "Himbeer Spritz",
+          "desc_de": "Himbeere, Prosecco, Soda, Rum",
+          "desc_en": "Himbeere, Prosecco, Soda, Rum",
+          "allergens": [
+            "L"
+          ],
+          "price": "7,50 €"
+        },
+        {
+          "code": "181",
+          "name_de": "Lychee Spritz",
+          "name_en": "Lychee Spritz",
+          "desc_de": "Lychee-Likör, Lycheesaft, Prosecco",
+          "desc_en": "Lychee-Likör, Lycheesaft, Prosecco",
+          "allergens": [
+            "L"
+          ],
+          "price": "7,50 €"
+        },
+        {
+          "code": "182",
+          "name_de": "Lillet Wild Berry",
+          "name_en": "Lillet Wild Berry",
+          "desc_de": "Lillet, Wild Berry, frische Himbeeren",
+          "desc_en": "Lillet, Wild Berry, frische Himbeeren",
+          "allergens": [
+            "L"
+          ],
+          "price": "7,50 €"
+        },
+        {
+          "code": "183",
+          "name_de": "Gin Tonic",
+          "name_en": "Gin Tonic",
+          "desc_de": "Gin, Tonic Water (12)",
+          "desc_en": "Gin, Tonic Water (12)",
+          "allergens": [],
+          "price": "6,90 €"
+        },
+        {
+          "code": "184",
+          "name_de": "Whisky Cola",
+          "name_en": "Whisky Cola",
+          "desc_de": "Whisky, Cola (11)",
+          "desc_en": "Whisky, Cola (11)",
+          "allergens": [],
+          "price": "6,90 €"
+        },
+        {
+          "code": "185",
+          "name_de": "Cuba Libre",
+          "name_en": "Cuba Libre",
+          "desc_de": "Rum Havana, Cola (11)",
+          "desc_en": "Rum Havana, Cola (11)",
+          "allergens": [],
+          "price": "6,90 €"
+        }
+      ]
+    },
+    {
+      "id": "biere",
+      "name_de": "Biere",
+      "name_en": "Beer",
+      "items": [
+        {
+          "code": "186",
+          "name_de": "König Ludwig Hefe Dunkel (0,5 L)",
+          "name_en": "König Ludwig Hefe Dunkel (0,5 L)",
+          "desc_de": "",
+          "desc_en": "",
+          "allergens": [
+            "A"
+          ],
+          "price": "4,60 €"
+        },
+        {
+          "code": "187",
+          "name_de": "König Ludwig Hefeweizen (0,5 L)",
+          "name_en": "König Ludwig Hefeweizen (0,5 L)",
+          "desc_de": "",
+          "desc_en": "",
+          "allergens": [
+            "A"
+          ],
+          "price": "4,60 €"
+        },
+        {
+          "code": "188",
+          "name_de": "Alkoholfrei Hefeweizen (0,5 L)",
+          "name_en": "Alkoholfrei Hefeweizen (0,5 L)",
+          "desc_de": "",
+          "desc_en": "",
+          "allergens": [
+            "A"
+          ],
+          "price": "4,60 €"
+        },
+        {
+          "code": "189",
+          "name_de": "Alkoholfrei Pils (0,3 L)",
+          "name_en": "Alkoholfrei Pils (0,3 L)",
+          "desc_de": "",
+          "desc_en": "",
+          "allergens": [
+            "A"
+          ],
+          "price": "3,90 €"
+        },
+        {
+          "code": "190",
+          "name_de": "Radler · Shandy (0,3 / 0,5 L)",
+          "name_en": "Radler · Shandy (0,3 / 0,5 L)",
+          "desc_de": "",
+          "desc_en": "",
+          "allergens": [
+            "A"
+          ],
+          "variants": [
+            {
+              "label_de": "0,3 L",
+              "label_en": "0.3 L",
+              "allergens": [
+                "A"
+              ],
+              "price": "3,50 €"
+            },
+            {
+              "label_de": "0,5 L",
+              "label_en": "0.5 L",
+              "allergens": [
+                "A"
+              ],
+              "price": "4,90 €"
+            }
+          ]
+        },
+        {
+          "code": "191",
+          "name_de": "Warsteiner Fassbier (0,3 / 0,5 L)",
+          "name_en": "Warsteiner Fassbier (0,3 / 0,5 L)",
+          "desc_de": "",
+          "desc_en": "",
+          "allergens": [
+            "A"
+          ],
+          "variants": [
+            {
+              "label_de": "0,3 L",
+              "label_en": "0.3 L",
+              "allergens": [
+                "A"
+              ],
+              "price": "3,50 €"
+            },
+            {
+              "label_de": "0,5 L",
+              "label_en": "0.5 L",
+              "allergens": [
+                "A"
+              ],
+              "price": "4,90 €"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kaffee",
+      "name_de": "Kaffee",
+      "name_en": "Coffee",
+      "items": [
+        {
+          "code": "192",
+          "name_de": "Cafe Phin Den",
+          "name_en": "Cafe Phin Den",
+          "desc_de": "Vietnamesischer schwarzer Filterkaffee / Vietnamese black filter coffee",
+          "desc_en": "Vietnamesischer schwarzer Filterkaffee / Vietnamese black filter coffee",
+          "allergens": [],
+          "price": "5,00 €"
+        },
+        {
+          "code": "193",
+          "name_de": "Cafe Phin Nau",
+          "name_en": "Cafe Phin Nau",
+          "desc_de": "Filterkaffee mit Kondensmilch / Filter coffee with condensed milk",
+          "desc_en": "Filterkaffee mit Kondensmilch / Filter coffee with condensed milk",
+          "allergens": [
+            "G"
+          ],
+          "price": "5,50 €"
+        },
+        {
+          "code": "194",
+          "name_de": "Cafe Muoi",
+          "name_en": "Cafe Muoi",
+          "desc_de": "Salzkaffee mit Milch & Schlagsahne / Salt coffee with milk & cream",
+          "desc_en": "Salzkaffee mit Milch & Schlagsahne / Salt coffee with milk & cream",
+          "allergens": [
+            "G"
+          ],
+          "price": "6,50 €"
+        },
+        {
+          "code": "195",
+          "name_de": "Bac Xiu",
+          "name_en": "Bac Xiu",
+          "desc_de": "Kaffee mit Kondensmilch & Milch / Coffee with condensed milk & milk",
+          "desc_en": "Kaffee mit Kondensmilch & Milch / Coffee with condensed milk & milk",
+          "allergens": [
+            "G"
+          ],
+          "price": "6,50 €"
+        },
+        {
+          "code": "196",
+          "name_de": "Cafe Trung",
+          "name_en": "Cafe Trung",
+          "desc_de": "Eierkaffee mit Eigelb & Schlagsahne / Egg coffee with yolk & cream",
+          "desc_en": "Eierkaffee mit Eigelb & Schlagsahne / Egg coffee with yolk & cream",
+          "allergens": [
+            "C",
+            "G"
+          ],
+          "price": "7,00 €"
+        },
+        {
+          "code": "197",
+          "name_de": "Cafe Cot Dua",
+          "name_en": "Cafe Cot Dua",
+          "desc_de": "Kokosnusskaffee mit Crushed Ice / Coconut coffee with crushed ice",
+          "desc_en": "Kokosnusskaffee mit Crushed Ice / Coconut coffee with crushed ice",
+          "allergens": [
+            "G"
+          ],
+          "price": "6,50 €"
+        }
+      ]
+    },
+    {
+      "id": "tee",
+      "name_de": "Tee",
+      "name_en": "Tea",
+      "items": [
+        {
+          "code": "198",
+          "name_de": "Jasmintee",
+          "name_en": "Jasmintee",
+          "desc_de": "Jasmine tea",
+          "desc_en": "Jasmine tea",
+          "allergens": [],
+          "price": "5,00 €"
+        },
+        {
+          "code": "199",
+          "name_de": "Grüner Tee",
+          "name_en": "Grüner Tee",
+          "desc_de": "Green tea",
+          "desc_en": "Green tea",
+          "allergens": [],
+          "price": "5,00 €"
+        },
+        {
+          "code": "200",
+          "name_de": "Ingwertee",
+          "name_en": "Ingwertee",
+          "desc_de": "Frischer Ingwer mit Honig / Fresh ginger with honey",
+          "desc_en": "Frischer Ingwer mit Honig / Fresh ginger with honey",
+          "allergens": [],
+          "price": "5,00 €"
+        },
+        {
+          "code": "201",
+          "name_de": "Minze &",
+          "name_en": "Minze &",
+          "desc_de": "Minze, frischer Ingwer mit Honig / Mint, fresh ginger with honey",
+          "desc_en": "Minze, frischer Ingwer mit Honig / Mint, fresh ginger with honey",
+          "allergens": [],
+          "price": "5,50 €"
+        },
+        {
+          "code": "202",
+          "name_de": "Wintertee",
+          "name_en": "Wintertee",
+          "desc_de": "Frischer Ingwer mit Orange, Minze, Honig / Fresh ginger with orange, mint,",
+          "desc_en": "Frischer Ingwer mit Orange, Minze, Honig / Fresh ginger with orange, mint,",
+          "allergens": [],
+          "price": "6,00 €"
+        }
+      ]
+    },
+    {
+      "id": "schnaps",
+      "name_de": "Schnaps · Spirituosen",
+      "name_en": "Spirits",
+      "items": [
+        {
+          "code": "203",
+          "name_de": "Lúa Mới · Reisschnaps",
+          "name_en": "Lúa Mới · Reisschnaps",
+          "allergens": [],
+          "variants": [
+            {
+              "label_de": "2 cl",
+              "label_en": "2 cl",
+              "allergens": [],
+              "price": "4,50 €"
+            },
+            {
+              "label_de": "4 cl",
+              "label_en": "4 cl",
+              "allergens": [],
+              "price": "8,50 €"
+            }
+          ]
+        },
+        {
+          "code": "204",
+          "name_de": "Nếp Mới · Reisschnaps",
+          "name_en": "Nếp Mới · Reisschnaps",
+          "allergens": [],
+          "variants": [
+            {
+              "label_de": "2 cl",
+              "label_en": "2 cl",
+              "allergens": [],
+              "price": "4,50 €"
+            },
+            {
+              "label_de": "4 cl",
+              "label_en": "4 cl",
+              "allergens": [],
+              "price": "8,50 €"
+            }
+          ]
+        },
+        {
+          "code": "205",
+          "name_de": "Wodka",
+          "name_en": "Wodka",
+          "allergens": [],
+          "variants": [
+            {
+              "label_de": "2 cl",
+              "label_en": "2 cl",
+              "allergens": [],
+              "price": "4,50 €"
+            },
+            {
+              "label_de": "4 cl",
+              "label_en": "4 cl",
+              "allergens": [],
+              "price": "8,50 €"
+            }
+          ]
+        },
+        {
+          "code": "206",
+          "name_de": "Jägermeister",
+          "name_en": "Jägermeister",
+          "allergens": [],
+          "variants": [
+            {
+              "label_de": "2 cl",
+              "label_en": "2 cl",
+              "allergens": [],
+              "price": "4,50 €"
+            },
+            {
+              "label_de": "4 cl",
+              "label_en": "4 cl",
+              "allergens": [],
+              "price": "8,50 €"
+            }
+          ]
+        },
+        {
+          "code": "207",
+          "name_de": "Irish Cream Likör",
+          "name_en": "Irish Cream Likör",
+          "allergens": [
+            "G"
+          ],
+          "variants": [
+            {
+              "label_de": "4 cl",
+              "label_en": "4 cl",
+              "allergens": [
+                "G"
+              ],
+              "price": "8,00 €"
+            }
+          ]
+        },
+        {
+          "code": "208",
+          "name_de": "Whisky",
+          "name_en": "Whisky",
+          "allergens": [],
+          "variants": [
+            {
+              "label_de": "2 cl",
+              "label_en": "2 cl",
+              "allergens": [],
+              "price": "5,00 €"
+            },
+            {
+              "label_de": "4 cl",
+              "label_en": "4 cl",
+              "allergens": [],
+              "price": "9,50 €"
+            }
+          ]
+        },
+        {
+          "code": "209",
+          "name_de": "Chivas 18",
+          "name_en": "Chivas 18",
+          "allergens": [],
+          "variants": [
+            {
+              "label_de": "2 cl",
+              "label_en": "2 cl",
+              "allergens": [],
+              "price": "7,00 €"
+            },
+            {
+              "label_de": "4 cl",
+              "label_en": "4 cl",
+              "allergens": [],
+              "price": "14,00 €"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wein",
+      "name_de": "Wein",
+      "name_en": "Wine",
+      "items": [
+        {
+          "code": "210",
+          "name_de": "Chardonnay · trocken",
+          "name_en": "Chardonnay · trocken",
+          "allergens": [
+            "L"
+          ],
+          "variants": [
+            {
+              "label_de": "0,2 L",
+              "label_en": "0.2 L",
+              "allergens": [
+                "L"
+              ],
+              "price": "5,50 €"
+            },
+            {
+              "label_de": "0,75 L",
+              "label_en": "0.75 L",
+              "allergens": [
+                "L"
+              ],
+              "price": "19,90 €"
+            }
+          ]
+        },
+        {
+          "code": "211",
+          "name_de": "Riesling · trocken",
+          "name_en": "Riesling · trocken",
+          "allergens": [
+            "L"
+          ],
+          "variants": [
+            {
+              "label_de": "0,2 L",
+              "label_en": "0.2 L",
+              "allergens": [
+                "L"
+              ],
+              "price": "5,50 €"
+            },
+            {
+              "label_de": "0,75 L",
+              "label_en": "0.75 L",
+              "allergens": [
+                "L"
+              ],
+              "price": "19,90 €"
+            }
+          ]
+        },
+        {
+          "code": "212",
+          "name_de": "Grauburgunder · trocken",
+          "name_en": "Grauburgunder · trocken",
+          "allergens": [
+            "L"
+          ],
+          "variants": [
+            {
+              "label_de": "0,2 L",
+              "label_en": "0.2 L",
+              "allergens": [
+                "L"
+              ],
+              "price": "5,50 €"
+            },
+            {
+              "label_de": "0,75 L",
+              "label_en": "0.75 L",
+              "allergens": [
+                "L"
+              ],
+              "price": "19,90 €"
+            }
+          ]
+        },
+        {
+          "code": "213",
+          "name_de": "Weißburgunder · trocken",
+          "name_en": "Weißburgunder · trocken",
+          "allergens": [
+            "L"
+          ],
+          "variants": [
+            {
+              "label_de": "0,2 L",
+              "label_en": "0.2 L",
+              "allergens": [
+                "L"
+              ],
+              "price": "5,50 €"
+            },
+            {
+              "label_de": "0,75 L",
+              "label_en": "0.75 L",
+              "allergens": [
+                "L"
+              ],
+              "price": "19,90 €"
+            }
+          ]
+        },
+        {
+          "code": "214",
+          "name_de": "Pinot Grigio · trocken",
+          "name_en": "Pinot Grigio · trocken",
+          "allergens": [
+            "L"
+          ],
+          "variants": [
+            {
+              "label_de": "0,2 L",
+              "label_en": "0.2 L",
+              "allergens": [
+                "L"
+              ],
+              "price": "5,50 €"
+            },
+            {
+              "label_de": "0,75 L",
+              "label_en": "0.75 L",
+              "allergens": [
+                "L"
+              ],
+              "price": "19,90 €"
+            }
+          ]
+        },
+        {
+          "code": "215",
+          "name_de": "Weinschorle · Spritzer",
+          "name_en": "Weinschorle · Spritzer",
+          "allergens": [
+            "L"
+          ],
+          "variants": [
+            {
+              "label_de": "0,2 L",
+              "label_en": "0.2 L",
+              "allergens": [
+                "L"
+              ],
+              "price": "5,50 €"
+            }
+          ]
+        },
+        {
+          "code": "216",
+          "name_de": "Roséwein",
+          "name_en": "Roséwein",
+          "allergens": [
+            "L"
+          ],
+          "variants": [
+            {
+              "label_de": "0,2 L",
+              "label_en": "0.2 L",
+              "allergens": [
+                "L"
+              ],
+              "price": "5,50 €"
+            },
+            {
+              "label_de": "0,75 L",
+              "label_en": "0.75 L",
+              "allergens": [
+                "L"
+              ],
+              "price": "19,90 €"
+            }
+          ]
+        },
+        {
+          "code": "217",
+          "name_de": "Merlot · trocken",
+          "name_en": "Merlot · trocken",
+          "allergens": [
+            "L"
+          ],
+          "variants": [
+            {
+              "label_de": "0,2 L",
+              "label_en": "0.2 L",
+              "allergens": [
+                "L"
+              ],
+              "price": "5,50 €"
+            },
+            {
+              "label_de": "0,75 L",
+              "label_en": "0.75 L",
+              "allergens": [
+                "L"
+              ],
+              "price": "19,90 €"
+            }
+          ]
+        },
+        {
+          "code": "218",
+          "name_de": "Primitivo Puglia · trocken",
+          "name_en": "Primitivo Puglia · trocken",
+          "allergens": [
+            "L"
+          ],
+          "variants": [
+            {
+              "label_de": "0,2 L",
+              "label_en": "0.2 L",
+              "allergens": [
+                "L"
+              ],
+              "price": "5,50 €"
+            },
+            {
+              "label_de": "0,75 L",
+              "label_en": "0.75 L",
+              "allergens": [
+                "L"
+              ],
+              "price": "19,90 €"
+            }
+          ]
+        },
+        {
+          "code": "219",
+          "name_de": "Prosecco",
+          "name_en": "Prosecco",
+          "allergens": [
+            "L"
+          ],
+          "variants": [
+            {
+              "label_de": "0,2 L",
+              "label_en": "0.2 L",
+              "allergens": [
+                "L"
+              ],
+              "price": "6,50 €"
+            },
+            {
+              "label_de": "0,75 L",
+              "label_en": "0.75 L",
+              "allergens": [
+                "L"
+              ],
+              "price": "23,50 €"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "allergen_legend": {
+    "A": "Glutenhaltiges Getreide / Cereals containing gluten",
+    "B": "Krebstiere / Crustaceans",
+    "C": "Eier / Eggs",
+    "D": "Fische / Fish",
+    "E": "Erdnüsse / Peanuts",
+    "F": "Sojabohnen / Soybeans",
+    "G": "Milch, Laktose / Milk, lactose",
+    "H": "Schalenfrüchte / Tree nuts",
+    "I": "Sellerie / Celery",
+    "J": "Senf / Mustard",
+    "K": "Sesamsamen / Sesame",
+    "L": "Schwefeldioxid, Sulfite / Sulphur dioxide, sulphites",
+    "M": "Lupinen / Lupin",
+    "N": "Weichtiere / Molluscs"
+  },
+  "additive_legend": {
+    "1": "Farbstoff / Colourant",
+    "2": "Konservierungsstoff / Preservative",
+    "3": "Antioxidationsmittel / Antioxidant",
+    "4": "Geschmacksverstärker / Flavour enhancer",
+    "5": "geschwefelt / Sulphured",
+    "9": "Süßungsmittel / Sweetener",
+    "10": "Phenylalaninquelle / Source of phenylalanine",
+    "11": "koffeinhaltig / Contains caffeine",
+    "12": "chininhaltig / Contains quinine"
+  },
+  "meta": {
+    "restaurant": "Jury Phở Restaurant",
+    "address": "Kastanienwall 32, 31785 Hameln, Niedersachsen",
+    "note_de": "Trotz größter Sorgfalt können Spuren anderer Allergene nicht ausgeschlossen werden. Alle Preise inkl. MwSt.",
+    "note_en": "Despite the greatest care, traces of other allergens cannot be excluded. All prices incl. VAT."
+  }
+}

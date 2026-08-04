@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Speisekarte — JURI Restaurant | Vietnamesisch·Japanisch Hameln</title>
+<meta name="description" content="Die Speisekarte von JURI Restaurant in Hameln: Phở, Sushi, Bún, vegane Gerichte & Getränke — vietnamesisch·japanisch, zweisprachig DE/EN, mit Allergenangaben und Preisen.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#39412f">
+<meta property="og:type" content="restaurant.menu">
+<meta property="og:title" content="Speisekarte — JURI Restaurant Hameln">
+<meta property="og:description" content="Phở, Sushi, Bún & vegane Gerichte — die volle Karte online, zweisprachig DE/EN mit Preisen und Allergenen.">
+<meta property="og:image" content="images/hero-restaurant.jpg">
+<meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="en_US">
+<link rel="preload" href="fonts/Fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/Archivo.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/tokens.css?v=2">
+<link rel="stylesheet" href="css/home.css?v=2">
+<link rel="stylesheet" href="css/menu.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍜</text></svg>">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Restaurant",
+  "name":"JURI Restaurant",
+  "servesCuisine":["Vietnamese","Japanese","Sushi"],
+  "url":"https://jury.jury-resto.online/",
+  "telephone":"+4951513609",
+  "priceRange":"€€",
+  "address":{"@type":"PostalAddress","streetAddress":"Kastanienwall 32","postalCode":"31785","addressLocality":"Hameln","addressCountry":"DE"},
+  "acceptsReservations":"True",
+  "hasMenu":"speisekarte.html"
+}
+</script>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header scrolled" id="header">
+  <div class="container">
+    <a href="index.html" class="brand">JURI<small>Phở · Vietnamese · Japanese</small></a>
+    <div class="nav-desktop">
+      <nav class="nav">
+        <a href="index.html#philosophie"><span lang="de">Philosophie</span><span lang="en">Philosophy</span></a>
+        <a href="speisekarte.html">Speisekarte</a>
+        <a href="index.html#anlaesse"><span lang="de">Anlässe</span><span lang="en">Occasions</span></a>
+        <a href="index.html#ueber-uns"><span lang="de">Über uns</span><span lang="en">About</span></a>
+        <a href="index.html#kontakt">Kontakt</a>
+      </nav>
+      <div class="lang-toggle" role="group" aria-label="Sprache / Language">
+        <button data-lang="de" aria-pressed="true">DE</button>
+        <button data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a href="index.html#reservieren" class="btn btn--primary"><span lang="de">Tisch reservieren</span><span lang="en">Reserve a table</span></a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div class="drawer" id="drawer" role="dialog" aria-label="Navigation">
+  <button class="drawer-close" aria-label="Schließen">✕</button>
+  <a href="index.html#philosophie"><span lang="de">Philosophie</span><span lang="en">Philosophy</span></a>
+  <a href="speisekarte.html">Speisekarte</a>
+  <a href="index.html#anlaesse"><span lang="de">Anlässe</span><span lang="en">Occasions</span></a>
+  <a href="index.html#ueber-uns"><span lang="de">Über uns</span><span lang="en">About</span></a>
+  <a href="index.html#kontakt">Kontakt</a>
+  <div class="lang-toggle" role="group" aria-label="Sprache">
+    <button data-lang="de" aria-pressed="true">DE</button>
+    <button data-lang="en" aria-pressed="false">EN</button>
+  </div>
+  <a href="index.html#reservieren" class="btn btn--primary"><span lang="de">Tisch reservieren</span><span lang="en">Reserve a table</span></a>
+</div>
+
+<!-- Intro -->
+<section class="menu-intro">
+  <div class="container">
+    <span class="eyebrow"><span lang="de">Speisekarte</span><span lang="en">Menu</span></span>
+    <h1><span lang="de">Unsere Karte</span><span lang="en">Our menu</span></h1>
+    <p>
+      <span lang="de">Vietnamesische Seele, japanische Präzision — Phở, Sushi, Bún, vegane Gerichte und mehr. Alle Preise inkl. MwSt.</span>
+      <span lang="en">Vietnamese soul, Japanese precision — phở, sushi, bún, vegan dishes and more. All prices incl. VAT.</span>
+    </p>
+  </div>
+</section>
+
+<!-- Filter bar -->
+<div class="menu-filter">
+  <div class="container">
+    <div class="menu-search">
+      <label for="menuSearch" style="position:absolute;left:-9999px">Suche</label>
+      <input id="menuSearch" type="search" autocomplete="off" placeholder="Gericht suchen…">
+    </div>
+    <button class="filter-toggle" id="veganToggle" aria-pressed="false">
+      <span class="dot"></span><span lang="de">Nur Vegan</span><span lang="en">Vegan only</span>
+    </button>
+  </div>
+</div>
+
+<!-- Category tabs -->
+<nav class="menu-tabs" aria-label="Kategorien">
+  <div class="menu-tabs__scroll" id="menuTabs"></div>
+</nav>
+
+<!-- Menu body (rendered by menu.js) -->
+<main class="menu-body">
+  <div class="container">
+    <div id="menuBody"><p class="menu-status"><span lang="de">Speisekarte wird geladen…</span><span lang="en">Loading menu…</span></p></div>
+    <p class="menu-empty" id="menuEmpty"><span lang="de">Keine Gerichte gefunden.</span><span lang="en">No dishes found.</span></p>
+  </div>
+</main>
+
+<!-- Legend -->
+<section class="legend">
+  <div class="container">
+    <details>
+      <summary><span lang="de">Allergene A–N</span><span lang="en">Allergens A–N</span></summary>
+      <dl id="legendAllergen"></dl>
+    </details>
+    <details>
+      <summary><span lang="de">Zusatzstoffe</span><span lang="en">Additives</span></summary>
+      <dl id="legendAdditive"></dl>
+    </details>
+    <p class="note">
+      <span lang="de">Trotz größter Sorgfalt können Spuren anderer Allergene nicht ausgeschlossen werden. Alle Preise inkl. MwSt.</span>
+      <span lang="en">Despite the greatest care, traces of other allergens cannot be excluded. All prices incl. VAT.</span>
+    </p>
+  </div>
+</section>
+
+<!-- Reserve band -->
+<section class="section reserve-band">
+  <div class="container">
+    <h2><span lang="de">Hunger bekommen?</span><span lang="en">Getting hungry?</span></h2>
+    <p><span lang="de">Sichern Sie sich Ihren Tisch — wir bestätigen zeitnah persönlich.</span><span lang="en">Secure your table — we confirm personally, promptly.</span></p>
+    <a href="index.html#reservieren" class="btn"><span lang="de">Tisch reservieren</span><span lang="en">Reserve a table</span></a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand">JURI PHỞ</div>
+        <p><span lang="de">Vietnamesisch · Japanisch Fusion im historischen Fachwerkhaus am Kastanienwall.</span><span lang="en">Vietnamese · Japanese fusion in a historic timber-framed house on Kastanienwall.</span></p>
+      </div>
+      <div>
+        <h4><span lang="de">Öffnungszeiten</span><span lang="en">Hours</span></h4>
+        <address>
+          <span lang="de">Mo – So: 11:00 – 22:00</span><span lang="en">Mon – Sun: 11:00 – 22:00</span><br>
+          Kastanienwall 32<br>31785 Hameln
+        </address>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="tel:+4951513609">+49 5151 3609</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#reservieren"><span lang="de">Reservieren</span><span lang="en">Reserve</span></a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 JURI Restaurant</span>
+      <nav>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<!-- Bottom nav (mobile) -->
+<nav class="bottom-nav" aria-label="Mobile">
+  <ul>
+    <li><a href="index.html"><span>⌂</span>Home</a></li>
+    <li><a href="speisekarte.html"><span>🍜</span>Menü</a></li>
+    <li><a href="index.html#reservieren" class="is-cta"><span>◈</span>Reservieren</a></li>
+    <li><a href="index.html#kontakt"><span>✆</span>Kontakt</a></li>
+  </ul>
+</nav>
+
+<!-- FAB -->
+<a href="index.html#reservieren" class="fab show"><span lang="de">Tisch reservieren</span><span lang="en">Reserve</span></a>
+
+<script src="js/menu.js"></script>
+</body>
+</html>
