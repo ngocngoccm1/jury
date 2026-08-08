@@ -75,7 +75,15 @@ const DISH_IMAGES = {
   'chirashi': 'assets/juri-menu-v2-27-chirashi.png',
   'ente mit wok-gemuse vegan': 'assets/juri-menu-v2-28-vegan-duck.png',
   'zitronengras chili': 'assets/juri-menu-v2-29-lemongrass-chili.png',
-  'saigon bbq kimchi bowl': 'assets/juri-menu-v2-30-kimchi-bowl.png'
+  'saigon bbq kimchi bowl': 'assets/juri-menu-v2-30-kimchi-bowl.png',
+  'wantans': 'assets/juri-menu-v2-31-wantan.png',
+  'dim sum': 'assets/juri-menu-v2-32-dim-sum.png',
+  'edamame': 'assets/juri-menu-v2-33-edamame.png',
+  'yakitori': 'assets/juri-menu-v2-34-yakitori.png',
+  'tom yum': 'assets/juri-menu-v2-35-tom-yum.png',
+  'regenbogen salat': 'assets/juri-menu-v2-36-regenbogen-salat.png',
+  'gebratener reis': 'assets/juri-menu-v2-37-gebratener-reis.png',
+  'glasnudelsalat': 'assets/juri-menu-v2-38-glasnudelsalat.png'
 };
 const photoForDish = it => {
   const key = `${it.name_de || ''} ${it.name_en || ''}`.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[đĐ]/g, 'd').toLowerCase();
