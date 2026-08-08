@@ -14,6 +14,8 @@ function setLang(lang) {
   document.documentElement.lang = lang;
   document.querySelectorAll('.lang-toggle button').forEach(b =>
     b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+  const search = document.getElementById('menuSearch');
+  if (search) search.placeholder = lang === 'en' ? 'Search dishes…' : 'Gericht suchen…';
   try { localStorage.setItem('jury-lang', lang); } catch (e) {}
 }
 document.querySelectorAll('.lang-toggle button').forEach(b =>
@@ -40,6 +42,45 @@ function chips(allergens) {
   if (!allergens || !allergens.length) return '';
   return `<div class="dish__allergens">${allergens.map(a => `<span class="chip">${esc(a)}</span>`).join('')}</div>`;
 }
+
+// Only dishes with a matching local photo receive it. Everything else keeps a
+// deliberate JURI-logo placeholder until the restaurant supplies the photo.
+const DISH_IMAGES = {
+  'pho viet nam': 'assets/juri-menu-v2-01-pho-viet-nam.png',
+  'pho bat da': 'assets/juri-menu-v2-02-pho-bat-da.png',
+  'pho tron': 'assets/juri-menu-v2-03-pho-tron.png',
+  'pho bo sot vang': 'assets/juri-menu-v2-04-pho-sot-vang.png',
+  'bun bo hue': 'assets/juri-menu-v2-05-bun-bo-hue.png',
+  'bun cha': 'assets/juri-menu-v2-06-bun-cha.png',
+  'bun nem': 'assets/juri-menu-v2-07-bun-nem.png',
+  'bun tron cha lua': 'assets/juri-menu-v2-08-bun-tron-cha-lua.png',
+  'banh mi sai gon': 'assets/juri-menu-v2-09-banh-mi-sai-gon.png',
+  'banh mi sot vang': 'assets/juri-menu-v2-10-banh-mi-sot-vang.png',
+  'banh mi chao': 'assets/juri-menu-v2-11-banh-mi-chao.png',
+  'sommerrollen': 'assets/juri-menu-v2-12-sommerrollen.png',
+  'fruhlingsrollen': 'assets/juri-menu-v2-13-fruehlingsrollen.png',
+  'gyoza': 'assets/juri-menu-v2-14-huhn-gyoza.png',
+  'mango salat': 'assets/juri-menu-v2-15-mango-salat.png',
+  'tofu im com': 'assets/juri-menu-v2-16-tofu-com.png',
+  'grunes curry': 'assets/juri-menu-v2-17-gruenes-curry.png',
+  'rotes curry': 'assets/juri-menu-v2-18-rotes-curry.png',
+  'bo luc lac': 'assets/juri-menu-v2-19-shaking-beef.png',
+  'jury chicken tempura': 'assets/juri-menu-v2-20-chicken-tempura.png',
+  'udon': 'assets/juri-menu-v2-21-udon.png',
+  'california maki': 'assets/juri-menu-v2-22-california-maki.png',
+  'sake maki': 'assets/juri-menu-v2-23-sake-maki.png',
+  'ebi tempura maki': 'assets/juri-menu-v2-24-ebi-tempura-maki.png',
+  'dragon roll': 'assets/juri-menu-v2-25-dragon-roll.png',
+  'flambierter lachs': 'assets/juri-menu-v2-26-flambierter-lachs.png',
+  'chirashi': 'assets/juri-menu-v2-27-chirashi.png',
+  'ente mit wok-gemuse vegan': 'assets/juri-menu-v2-28-vegan-duck.png',
+  'zitronengras chili': 'assets/juri-menu-v2-29-lemongrass-chili.png',
+  'saigon bbq kimchi bowl': 'assets/juri-menu-v2-30-kimchi-bowl.png'
+};
+const photoForDish = it => {
+  const key = `${it.name_de || ''} ${it.name_en || ''}`.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[đĐ]/g, 'd').toLowerCase();
+  return Object.entries(DISH_IMAGES).find(([term]) => key.includes(term))?.[1] || 'assets/jury-logo.jpg';
+};
 
 // ---------- render ----------
 const CAT_EL = document.getElementById('menuBody');
@@ -73,7 +114,10 @@ function renderDish(it, catVegan) {
   }
   const searchText = esc([it.code, it.name_de, it.name_en, it.desc_de].filter(Boolean).join(' ').toLowerCase());
   const imgCode = esc(it.code);
+  const image = photoForDish(it);
+  const isPlaceholder = image === 'assets/jury-logo.jpg';
   return `<article class="dish" data-vegan="${vegan}" data-search="${searchText}">
+    <div class="dish__media${isPlaceholder ? ' dish__media--placeholder' : ''}"><img src="${image}" alt="${isPlaceholder ? 'JURI' : esc(it.name_de)}" loading="lazy"></div>
     <div class="dish__body">
       <div class="dish__head">
         <div>
@@ -174,7 +218,7 @@ function wireInteractions() {
   }
 
   // strip basic Vietnamese diacritics so "pho" matches "Phở"
-  const norm = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd').toLowerCase();
+  const norm = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[đĐ]/g, 'd').toLowerCase();
 
   // filter: search text (across ALL categories) + vegan (within visible scope)
   function applyFilter() {

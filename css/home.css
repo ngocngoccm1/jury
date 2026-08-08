@@ -353,6 +353,17 @@ body.lang-en [lang="de"]{display:none}
   stroke-linecap:round;stroke-linejoin:round}
 .bottom-nav a.is-cta{color:var(--accent)}
 
+/* ---------- Child pages ---------- */
+.page-hero{position:relative;min-height:min(54svh,560px);display:flex;align-items:end;padding:calc(var(--header-h) + var(--sp-8)) 0 var(--sp-8);overflow:hidden;background:var(--bg-deep)}
+.page-hero__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.42}
+.page-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,12,14,.9),rgba(10,12,14,.45)),linear-gradient(180deg,transparent,rgba(10,12,14,.75))}
+.page-hero .container{position:relative;z-index:1;max-width:var(--content)}
+.page-hero h1{font-size:var(--fs-hero);max-width:12ch}
+.page-hero p{max-width:54ch;color:var(--text-muted);font-size:var(--fs-lg);margin-top:var(--sp-4)}
+.page-hero .cta{display:flex;gap:var(--sp-3);flex-wrap:wrap;margin-top:var(--sp-6)}
+.page-content{padding-block:clamp(4rem,8vw,7rem)}
+.page-content .split + .split{margin-top:clamp(4rem,8vw,7rem)}
+
 /* ---------- Responsive ---------- */
 @media (min-width:760px){
   .feature{grid-template-columns:1fr 1fr}
@@ -450,4 +461,5 @@ body.lang-en [lang="de"]{display:none}
   .philo-stats dd{font-size:.75rem}         /* was .6875rem */
   .lang-toggle,.lang-toggle button{font-size:.8125rem} /* keep 13px, no shrink */
   .event-card__body p,.anlass__row p,.note-soon,.form-msg,.footer-bottom{font-size:.875rem} /* ≥14px */
+  .page-hero{min-height:440px;padding-bottom:44px}.page-hero h1{font-size:clamp(2.6rem,13vw,4rem)}
 }

@@ -4,15 +4,15 @@
      Đổi nền olive → đen-xám trung tính hơi ấm (thêm chút nâu, không lạnh như xanh-điện),
      giống taumi (~#191B24/#0d0d12) để ẢNH món màu rực nổi bật (pop).
      Tên biến giữ nguyên để không phá các chỗ đang tham chiếu. */
-  --olive-950:#0b0d0f;
-  --olive-900:#0e1114;   /* footer / bg-deep */
-  --olive-850:#1a1f24;   /* section xen kẽ / lazy-img fill */
-  --olive-800:#171b1f;
-  --olive-700:#14181c;   /* NỀN CHỦ ĐẠO */
-  --olive-600:#20262b;
-  --olive-500:#2b323a;
-  --olive-400:#414a54;
-  --olive-300:#5a636e;
+  --olive-950:#1f2619;
+  --olive-900:#293121;   /* footer / bg-deep */
+  --olive-850:#343d2a;   /* section xen kẽ / lazy-img fill */
+  --olive-800:#303827;
+  --olive-700:#39412f;   /* xanh olive từ logo JURI */
+  --olive-600:#4a543d;
+  --olive-500:#5a654d;
+  --olive-400:#748069;
+  --olive-300:#96a08d;
 
   /* ---------- PRIMITIVE: IVORY ---------- */
   --ivory-50:#f6f5ea;
@@ -43,7 +43,7 @@
   --text-faint:var(--ivory-700);
   --accent:var(--gold-500);
   --accent-hover:var(--gold-600);
-  --on-accent:#14181c;   /* chữ trên nút gold: nền tối trung tính cho hợp */
+  --on-accent:#1f2619;   /* chữ trên nút gold */
   --line:rgba(241,239,223,.16);
   --line-strong:rgba(241,239,223,.28);
   --focus:var(--gold-400);
