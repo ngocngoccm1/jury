@@ -83,7 +83,16 @@ const DISH_IMAGES = {
   'tom yum': 'assets/juri-menu-v2-35-tom-yum.png',
   'regenbogen salat': 'assets/juri-menu-v2-36-regenbogen-salat.png',
   'gebratener reis': 'assets/juri-menu-v2-37-gebratener-reis.png',
-  'glasnudelsalat': 'assets/juri-menu-v2-38-glasnudelsalat.png'
+  'glasnudelsalat': 'assets/juri-menu-v2-38-glasnudelsalat.png',
+  'schweinespieße': 'assets/juri-menu-v2-39-schweinespiesse.png',
+  'garnelen im com': 'assets/juri-menu-v2-40-garnelen-com.png',
+  'seetang salat': 'assets/juri-menu-v2-41-seetang-salat.png',
+  'papaya salat': 'assets/juri-menu-v2-42-papaya-salat.png',
+  'seitan': 'assets/juri-menu-v2-43-seitan-spiesse.png',
+  'futo': 'assets/juri-menu-v2-44-futomaki.png',
+  'roll 1': 'assets/juri-menu-v2-45-fried-rolls.png',
+  'chicken-roll': 'assets/juri-menu-v2-45-fried-rolls.png',
+  'sashimi sake': 'assets/juri-menu-v2-46-sashimi-sake.png'
 };
 const photoForDish = it => {
   const key = `${it.name_de || ''} ${it.name_en || ''}`.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[đĐ]/g, 'd').toLowerCase();
