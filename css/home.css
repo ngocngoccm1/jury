@@ -463,3 +463,28 @@ body.lang-en [lang="de"]{display:none}
   .event-card__body p,.anlass__row p,.note-soon,.form-msg,.footer-bottom{font-size:.875rem} /* ≥14px */
   .page-hero{min-height:440px;padding-bottom:44px}.page-hero h1{font-size:clamp(2.6rem,13vw,4rem)}
 }
+
+/* ---------- Taumi-reference home refit: JURI content, compact charcoal layout ---------- */
+body{background:#171b24;color:#f1efdf}
+.header{height:64px;background:rgba(20,24,32,.92);border-bottom:1px solid rgba(241,239,223,.12);backdrop-filter:blur(12px)}
+.header .container{max-width:none;padding-inline:32px;display:flex;align-items:center;gap:18px}
+.burger{display:flex;order:1;width:38px;height:38px;padding:8px;justify-content:center}
+.burger span{background:#f1efdf}
+.brand{order:2;margin-right:auto}.brand__text{font-family:var(--font-sans);letter-spacing:.2em;font-size:1.08rem}.brand small{letter-spacing:.12em}
+.nav-desktop{order:3;display:block}.nav-desktop .nav,.nav-desktop .lang-toggle{display:none}.nav-desktop .btn{height:40px;padding-inline:22px;background:#f1efdf;color:#665739;border:0;font-size:.82rem}
+.hero{min-height:calc(100dvh - 0px);padding-top:64px;align-items:flex-end;background:#171b24}
+.hero__bg::after{background:linear-gradient(180deg,rgba(20,24,32,.22) 0%,rgba(20,24,32,.22) 54%,rgba(20,24,32,.97) 100%)}
+.hero .container{max-width:1160px;width:100%;padding-bottom:64px}.hero__inner{max-width:820px}
+.hero .eyebrow{color:#d9c8a0;letter-spacing:.14em}.hero h1{font-family:var(--font-sans);font-size:clamp(2.8rem,5.1vw,4.9rem);line-height:.98;letter-spacing:-.055em;color:#f1efdf}.hero h1 em{font-style:normal;color:#d9c8a0}
+.hero .sub{max-width:48ch;color:#dcdbcb}.hero .addr{display:none}.hero__scroll,.usp-strip{display:none}
+.btn{border-radius:8px;min-height:42px}.btn--primary{background:#9f8a5a;color:#171b24}.btn--primary:hover{background:#bda67a}.btn--ghost{border-color:#d9c8a0;color:#f1efdf}
+.section{padding-block:clamp(72px,10vw,128px);background:#171b24}.section--alt{background:#1c212b}.philo-band{padding-block:86px;background:#171b24;text-align:center}.philo-band .container{max-width:850px}.philo-quote{font-family:var(--font-sans);font-weight:700;font-size:clamp(2rem,4.6vw,3.8rem);letter-spacing:-.04em;color:#d9c8a0}.philo-lead{max-width:710px;font-size:1rem;color:#dcdbcb}.philo-stats{display:none}
+#kueche{padding-top:74px;background:#171b24}.section-head--center h2{font-family:var(--font-sans);font-size:clamp(2rem,3vw,3rem);color:#d9c8a0}.section-head--center p{max-width:600px}.section-head .eyebrow{display:none}
+#kueche .feature{display:none}.carousel__track{display:flex!important;gap:18px!important;overflow-x:auto!important;padding:0 4px 16px!important;scroll-snap-type:x mandatory!important;scrollbar-width:none}.carousel__track::-webkit-scrollbar{display:none}.carousel__track .dish{flex:0 0 min(290px,78vw)!important;scroll-snap-align:start}.dish__media{aspect-ratio:1/1;border-radius:12px;overflow:hidden}.dish__body{padding-top:10px}.dish__name{font-family:var(--font-sans);font-size:1rem;font-weight:600}.dish__price{color:#d9c8a0}.carousel__nav{display:flex!important;justify-content:center;margin-top:12px}.carousel__dots{display:flex;gap:10px}.carousel__dots button{width:38px;height:38px;border:1px solid #9f8a5a;border-radius:50%;background:transparent;color:transparent}.carousel__dots button[aria-selected=true]{background:#9f8a5a}.center-cta{margin-top:28px}
+#ambiente{padding-top:104px}.split{grid-template-columns:1fr 1fr;gap:clamp(40px,8vw,120px);max-width:1160px}.split__media{border:0;border-radius:12px;aspect-ratio:4/3}.split__body h2{font-family:var(--font-sans);font-size:clamp(2rem,3.5vw,3.4rem);color:#f1efdf}.split__body p{max-width:50ch}.photo-trio{margin-top:70px;gap:16px}.photo-trio figure{border-radius:12px;overflow:hidden}.photo-trio img{filter:saturate(.88) contrast(1.04)}
+.bar-band{min-height:520px}.bar-band::after{background:linear-gradient(90deg,rgba(20,24,32,.94),rgba(20,24,32,.52) 58%,rgba(20,24,32,.18))}.bar-band__inner{max-width:530px}.bar-band__inner h2{font-family:var(--font-sans);color:#d9c8a0;font-size:clamp(2.1rem,4vw,3.6rem)}.bar-band__inner .eyebrow{display:none}
+.drink-duo{gap:20px}.drink-duo__item{border-radius:12px;overflow:hidden;background:#1c212b}.drink-duo__item figcaption{font-family:var(--font-sans);font-weight:600;padding:16px;color:#d9c8a0}
+.footer{background:#11151c;border-color:rgba(241,239,223,.15)}.footer-watermark{display:none}.footer-grid{max-width:1160px}.footer .brand{margin-right:0}.footer-bottom{border-color:rgba(241,239,223,.14)}
+@media (max-width:759px){
+  .header .container{padding-inline:16px}.nav-desktop .btn{display:none}.hero .container{padding-bottom:42px}.hero h1{font-size:clamp(2.7rem,13vw,4rem)}.hero .cta{flex-direction:row}.hero .cta .btn{width:auto}.philo-band{padding-block:64px}.split{grid-template-columns:1fr;gap:30px}.split__media{aspect-ratio:4/3}.photo-trio{margin-top:32px}.bar-band{min-height:440px}.carousel__track .dish{flex-basis:76vw}.bottom-nav{background:#171b24}
+}

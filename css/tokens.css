@@ -4,15 +4,15 @@
      Đổi nền olive → đen-xám trung tính hơi ấm (thêm chút nâu, không lạnh như xanh-điện),
      giống taumi (~#191B24/#0d0d12) để ẢNH món màu rực nổi bật (pop).
      Tên biến giữ nguyên để không phá các chỗ đang tham chiếu. */
-  --olive-950:#1f2619;
-  --olive-900:#293121;   /* footer / bg-deep */
+  --olive-950:#141820;
+  --olive-900:#171b24;   /* footer / bg-deep */
   --olive-850:#343d2a;   /* section xen kẽ / lazy-img fill */
-  --olive-800:#303827;
+  --olive-800:#232936;
   --olive-700:#39412f;   /* xanh olive từ logo JURI */
-  --olive-600:#4a543d;
-  --olive-500:#5a654d;
-  --olive-400:#748069;
-  --olive-300:#96a08d;
+  --olive-600:#46513d;
+  --olive-500:#5b684e;
+  --olive-400:#788469;
+  --olive-300:#9ca58e;
 
   /* ---------- PRIMITIVE: IVORY ---------- */
   --ivory-50:#f6f5ea;
@@ -22,11 +22,11 @@
   --ivory-700:#9a9a8c;
 
   /* ---------- PRIMITIVE: GOLD ---------- */
-  --gold-300:#e3c986;
-  --gold-400:#dabd6f;
-  --gold-500:#d2ad5a;
-  --gold-600:#b8934a;
-  --gold-700:#8f6f37;
+  --gold-300:#d9c8a0;
+  --gold-400:#bda67a;
+  --gold-500:#9f8a5a;
+  --gold-600:#806f4a;
+  --gold-700:#665739;
 
   --red-500:#d64545;
   --green-500:#7fa86a;

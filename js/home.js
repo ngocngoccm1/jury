@@ -1,11 +1,5 @@
 // js/home.js — Jury Phở homepage interactivity (plain DOM, no deps)
 
-// --- Sticky header state ---
-const header = document.querySelector('.header');
-addEventListener('scroll', () => {
-  header?.classList.toggle('scrolled', scrollY > 40);
-}, { passive: true });
-
 // --- Mobile drawer ---
 const drawer = document.getElementById('drawer');
 document.getElementById('burger')?.addEventListener('click', () => drawer.classList.add('open'));
