@@ -68,7 +68,7 @@
 </header>
 
 <!-- Mobile drawer -->
-<div class="drawer" id="drawer" role="dialog" aria-label="Navigation">
+<div class="drawer" id="legacy-drawer" role="dialog" aria-label="Navigation">
   <button class="drawer-close" aria-label="Schließen">✕</button>
   <a href="https://wa.me/4951513609?text=Hallo%20JURI%2C%20ich%20möchte%20einen%20Tisch%20reservieren."><span lang="de">Reservieren</span><span lang="en">Reservation</span></a>
   <a href="speisekarte.html">Speisekarte</a>
@@ -529,6 +529,22 @@
 </nav>
 
 </div>
+
+<nav class="drawer" id="drawer" role="dialog" aria-label="Navigation" aria-modal="true">
+  <button class="drawer-close" type="button" aria-label="Schließen">×</button>
+  <a href="index.html">Home</a>
+  <a href="speisekarte.html">Speisekarte</a>
+  <a href="bestellen.html"><span lang="de">Bestellen</span><span lang="en">Online Order</span></a>
+  <a href="gutschein.html">Gutschein</a>
+  <a href="anlaesse.html">Events</a>
+  <a href="ueber-uns.html"><span lang="de">Über uns</span><span lang="en">About</span></a>
+  <a href="kontakt.html">Kontakt</a>
+  <div class="lang-toggle" role="group" aria-label="Sprache">
+    <button type="button" data-lang="de" aria-pressed="true">DE</button>
+    <button type="button" data-lang="en" aria-pressed="false">EN</button>
+  </div>
+  <a href="https://wa.me/4951513609?text=Hallo%20JURI%2C%20ich%20möchte%20einen%20Tisch%20reservieren." class="btn btn--primary"><span lang="de">Tisch reservieren</span><span lang="en">Reserve a table</span></a>
+</nav>
 
 <div class="taumi-home">
   <header class="taumi-header">
