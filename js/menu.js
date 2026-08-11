@@ -99,6 +99,77 @@ const photoForDish = it => {
   return Object.entries(DISH_IMAGES).find(([term]) => key.includes(term))?.[1] || 'assets/jury-logo.jpg';
 };
 
+const normalizeDishName = value => String(value || '')
+  .normalize('NFD')
+  .replace(/[\u0300-\u036f]/g, '')
+  .replace(/[\u0111\u0110]/g, 'd')
+  .replace(/\u00df/g, 'ss')
+  .toLowerCase();
+
+const EXACT_DISH_IMAGES = {
+  'sharing_sets:mix set fur 2 personen': 'assets/juri-menu-v2-47-mix-set.png',
+  'sharing_sets:mix set fur 3 personen': 'assets/juri-menu-v2-47-mix-set.png',
+  'sharing_sets:vegan set fur 2 personen': 'assets/juri-menu-v2-48-vegan-set.png',
+  'sharing_sets:vegan set fur 3 personen': 'assets/juri-menu-v2-48-vegan-set.png',
+  'suppen_salat:gemuse suppe': 'assets/juri-menu-v2-49-gemuse-suppe.png',
+  'suppen_salat:wantan suppe': 'assets/juri-menu-v2-50-wantan-suppe.png',
+  'kindermenue:pommes frites': 'assets/juri-menu-v2-51-pommes-frites.png',
+  'kindermenue:susskartoffelpommes': 'assets/juri-menu-v2-52-susskartoffelpommes.png',
+  'kindermenue:schweinespiess mit reis': 'assets/juri-menu-v2-53-schweinespiess-reis.png',
+  'kindermenue:hahnchenspiess mit reis': 'assets/juri-menu-v2-54-hahnchenspiess-reis.png',
+  'hauptgerichte:gemuse pfanne': 'assets/juri-menu-v2-55-gemuse-pfanne.png',
+  'hauptgerichte:erdnuss sosse': 'assets/juri-menu-v2-56-erdnuss-sosse.png',
+  'hauptgerichte:suss-sauer': 'assets/juri-menu-v2-57-suss-sauer.png',
+  'reis_spezial:sommer bowl': 'assets/juri-menu-v2-58-sommer-bowl.png',
+  'vegan:bun dau – tofu mit reisnudeln': 'assets/juri-menu-v2-59-bun-dau.png',
+  'vegan:curry-ente vegan': 'assets/juri-menu-v2-60-curry-ente-vegan.png',
+  'vegan:erdnuss-ente vegan': 'assets/juri-menu-v2-61-erdnuss-ente-vegan.png',
+  'maki:kappa maki': 'assets/juri-menu-v2-62-kappa-maki.png',
+  'maki:avocado maki': 'assets/juri-menu-v2-63-avocado-maki.png',
+  'maki:mango maki': 'assets/juri-menu-v2-64-mango-maki.png',
+  'maki:tekka maki': 'assets/juri-menu-v2-65-tekka-maki.png',
+  'maki:ebi maki': 'assets/juri-menu-v2-66-ebi-maki.png',
+  'maki:salmon avocado maki': 'assets/juri-menu-v2-67-salmon-avocado-maki.png',
+  'maki:salmon skin maki': 'assets/juri-menu-v2-68-salmon-skin-maki.png',
+  'maki:unagi maki': 'assets/juri-menu-v2-69-unagi-maki.png',
+  'special_rolls:sake': 'assets/juri-menu-v2-70-sake-special-roll.png',
+  'special_rolls:maguro': 'assets/juri-menu-v2-71-maguro-special-roll.png',
+  'special_rolls:ebi': 'assets/juri-menu-v2-72-ebi-special-roll.png',
+  'special_rolls:unagi rolls': 'assets/juri-menu-v2-73-unagi-rolls.png',
+  'special_rolls:chicken rolls': 'assets/juri-menu-v2-74-chicken-rolls.png',
+  'special_rolls:crispy tiger': 'assets/juri-menu-v2-75-crispy-tiger.png',
+  'special_rolls:orchidee roll': 'assets/juri-menu-v2-76-orchidee-roll.png',
+  'special_rolls:tiger roll': 'assets/juri-menu-v2-77-tiger-roll.png',
+  'special_rolls:green roll': 'assets/juri-menu-v2-78-green-roll.png',
+  'special_rolls:baby roll': 'assets/juri-menu-v2-79-baby-roll.png',
+  'special_rolls:black rolls': 'assets/juri-menu-v2-80-black-roll.png',
+  'special_rolls:jury roll': 'assets/juri-menu-v2-81-jury-roll.png',
+  'sushi_menues:vegan': 'assets/juri-menu-v2-82-vegan-sushi-menu.png',
+  'sushi_menues:vegan plus': 'assets/juri-menu-v2-82-vegan-sushi-menu.png',
+  'nigiri:avocado': 'assets/juri-menu-v2-83-avocado-nigiri.png',
+  'nigiri:surimi': 'assets/juri-menu-v2-84-surimi-nigiri.png',
+  'nigiri:ebi': 'assets/juri-menu-v2-85-ebi-nigiri.png',
+  'nigiri:maguro': 'assets/juri-menu-v2-86-maguro-nigiri.png',
+  'nigiri:sake': 'assets/juri-menu-v2-87-sake-nigiri.png',
+  'nigiri:unagi': 'assets/juri-menu-v2-88-unagi-nigiri.png',
+  'sashimi:sashimi maguro · 10 stk.': 'assets/juri-menu-v2-89-sashimi-maguro.png',
+  'sashimi:sashimi sake-maguro · 10 stk.': 'assets/juri-menu-v2-90-sashimi-combo.png',
+  'sushi_menues:deluxe solo': 'assets/juri-menu-v2-91-deluxe-solo.png',
+  'sushi_menues:fur 2 personen': 'assets/juri-menu-v2-92-sushi-set-2.png',
+  'sushi_menues:fur 3 personen': 'assets/juri-menu-v2-93-sushi-set-3.png',
+  'sushi_menues:fur 4 personen · komplett': 'assets/juri-menu-v2-94-sushi-set-4.png',
+  'lassi:mango lassi': 'assets/juri-menu-v2-95-mango-lassi.png',
+  'kaffee:cafe trung': 'assets/juri-menu-v2-96-cafe-trung.png'
+};
+
+const photoForDishExact = (it, categoryId) => {
+  const exactKey = normalizeDishName(it.name_de || it.name_en || '');
+  const searchKey = normalizeDishName(`${it.name_de || ''} ${it.name_en || ''}`);
+  return EXACT_DISH_IMAGES[`${categoryId}:${exactKey}`]
+    || Object.entries(DISH_IMAGES).find(([term]) => searchKey.includes(normalizeDishName(term)))?.[1]
+    || 'assets/jury-logo.jpg';
+};
+
 // ---------- render ----------
 const CAT_EL = document.getElementById('menuBody');
 const TAB_EL = document.getElementById('menuTabs');
@@ -113,7 +184,7 @@ function renderVariant(v) {
     <span class="var-price">${esc(v.price || '')}</span></li>`;
 }
 
-function renderDish(it, catVegan) {
+function renderDish(it, catVegan, categoryId) {
   const vegan = catVegan || isVeganItem(it);
   const nameEn = it.name_en && it.name_en !== it.name_de ? esc(it.name_en) : esc(it.name_de);
   const desc = it.desc_de
@@ -131,7 +202,7 @@ function renderDish(it, catVegan) {
   }
   const searchText = esc([it.code, it.name_de, it.name_en, it.desc_de].filter(Boolean).join(' ').toLowerCase());
   const imgCode = esc(it.code);
-  const image = photoForDish(it);
+  const image = photoForDishExact(it, categoryId);
   const isPlaceholder = image === 'assets/jury-logo.jpg';
   return `<article class="dish" data-vegan="${vegan}" data-search="${searchText}">
     <div class="dish__media${isPlaceholder ? ' dish__media--placeholder' : ''}"><img src="${image}" alt="${isPlaceholder ? 'JURI' : esc(it.name_de)}" loading="lazy"></div>
@@ -188,7 +259,7 @@ fetch('data/menu.json')
       return `<section class="menu-category" id="${esc(c.id)}">
         <h2><span lang="de">${esc(c.name_de)}</span><span lang="en">${esc(c.name_en || c.name_de)}</span></h2>
         <span class="menu-category__count">${c.items.length} <span lang="de">Gerichte</span><span lang="en">dishes</span></span>
-        <div class="dish-grid">${c.items.map(it => renderDish(it, catVegan)).join('')}</div>
+        <div class="dish-grid">${c.items.map(it => renderDish(it, catVegan, c.id)).join('')}</div>
       </section>`;
     }).join('');
     document.getElementById('menuEmpty')?.classList.remove('show');
