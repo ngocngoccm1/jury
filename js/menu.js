@@ -172,7 +172,8 @@ function buildSchema(cats) {
   };
 }
 
-fetch('_data/menu.json')
+// GitHub Pages excludes folders whose names begin with an underscore.
+fetch('data/menu.json')
   .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
   .then(data => {
     const cats = data.categories;
