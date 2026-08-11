@@ -7,6 +7,13 @@ document.querySelectorAll('#burger,[data-open-menu]').forEach(button =>
 drawer?.querySelector('.drawer-close')?.addEventListener('click', () => drawer.classList.remove('open'));
 drawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => drawer.classList.remove('open')));
 
+// --- Taumi-style dish rail controls ---
+const taumiRail = document.querySelector('.taumi-dish-rail');
+document.querySelectorAll('[data-rail]').forEach(button => button.addEventListener('click', () => {
+  const direction = button.dataset.rail === 'next' ? 1 : -1;
+  taumiRail?.scrollBy({ left: direction * Math.min(taumiRail.clientWidth * .75, 600), behavior: 'smooth' });
+}));
+
 // --- Language toggle (DE/EN) — persists in localStorage ---
 function setLang(lang) {
   document.body.classList.toggle('lang-en', lang === 'en');
