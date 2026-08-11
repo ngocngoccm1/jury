@@ -2,7 +2,8 @@
 
 // --- Mobile drawer ---
 const drawer = document.getElementById('drawer');
-document.getElementById('burger')?.addEventListener('click', () => drawer.classList.add('open'));
+document.querySelectorAll('#burger,[data-open-menu]').forEach(button =>
+  button.addEventListener('click', () => drawer?.classList.add('open')));
 drawer?.querySelector('.drawer-close')?.addEventListener('click', () => drawer.classList.remove('open'));
 drawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => drawer.classList.remove('open')));
 

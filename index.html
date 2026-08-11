@@ -19,7 +19,7 @@
 <link rel="preload" href="fonts/Archivo.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/tokens.css?v=3">
-<link rel="stylesheet" href="css/home.css?v=4">
+<link rel="stylesheet" href="css/home.css?v=5">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍜</text></svg>">
 <script type="application/ld+json">
 {
@@ -39,6 +39,8 @@
 </script>
 </head>
 <body>
+
+<div class="legacy-home" aria-hidden="true">
 
 <!-- Header -->
 <header class="header" id="header">
@@ -525,6 +527,76 @@
     <li><a href="kontakt.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2 1a11 11 0 0 0 5 5l1-2 5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"/></svg>Kontakt</a></li>
   </ul>
 </nav>
+
+</div>
+
+<div class="taumi-home">
+  <header class="taumi-header">
+    <button class="taumi-menu" data-open-menu aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+    <a class="taumi-brand" href="index.html" aria-label="JURI Startseite">JURI<small>VIETNAMESE · JAPANESE</small></a>
+    <div class="taumi-header__right">
+      <div class="taumi-lang" role="group" aria-label="Sprache"><button data-lang="de" aria-pressed="true">DE</button><button data-lang="en" aria-pressed="false">EN</button></div>
+      <a class="taumi-location" href="https://wa.me/4951513609?text=Hallo%20JURI%2C%20ich%20möchte%20einen%20Tisch%20reservieren."><span lang="de">Tisch reservieren</span><span lang="en">Reserve a table</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="taumi-hero" aria-label="JURI Restaurant">
+      <img src="images/hero-restaurant.jpg" alt="JURI Restaurant in Hameln" fetchpriority="high" width="1600" height="1500">
+      <div class="taumi-hero__shade"></div>
+      <div class="taumi-hero__mark"><strong>JURI</strong><span>Vietnamese · Japanese Fusion</span></div>
+    </section>
+
+    <section class="taumi-intro">
+      <p class="taumi-kicker"><span lang="de">JURI Restaurant Hameln</span><span lang="en">JURI Restaurant Hameln</span></p>
+      <h1><span lang="de">Zwei Küchen. Eine Handschrift.</span><span lang="en">Two cuisines. One signature.</span></h1>
+      <p><span lang="de">Vietnamesische Wärme trifft japanische Präzision. Frische Phở, Sushi und Fusion-Gerichte im Herzen von Hameln.</span><span lang="en">Vietnamese warmth meets Japanese precision. Fresh phở, sushi and fusion dishes in the heart of Hameln.</span></p>
+    </section>
+
+    <section class="taumi-dishes" aria-labelledby="taumi-dishes-title">
+      <h2 id="taumi-dishes-title"><span lang="de">Besondere Gerichte</span><span lang="en">Special dishes</span></h2>
+      <div class="taumi-dish-rail">
+        <a href="speisekarte.html" class="taumi-dish"><img src="images/dish-sushi.jpg" alt="Sushi Platte"><span>Sushi Platter</span></a>
+        <a href="speisekarte.html#pho" class="taumi-dish"><img src="images/dish-pho.jpg" alt="Phở Bò"><span>Phở Bò</span></a>
+        <a href="speisekarte.html" class="taumi-dish"><img src="images/dish-sommerrollen.jpg" alt="Sommerrollen"><span>Sommerrollen</span></a>
+        <a href="speisekarte.html" class="taumi-dish"><img src="images/dish-fruehlingsrollen.jpg" alt="Frühlingsrollen"><span>Frühlingsrollen</span></a>
+        <a href="speisekarte.html" class="taumi-dish"><img src="images/dish-curry.jpg" alt="Grünes Curry"><span>Grünes Curry</span></a>
+      </div>
+      <p class="taumi-dishes__note"><span lang="de">Entdecken Sie unsere gesamte Speisekarte.</span><span lang="en">Discover our complete menu.</span></p>
+      <a class="taumi-button" href="speisekarte.html"><span lang="de">Speisekarte</span><span lang="en">Menu</span></a>
+    </section>
+
+    <section class="taumi-story">
+      <div class="taumi-story__copy">
+        <h2><span lang="de">Feiern bei JURI</span><span lang="en">Celebrate at JURI</span></h2>
+        <p><span lang="de">Ob Familienessen, Geburtstag oder Firmenfeier: Wir gestalten Ihren Abend mit Sharing-Sets, persönlichen Service und vietnamesisch-japanischer Küche.</span><span lang="en">Whether a family dinner, birthday or company event: we shape your evening with sharing sets, personal service and Vietnamese-Japanese cuisine.</span></p>
+        <a class="taumi-contact" href="anlaesse.html"><span lang="de">Events &amp; Catering entdecken</span><span lang="en">Discover events &amp; catering</span></a>
+      </div>
+      <img src="images/event-table.jpg" alt="Tafel für ein Event bei JURI" loading="lazy" width="1200" height="800">
+    </section>
+
+    <section class="taumi-story taumi-story--reverse">
+      <img src="images/amb-dining.jpg" alt="JURI Restaurant Innenraum" loading="lazy" width="900" height="675">
+      <div class="taumi-story__copy">
+        <h2><span lang="de">Ein Ort zum Bleiben</span><span lang="en">A place to stay</span></h2>
+        <p><span lang="de">Warmes Licht, ruhige Details und Gerichte zum Teilen. Tagsüber unkompliziert, abends entspannt.</span><span lang="en">Warm light, calm details and dishes made for sharing. Easy-going by day, relaxed by night.</span></p>
+        <a class="taumi-button" href="https://wa.me/4951513609?text=Hallo%20JURI%2C%20ich%20möchte%20einen%20Tisch%20reservieren."><span lang="de">Tisch reservieren</span><span lang="en">Reserve a table</span></a>
+      </div>
+    </section>
+
+    <section class="taumi-about">
+      <h2><span lang="de">Über JURI</span><span lang="en">About JURI</span></h2>
+      <p><span lang="de">Traditionelle Aromen, frisch zubereitet und mit Respekt vor beiden Küchen serviert.</span><span lang="en">Traditional flavours, freshly prepared and served with respect for both cuisines.</span></p>
+    </section>
+  </main>
+
+  <footer class="taumi-footer">
+    <div><a class="taumi-brand" href="index.html">JURI<small>VIETNAMESE · JAPANESE</small></a><p><span lang="de">Vietnamesisch-japanische Fusion im historischen Fachwerkhaus am Kastanienwall.</span><span lang="en">Vietnamese-Japanese fusion in Hameln's historic old town.</span></p></div>
+    <div><h3><span lang="de">Öffnungszeiten</span><span lang="en">Opening hours</span></h3><p>Mo – So: 11:00 – 22:00<br>Kastanienwall 32<br>31785 Hameln</p></div>
+    <div><h3><span lang="de">Links</span><span lang="en">Links</span></h3><a href="speisekarte.html">Speisekarte</a><a href="ueber-uns.html"><span lang="de">Über uns</span><span lang="en">About</span></a><a href="kontakt.html">Kontakt</a></div>
+    <div><h3>Kontakt</h3><a href="tel:+4951513609">+49 5151 3609</a><a href="https://wa.me/4951513609">WhatsApp</a></div>
+  </footer>
+</div>
 
 <script src="js/home.js"></script>
 </body>
