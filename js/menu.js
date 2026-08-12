@@ -259,7 +259,17 @@ const EXACT_DISH_IMAGES = {
   'schnaps:jagermeister': 'assets/juri-menu-v2-193-herbal-liqueur.png',
   'schnaps:irish cream likor': 'assets/juri-menu-v2-194-irish-cream.png',
   'schnaps:whisky': 'assets/juri-menu-v2-195-whisky.png',
-  'schnaps:chivas 18': 'assets/juri-menu-v2-196-chivas.png'
+  'schnaps:chivas 18': 'assets/juri-menu-v2-196-chivas.png',
+  'wein:chardonnay · trocken': 'images/drink-cocktails.jpg',
+  'wein:riesling · trocken': 'images/drink-cocktails.jpg',
+  'wein:grauburgunder · trocken': 'images/drink-cocktails.jpg',
+  'wein:weissburgunder · trocken': 'images/drink-cocktails.jpg',
+  'wein:pinot grigio · trocken': 'images/drink-cocktails.jpg',
+  'wein:weinschorle · spritzer': 'images/drink-cocktails.jpg',
+  'wein:rosewein': 'images/drink-cocktails.jpg',
+  'wein:merlot · trocken': 'images/bar.jpg',
+  'wein:primitivo puglia · trocken': 'images/bar.jpg',
+  'wein:prosecco': 'images/drink-cocktails.jpg'
 };
 
 const photoForDishExact = (it, categoryId) => {

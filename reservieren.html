@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tisch reservieren | JURI Restaurant Hameln</title>
+  <meta name="description" content="Tisch im JURI Restaurant Hameln online reservieren.">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/taumi-source-252485d45a1d6a08.css">
+  <link rel="stylesheet" href="css/juri-source.css?v=20260812d">
+</head>
+<body>
+  <main>
+    <section class="reservation-hero">
+      <img src="images/interior.jpg" alt="Innenraum des JURI Restaurants">
+      <div class="reservation-hero__content">
+        <h1>Einen Tisch reservieren</h1>
+        <span class="reservation-hero__branch">JURI RESTAURANT HAMELN</span>
+        <div class="reservation-hero__contact"><span>● Kastanienwall 32, 31785 Hameln</span><a href="tel:+4951513609">☎ +49 5151 3609</a></div>
+      </div>
+    </section>
+    <section class="reservation-main">
+      <div class="reservation-card">
+        <p class="reservation-card__intro">Willkommen im JURI Restaurant!<br>Bitte wählen Sie die Details unten aus, um Ihren Tisch zu reservieren.</p>
+        <div class="reservation-grid">
+          <form class="reservation-form" id="onlineReservationForm">
+            <h2>Reservierung</h2>
+            <label>Datum *<input id="bookingDate" name="date" type="date" required></label>
+            <label>Zeit *<select id="bookingTime" name="time" required><option value="">Zeit wählen</option><option>11:00</option><option>11:30</option><option>12:00</option><option>12:30</option><option>13:00</option><option>13:30</option><option>14:00</option><option>17:00</option><option>17:30</option><option>18:00</option><option>18:30</option><option>19:00</option><option>19:30</option><option>20:00</option><option>20:30</option><option>21:00</option></select></label>
+            <label>Anzahl der Gäste *<select id="bookingGuests" name="guests" required><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option value="9+">9+</option></select></label>
+            <label>Tischplatzierung<select id="bookingSeat" name="seat"><option value="">Keine Präferenz</option><option>Innenbereich</option><option>Außenbereich</option><option>Ruhiger Tisch</option></select></label>
+            <label>Name *<input id="bookingName" name="name" autocomplete="name" placeholder="Ihr Name" required></label>
+            <label>Telefon *<input id="bookingPhone" name="phone" type="tel" autocomplete="tel" placeholder="Ihre Telefonnummer" required></label>
+            <label class="full">E-Mail *<input id="bookingEmail" name="email" type="email" autocomplete="email" placeholder="name@beispiel.de" required></label>
+            <label class="full">Notiz<textarea id="bookingNote" name="note" placeholder="Allergien, Kinderstuhl oder weitere Wünsche"></textarea></label>
+            <label class="full reservation-consent"><input name="consent" type="checkbox" required><span>Mit der Angabe der oben genannten Informationen erkläre ich mich mit den <a href="impressum.html">Bedingungen</a> und der <a href="datenschutz.html">Datenschutzrichtlinie</a> einverstanden.</span></label>
+            <button class="reservation-submit" type="submit">reservieren</button>
+            <p class="reservation-message" id="reservationMessage" aria-live="polite"></p>
+          </form>
+          <aside class="reservation-summary">
+            <h2>Reservierung bestätigen</h2>
+            <dl>
+              <div><dt>Restaurant</dt><dd>JURI Restaurant Hameln</dd></div>
+              <div><dt>Adresse des Restaurants</dt><dd>Kastanienwall 32, 31785 Hameln</dd></div>
+              <div><dt>Zeit und Datum</dt><dd data-summary="datetime">---</dd></div>
+              <div><dt>Anzahl der Gäste</dt><dd data-summary="guests">1 Gast</dd></div>
+              <div><dt>Vollständiger Name</dt><dd data-summary="name">---</dd></div>
+              <div><dt>E-Mail</dt><dd data-summary="email">---</dd></div>
+              <div><dt>Telefon</dt><dd data-summary="phone">---</dd></div>
+              <div><dt>Notiz</dt><dd data-summary="note">---</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="js/juri-source.js?v=20260812d"></script>
+  <script src="js/reservation.js?v=20260812d"></script>
+</body>
+</html>
