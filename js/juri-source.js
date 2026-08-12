@@ -1,5 +1,16 @@
 /* Shared JURI chrome using Taumi's original header, drawer and footer geometry. */
 (() => {
+  // Shared interaction modules do not alter the page until a guest starts an action.
+  const loadFeature = src => {
+    if (document.querySelector(`script[src="${src}"]`)) return;
+    const script = document.createElement('script');
+    script.src = src;
+    script.async = false;
+    document.head.append(script);
+  };
+  loadFeature('js/booking.js');
+  loadFeature('js/order-cart.js');
+
   if (document.getElementById('juriSourceHome') || document.querySelector('.juri-shell-header')) return;
 
   document.body.classList.add('juri-source-site');

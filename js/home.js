@@ -75,7 +75,7 @@ if (track && dots) {
   sync();
 }
 
-// --- Reservation form (static deployment: opens a prepared email) ---
+// --- Reservation form (static deployment: opens a complete WhatsApp request) ---
 const form = document.getElementById('reserveForm');
 const dateEl = document.getElementById('r-date');
 if (dateEl) dateEl.min = new Date().toISOString().slice(0, 10);
@@ -98,7 +98,6 @@ form?.addEventListener('submit', e => {
     msg.textContent = 'Bitte geben Sie eine gültige E-Mail-Adresse ein.';
     msg.className = 'form-msg err'; return;
   }
-  const subject = 'Tischreservierung JURI';
   const message = [
     'Hallo JURI,', '',
     'ich möchte gerne einen Tisch reservieren.', '',
@@ -110,8 +109,8 @@ form?.addEventListener('submit', e => {
     `Uhrzeit: ${data.time}`,
     `Anmerkung: ${data.note || '-'}`
   ].join('\n');
-  window.location.href = `mailto:${form.dataset.reservationEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
-  msg.textContent = 'Ihr E-Mail-Programm wird geöffnet. Bitte senden Sie die vorbereitete Anfrage ab.';
+  window.location.href = `https://wa.me/4951513609?text=${encodeURIComponent(message)}`;
+  msg.textContent = 'WhatsApp wird mit Ihrer vollständigen Reservierungsanfrage geöffnet.';
   msg.className = 'form-msg ok';
 });
 

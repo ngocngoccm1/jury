@@ -635,3 +635,7 @@ body.source-drawer-open{overflow:hidden}
   .juri-source-dish-dots{display:none}
 }
 @media (min-width:1616px){.juri-source .container{max-width:1616px}}
+
+/* The active homepage is the original reference shell above. */
+.legacy-home{display:block!important}
+.juri-source[hidden],.juri-taumi[hidden]{display:none!important}

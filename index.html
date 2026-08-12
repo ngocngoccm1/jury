@@ -25,7 +25,7 @@
 <link rel="stylesheet" href="css/taumi-source-cfa93e21f1e4a5a1.css">
 <link rel="stylesheet" href="css/taumi-source-ab491180cfe1bd60.css">
 <link rel="stylesheet" href="css/taumi-source-0d9b1a09e9e127c3.css">
-<link rel="stylesheet" href="css/home.css?v=20260812c">
+<link rel="stylesheet" href="css/home.css?v=20260812d">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍜</text></svg>">
 <script type="application/ld+json">
 {
@@ -46,7 +46,7 @@
 </head>
 <body>
 
-<div class="legacy-home" aria-hidden="true">
+<div class="legacy-home">
 <!-- Header -->
 <header class="header" id="header">
   <div class="container">
@@ -535,7 +535,8 @@
 
 </div>
 
-<div class="juri-taumi" id="home">
+<!-- Older duplicate shell kept out of the rendered page; the source-faithful shell below is the active homepage. -->
+<div class="juri-taumi" id="home" hidden aria-hidden="true">
   <header class="jt-header">
     <button class="jt-menu" type="button" data-jt-menu aria-label="Menü öffnen"><i></i><i></i><i></i></button>
     <a class="jt-logo" href="index.html" aria-label="JURI Startseite">JURI<small>VIETNAMESE · JAPANESE</small></a>
@@ -565,7 +566,7 @@
 </div>
 
 <!-- Source-faithful homepage: Taumi's original section structure, retained with JURI identity. -->
-<div class="juri-source" id="juriSourceHome">
+<div class="juri-source" id="juriSourceHome" hidden aria-hidden="true">
   <header class="bg-gradient-180-black fixed top-0 z-50 flex h-[60px] w-full items-center transition-all duration-500 backdrop-blur-[2px] shadow-lg juri-source-header">
     <div class="container flex justify-between">
       <div class="flex items-center">

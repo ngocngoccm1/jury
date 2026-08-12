@@ -304,6 +304,10 @@ function renderDish(it, catVegan, categoryId) {
   const imgCode = esc(it.code);
   const image = photoForDishExact(it, categoryId);
   const isPlaceholder = image === 'assets/jury-logo.jpg';
+  const orderKey = esc(`${categoryId}:${it.code}`);
+  const orderLabel = it.variants && it.variants.length
+    ? '<span lang="de">Auswählen</span><span lang="en">Choose</span>'
+    : '<span lang="de">In den Warenkorb</span><span lang="en">Add to cart</span>';
   return `<article class="dish" data-vegan="${vegan}" data-search="${searchText}">
     <div class="dish__media${isPlaceholder ? ' dish__media--placeholder' : ''}"><img src="${image}" alt="${isPlaceholder ? 'JURI' : esc(it.name_de)}" loading="lazy" onerror="this.onerror=null;this.src='assets/jury-logo.jpg';this.closest('.dish__media').classList.add('dish__media--placeholder')"></div>
     <div class="dish__body">
@@ -318,6 +322,7 @@ function renderDish(it, catVegan, categoryId) {
       ${desc}
       ${cardAllergens}
       ${variantsPart}
+      <button class="dish__add" type="button" data-add-dish="${orderKey}">${orderLabel}</button>
     </div>
   </article>`;
 }
@@ -348,6 +353,12 @@ fetch('data/menu.json')
   .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
   .then(data => {
     const cats = data.categories;
+    // Kept separate from rendering: the order UI only reads this local menu data
+    // after the guest explicitly chooses a dish.
+    window.JuryOrderMenu = {};
+    cats.forEach(category => category.items.forEach(item => {
+      window.JuryOrderMenu[`${category.id}:${item.code}`] = item;
+    }));
 
     // tabs
     TAB_EL.innerHTML = cats.map((c, i) =>
