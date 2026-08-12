@@ -548,3 +548,27 @@ body:has(.juri-taumi){padding-bottom:0!important;overflow:visible!important}
   .jt-dish-track a{font-size:14px;line-height:21px;font-weight:500;color:#aaa}
   .jt-dish-track span{margin-top:10px}
 }
+
+/* Dish rail copied from the source component: two padded slides and slick-style circular dots on mobile. */
+.jt-dish-frame{overflow:hidden;border-radius:14px}
+.jt-slider-dots{margin:0;padding:0;list-style:none;text-align:center}
+.jt-slider-dots li{display:inline-block;width:16px;height:16px;margin:0;padding:0;vertical-align:top}
+.jt-slider-dots button{position:relative;display:block;width:20px;height:20px;margin:0;padding:5px;border:0;background:transparent;color:transparent;font-size:0;line-height:0;cursor:pointer}
+.jt-slider-dots button::before{position:absolute;inset:0;width:20px;height:20px;color:var(--jt-heading);content:'•';font:10px/20px Arial,sans-serif;opacity:.25;text-align:center}
+.jt-slider-dots .is-active button::before{opacity:.75}
+@media (max-width:767px){
+  .jt-dishes{height:490px}
+  .jt-dish-window{position:relative;height:240px;margin:8px -8px 0;padding:0 0 16px;overflow:visible}
+  .jt-dish-track{height:200px;gap:0;padding:0;scroll-snap-type:x mandatory}
+  .jt-dish-track a.jt-dish-slide{flex:0 0 185px;height:200px;padding:0 8px;font-size:14px;line-height:21px}
+  .jt-dish-frame{width:169px;height:169px}
+  .jt-dish-track img{width:169px;height:169px;border-radius:0}
+  .jt-dish-track span{margin-top:10px;font-size:14px;line-height:21px;font-weight:500;color:#aaa}
+  .jt-slider-dots{height:22px;margin-top:27px}
+}
+@media (min-width:768px){
+  .jt-dish-track a.jt-dish-slide{padding:0;height:auto}
+  .jt-dish-frame{width:100%;aspect-ratio:1/1}
+  .jt-dish-frame img{width:100%;height:100%;border-radius:0}
+  .jt-slider-dots{display:none}
+}

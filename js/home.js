@@ -122,6 +122,27 @@ document.querySelector('[data-jt-close]')?.addEventListener('click', () => jtDra
 jtDrawer?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => jtDrawer.classList.remove('open')));
 
 const jtTrack = document.getElementById('jtDishTrack');
-const jtStep = () => (jtTrack?.querySelector('a')?.getBoundingClientRect().width || 169) + 16;
-document.querySelector('[data-jt-next]')?.addEventListener('click', () => jtTrack?.scrollBy({ left: jtStep(), behavior: 'smooth' }));
-document.querySelector('[data-jt-prev]')?.addEventListener('click', () => jtTrack?.scrollBy({ left: -jtStep(), behavior: 'smooth' }));
+const jtSlides = [...document.querySelectorAll('.jt-dish-slide')];
+const jtDots = [...document.querySelectorAll('[data-jt-dot]')];
+const jtSetActiveDot = index => jtDots.forEach((dot, i) => {
+  dot.parentElement?.classList.toggle('is-active', i === index);
+  dot.setAttribute('aria-current', String(i === index));
+});
+const jtScrollToSlide = index => {
+  const slide = jtSlides[index];
+  if (!jtTrack || !slide) return;
+  jtTrack.scrollTo({ left: slide.offsetLeft, behavior: 'smooth' });
+  jtSetActiveDot(index);
+};
+jtDots.forEach(dot => dot.addEventListener('click', () => jtScrollToSlide(Number(dot.dataset.jtDot))));
+if (jtTrack) {
+  let jtScrollFrame;
+  jtTrack.addEventListener('scroll', () => {
+    cancelAnimationFrame(jtScrollFrame);
+    jtScrollFrame = requestAnimationFrame(() => {
+      const step = jtSlides[0]?.getBoundingClientRect().width || 185;
+      jtSetActiveDot(Math.max(0, Math.min(jtSlides.length - 1, Math.round(jtTrack.scrollLeft / step))));
+    });
+  }, { passive: true });
+  jtSetActiveDot(0);
+}
