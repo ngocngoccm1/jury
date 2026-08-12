@@ -278,10 +278,12 @@ function renderVariant(v, orderKey) {
   const code = v.code ? `<span class="var-code">${esc(v.code)}</span>` : '';
   const label = esc(v.label_de || '');
   const labelEn = v.label_en && v.label_en !== v.label_de ? esc(v.label_en) : label;
-  return `<li data-add-dish="${orderKey}" data-variant-code="${esc(v.code || '')}" role="button" tabindex="0">${code}
+  const addLabel = esc(`Hinzufügen: ${v.label_de || ''}`);
+  return `<li>${code}
     <span class="var-label"><span lang="de">${label}</span><span lang="en">${labelEn}</span></span>
     ${v.allergens && v.allergens.length ? `<span class="var-alg">${v.allergens.map(a => `<span class="chip">${esc(a)}</span>`).join('')}</span>` : ''}
-    <span class="var-price">${esc(v.price || '')}</span></li>`;
+    <span class="var-price">${esc(v.price || '')}</span>
+    <button class="dish__add dish__add--variant" type="button" data-add-dish="${orderKey}" data-variant-code="${esc(v.code || '')}" aria-label="${addLabel}" title="${addLabel}">+</button></li>`;
 }
 
 function renderDish(it, catVegan, categoryId) {
@@ -299,12 +301,14 @@ function renderDish(it, catVegan, categoryId) {
     cardAllergens = ''; // allergens shown per-variant
   } else {
     variantsPart = '';
-    headPrice = it.price ? `<span class="dish__price--single">${esc(it.price)}</span>` : '';
+    headPrice = it.price ? `<div class="dish__price-group"><span class="dish__price--single">${esc(it.price)}</span><button class="dish__add" type="button" data-add-dish="${orderKey}" aria-label="${esc(`Hinzufügen: ${it.name_de}`)}" title="${esc(`Hinzufügen: ${it.name_de}`)}">+</button></div>` : '';
     cardAllergens = chips(it.allergens);
   }
   const searchText = esc([it.code, it.name_de, it.name_en, it.desc_de].filter(Boolean).join(' ').toLowerCase());
-  const orderAttrs = hasVariants ? '' : ` data-add-dish="${orderKey}" role="button" tabindex="0"`;
-  return `<article class="dish" data-vegan="${vegan}" data-search="${searchText}"${orderAttrs}>
+  const image = photoForDishExact(it, categoryId);
+  const isPlaceholder = image === 'assets/jury-logo.jpg';
+  return `<article class="dish" data-vegan="${vegan}" data-search="${searchText}">
+    <div class="dish__media${isPlaceholder ? ' dish__media--placeholder' : ''}"><img src="${image}" alt="${isPlaceholder ? 'JURI' : esc(it.name_de)}" loading="lazy" width="112" height="112" onerror="this.onerror=null;this.src='assets/jury-logo.jpg';this.closest('.dish__media').classList.add('dish__media--placeholder')"></div>
     <div class="dish__body">
       <div class="dish__head">
         <div>
@@ -351,7 +355,10 @@ fetch('data/menu.json')
     // after the guest explicitly chooses a dish.
     window.JuryOrderMenu = {};
     cats.forEach(category => category.items.forEach(item => {
-      window.JuryOrderMenu[`${category.id}:${item.code}`] = item;
+      window.JuryOrderMenu[`${category.id}:${item.code}`] = {
+        ...item,
+        image: photoForDishExact(item, category.id)
+      };
     }));
 
     // tabs
