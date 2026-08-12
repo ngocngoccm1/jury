@@ -460,10 +460,7 @@ body.lang-en [lang="de"]{display:none}
 .jt-section h2,.jt-feature h3{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}.jt-about-grid{display:none}@media (min-width:768px){.jt-about-grid{display:grid}}
 
 /* Reference-fit overrides: the Taumi page rhythm is preserved while the JURI brand remains in place. */
-html:has(.juri-taumi){scrollbar-width:thin;scrollbar-color:#64766d transparent}
-html:has(.juri-taumi)::-webkit-scrollbar{width:4px}
-html:has(.juri-taumi)::-webkit-scrollbar-thumb{background:#64766d}
-body:has(.juri-taumi){padding-bottom:0!important}
+body:has(.juri-taumi){padding-bottom:0!important;overflow:visible!important}
 .juri-taumi{font-size:14px;line-height:21px}
 .juri-taumi .jt-container{width:100%;max-width:1280px;padding-inline:16px}
 .jt-heading-icon{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
@@ -502,14 +499,14 @@ body:has(.juri-taumi){padding-bottom:0!important}
   .jt-philosophy .jt-copy{height:112px;margin:32px -8px 0;padding:0 8px 24px}
   .jt-copy strong{max-width:760px;font-size:20px;line-height:28px}
   .jt-copy p{max-width:760px;margin-top:8px;font-size:14px;line-height:21px}
-  .jt-dishes{height:633px}
+  .jt-dishes{height:632px}
   .jt-dish-window{height:315px;margin:32px -8px 0;padding-bottom:24px}
   .jt-dish-track{height:291px;gap:16px}
   .jt-dish-track a{flex:0 0 calc((100% - 64px)/5);font-size:11px}
   .jt-dish-track img{width:100%;height:auto;aspect-ratio:1/1;border-radius:8px}
   .jt-slider-nav{margin-top:0}
   .jt-dishes .jt-container>p{margin-top:44px;font-size:14px;line-height:21px}
-  .jt-restaurants{height:1200px}
+  .jt-restaurants{height:1198px}
   .jt-feature{height:310px;grid-template-columns:1fr 1fr;gap:80px;margin-top:52px}
   .jt-feature--reverse{height:310px;margin-top:60px}
   .jt-feature--lunch{height:249px;margin-top:60px}
@@ -524,4 +521,30 @@ body:has(.juri-taumi){padding-bottom:0!important}
   .jt-about{height:236px}
   .jt-about>div>p{max-width:none;font-size:16px;line-height:24px;text-align:left}
   .jt-footer{height:315px;padding:32px 0}
+}
+
+/* Fine-grained reference matching while retaining JURI's green identity. */
+::-webkit-scrollbar{width:4px;height:4px;overflow:hidden;border-radius:9999px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb,::-webkit-scrollbar-thumb:hover{background:#64766d}
+.juri-taumi{--jt-bg:#19201e;--jt-bg-alt:#1b2421;--jt-muted:#aaa;--jt-heading:#e5efcf;overflow:visible}
+.jt-header{background:none;box-shadow:none}
+.jt-section h2{color:var(--jt-heading);letter-spacing:normal}
+.jt-feature h3{font-weight:700;letter-spacing:normal}
+.jt-feature p{color:var(--jt-muted)}
+.jt-philosophy .jt-copy p{margin-top:4px;color:#fff}
+.jt-feature__copy>.jt-contact{display:block!important;width:100%;height:81px;margin:32px 0 0;padding:12px;border-radius:14px;background:linear-gradient(180deg,rgba(181,207,182,.18),rgba(181,207,182,.03));color:var(--jt-heading);text-align:center}
+.jt-contact h5{margin:0 0 16px;color:var(--jt-heading);font-size:14px;line-height:21px;font-weight:400}
+.jt-contact>div{max-width:167px;margin:auto;color:var(--jt-heading);font-size:14px;line-height:21px}
+.jt-contact a{display:flex!important;align-items:center;gap:8px;margin:0!important;padding:0!important;background:none!important;color:inherit!important;font:inherit!important;text-align:left!important}
+.jt-contact svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.jt-feature__note .jt-mail{display:inline!important;margin:0!important;padding:0!important;background:none!important;color:var(--jt-heading)!important;font:inherit!important;text-align:inherit!important}
+.jt-feature__hours{margin-top:0!important;color:var(--jt-heading)!important}
+@media (min-width:768px){
+  .jt-section h2{gap:4px}
+  .jt-copy strong{font-size:14px;line-height:21px}
+  .jt-copy p{margin-top:4px}
+  .jt-dish-track{padding:0 8px 4px}
+  .jt-dish-track a{font-size:14px;line-height:21px;font-weight:500;color:#aaa}
+  .jt-dish-track span{margin-top:10px}
 }
