@@ -3,6 +3,7 @@
    exchanges Taumi's identity for JURI's green palette and local content. */
 @font-face{font-family:"JuriZen";src:url("../fonts/taumi-zen-latin.woff2") format("woff2");font-display:swap;font-weight:700}
 
+html:has(body.juri-source-site){overflow-x:clip}
 body.juri-source-site{margin:0;padding:0!important;background:#19201e;color:#fff;font:14px/1.5 ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";overflow-x:hidden}
 body.juri-source-site *{box-sizing:border-box}
 body.juri-source-site a{text-decoration:none}
@@ -148,9 +149,8 @@ body.juri-source-site .legal p{color:#aaa!important;line-height:24px!important}
 @media(min-width:1616px){body.juri-source-site .container{max-width:1616px}}
 @media(max-width:767px){
   .juri-shell-book{padding:8px 14px;font-size:13px}
-  .juri-shell-book span{display:none}
   .juri-source-site .page-hero{min-height:520px}
-  .juri-source-site .page-hero h1{font-size:56px;line-height:1.08}
+  .juri-source-site .page-hero h1{width:100%;max-width:100%;font-size:clamp(38px,10.25vw,48px);line-height:1.08;overflow-wrap:normal;word-break:normal}
   .juri-source-site .page-hero p{font-size:14px;line-height:21px}
   .juri-source-site .page-content,.juri-source-site .section--alt{padding:32px 0}
   .juri-source-site .section-head{margin-bottom:20px}
