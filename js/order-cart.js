@@ -21,7 +21,7 @@
   const itemKey = item => [item.menuKey, item.variantCode || 'single'].join('|');
 
   const css = `
-    .dish__add{display:inline-flex;min-height:40px;align-items:center;justify-content:center;width:100%;margin-top:14px;border:1px solid #7d9b79;border-radius:8px;background:#7d9b79;color:#fff;font:600 13px/1 system-ui,sans-serif;cursor:pointer}
+    .dish[data-add-dish],.dish__variants li[data-add-dish]{cursor:pointer}.dish[data-add-dish]:focus-visible,.dish__variants li[data-add-dish]:focus-visible{outline:2px solid #e5efcf;outline-offset:3px}
     .jury-order-modal[hidden]{display:none!important}.jury-order-modal{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;padding:16px;background:rgba(0,0,0,.64)}
     .jury-order-modal__panel{width:min(100%,430px);max-height:calc(100dvh - 32px);overflow:auto;border:1px solid rgba(229,239,207,.26);border-radius:14px;background:#202126;color:#fff;box-shadow:0 24px 70px rgba(0,0,0,.48)}
     .jury-order-modal__head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:22px 22px 8px}.jury-order-modal__head h2{margin:0;color:#e5efcf;font:700 21px/1.25 system-ui,sans-serif}.jury-order-modal__head p{margin:6px 0 0;color:#aaa;font:14px/1.45 system-ui,sans-serif}
@@ -67,7 +67,7 @@
     write(cart);
   };
 
-  const addMenuItem = menuKey => {
+  const addMenuItem = (menuKey, variantCode = '') => {
     const item = window.JuryOrderMenu?.[menuKey];
     if (!item) return;
     const variants = (item.variants || []).filter(variant => variant.price);
@@ -80,6 +80,10 @@
       price: variant?.price || item.price || ''
     });
     if (!variants.length) return selected(null);
+    if (variantCode) {
+      const directVariant = variants.find(variant => String(variant.code || '') === variantCode);
+      if (directVariant) return selected(directVariant);
+    }
     optionModal.querySelector('#juryOrderTitle').textContent = item.name_de;
     const choices = optionModal.querySelector('.jury-order-options');
     choices.innerHTML = variants.map((variant, index) => `<button class="jury-order-option" type="button" data-order-option="${index}"><span>${esc(variant.code ? `${variant.code} · ` : '')}${esc(variant.label_de || '')}</span><small>${esc(variant.price)}</small></button>`).join('');
@@ -94,7 +98,15 @@
     const addButton = event.target.closest('[data-add-dish]');
     if (!addButton) return;
     event.preventDefault();
-    addMenuItem(addButton.dataset.addDish);
+    addMenuItem(addButton.dataset.addDish, addButton.dataset.variantCode || '');
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    const addTarget = event.target.closest('[data-add-dish]');
+    if (!addTarget) return;
+    event.preventDefault();
+    addMenuItem(addTarget.dataset.addDish, addTarget.dataset.variantCode || '');
   });
 
   const renderCheckout = () => {

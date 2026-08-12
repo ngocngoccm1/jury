@@ -274,11 +274,11 @@ const photoForDishExact = (it, categoryId) => {
 const CAT_EL = document.getElementById('menuBody');
 const TAB_EL = document.getElementById('menuTabs');
 
-function renderVariant(v) {
+function renderVariant(v, orderKey) {
   const code = v.code ? `<span class="var-code">${esc(v.code)}</span>` : '';
   const label = esc(v.label_de || '');
   const labelEn = v.label_en && v.label_en !== v.label_de ? esc(v.label_en) : label;
-  return `<li>${code}
+  return `<li data-add-dish="${orderKey}" data-variant-code="${esc(v.code || '')}" role="button" tabindex="0">${code}
     <span class="var-label"><span lang="de">${label}</span><span lang="en">${labelEn}</span></span>
     ${v.allergens && v.allergens.length ? `<span class="var-alg">${v.allergens.map(a => `<span class="chip">${esc(a)}</span>`).join('')}</span>` : ''}
     <span class="var-price">${esc(v.price || '')}</span></li>`;
@@ -286,13 +286,15 @@ function renderVariant(v) {
 
 function renderDish(it, catVegan, categoryId) {
   const vegan = catVegan || isVeganItem(it);
+  const orderKey = esc(`${categoryId}:${it.code}`);
+  const hasVariants = Boolean(it.variants && it.variants.length);
   const nameEn = it.name_en && it.name_en !== it.name_de ? esc(it.name_en) : esc(it.name_de);
   const desc = it.desc_de
     ? `<p class="dish__desc"><span lang="de">${esc(it.desc_de)}</span><span lang="en">${esc(it.desc_en || it.desc_de)}</span></p>`
     : '';
   let variantsPart, headPrice, cardAllergens;
-  if (it.variants && it.variants.length) {
-    variantsPart = `<ul class="dish__variants">${it.variants.map(renderVariant).join('')}</ul>`;
+  if (hasVariants) {
+    variantsPart = `<ul class="dish__variants">${it.variants.map(v => renderVariant(v, orderKey)).join('')}</ul>`;
     headPrice = '';
     cardAllergens = ''; // allergens shown per-variant
   } else {
@@ -301,19 +303,12 @@ function renderDish(it, catVegan, categoryId) {
     cardAllergens = chips(it.allergens);
   }
   const searchText = esc([it.code, it.name_de, it.name_en, it.desc_de].filter(Boolean).join(' ').toLowerCase());
-  const imgCode = esc(it.code);
-  const image = photoForDishExact(it, categoryId);
-  const isPlaceholder = image === 'assets/jury-logo.jpg';
-  const orderKey = esc(`${categoryId}:${it.code}`);
-  const orderLabel = it.variants && it.variants.length
-    ? '<span lang="de">Auswählen</span><span lang="en">Choose</span>'
-    : '<span lang="de">In den Warenkorb</span><span lang="en">Add to cart</span>';
-  return `<article class="dish" data-vegan="${vegan}" data-search="${searchText}">
-    <div class="dish__media${isPlaceholder ? ' dish__media--placeholder' : ''}"><img src="${image}" alt="${isPlaceholder ? 'JURI' : esc(it.name_de)}" loading="lazy" onerror="this.onerror=null;this.src='assets/jury-logo.jpg';this.closest('.dish__media').classList.add('dish__media--placeholder')"></div>
+  const orderAttrs = hasVariants ? '' : ` data-add-dish="${orderKey}" role="button" tabindex="0"`;
+  return `<article class="dish" data-vegan="${vegan}" data-search="${searchText}"${orderAttrs}>
     <div class="dish__body">
       <div class="dish__head">
         <div>
-          <span class="dish__code">Nr. ${imgCode}</span>
+          <span class="dish__code">Nr. ${esc(it.code)}</span>
           <h3 class="dish__name"><span lang="de">${esc(it.name_de)}</span><span lang="en">${nameEn}</span></h3>
           ${vegan ? '<span class="badge-vegan" lang="de">Vegan</span>' : ''}
         </div>
@@ -322,7 +317,6 @@ function renderDish(it, catVegan, categoryId) {
       ${desc}
       ${cardAllergens}
       ${variantsPart}
-      <button class="dish__add" type="button" data-add-dish="${orderKey}">${orderLabel}</button>
     </div>
   </article>`;
 }
