@@ -1,18 +1,16 @@
 // js/home.js — Jury Phở homepage interactivity (plain DOM, no deps)
 
+// --- Sticky header state ---
+const header = document.querySelector('.header');
+addEventListener('scroll', () => {
+  header?.classList.toggle('scrolled', scrollY > 40);
+}, { passive: true });
+
 // --- Mobile drawer ---
 const drawer = document.getElementById('drawer');
-document.querySelectorAll('#burger,[data-open-menu]').forEach(button =>
-  button.addEventListener('click', () => drawer?.classList.add('open')));
+document.getElementById('burger')?.addEventListener('click', () => drawer.classList.add('open'));
 drawer?.querySelector('.drawer-close')?.addEventListener('click', () => drawer.classList.remove('open'));
 drawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => drawer.classList.remove('open')));
-
-// --- Taumi-style dish rail controls ---
-const taumiRail = document.querySelector('.taumi-dish-rail');
-document.querySelectorAll('[data-rail]').forEach(button => button.addEventListener('click', () => {
-  const direction = button.dataset.rail === 'next' ? 1 : -1;
-  taumiRail?.scrollBy({ left: direction * Math.min(taumiRail.clientWidth * .75, 600), behavior: 'smooth' });
-}));
 
 // --- Language toggle (DE/EN) — persists in localStorage ---
 function setLang(lang) {
@@ -100,8 +98,6 @@ form?.addEventListener('submit', e => {
     msg.textContent = 'Bitte geben Sie eine gültige E-Mail-Adresse ein.';
     msg.className = 'form-msg err'; return;
   }
-  // Works from a static deployment: open a prepared reservation email.
-  const reservationEmail = form.dataset.reservationEmail;
   const subject = 'Tischreservierung JURI';
   const message = [
     'Hallo JURI,', '',
@@ -114,7 +110,18 @@ form?.addEventListener('submit', e => {
     `Uhrzeit: ${data.time}`,
     `Anmerkung: ${data.note || '-'}`
   ].join('\n');
-  window.location.href = `mailto:${reservationEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+  window.location.href = `mailto:${form.dataset.reservationEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
   msg.textContent = 'Ihr E-Mail-Programm wird geöffnet. Bitte senden Sie die vorbereitete Anfrage ab.';
   msg.className = 'form-msg ok';
 });
+
+// Homepage reference shell: independent navigation and exact-width dish rail.
+const jtDrawer = document.getElementById('jtDrawer');
+document.querySelector('[data-jt-menu]')?.addEventListener('click', () => jtDrawer?.classList.add('open'));
+document.querySelector('[data-jt-close]')?.addEventListener('click', () => jtDrawer?.classList.remove('open'));
+jtDrawer?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => jtDrawer.classList.remove('open')));
+
+const jtTrack = document.getElementById('jtDishTrack');
+const jtStep = () => (jtTrack?.querySelector('a')?.getBoundingClientRect().width || 169) + 16;
+document.querySelector('[data-jt-next]')?.addEventListener('click', () => jtTrack?.scrollBy({ left: jtStep(), behavior: 'smooth' }));
+document.querySelector('[data-jt-prev]')?.addEventListener('click', () => jtTrack?.scrollBy({ left: -jtStep(), behavior: 'smooth' }));

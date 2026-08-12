@@ -18,8 +18,8 @@
 <link rel="preload" href="fonts/Fraunces.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/Archivo.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/fonts.css">
-<link rel="stylesheet" href="css/tokens.css?v=3">
-<link rel="stylesheet" href="css/home.css?v=7">
+<link rel="stylesheet" href="css/tokens.css?v=20260812">
+<link rel="stylesheet" href="css/home.css?v=20260812b">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍜</text></svg>">
 <script type="application/ld+json">
 {
@@ -41,7 +41,6 @@
 <body>
 
 <div class="legacy-home" aria-hidden="true">
-
 <!-- Header -->
 <header class="header" id="header">
   <div class="container">
@@ -52,36 +51,36 @@
     <div class="nav-desktop">
       <nav class="nav">
         <a href="speisekarte.html">Speisekarte</a>
-        <a href="bestellen.html"><span lang="de">Bestellen</span><span lang="en">Order</span></a>
-        <a href="gutschein.html">Gutschein</a>
-        <a href="anlaesse.html">Events</a>
-        <a href="ueber-uns.html"><span lang="de">Über uns</span><span lang="en">About</span></a>
+        <a href="index.html#bestellen"><span lang="de">Bestellen</span><span lang="en">Order</span></a>
+        <a href="index.html#gutschein">Gutschein</a>
+        <a href="index.html#events">Events</a>
+        <a href="index.html#philosophie"><span lang="de">Über uns</span><span lang="en">About</span></a>
       </nav>
       <div class="lang-toggle" role="group" aria-label="Sprache / Language">
         <button data-lang="de" aria-pressed="true">DE</button>
         <button data-lang="en" aria-pressed="false">EN</button>
       </div>
-      <a href="https://wa.me/4951513609?text=Hallo%20JURI%2C%20ich%20möchte%20einen%20Tisch%20reservieren." class="btn btn--primary"><span lang="de">Tisch reservieren</span><span lang="en">Reserve a table</span></a>
+      <a href="#reservieren" class="btn btn--primary"><span lang="de">Tisch reservieren</span><span lang="en">Reserve a table</span></a>
     </div>
     <button class="burger" id="burger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
   </div>
 </header>
 
 <!-- Mobile drawer -->
-<div class="drawer" id="legacy-drawer" role="dialog" aria-label="Navigation">
+<div class="drawer" id="drawer" role="dialog" aria-label="Navigation">
   <button class="drawer-close" aria-label="Schließen">✕</button>
-  <a href="https://wa.me/4951513609?text=Hallo%20JURI%2C%20ich%20möchte%20einen%20Tisch%20reservieren."><span lang="de">Reservieren</span><span lang="en">Reservation</span></a>
+  <a href="#reservieren"><span lang="de">Reservieren</span><span lang="en">Reservation</span></a>
   <a href="speisekarte.html">Speisekarte</a>
-  <a href="bestellen.html"><span lang="de">Bestellen</span><span lang="en">Online Order</span></a>
-  <a href="gutschein.html">Gutschein</a>
-  <a href="anlaesse.html">Events</a>
-  <a href="ueber-uns.html"><span lang="de">Über uns</span><span lang="en">About</span></a>
-  <a href="kontakt.html">Kontakt</a>
+  <a href="index.html#bestellen"><span lang="de">Bestellen</span><span lang="en">Online Order</span></a>
+  <a href="index.html#gutschein">Gutschein</a>
+  <a href="index.html#events">Events</a>
+  <a href="index.html#philosophie"><span lang="de">Über uns</span><span lang="en">About</span></a>
+  <a href="index.html#kontakt">Kontakt</a>
   <div class="lang-toggle" role="group" aria-label="Sprache">
     <button data-lang="de" aria-pressed="true">DE</button>
     <button data-lang="en" aria-pressed="false">EN</button>
   </div>
-  <a href="https://wa.me/4951513609?text=Hallo%20JURI%2C%20ich%20möchte%20einen%20Tisch%20reservieren." class="btn btn--primary"><span lang="de">Tisch reservieren</span><span lang="en">Reserve a table</span></a>
+  <a href="#reservieren" class="btn btn--primary"><span lang="de">Tisch reservieren</span><span lang="en">Reserve a table</span></a>
 </div>
 
 <!-- Hero -->
@@ -99,7 +98,7 @@
         <span lang="en">Aromatic phở, hand-rolled sushi and fusion dishes from fresh ingredients — in the heart of Hameln.</span>
       </p>
       <div class="cta">
-        <a href="https://wa.me/4951513609?text=Hallo%20JURI%2C%20ich%20möchte%20einen%20Tisch%20reservieren." class="btn btn--primary"><span lang="de">Tisch reservieren</span><span lang="en">Reserve a table</span></a>
+        <a href="#reservieren" class="btn btn--primary"><span lang="de">Tisch reservieren</span><span lang="en">Reserve a table</span></a>
         <a href="speisekarte.html" class="btn btn--ghost">Speisekarte</a>
       </div>
       <p class="addr">Kastanienwall 32 · 31785 Hameln</p>
@@ -290,7 +289,7 @@
 </section>
 
 <!-- Anlässe -->
-<section class="section section--alt" id="anlaesse" hidden>
+<section class="section section--alt" id="anlaesse">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow"><span lang="de">Anlässe</span><span lang="en">Occasions</span></span>
@@ -318,7 +317,7 @@
 </section>
 
 <!-- Featured Events / Aktuelles -->
-<section class="section" id="events" hidden>
+<section class="section" id="events">
   <div class="container">
     <div class="section-head section-head--center reveal">
       <span class="eyebrow"><span lang="de">Aktuelles</span><span lang="en">What's on</span></span>
@@ -349,7 +348,7 @@
 </section>
 
 <!-- Gutschein / Voucher -->
-<section class="section section--alt" id="gutschein" hidden>
+<section class="section section--alt" id="gutschein">
   <div class="container split split--rev reveal">
     <div class="split__media"><img src="images/gutschein.jpg" alt="Eleganter JURI-Geschenkgutschein in Gold auf olivgrünem Grund" loading="lazy" width="900" height="600"></div>
     <div class="split__body">
@@ -365,7 +364,7 @@
 </section>
 
 <!-- Online Order / Mitnahme -->
-<section class="section" id="bestellen" hidden>
+<section class="section" id="bestellen">
   <div class="container split reveal">
     <div class="split__media"><img src="images/togo.jpg" alt="Hochwertige Mitnahme-Verpackung von JURI mit goldenem Band" loading="lazy" width="900" height="600"></div>
     <div class="split__body">
@@ -381,7 +380,7 @@
 </section>
 
 <!-- Hours + map -->
-<section class="section section--alt" id="kontakt" hidden>
+<section class="section section--alt" id="kontakt">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow"><span lang="de">Öffnungszeiten &amp; Anfahrt</span><span lang="en">Hours &amp; directions</span></span>
@@ -404,7 +403,7 @@
 </section>
 
 <!-- About gallery -->
-<section class="section" id="ueber-uns" hidden>
+<section class="section" id="ueber-uns">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow"><span lang="de">Über uns</span><span lang="en">About us</span></span>
@@ -423,7 +422,7 @@
 </section>
 
 <!-- Reservation form -->
-<section class="section section--alt" id="reservieren" hidden>
+<section class="section section--alt" id="reservieren">
   <div class="container form-wrap reveal">
     <div class="section-head">
       <span class="eyebrow"><span lang="de">Reservierung</span><span lang="en">Reservation</span></span>
@@ -503,7 +502,7 @@
         <ul>
           <li><a href="tel:+4951513609">+49 5151 3609</a></li>
           <li><a href="speisekarte.html">Speisekarte</a></li>
-          <li><a href="https://wa.me/4951513609?text=Hallo%20JURI%2C%20ich%20möchte%20einen%20Tisch%20reservieren."><span lang="de">Reservieren</span><span lang="en">Reserve</span></a></li>
+          <li><a href="#reservieren"><span lang="de">Reservieren</span><span lang="en">Reserve</span></a></li>
           <li><a href="https://www.google.com/maps/search/?api=1&query=Kastanienwall+32+31785+Hameln" target="_blank" rel="noopener">Google Maps →</a></li>
         </ul>
       </div>
@@ -523,113 +522,42 @@
   <ul>
     <li><a href="index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11 12 4l8 7"/><path d="M6 10v9h12v-9"/></svg>Home</a></li>
     <li><a href="speisekarte.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16"/><path d="M5 8a7 7 0 0 1 14 0"/><path d="M3 12h18l-2 7H5z"/></svg>Menü</a></li>
-    <li><a href="https://wa.me/4951513609?text=Hallo%20JURI%2C%20ich%20möchte%20einen%20Tisch%20reservieren." class="is-cta"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="1"/><path d="M4 9h16M8 3v4M16 3v4"/></svg>Reservieren</a></li>
-    <li><a href="kontakt.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2 1a11 11 0 0 0 5 5l1-2 5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"/></svg>Kontakt</a></li>
+    <li><a href="#reservieren" class="is-cta"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="1"/><path d="M4 9h16M8 3v4M16 3v4"/></svg>Reservieren</a></li>
+    <li><a href="index.html#kontakt"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2 1a11 11 0 0 0 5 5l1-2 5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"/></svg>Kontakt</a></li>
   </ul>
 </nav>
 
 </div>
 
-<nav class="drawer" id="drawer" role="dialog" aria-label="Navigation" aria-modal="true">
-  <button class="drawer-close" type="button" aria-label="Schließen">×</button>
-  <a href="index.html">Home</a>
-  <a href="speisekarte.html">Speisekarte</a>
-  <a href="bestellen.html"><span lang="de">Bestellen</span><span lang="en">Online Order</span></a>
-  <a href="gutschein.html">Gutschein</a>
-  <a href="anlaesse.html">Events</a>
-  <a href="ueber-uns.html"><span lang="de">Über uns</span><span lang="en">About</span></a>
-  <a href="kontakt.html">Kontakt</a>
-  <div class="lang-toggle" role="group" aria-label="Sprache">
-    <button type="button" data-lang="de" aria-pressed="true">DE</button>
-    <button type="button" data-lang="en" aria-pressed="false">EN</button>
-  </div>
-  <a href="https://wa.me/4951513609?text=Hallo%20JURI%2C%20ich%20möchte%20einen%20Tisch%20reservieren." class="btn btn--primary"><span lang="de">Tisch reservieren</span><span lang="en">Reserve a table</span></a>
-</nav>
-
-<div class="taumi-home">
-  <header class="taumi-header">
-    <button class="taumi-menu" data-open-menu aria-label="Menü öffnen"><span></span><span></span><span></span></button>
-    <a class="taumi-brand" href="index.html" aria-label="JURI Startseite">JURI<small>VIETNAMESE · JAPANESE</small></a>
-    <div class="taumi-header__right">
-      <div class="taumi-lang" role="group" aria-label="Sprache"><button data-lang="de" aria-pressed="true">DE</button><button data-lang="en" aria-pressed="false">EN</button></div>
-      <a class="taumi-location" href="https://wa.me/4951513609?text=Hallo%20JURI%2C%20ich%20möchte%20einen%20Tisch%20reservieren."><span lang="de">Tisch reservieren</span><span lang="en">Reserve a table</span></a>
-    </div>
+<div class="juri-taumi" id="home">
+  <header class="jt-header">
+    <button class="jt-menu" type="button" data-jt-menu aria-label="Menü öffnen"><i></i><i></i><i></i></button>
+    <a class="jt-logo" href="index.html" aria-label="JURI Startseite">JURI<small>VIETNAMESE · JAPANESE</small></a>
+    <a class="jt-location" href="https://wa.me/4951513609?text=Hallo%20JURI%2C%20ich%20möchte%20einen%20Tisch%20reservieren.">Tisch reservieren</a>
   </header>
 
+  <nav class="jt-drawer" id="jtDrawer" aria-label="Navigation">
+    <button type="button" class="jt-drawer__close" data-jt-close aria-label="Menü schließen">×</button>
+    <a href="index.html">Home</a><a href="speisekarte.html">Speisekarte</a><a href="bestellen.html">Bestellen</a><a href="gutschein.html">Gutschein</a><a href="anlaesse.html">Events</a><a href="ueber-uns.html">Über uns</a><a href="kontakt.html">Kontakt</a>
+    <a class="jt-drawer__reserve" href="https://wa.me/4951513609?text=Hallo%20JURI%2C%20ich%20möchte%20einen%20Tisch%20reservieren.">Tisch reservieren</a>
+  </nav>
+
   <main>
-    <section class="taumi-hero" aria-label="JURI Restaurant">
-      <img src="images/hero-restaurant.jpg" alt="JURI Restaurant in Hameln" fetchpriority="high" width="1600" height="1500">
-      <div class="taumi-hero__shade"></div>
-      <div class="taumi-hero__mark"><strong>JURI</strong><span>Vietnamese · Japanese Fusion</span></div>
-    </section>
-
-    <section class="taumi-intro">
-      <p class="taumi-kicker"><span lang="de">JURI – unsere Philosophie</span><span lang="en">JURI our philosophy</span></p>
-      <h1><span lang="de">„Die Freude an Verbindung – Tradition neu belebt!“</span><span lang="en">“The joy of connection – tradition reborn!”</span></h1>
-      <p><span lang="de">JURI steht für eine neue Generation asiatischer Küche in Europa. Unsere Philosophie vereint asiatische Wurzeln mit moderner Kreativität und höchsten Qualitätsstandards. Wir möchten mehr als nur Speisen servieren – wir schaffen Erlebnisse, die Kulturen verbinden und Erinnerungen wecken.</span><span lang="en">JURI represents a new generation of Asian cuisine in Europe. Our philosophy combines Asian culinary roots with modern creativity and the highest quality standards. We strive to serve more than just food – we create experiences that connect cultures and evoke memories.</span></p>
-    </section>
-
-    <section class="taumi-dishes" aria-labelledby="taumi-dishes-title">
-      <h2 id="taumi-dishes-title"><span lang="de">Besondere Gerichte</span><span lang="en">Special dishes</span></h2>
-      <div class="taumi-dish-rail">
-        <a href="speisekarte.html" class="taumi-dish"><img src="images/taumi/dish-06.png" alt="OCEAN_S Best"><span>OCEAN_S Best</span></a>
-        <a href="speisekarte.html" class="taumi-dish"><img src="images/taumi/dish-07.png" alt="Pho Bo"><span>Pho Bo</span></a>
-        <a href="speisekarte.html" class="taumi-dish"><img src="images/taumi/dish-08.png" alt="Sushi"><span>Sushi</span></a>
-        <a href="speisekarte.html" class="taumi-dish"><img src="images/taumi/dish-09.png" alt="Getränk"><span>GETRÄNK</span></a>
-        <a href="speisekarte.html" class="taumi-dish"><img src="images/taumi/dish-10.png" alt="Pho Tofu"><span>Pho TOFU</span></a>
-        <a href="speisekarte.html" class="taumi-dish"><img src="images/taumi/dish-01.png" alt="Crew Loves Tapas"><span>Crew Loves Tapas</span></a>
-        <a href="speisekarte.html" class="taumi-dish"><img src="images/taumi/dish-02.png" alt="Business Lunch"><span>Business Lunch</span></a>
-        <a href="speisekarte.html" class="taumi-dish"><img src="images/taumi/dish-03.png" alt="Catch The Fish"><span>Catch The Fish</span></a>
-        <a href="speisekarte.html" class="taumi-dish"><img src="images/taumi/dish-04.png" alt="Desserts"><span>Desserts</span></a>
-        <a href="speisekarte.html" class="taumi-dish"><img src="images/taumi/dish-05.png" alt="Entrecôte"><span>Entrecôte</span></a>
-      </div>
-      <div class="taumi-rail-controls" aria-label="Gerichte blättern"><button type="button" data-rail="prev" aria-label="Vorherige Gerichte">‹</button><button type="button" data-rail="next" aria-label="Nächste Gerichte">›</button></div>
-      <p class="taumi-dishes__note"><span lang="de">Nicht entgehen lassen – entdecken Sie unsere Speisekarte!</span><span lang="en">Don't miss out! See our menu.</span></p>
-      <a class="taumi-button" href="speisekarte.html"><span lang="de">Speisekarte</span><span lang="en">Menu</span></a>
-    </section>
-
-    <section class="taumi-locations"><h2><span lang="de">JURI Restaurant</span><span lang="en">JURI Restaurant</span></h2></section>
-
-    <section class="taumi-story">
-      <div class="taumi-story__copy">
-        <h2><span lang="de">JURI-Feier</span><span lang="en">JURI Party</span></h2>
-        <p><span lang="de">Machen Sie Ihre besonderen Momente mit JURIs exklusivem Catering-Service unvergesslich. Ob Familienfeier, Firmenveranstaltung oder Abendessen mit Freunden – wir bieten maßgeschneiderte Menüs, hochwertige Sushi-Platten und Signature-Gerichte zum Mitnehmen. Täglich verfügbar zum Mittag- und Abendessen.</span><span lang="en">Make your special moments more memorable with JURI's exclusive catering services. Whether it's a family party, a corporate event or a dinner with friends – we offer tailor-made menus, premium sushi platters and signature dishes for you to take home.</span></p>
-        <a class="taumi-contact" href="https://wa.me/4951513609?text=Hallo%20JURI%2C%20ich%20möchte%20eine%20Feier%20anfragen."><span lang="de">KONTAKTIEREN SIE UNS FÜR EIN MASSGESCHNEIDERTES CATERING</span><span lang="en">CONTACT US FOR A BESPOKE CATERING SERVICE</span></a>
-      </div>
-      <img src="images/taumi/intro-right.png" alt="JURI-Feier" loading="lazy" width="1200" height="800">
-    </section>
-
-    <section class="taumi-story taumi-story--reverse">
-      <img src="images/taumi/intro-left.png" alt="JURI Team" loading="lazy" width="900" height="675">
-      <div class="taumi-story__copy">
-        <h2><span lang="de">Entdecken Sie Ihre beruflichen Möglichkeiten</span><span lang="en">Explore career opportunities</span></h2>
-        <p><span lang="de">Wir stellen derzeit für alle Positionen ein – Servicekräfte, Köche und Manager. Sind Sie talentiert, leidenschaftlich in Bezug auf Essen und möchten in einem modernen, dynamischen Restaurant arbeiten? Dann ist JURI der richtige Ort für Sie! Bitte senden Sie uns Ihren aktuellen Lebenslauf über WhatsApp.</span><span lang="en">We are currently recruiting for all positions – servers, chefs and managers. Are you talented, passionate about food and want to work in a modern, dynamic restaurant? Then JURI is the place for you!</span></p>
-      </div>
-    </section>
-
-    <section class="taumi-lunch">
-      <div>
-        <h2><span lang="de">Business Lunch</span><span lang="en">Business lunch</span></h2>
-        <p><span lang="de">Entdecken Sie unsere Asian-Fusion-Küche – jetzt auch zur Mittagszeit! Genießen Sie Ihre Lieblingsgerichte sowie exklusive Mittagsangebote – frisch, schnell und voller Geschmack. Ob Business-Lunch oder entspanntes Essen mit Freunden – TAUMI heißt Sie willkommen! Betriebszeiten: Montag bis Freitag, Servicezeiten: 11:00–16:00 Uhr</span><span lang="en">Discover our Asian fusion cuisine, now also at lunchtime. Enjoy your favorite dishes as well as exclusive lunch specials – fresh, fast, and full of flavor.</span></p>
-        <a class="taumi-button" href="https://wa.me/4951513609?text=Hallo%20JURI%2C%20ich%20möchte%20einen%20Tisch%20reservieren."><span lang="de">Reservierung</span><span lang="en">Reservation</span></a>
-      </div>
-    </section>
-
-    <section class="taumi-about">
-      <h2><span lang="de">Über uns</span><span lang="en">About Us</span></h2>
-      <p><span lang="de">Wir ehren unsere lokalen Wurzeln und verwöhnen gleichzeitig den globalen Gaumen.</span><span lang="en">We celebrate local origins while catering to global tastes.</span></p>
-      <div class="taumi-about__cards"><img src="images/taumi/about-order.jpg" alt="Online Bestellung"><img src="images/taumi/about-gift.png" alt="Schenken Sie Genuss mit JURI"><img src="images/taumi/about-pickup.png" alt="Abholservice"><img src="images/taumi/about-japanese.png" alt="Japanische Küche"><img src="images/taumi/about-service.png" alt="Serviceerlebnis"></div>
-    </section>
+    <section class="jt-hero"><img src="images/hero-restaurant.jpg" alt="JURI Restaurant" fetchpriority="high"><div class="jt-hero__shade"></div><div class="jt-hero__logo">JURI<small>VIETNAMESE · JAPANESE</small></div></section>
+    <section class="jt-section jt-philosophy"><div class="jt-container"><h2>JURI – unsere Philosophie</h2><div class="jt-copy"><strong>“Die Freude an Verbindung – Tradition neu belebt!”</strong><p>JURI vereint asiatische Wurzeln mit moderner Kreativität und höchsten Qualitätsstandards. Wir möchten mehr als nur Speisen servieren – wir schaffen Erlebnisse, die Kulturen verbinden und Erinnerungen wecken.</p></div></div></section>
+    <section class="jt-section jt-dishes"><div class="jt-container"><h2>Besonderes Gericht</h2><div class="jt-dish-window"><div class="jt-dish-track" id="jtDishTrack">
+      <a href="speisekarte.html"><img src="images/taumi/dish-01.png" alt="Crew Loves Tapas"><span>Crew Loves Tapas</span></a><a href="speisekarte.html"><img src="images/taumi/dish-02.png" alt="Business Lunch"><span>Business Lunch</span></a><a href="speisekarte.html"><img src="images/taumi/dish-03.png" alt="Catch The Fish"><span>Catch The Fish</span></a><a href="speisekarte.html"><img src="images/taumi/dish-04.png" alt="Desserts"><span>Desserts</span></a><a href="speisekarte.html"><img src="images/taumi/dish-05.png" alt="Entrecôte"><span>Entrecôte</span></a><a href="speisekarte.html"><img src="images/taumi/dish-06.png" alt="Ocean's Best"><span>Ocean's Best</span></a><a href="speisekarte.html"><img src="images/taumi/dish-07.png" alt="Pho Bo"><span>Pho Bo</span></a><a href="speisekarte.html"><img src="images/taumi/dish-08.png" alt="Sushi"><span>Sushi</span></a><a href="speisekarte.html"><img src="images/taumi/dish-09.png" alt="Getränk"><span>Getränk</span></a><a href="speisekarte.html"><img src="images/taumi/dish-10.png" alt="Pho Tofu"><span>Pho Tofu</span></a>
+    </div></div><div class="jt-slider-nav"><button type="button" data-jt-prev aria-label="Vorherige Gerichte">‹</button><button type="button" data-jt-next aria-label="Nächste Gerichte">›</button></div><p>Nicht entgehen lassen – entdecken Sie unsere Speisekarte!</p><a class="jt-button" href="speisekarte.html">Zur Speisekarte</a></div></section>
+    <section class="jt-section jt-restaurants"><div class="jt-container"><h2>JURI Restaurant</h2>
+      <article class="jt-feature"><div class="jt-feature__copy"><h3>JURI-Feier</h3><p>Machen Sie Ihre besonderen Momente mit JURIs exklusivem Catering-Service unvergesslich. Ob Familienfeier, Firmenveranstaltung oder Abendessen mit Freunden – wir bieten maßgeschneiderte Menüs, hochwertige Sushi-Platten und Signature-Gerichte zum Mitnehmen.</p><a href="https://wa.me/4951513609?text=Hallo%20JURI%2C%20ich%20möchte%20eine%20Feier%20anfragen.">KONTAKTIEREN SIE UNS FÜR EIN MASSGESCHNEIDERTES CATERING</a></div><img src="images/taumi/intro-right.png" alt="JURI Feier"></article>
+      <article class="jt-feature jt-feature--reverse"><img src="images/taumi/intro-left.png" alt="JURI Team"><div class="jt-feature__copy"><h3>Entdecken Sie Ihre beruflichen Möglichkeiten</h3><p>Wir stellen derzeit für alle Positionen ein – Servicekräfte, Köche und Manager. Sind Sie talentiert, leidenschaftlich in Bezug auf Essen und möchten in einem modernen, dynamischen Restaurant arbeiten? Dann ist JURI der richtige Ort für Sie!</p><a class="jt-mail" href="https://wa.me/4951513609?text=Hallo%20JURI%2C%20ich%20möchte%20mich%20bewerben.">Jetzt über WhatsApp bewerben</a></div></article>
+      <article class="jt-feature"><div class="jt-feature__copy"><h3>Business Lunch</h3><p>Entdecken Sie unsere Asian-Fusion-Küche – jetzt auch zur Mittagszeit! Genießen Sie Ihre Lieblingsgerichte sowie exklusive Mittagsangebote – frisch, schnell und voller Geschmack. Montag bis Freitag, 11:00–16:00 Uhr.</p><a class="jt-button" href="https://wa.me/4951513609?text=Hallo%20JURI%2C%20ich%20möchte%20einen%20Tisch%20reservieren.">Reservierung</a></div><img src="images/taumi/business-lunch.png" alt="Business Lunch"></article>
+    </div></section>
+    <section class="jt-section jt-about"><div class="jt-container"><h2>Über uns</h2><p>Wir ehren unsere lokalen Wurzeln und verwöhnen gleichzeitig den globalen Gaumen.</p><div class="jt-about-grid"><a href="bestellen.html"><img src="images/taumi/about-order.jpg" alt="Online Bestellung"><b>Online Bestellung</b></a><a href="gutschein.html"><img src="images/taumi/about-gift.png" alt="Gutschein"><b>Schenken Sie Genuss mit JURI</b></a><a href="bestellen.html"><img src="images/taumi/about-pickup.png" alt="Abholservice"><b>Abholservice</b></a><a href="speisekarte.html"><img src="images/taumi/about-japanese.png" alt="Japanische Küche"><b>Japanische Küche</b></a><a href="kontakt.html"><img src="images/taumi/about-service.png" alt="Serviceerlebnis"><b>Serviceerlebnis</b></a></div></div></section>
   </main>
-
-  <footer class="taumi-footer">
-    <div><a class="taumi-brand" href="index.html">JURI<small>VIETNAMESE · JAPANESE</small></a><p><span lang="de">Genießen Sie authentische Aromen und gemütliches Ambiente im JURI Restaurant – für unvergessliche Momente mit Familie und Freunden.</span><span lang="en">Enjoy authentic flavors and a cozy atmosphere at JURI Restaurant – for unforgettable moments with family and friends.</span></p></div>
-    <div><h3><span lang="de">Öffnungszeiten</span><span lang="en">Opening Hours</span></h3><p>Mo – So: 11:00 – 22:00<br>Kastanienwall 32<br>31785 Hameln</p></div>
-    <div><h3><span lang="de">Links</span><span lang="en">Links</span></h3><a href="ueber-uns.html"><span lang="de">Über uns</span><span lang="en">About Us</span></a><a href="speisekarte.html">Speisekarte</a><a href="kontakt.html">Kontakt</a></div>
-    <div><h3><span lang="de">Kontakt</span><span lang="en">Contact Us</span></h3><a href="tel:+4951513609">+49 5151 3609</a><a href="https://wa.me/4951513609">WhatsApp</a></div>
-  </footer>
+  <footer class="jt-footer"><div class="jt-container"><div class="jt-footer__grid"><div><a class="jt-logo" href="index.html">JURI<small>VIETNAMESE · JAPANESE</small></a><p>Genießen Sie authentische Aromen und gemütliches Ambiente im JURI Restaurant – für unvergessliche Momente mit Familie und Freunden.</p></div><div><b>Öffnungszeiten</b><p>Mo – So<br>11:00–22:00 Uhr</p></div><div><b>Links</b><a href="ueber-uns.html">Über uns</a><a href="datenschutz.html">Datenschutz</a></div><div><b>Kontakt</b><a href="tel:+4951513609">+49 5151 3609</a><a href="https://wa.me/4951513609">WhatsApp</a></div></div><small>© 2026 JURI Restaurant. Alle Rechte vorbehalten.</small></div></footer>
 </div>
 
-<script src="js/home.js"></script>
+<script src="js/home.js?v=20260812"></script>
 </body>
 </html>
