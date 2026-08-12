@@ -274,30 +274,33 @@ const photoForDishExact = (it, categoryId) => {
 const CAT_EL = document.getElementById('menuBody');
 const TAB_EL = document.getElementById('menuTabs');
 
-function renderVariant(v) {
+function renderVariant(v, orderKey) {
   const code = v.code ? `<span class="var-code">${esc(v.code)}</span>` : '';
   const label = esc(v.label_de || '');
   const labelEn = v.label_en && v.label_en !== v.label_de ? esc(v.label_en) : label;
+  const addLabel = esc(`Hinzufügen: ${v.label_de || ''}`);
   return `<li>${code}
     <span class="var-label"><span lang="de">${label}</span><span lang="en">${labelEn}</span></span>
     ${v.allergens && v.allergens.length ? `<span class="var-alg">${v.allergens.map(a => `<span class="chip">${esc(a)}</span>`).join('')}</span>` : ''}
-    <span class="var-price">${esc(v.price || '')}</span></li>`;
+    <span class="var-price">${esc(v.price || '')}</span>
+    <button class="dish__add dish__add--variant" type="button" data-add-dish="${orderKey}" data-variant-code="${esc(v.code || '')}" aria-label="${addLabel}" title="${addLabel}">+</button></li>`;
 }
 
 function renderDish(it, catVegan, categoryId) {
   const vegan = catVegan || isVeganItem(it);
+  const orderKey = esc(`${categoryId}:${it.code}`);
   const nameEn = it.name_en && it.name_en !== it.name_de ? esc(it.name_en) : esc(it.name_de);
   const desc = it.desc_de
     ? `<p class="dish__desc"><span lang="de">${esc(it.desc_de)}</span><span lang="en">${esc(it.desc_en || it.desc_de)}</span></p>`
     : '';
   let variantsPart, headPrice, cardAllergens;
   if (it.variants && it.variants.length) {
-    variantsPart = `<ul class="dish__variants">${it.variants.map(renderVariant).join('')}</ul>`;
+    variantsPart = `<ul class="dish__variants">${it.variants.map(v => renderVariant(v, orderKey)).join('')}</ul>`;
     headPrice = '';
     cardAllergens = ''; // allergens shown per-variant
   } else {
     variantsPart = '';
-    headPrice = it.price ? `<span class="dish__price--single">${esc(it.price)}</span>` : '';
+    headPrice = it.price ? `<div class="dish__price-group"><span class="dish__price--single">${esc(it.price)}</span><button class="dish__add" type="button" data-add-dish="${orderKey}" aria-label="${esc(`Hinzufügen: ${it.name_de}`)}" title="${esc(`Hinzufügen: ${it.name_de}`)}">+</button></div>` : '';
     cardAllergens = chips(it.allergens);
   }
   const searchText = esc([it.code, it.name_de, it.name_en, it.desc_de].filter(Boolean).join(' ').toLowerCase());
@@ -348,6 +351,14 @@ fetch('data/menu.json')
   .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
   .then(data => {
     const cats = data.categories;
+
+    window.JuryOrderMenu = {};
+    cats.forEach(category => category.items.forEach(item => {
+      window.JuryOrderMenu[`${category.id}:${item.code}`] = {
+        ...item,
+        image: photoForDishExact(item, category.id)
+      };
+    }));
 
     // tabs
     TAB_EL.innerHTML = cats.map((c, i) =>
