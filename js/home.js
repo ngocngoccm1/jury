@@ -146,3 +146,51 @@ if (jtTrack) {
   }, { passive: true });
   jtSetActiveDot(0);
 }
+
+// Source-faithful homepage shell. Kept separate from the hidden legacy shell so
+// menu navigation and the mobile dish rail remain functional on static hosting.
+const sourceDrawer = document.getElementById('juriSourceDrawer');
+const sourceMenuButton = document.querySelector('[data-source-menu]');
+const sourceCloseButton = document.querySelector('[data-source-close]');
+const setSourceDrawer = open => {
+  if (!sourceDrawer) return;
+  sourceDrawer.classList.toggle('is-open', open);
+  sourceDrawer.setAttribute('aria-hidden', String(!open));
+  sourceMenuButton?.setAttribute('aria-expanded', String(open));
+  document.body.classList.toggle('source-drawer-open', open);
+};
+sourceMenuButton?.addEventListener('click', () => setSourceDrawer(true));
+sourceCloseButton?.addEventListener('click', () => setSourceDrawer(false));
+sourceDrawer?.addEventListener('click', event => {
+  if (event.target === sourceDrawer) setSourceDrawer(false);
+});
+sourceDrawer?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setSourceDrawer(false)));
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') setSourceDrawer(false);
+});
+
+const sourceDishTrack = document.getElementById('juriSourceDishTrack');
+const sourceDishSlides = [...document.querySelectorAll('#juriSourceDishTrack .dish-slide')];
+const sourceDishDots = [...document.querySelectorAll('[data-source-dot]')];
+const setSourceDishDot = index => sourceDishDots.forEach((dot, i) => {
+  dot.parentElement?.classList.toggle('is-active', i === index);
+  dot.setAttribute('aria-current', String(i === index));
+});
+const moveSourceDish = index => {
+  const slide = sourceDishSlides[index];
+  if (!sourceDishTrack || !slide) return;
+  sourceDishTrack.scrollTo({ left: slide.offsetLeft, behavior: 'smooth' });
+  setSourceDishDot(index);
+};
+sourceDishDots.forEach(dot => dot.addEventListener('click', () => moveSourceDish(Number(dot.dataset.sourceDot))));
+if (sourceDishTrack) {
+  let sourceDishFrame;
+  sourceDishTrack.addEventListener('scroll', () => {
+    cancelAnimationFrame(sourceDishFrame);
+    sourceDishFrame = requestAnimationFrame(() => {
+      const step = sourceDishSlides[0]?.getBoundingClientRect().width || 185;
+      setSourceDishDot(Math.max(0, Math.min(sourceDishSlides.length - 1, Math.round(sourceDishTrack.scrollLeft / step))));
+    });
+  }, { passive: true });
+  setSourceDishDot(0);
+}

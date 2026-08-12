@@ -572,3 +572,66 @@ body:has(.juri-taumi){padding-bottom:0!important;overflow:visible!important}
   .jt-dish-frame img{width:100%;height:100%;border-radius:0}
   .jt-slider-dots{display:none}
 }
+
+/* Homepage fidelity layer: original Taumi layout utilities are loaded locally above;
+   these rules only replace brand identifiers with JURI's green. */
+body:has(.juri-source){padding-bottom:0!important;overflow-x:hidden;background:#19201e}
+body.source-drawer-open{overflow:hidden}
+.bottom-nav,.juri-taumi{display:none!important}
+.juri-source{--juri-green:#7d9b79;--juri-cream:#e5efcf;--juri-muted:#aaa;display:block;overflow:hidden;background:#19201e;color:#fff;font-family:ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:14px;line-height:21px}
+.juri-source *{box-sizing:border-box}
+.juri-source a{text-decoration:none}
+.juri-source .container{width:100%;max-width:none;margin-right:auto;margin-left:auto;padding-right:16px;padding-left:16px}
+.juri-source h2,.juri-source h3,.juri-source h4,.juri-source h5,.juri-source p{font-family:inherit;letter-spacing:normal}
+.juri-source h2{font-size:20px;line-height:28px;font-weight:700}
+.juri-source h3{font-size:16px;line-height:24px;font-weight:700}
+.juri-source .bg-bgr-01{background:#19201e!important}
+.juri-source .juri-source-about{background:#1b2421!important}
+.juri-source .text-base-04{color:var(--juri-cream)!important}
+.juri-source .text-base-02{color:var(--juri-muted)!important}
+.juri-source .bg-primary{background:var(--juri-green)!important}
+.juri-source .juri-source-hero{background:linear-gradient(180deg,rgba(0,0,0,.06) 72%,#19201e 100%)}
+.juri-source .juri-source-hero>div{z-index:0!important}
+.juri-source .juri-source-hero:after{position:absolute;inset:0;z-index:1;content:"";background:linear-gradient(180deg,rgba(0,0,0,.08) 68%,#19201e 100%);pointer-events:none}
+.juri-source-header{background:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,0))!important;box-shadow:0 4px 16px rgba(0,0,0,.12)!important}
+.juri-source-header .container{align-items:center}
+.juri-source-logo{position:relative;display:flex!important;flex-direction:column;align-items:center!important;justify-content:center!important;width:93px;height:40px;margin-left:4px;padding-left:12px;border-left:1px solid rgba(255,255,255,.6);color:#fff!important;line-height:1}
+.juri-source-logo span{font-size:21px;font-weight:500;letter-spacing:.28em}
+.juri-source-logo small{margin-top:5px;font-size:5px;font-weight:600;letter-spacing:.26em;white-space:nowrap}
+.juri-source-book{gap:7px;color:var(--juri-green)!important}
+.juri-source-book svg{flex:none}
+.juri-source-book-label{display:block}
+.juri-source-drawer{position:fixed;inset:0;z-index:120;display:grid;grid-template-columns:minmax(0,1fr);visibility:hidden;background:rgba(0,0,0,.45);opacity:0;transition:opacity .3s ease,visibility .3s ease}
+.juri-source-drawer.is-open{visibility:visible;opacity:1}
+.juri-source-drawer__panel{position:relative;display:flex;flex-direction:column;gap:20px;width:min(86vw,390px);min-height:100%;padding:88px 28px 28px;background:#19201e;transform:translateX(-100%);transition:transform .35s ease}
+.juri-source-drawer.is-open .juri-source-drawer__panel{transform:translateX(0)}
+.juri-source-drawer__panel>a{font-size:22px;line-height:28px;font-weight:700;color:#fff!important}
+.juri-source-drawer__close{position:absolute;top:14px;right:20px;width:40px;height:40px;border:0;background:transparent;color:#fff;font-size:30px;line-height:1}
+.juri-source-drawer__panel .juri-source-drawer__reserve{margin-top:auto;padding:12px;border-radius:8px;background:var(--juri-green);font-size:16px;line-height:24px;text-align:center}
+.juri-source-dish-slider{position:relative;height:240px;overflow:visible}
+.juri-source-dish-track{display:flex;height:200px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
+.juri-source-dish-track::-webkit-scrollbar{display:none}
+.juri-source-dish-track .dish-slide{display:block;flex:0 0 185px;height:200px;padding-right:8px;padding-left:8px;scroll-snap-align:start;color:inherit}
+.juri-source-dish-track .dish-slide img{display:block;width:169px;height:169px;object-fit:cover}
+.juri-source-dish-track .dish-slide p{margin-top:10px;color:var(--juri-muted)!important;font-size:14px;line-height:21px;font-weight:500;text-align:center}
+.juri-source-dish-dots{height:22px;margin:27px 0 0;padding:0;text-align:center;list-style:none}
+.juri-source-dish-dots li{display:inline-block;width:16px;height:16px;margin:0;padding:0;vertical-align:top}
+.juri-source-dish-dots button{position:relative;display:block;width:20px;height:20px;margin:0;padding:5px;border:0;background:transparent;color:transparent;font-size:0;line-height:0;cursor:pointer}
+.juri-source-dish-dots button:before{position:absolute;inset:0;width:20px;height:20px;color:var(--juri-cream);content:"•";font:10px/20px Arial,sans-serif;opacity:.25;text-align:center}
+.juri-source-dish-dots .is-active button:before{opacity:.75}
+.juri-source .bg-gradient-light-gray-180{background:linear-gradient(180deg,rgba(181,207,182,.18),rgba(181,207,182,.03))!important}
+.juri-source-about .bg-gradient-blur{background:linear-gradient(180deg,transparent,rgba(0,0,0,.82))!important}
+.juri-source-footer-logo{display:flex;flex-direction:column;width:max-content;color:#fff!important;font-size:22px;font-weight:500;letter-spacing:.28em;line-height:1}
+.juri-source-footer-logo small{margin-top:6px;font-size:5px;font-weight:600;letter-spacing:.26em}
+@media (min-width:640px){
+  .juri-source h2{font-size:32px;line-height:48px}
+  .juri-source h3{font-size:24px;line-height:32px}
+}
+@media (min-width:768px){
+  .juri-source-dish-slider{height:315px}
+  .juri-source-dish-track{height:267px;padding-left:8px;padding-right:8px}
+  .juri-source-dish-track .dish-slide{flex-basis:252px;height:267px}
+  .juri-source-dish-track .dish-slide img{width:236px;height:236px}
+  .juri-source-dish-dots{display:none}
+}
+@media (min-width:1616px){.juri-source .container{max-width:1616px}}
