@@ -458,3 +458,70 @@ body.lang-en [lang="de"]{display:none}
 
 /* Mobile reference refinements: Taumi's about-card rail is not rendered beneath 768px. */
 .jt-section h2,.jt-feature h3{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}.jt-about-grid{display:none}@media (min-width:768px){.jt-about-grid{display:grid}}
+
+/* Reference-fit overrides: the Taumi page rhythm is preserved while the JURI brand remains in place. */
+html:has(.juri-taumi){scrollbar-width:thin;scrollbar-color:#64766d transparent}
+html:has(.juri-taumi)::-webkit-scrollbar{width:4px}
+html:has(.juri-taumi)::-webkit-scrollbar-thumb{background:#64766d}
+body:has(.juri-taumi){padding-bottom:0!important}
+.juri-taumi{font-size:14px;line-height:21px}
+.juri-taumi .jt-container{width:100%;max-width:1280px;padding-inline:16px}
+.jt-heading-icon{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.jt-section h2{height:60px;min-height:60px;gap:4px;padding-block:16px}
+.jt-philosophy{height:267px;padding-bottom:0}
+.jt-philosophy .jt-copy{margin:8px -8px 0;padding:0 8px 16px}
+.jt-copy strong{max-width:none;font-size:14px;line-height:21px;font-style:italic;font-weight:400}
+.jt-copy p{max-width:none;margin-top:8px;font-size:14px;line-height:21px}
+.jt-dishes{height:492px;padding-bottom:0}
+.jt-dish-window{height:187px;margin:8px 0 0}
+.jt-dish-track{height:185px}
+.jt-dish-track a{flex-basis:171px}
+.jt-dish-track img{width:171px;height:171px}
+.jt-slider-nav{height:20px;margin-top:56px}
+.jt-dishes .jt-container>p{margin-top:44px;font-size:14px;line-height:21px}
+.jt-button{min-width:244px;padding-inline:66px}
+.jt-restaurants{height:1485px;padding-bottom:0}
+.jt-feature{height:541px;margin-top:32px;gap:32px}
+.jt-feature--reverse{height:674px;margin-top:32px}
+.jt-feature--lunch{height:131px;margin-top:32px}
+.jt-feature h3{font-size:16px;line-height:24px}
+.jt-feature p{font-size:12px;line-height:18px}
+.jt-feature__note,.jt-feature__hours{margin-top:24px!important}
+.jt-feature--lunch img{height:0!important;visibility:hidden}
+.jt-about{height:224px;padding-bottom:0}
+.jt-about>div>p{max-width:354px;margin:auto;font-size:12px;line-height:18px}
+.jt-about-grid{display:none!important}
+.jt-footer{height:861px;padding:50px 0}
+
+@media (min-width:768px){
+  .juri-taumi .jt-container{max-width:1280px;padding-inline:16px}
+  .jt-header{padding-inline:16px}
+  .jt-section h2{height:96px;min-height:96px;gap:8px;padding-block:24px;font-size:32px;line-height:48px}
+  .jt-heading-icon{width:32px;height:32px}
+  .jt-philosophy{height:300px}
+  .jt-philosophy .jt-copy{height:112px;margin:32px -8px 0;padding:0 8px 24px}
+  .jt-copy strong{max-width:760px;font-size:20px;line-height:28px}
+  .jt-copy p{max-width:760px;margin-top:8px;font-size:14px;line-height:21px}
+  .jt-dishes{height:633px}
+  .jt-dish-window{height:315px;margin:32px -8px 0;padding-bottom:24px}
+  .jt-dish-track{height:291px;gap:16px}
+  .jt-dish-track a{flex:0 0 calc((100% - 64px)/5);font-size:11px}
+  .jt-dish-track img{width:100%;height:auto;aspect-ratio:1/1;border-radius:8px}
+  .jt-slider-nav{margin-top:0}
+  .jt-dishes .jt-container>p{margin-top:44px;font-size:14px;line-height:21px}
+  .jt-restaurants{height:1200px}
+  .jt-feature{height:310px;grid-template-columns:1fr 1fr;gap:80px;margin-top:52px}
+  .jt-feature--reverse{height:310px;margin-top:60px}
+  .jt-feature--lunch{height:249px;margin-top:60px}
+  .jt-feature h3{padding-bottom:32px;font-size:24px;line-height:32px}
+  .jt-feature p{font-size:14px;line-height:21px}
+  .jt-feature__copy>a:not(.jt-button){min-height:81px;margin-top:32px;padding:12px;font-size:12px;line-height:18px}
+  .jt-feature .jt-mail{min-height:0!important;margin-top:24px!important;font-size:14px!important;line-height:21px!important}
+  .jt-feature__note,.jt-feature__hours{margin-top:24px!important}
+  .jt-feature img{height:310px;aspect-ratio:auto}
+  .jt-feature--lunch img{height:0!important;visibility:hidden}
+  .jt-feature--lunch .jt-button{margin-top:40px}
+  .jt-about{height:236px}
+  .jt-about>div>p{max-width:none;font-size:16px;line-height:24px;text-align:left}
+  .jt-footer{height:315px;padding:32px 0}
+}
