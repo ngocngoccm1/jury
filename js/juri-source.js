@@ -28,6 +28,19 @@
   dock.setAttribute('aria-label', 'Schnellzugriff');
   dock.innerHTML = `<a href="cart.html" data-order-link>${cart}<span>Warenkorb</span><b data-shell-cart-count>0</b></a><a href="speisekarte.html" data-order-link><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 5h14v14H5zM8 9h8M8 13h8M8 17h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Menü</span></a><a href="reservieren.html"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3v3m12-3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 0 1-1Z" stroke="currentColor" stroke-width="1.5"/></svg><span>Reservierung</span></a>`;
 
+  const dockLinks = dock.querySelectorAll('a');
+  if (dockLinks.length === 3) {
+    dockLinks[0].href = 'JURY-Speisekarte-DE-EN-v26.pdf';
+    dockLinks[0].innerHTML = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>Menü</span>';
+    dockLinks[0].removeAttribute('data-order-link');
+    dockLinks[1].href = 'speisekarte.html';
+    dockLinks[1].querySelector('span').textContent = 'Online Bestellung';
+    dockLinks[2].querySelector('span').textContent = 'Reservierung';
+  }
+  const desktopLinks = header.querySelectorAll('.juri-shell-tools a');
+  if (desktopLinks.length === 3) desktopLinks[0].href = 'JURY-Speisekarte-DE-EN-v26.pdf';
+  const drawerMenu = [...drawer.querySelectorAll('a')].find(link => /Speisekarte|Online Bestellung/.test(link.textContent));
+  if (drawerMenu) drawerMenu.href = 'JURY-Speisekarte-DE-EN-v26.pdf';
   document.body.prepend(drawer);
   document.body.prepend(header);
   document.body.append(footer, dock);
