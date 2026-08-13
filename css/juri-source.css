@@ -229,3 +229,50 @@ body.juri-source-site .legal p{color:#aaa!important;line-height:24px!important}
 }
 .jury-order-shell .dish__detail-link{display:block;color:inherit;text-decoration:none}
 .jury-order-shell .dish__detail-name{color:inherit;text-decoration:none}
+
+/* Reference-order geometry: keep the source rhythm consistent across every inner page. */
+.juri-shell-header{height:72px;background:#0b0d13;box-shadow:none;backdrop-filter:none}
+.juri-shell-header__row{height:72px;padding-inline:24px}
+.juri-shell-menu{width:48px;height:48px;border-right:1px solid rgba(255,255,255,.35)}
+.juri-shell-logo{height:48px;margin-left:0;padding-left:20px}
+.juri-shell-tools{height:72px;gap:48px}
+.juri-shell-tools a{font-size:14px;letter-spacing:.01em}
+.juri-shell-cart{width:48px;height:48px}
+.juri-shell-cart svg{width:30px;height:30px}
+.jury-order-shell{padding-top:88px}
+.jury-order-catalog{padding-inline:14px 30px}
+.jury-order-top{margin-top:0}
+.jury-order-shell .menu-search input{height:54px;border-radius:10px;padding-left:48px;font-size:16px}
+.jury-order-restaurant{min-height:84px;border-radius:16px;padding:18px 28px}
+.jury-order-shell .menu-tabs{border-radius:12px}
+.jury-order-shell .menu-tab{height:56px;font-size:16px}
+.jury-order-shell .dish-grid{gap:28px!important}
+.jury-order-shell .dish__media{border-radius:14px}
+.jury-order-shell .dish__body{padding-top:14px!important}
+.jury-order-shell .dish__code,.jury-order-shell .dish__name{font-size:15px!important}
+.jury-order-shell .dish__add{height:50px!important;border-radius:10px!important}
+.jury-cart-panel{padding-top:96px}
+@media(max-width:767px){
+  body.juri-source-site{padding-bottom:76px!important}
+  .juri-shell-header,.juri-shell-header__row{height:68px}
+  .juri-shell-header__row{padding-inline:12px}
+  .juri-shell-menu{height:48px}
+  .juri-shell-logo{height:48px;padding-left:14px}
+  .juri-shell-cart{width:44px;height:44px}
+  .juri-mobile-tools{height:76px;border-radius:18px 18px 0 0;box-shadow:0 -10px 30px rgba(0,0,0,.4)}
+  .juri-mobile-tools a{gap:5px;font-size:12px;font-weight:600}
+  .juri-mobile-tools svg{width:26px;height:26px}
+  .juri-mobile-tools b{top:8px;left:calc(50% + 10px);min-width:18px;height:18px;font-size:10px}
+  .jury-order-shell{padding-top:80px}
+  .jury-order-catalog{padding-inline:14px}
+  .jury-order-top h1{font-size:22px}
+  .jury-order-shell .menu-search input{height:54px;font-size:16px}
+  .jury-order-restaurant{height:60px;min-height:60px;padding:12px 16px;border-radius:14px}
+  .jury-order-shell .menu-tabs{top:68px}
+  .jury-order-shell .menu-tab{height:56px;font-size:16px;padding-inline:20px}
+  .jury-order-shell .dish-grid{gap:18px!important}
+  .jury-order-shell .dish__media{border-radius:14px}
+  .jury-order-shell .dish__code,.jury-order-shell .dish__name{font-size:13px!important}
+  .jury-order-shell .dish__add{height:48px!important}
+  .jury-cart-panel.is-open{inset:68px 0 76px;padding:24px 18px}
+}
