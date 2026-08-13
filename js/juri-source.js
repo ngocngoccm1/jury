@@ -50,5 +50,12 @@
     document.querySelectorAll('[data-shell-cart-count]').forEach(el => el.textContent = count);
   };
   document.addEventListener('jury-cart-change', syncCart);
+  document.addEventListener('click', event => {
+    const link = event.target.closest('a[href="cart.html"]');
+    const panel = document.getElementById('juryCart');
+    if (!link || !panel) return;
+    event.preventDefault();
+    panel.classList.add('is-open');
+  });
   syncCart();
 })();
