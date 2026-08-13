@@ -321,13 +321,14 @@ function renderDish(it, catVegan, categoryId) {
   const imgCode = esc(it.code);
   const image = photoForDishExact(it, categoryId);
   const isPlaceholder = image === 'assets/jury-logo.jpg';
+  const detailHref = orderView ? `dish.html?item=${encodeURIComponent(`${categoryId}:${it.code}`)}&image=${encodeURIComponent(image)}` : '';
   return `<article class="dish" data-vegan="${vegan}" data-search="${searchText}">
-    <div class="dish__media${isPlaceholder ? ' dish__media--placeholder' : ''}"><img src="${image}" alt="${isPlaceholder ? 'JURI' : esc(it.name_de)}" loading="lazy" onerror="this.onerror=null;this.src='assets/jury-logo.jpg';this.closest('.dish__media').classList.add('dish__media--placeholder')">${imagePrice}</div>
+    ${detailHref ? `<a class="dish__detail-link" href="${detailHref}" aria-label="Details: ${esc(it.name_de)}">` : ''}<div class="dish__media${isPlaceholder ? ' dish__media--placeholder' : ''}"><img src="${image}" alt="${isPlaceholder ? 'JURI' : esc(it.name_de)}" loading="lazy" onerror="this.onerror=null;this.src='assets/jury-logo.jpg';this.closest('.dish__media').classList.add('dish__media--placeholder')">${imagePrice}</div>${detailHref ? '</a>' : ''}
     <div class="dish__body">
       <div class="dish__head">
         <div>
           <span class="dish__code">Nr. ${imgCode}</span>
-          <h3 class="dish__name"><span lang="de">${esc(it.name_de)}</span><span lang="en">${nameEn}</span></h3>
+          ${detailHref ? `<a class="dish__detail-name" href="${detailHref}"><h3 class="dish__name"><span lang="de">${esc(it.name_de)}</span><span lang="en">${nameEn}</span></h3></a>` : `<h3 class="dish__name"><span lang="de">${esc(it.name_de)}</span><span lang="en">${nameEn}</span></h3>`}
           ${vegan ? '<span class="badge-vegan" lang="de">Vegan</span>' : ''}
         </div>
         ${headPrice}
