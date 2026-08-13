@@ -588,6 +588,7 @@ body.source-drawer-open{overflow:hidden}
 .juri-source .bg-bgr-01{background:#19201e!important}
 .juri-source .juri-source-about{background:#1b2421!important}
 .juri-source .text-base-04{color:var(--juri-cream)!important}
+.juri-source h2.flex.text-base-04{color:#f1ddc4!important}
 .juri-source .text-base-02{color:var(--juri-muted)!important}
 .juri-source .bg-primary{background:var(--juri-green)!important}
 .juri-source .juri-source-hero{background:linear-gradient(180deg,rgba(0,0,0,.06) 72%,#19201e 100%)}
