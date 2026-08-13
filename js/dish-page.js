@@ -1,4 +1,5 @@
 (() => {
+  const imageScript = document.createElement('script'); imageScript.src = 'js/menu.js?v=20260813h'; document.head.append(imageScript);
   const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const num = (v) => Number(String(v || 0).replace(/[^0-9,.-]/g, '').replace(',', '.')) || 0;
   const fmt = (v) => `${num(v).toFixed(2).replace('.', ',')} €`;
@@ -45,7 +46,7 @@
     } else document.querySelector('#dishPrice').textContent = fmt(dish.price);
     const related = data.categories.find((c) => c.id === cat)?.items.filter((item) => String(item.code) !== String(dish.code)).slice(0, 4) || [];
     const relatedBox = document.createElement('section'); relatedBox.className = 'juri-dish-related'; relatedBox.innerHTML = '<h2>Weitere Gerichte</h2><div class="juri-dish-related-grid"></div>';
-    relatedBox.querySelector('div').innerHTML = related.map((item) => `<a href="dish.html?item=${encodeURIComponent(`${cat}:${item.code}`)}"><img src="assets/jury-logo.jpg" alt=""><span>${esc(item.name_de)}</span></a>`).join('');
+    relatedBox.querySelector('div').innerHTML = related.map((item) => { const image = window.photoForDishExact?.(item, cat) || 'assets/jury-logo.jpg'; return `<a href="dish.html?item=${encodeURIComponent(`${cat}:${item.code}`)}&image=${encodeURIComponent(image)}"><img src="${image}" alt="${esc(item.name_de)}"><span>${esc(item.name_de)}</span></a>`; }).join('');
     document.querySelector('.juri-dish-detail')?.append(relatedBox);
   }).catch(() => {});
   const style = document.createElement('style'); style.textContent = '.juri-dish-gallery{position:relative}.juri-dish-gallery>#dishImage{display:block}.juri-dish-gallery>button{position:absolute;top:50%;z-index:2;width:38px;height:38px;border:1px solid #9e8955;border-radius:50%;background:rgba(16,18,25,.8);color:#f1dfbf;font-size:28px;line-height:1;transform:translateY(-50%)}.juri-dish-gallery>#dishPrev{left:12px}.juri-dish-gallery>#dishNext{right:12px}.juri-dish-related{margin:56px auto 0;max-width:1200px}.juri-dish-related h2{color:#f1dfbf}.juri-dish-related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.juri-dish-related-grid a{display:grid;gap:8px;color:#fff;text-decoration:none}.juri-dish-related-grid img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px}@media(max-width:767px){.juri-dish-related-grid{grid-template-columns:repeat(2,1fr)}}'; document.head.append(style);

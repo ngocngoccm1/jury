@@ -279,6 +279,7 @@ const photoForDishExact = (it, categoryId) => {
     || Object.entries(DISH_IMAGES).find(([term]) => searchKey.includes(normalizeDishName(term)))?.[1]
     || 'assets/jury-logo.jpg';
 };
+window.photoForDishExact = photoForDishExact;
 
 // ---------- render ----------
 const CAT_EL = document.getElementById('menuBody');
@@ -375,6 +376,7 @@ fetch('data/menu.json')
       };
     }));
 
+    if (!CAT_EL || !TAB_EL) return;
     // tabs
     TAB_EL.innerHTML = cats.map((c, i) =>
       `<button class="menu-tab${i === 0 ? ' active' : ''}" data-target="${c.id}">${esc(c.name_de)}</button>`).join('');
