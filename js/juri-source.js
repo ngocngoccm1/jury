@@ -26,7 +26,7 @@
   const dock = document.createElement('nav');
   dock.className = 'juri-mobile-tools';
   dock.setAttribute('aria-label', 'Schnellzugriff');
-  dock.innerHTML = `<a href="cart.html" data-order-link>${cart}<span>Warenkorb</span><b data-shell-cart-count>0</b></a><a href="reservieren.html"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3v3m12-3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.5"/></svg><span>Reservierung</span></a>`;
+  dock.innerHTML = `<a href="cart.html" data-order-link>${cart}<span>Warenkorb</span><b data-shell-cart-count>0</b></a><a href="speisekarte.html" data-order-link><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 5h14v14H5zM8 9h8M8 13h8M8 17h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Menü</span></a><a href="reservieren.html"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3v3m12-3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 0 1-1Z" stroke="currentColor" stroke-width="1.5"/></svg><span>Reservierung</span></a>`;
 
   document.body.prepend(drawer);
   document.body.prepend(header);
