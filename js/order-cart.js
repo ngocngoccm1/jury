@@ -14,6 +14,7 @@
 
   let panel;
   let variantModal;
+  let variantState;
   const closeCart = () => panel?.classList.remove('is-open');
   const render = () => {
     if (!panel) return;
@@ -37,21 +38,28 @@
     });
   };
 
-  const add = entry => {
+  const add = (entry, quantity = 1, note = '') => {
     const items = read(); const existing = items.find(item => keyOf(item) === keyOf(entry));
-    if (existing) existing.quantity += 1; else items.push({...entry, quantity: 1});
+    if (existing) { existing.quantity += quantity; if (note) existing.note = note; } else items.push({...entry, quantity, note});
     write(items);
   };
-  const addDish = (menuKey, variantCode = '') => {
+  const addDish = (menuKey, variantCode = '', editIndex = -1) => {
     const dish = window.JuryOrderMenu?.[menuKey]; if (!dish) return;
     const variants = (dish.variants || []).filter(v => v.price);
-    const addVariant = variant => add({menuKey, code:dish.code, name:dish.name_de, variantCode:variant?.code || '', variant:variant?.label_de || '', price:variant?.price || dish.price, image:dish.image || 'assets/jury-logo.jpg'});
+    const addVariant = (variant, quantity = 1, note = '') => { if (editIndex >= 0) { const current = read(); current.splice(editIndex, 1); write(current); } add({menuKey, code:dish.code, name:dish.name_de, variantCode:variant?.code || '', variant:variant?.label_de || '', price:variant?.price || dish.price, image:dish.image || 'assets/jury-logo.jpg'}, quantity, note); };
     const selected = variants.find(v => String(v.code || '') === String(variantCode || ''));
-    if (selected || variants.length < 2) return addVariant(selected || variants[0]);
+    if ((selected && editIndex < 0) || variants.length < 2) return addVariant(selected || variants[0]);
+    variantState = {dish, variants, addVariant};
     variantModal.querySelector('h2').textContent = dish.name_de;
+    variantModal.querySelector('.jury-variant-image').src = dish.image || 'assets/jury-logo.jpg';
+    variantModal.querySelector('.jury-variant-description').textContent = dish.desc_de || '';
+    variantModal.querySelector('[data-variant-qty]').value = '1';
+    variantModal.querySelector('[data-variant-note]').value = '';
     variantModal.querySelector('.jury-variant-options').innerHTML = variants.map((variant, index) => `<button type="button" data-variant-index="${index}"><span>${esc(variant.code ? `${variant.code} · ` : '')}${esc(variant.label_de || 'Standard')}</span><b>${esc(variant.price)}</b></button>`).join('');
     variantModal.querySelectorAll('[data-variant-index]').forEach(button => button.addEventListener('click', () => {
-      addVariant(variants[Number(button.dataset.variantIndex)]);
+      const quantity = Math.max(1, Number(variantModal.querySelector('[data-variant-qty]').value || 1));
+      const note = variantModal.querySelector('[data-variant-note]').value.trim();
+      addVariant(variants[Number(button.dataset.variantIndex)], quantity, note);
       variantModal.hidden = true;
     }));
     variantModal.hidden = false;
@@ -69,6 +77,7 @@
     filter.parentNode.insertBefore(shell, filter); shell.append(catalog); catalog.append(top); top.append(filter); [restaurant, tabs, menu, legend, reserve].forEach(node => catalog.append(node));
     panel = document.createElement('aside'); panel.className = 'jury-cart-panel'; panel.id = 'juryCart'; shell.append(panel);
     variantModal = document.createElement('div'); variantModal.className = 'jury-variant-modal'; variantModal.hidden = true; variantModal.innerHTML = '<section role="dialog" aria-modal="true" aria-labelledby="juryVariantTitle"><div><h2 id="juryVariantTitle"></h2><button type="button" data-close-variants aria-label="Schließen">×</button></div><p>Bitte wählen Sie eine Variante.</p><div class="jury-variant-options"></div></section>'; document.body.append(variantModal);
+    variantModal.querySelector('.jury-variant-options').insertAdjacentHTML('beforebegin', '<img class="jury-variant-image" src="assets/jury-logo.jpg" alt=""><p class="jury-variant-description"></p><label class="jury-variant-quantity">Menge <input data-variant-qty type="number" min="1" value="1"></label><label class="jury-variant-note">Notiz <textarea data-variant-note placeholder="Fügen Sie eine Notiz hinzu"></textarea></label>');
     variantModal.querySelector('[data-close-variants]').addEventListener('click', () => { variantModal.hidden = true; });
     variantModal.addEventListener('click', event => { if (event.target === variantModal) variantModal.hidden = true; });
     const syncMoreCategories = () => {
@@ -89,6 +98,8 @@
       if (cartLink && matchMedia('(max-width:767px)').matches) { event.preventDefault(); panel.classList.add('is-open'); }
     });
     render();
+    const openPendingEdit = () => { try { const edit = JSON.parse(sessionStorage.getItem('jury-edit-item') || 'null'); if (!edit?.menuKey) return; if (!window.JuryOrderMenu?.[edit.menuKey]) return setTimeout(openPendingEdit, 120); sessionStorage.removeItem('jury-edit-item'); addDish(edit.menuKey, edit.variantCode || '', Number(edit.index)); } catch (_) {} };
+    openPendingEdit();
     if (location.hash === '#juryCart' && matchMedia('(max-width:767px)').matches) panel.classList.add('is-open');
   };
   document.addEventListener('jury-cart-change', render);
