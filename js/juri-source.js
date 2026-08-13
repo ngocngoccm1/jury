@@ -11,7 +11,7 @@
   header.innerHTML = `<div class="container juri-shell-header__row">
     <div class="juri-shell-header__left"><button class="juri-shell-menu" type="button" aria-label="Menü öffnen" aria-expanded="false">${burger}</button><a class="juri-shell-logo" href="index.html" aria-label="JURI Startseite"><span>JURI</span><small>VIETNAMESE · JAPANESE</small></a></div>
     <nav class="juri-shell-tools" aria-label="Hauptnavigation"><a href="speisekarte.html">MENÜ</a><a href="speisekarte.html" data-order-link>ONLINE BESTELLUNG</a><a href="reservieren.html">RESERVIERUNG</a></nav>
-    <a class="juri-shell-cart" href="speisekarte.html#juryCart" aria-label="Warenkorb">${cart}<b data-shell-cart-count>0</b></a>
+    <a class="juri-shell-cart" href="cart.html" aria-label="Warenkorb">${cart}<b data-shell-cart-count>0</b></a>
   </div>`;
 
   const drawer = document.createElement('aside');
@@ -26,7 +26,7 @@
   const dock = document.createElement('nav');
   dock.className = 'juri-mobile-tools';
   dock.setAttribute('aria-label', 'Schnellzugriff');
-  dock.innerHTML = `<a href="speisekarte.html" data-order-link>${cart}<span>Online Bestellung</span><b data-shell-cart-count>0</b></a><a href="reservieren.html"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3v3m12-3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.5"/></svg><span>Reservierung</span></a>`;
+  dock.innerHTML = `<a href="cart.html" data-order-link>${cart}<span>Warenkorb</span><b data-shell-cart-count>0</b></a><a href="reservieren.html"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3v3m12-3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.5"/></svg><span>Reservierung</span></a>`;
 
   document.body.prepend(drawer);
   document.body.prepend(header);
