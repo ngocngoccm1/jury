@@ -298,19 +298,23 @@ function renderVariant(v, orderKey) {
 
 function renderDish(it, catVegan, categoryId) {
   const vegan = catVegan || isVeganItem(it);
+  const orderView = document.body.classList.contains('is-order-page');
   const orderKey = esc(`${categoryId}:${it.code}`);
   const nameEn = it.name_en && it.name_en !== it.name_de ? esc(it.name_en) : esc(it.name_de);
   const desc = it.desc_de
     ? `<p class="dish__desc"><span lang="de">${esc(it.desc_de)}</span><span lang="en">${esc(it.desc_en || it.desc_de)}</span></p>`
     : '';
-  let variantsPart, headPrice, cardAllergens;
+  let variantsPart, headPrice, cardAllergens, imagePrice = '';
   if (it.variants && it.variants.length) {
-    variantsPart = `<ul class="dish__variants">${it.variants.map(v => renderVariant(v, orderKey)).join('')}</ul>`;
-    headPrice = '';
+    variantsPart = orderView ? '' : `<ul class="dish__variants">${it.variants.map(v => renderVariant(v, orderKey)).join('')}</ul>`;
+    const firstPrice = it.variants.find(v => v.price)?.price || '';
+    imagePrice = orderView && firstPrice ? `<span class="dish__price--single">ab ${esc(firstPrice)}</span>` : '';
+    headPrice = orderView && firstPrice ? `<div class="dish__price-group"><button class="dish__add" type="button" data-add-dish="${orderKey}" aria-label="${esc(`Hinzufügen: ${it.name_de}`)}" title="${esc(`Hinzufügen: ${it.name_de}`)}">+</button></div>` : '';
     cardAllergens = ''; // allergens shown per-variant
   } else {
     variantsPart = '';
-    headPrice = it.price ? `<div class="dish__price-group"><span class="dish__price--single">${esc(it.price)}</span><button class="dish__add" type="button" data-add-dish="${orderKey}" aria-label="${esc(`Hinzufügen: ${it.name_de}`)}" title="${esc(`Hinzufügen: ${it.name_de}`)}">+</button></div>` : '';
+    imagePrice = orderView && it.price ? `<span class="dish__price--single">${esc(it.price)}</span>` : '';
+    headPrice = it.price ? `<div class="dish__price-group">${orderView ? '' : `<span class="dish__price--single">${esc(it.price)}</span>`}<button class="dish__add" type="button" data-add-dish="${orderKey}" aria-label="${esc(`Hinzufügen: ${it.name_de}`)}" title="${esc(`Hinzufügen: ${it.name_de}`)}">+</button></div>` : '';
     cardAllergens = chips(it.allergens);
   }
   const searchText = esc([it.code, it.name_de, it.name_en, it.desc_de].filter(Boolean).join(' ').toLowerCase());
@@ -318,7 +322,7 @@ function renderDish(it, catVegan, categoryId) {
   const image = photoForDishExact(it, categoryId);
   const isPlaceholder = image === 'assets/jury-logo.jpg';
   return `<article class="dish" data-vegan="${vegan}" data-search="${searchText}">
-    <div class="dish__media${isPlaceholder ? ' dish__media--placeholder' : ''}"><img src="${image}" alt="${isPlaceholder ? 'JURI' : esc(it.name_de)}" loading="lazy" onerror="this.onerror=null;this.src='assets/jury-logo.jpg';this.closest('.dish__media').classList.add('dish__media--placeholder')"></div>
+    <div class="dish__media${isPlaceholder ? ' dish__media--placeholder' : ''}"><img src="${image}" alt="${isPlaceholder ? 'JURI' : esc(it.name_de)}" loading="lazy" onerror="this.onerror=null;this.src='assets/jury-logo.jpg';this.closest('.dish__media').classList.add('dish__media--placeholder')">${imagePrice}</div>
     <div class="dish__body">
       <div class="dish__head">
         <div>

@@ -183,6 +183,16 @@ const moveSourceDish = index => {
   setSourceDishDot(index);
 };
 sourceDishDots.forEach(dot => dot.addEventListener('click', () => moveSourceDish(Number(dot.dataset.sourceDot))));
+const moveSourceDishPage = direction => {
+  if (!sourceDishTrack || !sourceDishSlides.length) return;
+  const slideWidth = sourceDishSlides[0].getBoundingClientRect().width || 252;
+  const visible = Math.max(1, Math.floor(sourceDishTrack.clientWidth / slideWidth));
+  const current = Math.round(sourceDishTrack.scrollLeft / slideWidth);
+  const next = Math.max(0, Math.min(sourceDishSlides.length - visible, current + direction * visible));
+  sourceDishTrack.scrollTo({ left: sourceDishSlides[next].offsetLeft, behavior: 'smooth' });
+};
+document.querySelector('[data-source-prev]')?.addEventListener('click', () => moveSourceDishPage(-1));
+document.querySelector('[data-source-next]')?.addEventListener('click', () => moveSourceDishPage(1));
 if (sourceDishTrack) {
   let sourceDishFrame;
   sourceDishTrack.addEventListener('scroll', () => {

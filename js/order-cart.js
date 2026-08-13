@@ -13,6 +13,7 @@
   const format = value => `${value.toFixed(2).replace('.', ',')} €`;
 
   let panel;
+  let variantModal;
   const closeCart = () => panel?.classList.remove('is-open');
   const render = () => {
     if (!panel) return;
@@ -44,8 +45,16 @@
   const addDish = (menuKey, variantCode = '') => {
     const dish = window.JuryOrderMenu?.[menuKey]; if (!dish) return;
     const variants = (dish.variants || []).filter(v => v.price);
-    const variant = variants.find(v => String(v.code || '') === String(variantCode || '')) || variants[0];
-    add({menuKey, code:dish.code, name:dish.name_de, variantCode:variant?.code || '', variant:variant?.label_de || '', price:variant?.price || dish.price, image:dish.image || 'assets/jury-logo.jpg'});
+    const addVariant = variant => add({menuKey, code:dish.code, name:dish.name_de, variantCode:variant?.code || '', variant:variant?.label_de || '', price:variant?.price || dish.price, image:dish.image || 'assets/jury-logo.jpg'});
+    const selected = variants.find(v => String(v.code || '') === String(variantCode || ''));
+    if (selected || variants.length < 2) return addVariant(selected || variants[0]);
+    variantModal.querySelector('h2').textContent = dish.name_de;
+    variantModal.querySelector('.jury-variant-options').innerHTML = variants.map((variant, index) => `<button type="button" data-variant-index="${index}"><span>${esc(variant.code ? `${variant.code} · ` : '')}${esc(variant.label_de || 'Standard')}</span><b>${esc(variant.price)}</b></button>`).join('');
+    variantModal.querySelectorAll('[data-variant-index]').forEach(button => button.addEventListener('click', () => {
+      addVariant(variants[Number(button.dataset.variantIndex)]);
+      variantModal.hidden = true;
+    }));
+    variantModal.hidden = false;
   };
 
   const mount = () => {
@@ -55,9 +64,23 @@
     const filter = document.querySelector('.menu-filter'); const tabs = document.querySelector('.menu-tabs'); const menu = document.querySelector('.menu-body'); const legend = document.querySelector('.legend'); const reserve = document.querySelector('.reserve-band');
     const shell = document.createElement('div'); shell.className = 'jury-order-shell';
     const catalog = document.createElement('div'); catalog.className = 'jury-order-catalog';
+    const top = document.createElement('div'); top.className = 'jury-order-top'; top.innerHTML = '<h1>Speisekarte</h1>';
     const restaurant = document.createElement('div'); restaurant.className = 'jury-order-restaurant'; restaurant.innerHTML = '<span>📍</span><strong>JURI RESTAURANT HAMELN</strong><span>Kastanienwall 32, 31785 Hameln</span><a href="tel:+4951513609">☎ +49 5151 3609</a>';
-    filter.parentNode.insertBefore(shell, filter); shell.append(catalog); [filter, restaurant, tabs, menu, legend, reserve].forEach(node => catalog.append(node));
+    filter.parentNode.insertBefore(shell, filter); shell.append(catalog); catalog.append(top); top.append(filter); [restaurant, tabs, menu, legend, reserve].forEach(node => catalog.append(node));
     panel = document.createElement('aside'); panel.className = 'jury-cart-panel'; panel.id = 'juryCart'; shell.append(panel);
+    variantModal = document.createElement('div'); variantModal.className = 'jury-variant-modal'; variantModal.hidden = true; variantModal.innerHTML = '<section role="dialog" aria-modal="true" aria-labelledby="juryVariantTitle"><div><h2 id="juryVariantTitle"></h2><button type="button" data-close-variants aria-label="Schließen">×</button></div><p>Bitte wählen Sie eine Variante.</p><div class="jury-variant-options"></div></section>'; document.body.append(variantModal);
+    variantModal.querySelector('[data-close-variants]').addEventListener('click', () => { variantModal.hidden = true; });
+    variantModal.addEventListener('click', event => { if (event.target === variantModal) variantModal.hidden = true; });
+    const syncMoreCategories = () => {
+      const scroll = tabs.querySelector('.menu-tabs__scroll');
+      const tabButtons = [...scroll.querySelectorAll('.menu-tab')];
+      if (tabButtons.length <= 5 || scroll.querySelector('.jury-order-more')) return;
+      const more = document.createElement('button'); more.type = 'button'; more.className = 'jury-order-more'; more.textContent = `+${tabButtons.length - 5}`;
+      more.addEventListener('click', () => { const open = scroll.classList.toggle('is-expanded'); more.textContent = open ? '×' : `+${tabButtons.length - 5}`; });
+      scroll.append(more);
+    };
+    new MutationObserver(syncMoreCategories).observe(tabs.querySelector('.menu-tabs__scroll'), {childList:true});
+    syncMoreCategories();
     document.querySelectorAll('.juri-shell-tools a').forEach(link => { if (link.href.includes('speisekarte')) link.setAttribute('aria-current', 'page'); });
     document.addEventListener('click', event => {
       const addButton = event.target.closest('[data-add-dish]');

@@ -619,6 +619,10 @@ body.source-drawer-open{overflow:hidden}
 .juri-source-dish-dots button{position:relative;display:block;width:20px;height:20px;margin:0;padding:5px;border:0;background:transparent;color:transparent;font-size:0;line-height:0;cursor:pointer}
 .juri-source-dish-dots button:before{position:absolute;inset:0;width:20px;height:20px;color:var(--juri-cream);content:"•";font:10px/20px Arial,sans-serif;opacity:.25;text-align:center}
 .juri-source-dish-dots .is-active button:before{opacity:.75}
+.juri-source-dish-arrows{display:none;align-items:center;justify-content:center;gap:24px;margin-top:18px}
+.juri-source-dish-arrows button{display:grid;width:40px;height:40px;place-items:center;padding:0;border:1px solid rgba(229,239,207,.55);border-radius:9999px;background:transparent;color:var(--juri-cream);cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.juri-source-dish-arrows button:hover{border-color:var(--juri-cream);background:rgba(229,239,207,.08)}
+.juri-source-dish-arrows svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .juri-source .bg-gradient-light-gray-180{background:linear-gradient(180deg,rgba(181,207,182,.18),rgba(181,207,182,.03))!important}
 .juri-source-about .bg-gradient-blur{background:linear-gradient(180deg,transparent,rgba(0,0,0,.82))!important}
 .juri-source-footer-logo{display:flex;flex-direction:column;width:max-content;color:#fff!important;font-size:22px;font-weight:500;letter-spacing:.28em;line-height:1}
@@ -633,5 +637,6 @@ body.source-drawer-open{overflow:hidden}
   .juri-source-dish-track .dish-slide{flex-basis:252px;height:267px}
   .juri-source-dish-track .dish-slide img{width:236px;height:236px}
   .juri-source-dish-dots{display:none}
+  .juri-source-dish-arrows{display:flex}
 }
 @media (min-width:1616px){.juri-source .container{max-width:1616px}}
