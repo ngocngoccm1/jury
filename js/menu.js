@@ -341,6 +341,13 @@ function renderDish(it, catVegan, categoryId) {
   </article>`;
 }
 
+document.addEventListener('click', event => {
+  const media = event.target.closest('.jury-order-shell .dish__media');
+  if (!media || event.target.closest('a')) return;
+  const link = media.closest('.dish')?.querySelector('.dish__detail-link');
+  if (link?.href) window.location.href = link.href;
+});
+
 function buildSchema(cats) {
   return {
     '@context': 'https://schema.org', '@type': 'Menu', 'name': 'Speisekarte — JURI Restaurant',
