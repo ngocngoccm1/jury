@@ -272,6 +272,33 @@ const EXACT_DISH_IMAGES = {
   'wein:prosecco': 'images/drink-cocktails.jpg'
 };
 
+// Aliases from the new customer PDF, reusing the existing local dish photos.
+Object.assign(DISH_IMAGES, {
+  'goi cuon': 'assets/juri-menu-v2-12-sommerrollen.png',
+  'cha gio': 'assets/juri-menu-v2-13-fruehlingsrollen.png',
+  'mini fruhlingsrollen': 'assets/juri-menu-v2-13-fruehlingsrollen.png',
+  'hoanh thanh chien': 'assets/juri-menu-v2-31-wantan.png',
+  'dau hu chien com': 'assets/juri-menu-v2-16-tofu-com.png',
+  'ha cao tom': 'assets/juri-menu-v2-32-dim-sum.png',
+  'tom chien com': 'assets/juri-menu-v2-40-garnelen-com.png',
+  'thit xien nuong': 'assets/juri-menu-v2-39-schweinespiesse.png',
+  'com xien heo nuong': 'assets/juri-menu-v2-53-schweinespiess-reis.png',
+  'com chien ga nuong': 'assets/juri-menu-v2-54-hahnchenspiess-reis.png',
+  'khoai lang chien': 'assets/juri-menu-v2-52-susskartoffelpommes.png',
+  'goi du du xanh': 'assets/juri-menu-v2-42-papaya-salat.png',
+  'erdnuss sosse': 'assets/juri-menu-v2-56-erdnuss-sosse.png',
+  'fruchtjoghurt': 'images/dessert.jpg',
+  'joghurt mit gelee': 'images/dessert.jpg',
+  'mochi-eis': 'images/dessert.jpg',
+  'frittierte banane': 'images/dessert.jpg',
+  'mango-cheesecake': 'images/dessert.jpg',
+  'matcha-mousse': 'images/dessert.jpg',
+  'kugel eis': 'images/dessert.jpg',
+  'kostrizer schwarzbier': 'assets/juri-menu-v2-179-draft-pils.png',
+  'konig pilsener': 'assets/juri-menu-v2-179-draft-pils.png',
+  'konigpilsener radler': 'assets/juri-menu-v2-178-radler-shandy.png'
+});
+
 const photoForDishExact = (it, categoryId) => {
   const exactKey = normalizeDishName(it.name_de || it.name_en || '');
   const searchKey = normalizeDishName(`${it.name_de || ''} ${it.name_en || ''}`);
@@ -373,7 +400,18 @@ function buildSchema(cats) {
 fetch('data/menu.json')
   .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
   .then(data => {
-    const cats = data.categories;
+    const exclusions = window.JURY_MENU_NEW_EXCLUSIONS || {};
+    const cats = [...data.categories, ...(window.JURY_MENU_NEW_EXTRA_CATEGORIES || [])]
+      .filter(category => !(exclusions.categories || []).includes(category.id))
+      .map(category => ({
+        ...category,
+        items: [...category.items, ...((window.JURY_MENU_NEW_EXTRA_ITEMS || {})[category.id] || [])]
+          .filter(item => !(exclusions.items || new Set()).has(`${category.id}:${item.code}`))
+          .map(item => ({
+            ...item,
+            ...(window.JURY_MENU_NEW_OVERRIDES?.[`${category.id}:${item.code}`] || {})
+          }))
+      }));
 
     window.JuryOrderMenu = {};
     cats.forEach(category => category.items.forEach(item => {

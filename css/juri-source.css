@@ -25,6 +25,7 @@ body.juri-source-site h1,body.juri-source-site h2,body.juri-source-site h3,body.
 .juri-shell-tools a{position:relative;color:#fff!important;font-size:13px;font-weight:700;white-space:nowrap}
 .juri-shell-tools a[aria-current="page"]:after,.juri-shell-tools a:hover:after{position:absolute;right:0;bottom:-14px;left:0;height:1px;background:#e5efcf;content:""}
 .juri-shell-cart{position:relative;display:grid;width:42px;height:42px;place-items:center;color:#fff!important}
+.juri-shell-cart,.juri-mobile-tools a[href="cart.html"]{display:none!important}
 .juri-shell-cart svg{width:27px;height:27px}.juri-shell-cart b{position:absolute;top:1px;right:0;display:grid;min-width:17px;height:17px;place-items:center;border-radius:50%;background:#a78c56;color:#fff;font-size:10px}
 .juri-mobile-tools{display:none}
 

@@ -169,6 +169,24 @@ document.addEventListener('keydown', event => {
   if (event.key === 'Escape') setSourceDrawer(false);
 });
 
+// The customer no longer offers these Taumi carry-over items on the homepage.
+// Remove them before the slider initializes so navigation indexes stay correct.
+['Crew Loves Tapas', 'Business Lunch'].forEach(name => {
+  [...document.querySelectorAll('#juriSourceDishTrack .dish-slide')]
+    .find(slide => slide.textContent.includes(name))?.remove();
+});
+const sourceLunch = [...document.querySelectorAll('#juriSourceHome h3')]
+  .find(heading => heading.textContent.trim() === 'Business Lunch');
+sourceLunch?.closest('div.flex.flex-col')?.remove();
+document.querySelectorAll('[data-source-dot]').forEach((dot, index) => {
+  if (index < 2) {
+    dot.parentElement?.remove();
+    return;
+  }
+  dot.dataset.sourceDot = String(index - 2);
+  dot.textContent = String(index - 1);
+});
+
 const sourceDishTrack = document.getElementById('juriSourceDishTrack');
 const sourceDishSlides = [...document.querySelectorAll('#juriSourceDishTrack .dish-slide')];
 const sourceDishDots = [...document.querySelectorAll('[data-source-dot]')];
