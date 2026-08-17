@@ -1,4 +1,6 @@
 (() => {
+  const loadScript = src => new Promise(resolve => { const script = document.createElement('script'); script.src = src; script.onload = resolve; script.onerror = resolve; document.head.append(script); });
+  const menuOverridesReady = loadScript('js/menu-new.js?v=20260815a');
   const imageScript = document.createElement('script'); imageScript.src = 'js/menu.js?v=20260813h'; document.head.append(imageScript);
   const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const num = (v) => Number(String(v || 0).replace(/[^0-9,.-]/g, '').replace(',', '.')) || 0;
@@ -25,9 +27,19 @@
     document.dispatchEvent(new CustomEvent('jury-cart-change'));
     location.href = 'speisekarte.html';
   };
-  fetch('data/menu.json').then((r) => r.json()).then((data) => {
+  Promise.all([menuOverridesReady, fetch('data/menu.json').then((r) => r.json())]).then(([, data]) => {
     const [cat, code] = String(key || '').split(':');
-    dish = data.categories.find((c) => c.id === cat)?.items.find((i) => String(i.code) === String(code));
+    const exclusions = window.JURY_MENU_NEW_EXCLUSIONS || {};
+    const categories = [...data.categories, ...(window.JURY_MENU_NEW_EXTRA_CATEGORIES || [])]
+      .filter(category => !(exclusions.categories || []).includes(category.id))
+      .map(category => ({
+        ...category,
+        items: [...category.items, ...((window.JURY_MENU_NEW_EXTRA_ITEMS || {})[category.id] || [])]
+          .filter(item => !(exclusions.items || new Set()).has(`${category.id}:${item.code}`))
+          .map(item => ({ ...item, ...(window.JURY_MENU_NEW_OVERRIDES?.[`${category.id}:${item.code}`] || {}) }))
+      }));
+    const category = categories.find((item) => item.id === cat);
+    dish = category?.items.find((item) => String(item.code) === String(code));
     if (!dish) throw Error('not found');
     dish.image = requestedImage || 'assets/jury-logo.jpg';
     gallery = [dish.image, 'assets/jury-logo.jpg'];
@@ -44,7 +56,7 @@
       document.querySelectorAll('[data-v]').forEach((b) => { b.onclick = () => { selected = vs[Number(b.dataset.v)]; document.querySelectorAll('[data-v]').forEach((x) => x.classList.remove('is-selected')); b.classList.add('is-selected'); }; });
       document.querySelector('[data-v]')?.classList.add('is-selected');
     } else document.querySelector('#dishPrice').textContent = fmt(dish.price);
-    const related = data.categories.find((c) => c.id === cat)?.items.filter((item) => String(item.code) !== String(dish.code)).slice(0, 4) || [];
+    const related = category?.items.filter((item) => String(item.code) !== String(dish.code)).slice(0, 4) || [];
     const relatedBox = document.createElement('section'); relatedBox.className = 'juri-dish-related'; relatedBox.innerHTML = '<h2>Weitere Gerichte</h2><div class="juri-dish-related-grid"></div>';
     relatedBox.querySelector('div').innerHTML = related.map((item) => { const image = window.photoForDishExact?.(item, cat) || 'assets/jury-logo.jpg'; return `<a href="dish.html?item=${encodeURIComponent(`${cat}:${item.code}`)}&image=${encodeURIComponent(image)}"><img src="${image}" alt="${esc(item.name_de)}"><span>${esc(item.name_de)}</span></a>`; }).join('');
     document.querySelector('.juri-dish-detail')?.append(relatedBox);

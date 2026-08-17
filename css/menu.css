@@ -69,6 +69,7 @@ body.menu-searching .menu-category.search-hidden{display:none}
   transition:none}
 .dish__media{align-self:start;aspect-ratio:1;border:1px solid var(--line);border-radius:var(--r-sm);overflow:hidden;background:var(--olive-850)}
 .dish__media img{width:100%;height:100%;object-fit:cover}
+.dish__detail-link{display:block;color:inherit;text-decoration:none;cursor:pointer}
 .dish__media--placeholder{display:grid;place-items:center;background:var(--olive-600)}
 .dish__media--placeholder img{object-fit:contain;padding:12%;mix-blend-mode:screen}
 .dish__body{display:flex;flex-direction:column;gap:var(--sp-1);flex:1}

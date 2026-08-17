@@ -24,6 +24,11 @@ document.querySelectorAll('.lang-toggle button').forEach(b =>
   b.addEventListener('click', () => setLang(b.dataset.lang)));
 setLang((() => { try { return localStorage.getItem('jury-lang') || 'de'; } catch (e) { return 'de'; } })());
 
+// Temporary direct-call CTAs requested by the restaurant.
+document.querySelectorAll('a[href="bestellen.html"], a[href="reservieren.html"]').forEach(link => {
+  link.href = 'tel:+4951513609';
+});
+
 // --- Scroll reveal (fade-in on scroll) ---
 const reveals = document.querySelectorAll('.reveal');
 if (reveals.length && 'IntersectionObserver' in window) {

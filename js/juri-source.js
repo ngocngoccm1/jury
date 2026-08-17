@@ -10,14 +10,14 @@
   header.className = 'juri-shell-header';
   header.innerHTML = `<div class="container juri-shell-header__row">
     <div class="juri-shell-header__left"><button class="juri-shell-menu" type="button" aria-label="Menü öffnen" aria-expanded="false">${burger}</button><a class="juri-shell-logo" href="index.html" aria-label="JURI Startseite"><span>JURI</span><small>VIETNAMESE · JAPANESE</small></a></div>
-    <nav class="juri-shell-tools" aria-label="Hauptnavigation"><a href="speisekarte.html">MENÜ</a><a href="speisekarte.html" data-order-link>ONLINE BESTELLUNG</a><a href="reservieren.html">RESERVIERUNG</a></nav>
+    <nav class="juri-shell-tools" aria-label="Hauptnavigation"><a href="speisekarte.html">MENÜ</a><a href="tel:+4951513609">ONLINE BESTELLUNG</a><a href="tel:+4951513609">RESERVIERUNG</a></nav>
     <a class="juri-shell-cart" href="cart.html" aria-label="Warenkorb">${cart}<b data-shell-cart-count>0</b></a>
   </div>`;
 
   const drawer = document.createElement('aside');
   drawer.className = 'juri-shell-drawer';
   drawer.setAttribute('aria-hidden', 'true');
-  drawer.innerHTML = `<div class="juri-shell-drawer__panel" role="dialog" aria-label="Navigation"><div class="juri-shell-drawer__top"><span>Informationen</span><button class="juri-shell-drawer__close" type="button" aria-label="Menü schließen">×</button></div><a href="speisekarte.html">Online Bestellung</a><a href="speisekarte.html">Speisekarte</a><a href="reservieren.html">Reservierung</a><a href="anlaesse.html">Ausgewählte Veranstaltungen</a><a href="ueber-uns.html">Über uns</a><a href="gutschein.html">Gutschein kaufen</a><a href="kontakt.html">Kontakt</a><a class="juri-shell-drawer__reserve" href="reservieren.html">Tisch reservieren</a></div>`;
+  drawer.innerHTML = `<div class="juri-shell-drawer__panel" role="dialog" aria-label="Navigation"><div class="juri-shell-drawer__top"><span>Informationen</span><button class="juri-shell-drawer__close" type="button" aria-label="Menü schließen">×</button></div><a href="tel:+4951513609">Online Bestellung</a><a href="speisekarte.html">Speisekarte</a><a href="tel:+4951513609">Reservierung</a><a href="anlaesse.html">Ausgewählte Veranstaltungen</a><a href="ueber-uns.html">Über uns</a><a href="gutschein.html">Gutschein kaufen</a><a href="kontakt.html">Kontakt</a><a class="juri-shell-drawer__reserve" href="tel:+4951513609">Tisch reservieren</a></div>`;
 
   const footer = document.createElement('footer');
   footer.className = 'juri-shell-footer';
@@ -33,7 +33,7 @@
     dockLinks[0].href = 'JURY-Speisekarte-DE-EN-v26.pdf';
     dockLinks[0].innerHTML = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>Menü</span>';
     dockLinks[0].removeAttribute('data-order-link');
-    dockLinks[1].href = 'speisekarte.html';
+    dockLinks[1].href = 'tel:+4951513609';
     dockLinks[1].querySelector('span').textContent = 'Online Bestellung';
     dockLinks[2].querySelector('span').textContent = 'Reservierung';
   }

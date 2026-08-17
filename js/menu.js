@@ -349,7 +349,7 @@ function renderDish(it, catVegan, categoryId) {
   const imgCode = esc(it.code);
   const image = photoForDishExact(it, categoryId);
   const isPlaceholder = image === 'assets/jury-logo.jpg';
-  const detailHref = orderView ? `dish.html?item=${encodeURIComponent(`${categoryId}:${it.code}`)}&image=${encodeURIComponent(image)}` : '';
+  const detailHref = `dish.html?item=${encodeURIComponent(`${categoryId}:${it.code}`)}&image=${encodeURIComponent(image)}`;
   return `<article class="dish" data-vegan="${vegan}" data-search="${searchText}">
     ${detailHref ? `<a class="dish__detail-link" href="${detailHref}" aria-label="Details: ${esc(it.name_de)}">` : ''}<div class="dish__media${isPlaceholder ? ' dish__media--placeholder' : ''}"><img src="${image}" alt="${isPlaceholder ? 'JURI' : esc(it.name_de)}" loading="lazy" onerror="this.onerror=null;this.src='assets/jury-logo.jpg';this.closest('.dish__media').classList.add('dish__media--placeholder')">${imagePrice}</div>${detailHref ? '</a>' : ''}
     <div class="dish__body">
