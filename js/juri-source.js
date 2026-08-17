@@ -30,7 +30,7 @@
 
   const dockLinks = dock.querySelectorAll('a');
   if (dockLinks.length === 3) {
-    dockLinks[0].href = 'JURY-Speisekarte-DE-EN-v26.pdf';
+    dockLinks[0].href = 'menu-new.pdf';
     dockLinks[0].innerHTML = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>Menü</span>';
     dockLinks[0].removeAttribute('data-order-link');
     dockLinks[1].href = 'tel:+4951513609';
@@ -38,9 +38,9 @@
     dockLinks[2].querySelector('span').textContent = 'Reservierung';
   }
   const desktopLinks = header.querySelectorAll('.juri-shell-tools a');
-  if (desktopLinks.length === 3) desktopLinks[0].href = 'JURY-Speisekarte-DE-EN-v26.pdf';
+  if (desktopLinks.length === 3) desktopLinks[0].href = 'menu-new.pdf';
   const drawerMenu = [...drawer.querySelectorAll('a')].find(link => /Speisekarte|Online Bestellung/.test(link.textContent));
-  if (drawerMenu) drawerMenu.href = 'JURY-Speisekarte-DE-EN-v26.pdf';
+  if (drawerMenu) drawerMenu.href = 'menu-new.pdf';
   document.body.prepend(drawer);
   document.body.prepend(header);
   document.body.append(footer, dock);
