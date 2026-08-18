@@ -17,7 +17,7 @@
   const drawer = document.createElement('aside');
   drawer.className = 'juri-shell-drawer';
   drawer.setAttribute('aria-hidden', 'true');
-  drawer.innerHTML = `<div class="juri-shell-drawer__panel" role="dialog" aria-label="Navigation"><div class="juri-shell-drawer__top"><span>Informationen</span><button class="juri-shell-drawer__close" type="button" aria-label="Menü schließen">×</button></div><a href="tel:+4951513609">Online Bestellung</a><a href="speisekarte.html">Speisekarte</a><a href="tel:+4951513609">Reservierung</a><a href="anlaesse.html">Ausgewählte Veranstaltungen</a><a href="ueber-uns.html">Über uns</a><a href="gutschein.html">Gutschein kaufen</a><a href="kontakt.html">Kontakt</a><a class="juri-shell-drawer__reserve" href="tel:+4951513609">Tisch reservieren</a></div>`;
+  drawer.innerHTML = `<div class="juri-shell-drawer__panel" role="dialog" aria-label="Navigation"><div class="juri-shell-drawer__top"><span>Informationen</span><button class="juri-shell-drawer__close" type="button" aria-label="Menü schließen">×</button></div><a href="tel:+4951513609">Online Bestellung</a><a href="speisekarte.html">Speisekarte</a><a href="tel:+4951513609">Reservierung</a><a href="ueber-uns.html">Über uns</a><a href="kontakt.html">Kontakt</a><a class="juri-shell-drawer__reserve" href="tel:+4951513609">Tisch reservieren</a></div>`;
 
   const footer = document.createElement('footer');
   footer.className = 'juri-shell-footer';
