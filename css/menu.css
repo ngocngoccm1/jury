@@ -79,6 +79,10 @@ body.menu-searching .menu-category.search-hidden{display:none}
 .dish__name{font-family:var(--font-display);font-weight:500;font-size:var(--fs-h3);
   line-height:var(--lh-snug);color:var(--ivory-50)}
 .dish__desc{font-size:var(--fs-sm);color:var(--text-muted);line-height:var(--lh-body)}
+.dish__desc span{display:block}
+/* The restaurant's printed menu presents both translations. Keep the complete
+   English OCR text visible under the German copy on the menu cards. */
+body.lang-en .dish__desc-de{display:block}
 .dish__price--single{font:600 var(--fs-lg)/1 var(--font-display);color:var(--accent);
   font-variant-numeric:tabular-nums;align-self:baseline;flex-shrink:0;white-space:nowrap}
 

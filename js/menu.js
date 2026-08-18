@@ -330,7 +330,7 @@ function renderDish(it, catVegan, categoryId) {
   const orderKey = esc(`${categoryId}:${it.code}`);
   const nameEn = it.name_en && it.name_en !== it.name_de ? esc(it.name_en) : esc(it.name_de);
   const desc = it.desc_de
-    ? `<p class="dish__desc"><span lang="de">${esc(it.desc_de)}</span><span lang="en">${esc(it.desc_en || it.desc_de)}</span></p>`
+    ? `<p class="dish__desc"><span class="dish__desc-de" lang="de">${esc(it.desc_de)}</span><span class="dish__desc-en" lang="en">${esc(it.desc_en || it.desc_de)}</span></p>`
     : '';
   let variantsPart, headPrice, cardAllergens, imagePrice = '';
   if (it.variants && it.variants.length) {
@@ -355,7 +355,7 @@ function renderDish(it, catVegan, categoryId) {
     <div class="dish__body">
       <div class="dish__head">
         <div>
-          <span class="dish__code">Nr. ${imgCode}</span>
+          <span class="dish__code">${imgCode}</span>
           ${detailHref ? `<a class="dish__detail-name" href="${detailHref}"><h3 class="dish__name"><span lang="de">${esc(it.name_de)}</span><span lang="en">${nameEn}</span></h3></a>` : `<h3 class="dish__name"><span lang="de">${esc(it.name_de)}</span><span lang="en">${nameEn}</span></h3>`}
           ${vegan ? '<span class="badge-vegan" lang="de">Vegan</span>' : ''}
         </div>
@@ -407,10 +407,19 @@ fetch('data/menu.json')
         ...category,
         items: [...category.items, ...((window.JURY_MENU_NEW_EXTRA_ITEMS || {})[category.id] || [])]
           .filter(item => !(exclusions.items || new Set()).has(`${category.id}:${item.code}`))
-          .map(item => ({
-            ...item,
-            ...(window.JURY_MENU_NEW_OVERRIDES?.[`${category.id}:${item.code}`] || {})
-          }))
+          .map(item => {
+            const override = window.JURY_MENU_NEW_OVERRIDES?.[`${category.id}:${item.code}`] || {};
+            const merged = { ...item, ...override };
+            // Price/name updates must not discard the allergen codes supplied
+            // for the same option in the original PDF data.
+            if (override.variants && item.variants) {
+              merged.variants = override.variants.map(variant => ({
+                ...(item.variants.find(base => base.code === variant.code) || {}),
+                ...variant
+              }));
+            }
+            return merged;
+          })
       }));
 
     window.JuryOrderMenu = {};

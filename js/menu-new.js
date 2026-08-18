@@ -126,13 +126,13 @@ Object.assign(window.JURY_MENU_NEW_OVERRIDES, {
 
 window.JURY_MENU_NEW_EXTRA_CATEGORIES = [{
   id: 'desserts', name_de: 'Nachtisch', name_en: 'Desserts', items: [
-    { code:'71', name_de:'Fruchtjoghurt', name_en:'Fruit yogurt', price:'7,90 €', allergens:['G'] },
-    { code:'72', name_de:'Joghurt mit Gelee', name_en:'Yogurt with jelly', price:'7,90 €', allergens:['G'] },
-    { code:'73', name_de:'Mochi-Eis', name_en:'Mochi ice cream', price:'7,50 €', allergens:['G'] },
-    { code:'74', name_de:'Frittierte Banane', name_en:'Fried banana', price:'7,50 €', allergens:['A','C','E','K'] },
-    { code:'75', name_de:'Mango-Cheesecake', name_en:'Mango cheesecake', price:'7,90 €', allergens:['G'] },
-    { code:'76', name_de:'Matcha-Mousse', name_en:'Matcha mousse', price:'7,90 €', allergens:['G'] },
-    { code:'77', name_de:'3 Kugel Eis nach Wahl', name_en:'3 scoops of ice cream', price:'7,50 €', allergens:['G'] }
+    { code:'71', name_de:'Fruchtjoghurt', name_en:'Fruit yogurt', desc_de:'Hausgemachter Joghurt mit frischen Früchten (täglich wechselnd).', desc_en:'Homemade yogurt with fresh fruits (daily selection).', price:'7,90 €', allergens:['G'] },
+    { code:'72', name_de:'Joghurt mit Gelee', name_en:'Yogurt with jelly', desc_de:'Joghurt mit Götterspeise.', desc_en:'Yogurt with jelly.', price:'7,90 €', allergens:['G'] },
+    { code:'73', name_de:'Mochi-Eis', name_en:'Mochi ice cream', desc_de:'Mochi-Eis: Mango, Grüner Tee, Erdbeere.', desc_en:'Mochi ice cream: mango, green tea, strawberry.', price:'7,50 €', allergens:['G'] },
+    { code:'74', name_de:'Frittierte Banane', name_en:'Fried banana', desc_de:'Frittierte Banane mit Honig, Erdnüssen und Sesam.', desc_en:'Fried banana with honey, peanuts and sesame.', price:'7,50 €', allergens:['A','C','E','K'] },
+    { code:'75', name_de:'Mango-Cheesecake', name_en:'Mango cheesecake', desc_de:'Cremiger Käsekuchen mit süßer, fruchtiger Mango.', desc_en:'Creamy cheesecake with sweet, fruity mango.', price:'7,90 €', allergens:['G'] },
+    { code:'76', name_de:'Matcha-Mousse', name_en:'Matcha mousse', desc_de:'Leichte und luftige Mousse mit japanischem Grüntee.', desc_en:'Light and airy mousse with Japanese green tea.', price:'7,90 €', allergens:['G'] },
+    { code:'77', name_de:'3 Kugel Eis nach Wahl', name_en:'3 scoops of ice cream', desc_de:'3 Kugel Eis nach Wahl. Verschiedene Sorten, bitte nachfragen.', desc_en:'3 scoops of ice cream of your choice. Different flavors, please ask.', price:'7,50 €', allergens:['G'] }
   ]
 }];
 
@@ -160,3 +160,29 @@ window.JURY_MENU_NEW_EXTRA_ITEMS = {
     { code:'K192', name_de:'Königpilsener Radler (0,3 / 0,5 L)', name_en:'Königpilsener shandy', variants:[{code:'0,3 L',label_de:'0,3 L',price:'3,50 €'},{code:'0,5 L',label_de:'0,5 L',price:'4,90 €'}], allergens:['A'] }
   ]
 };
+
+// OCR-restored allergen codes for options added by the current PDF revision.
+// These options are not present in the older base JSON, so their codes cannot
+// be inherited during the merge in menu.js / dish-page.js.
+const JURY_OCR_VARIANT_ALLERGENS = {
+  'vorspeise:1:E': ['D', 'E', 'F'],
+  'hauptgerichte:29:H': ['D', 'E', 'F', 'N'],
+  'hauptgerichte:30:G': ['D', 'E', 'F', 'N'],
+  'hauptgerichte:30:H': ['D', 'E', 'F', 'N'],
+  'hauptgerichte:31:H': ['D', 'E', 'F', 'N'],
+  'hauptgerichte:32:H': ['D', 'E', 'F', 'N'],
+  'hauptgerichte:33:G': ['D', 'E', 'F', 'N'],
+  'hauptgerichte:33:H': ['D', 'E', 'F', 'N'],
+  'hauptgerichte:34:G': ['D', 'E', 'F', 'N'],
+  'hauptgerichte:34:H': ['D', 'E', 'F', 'N'],
+  'reis_spezial:39:G': ['D', 'E', 'F', 'N'],
+  'reis_spezial:39:H': ['D', 'E', 'F', 'N'],
+  'gebratene_nudeln:40:G': ['D', 'E', 'F', 'N'],
+  'gebratene_nudeln:40:H': ['D', 'E', 'F', 'N']
+};
+
+Object.entries(JURY_OCR_VARIANT_ALLERGENS).forEach(([key, allergens]) => {
+  const [category, itemCode, variantCode] = key.split(':');
+  const variant = window.JURY_MENU_NEW_OVERRIDES?.[`${category}:${itemCode}`]?.variants?.find(item => item.code === variantCode);
+  if (variant && !variant.allergens) variant.allergens = allergens;
+});

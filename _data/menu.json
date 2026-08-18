@@ -295,8 +295,8 @@
           "code": "17",
           "name_de": "Vegan Set für 3 Personen",
           "name_en": "Vegan Set für 3 Personen",
-          "desc_de": "100% pflanzlich, ausreichend für 3 Personen. Enthält: 6 Mini Frühlingsrollen vegan · 3 vegane Sommerrollen · 3 vegane Wantans · Edamame · eingelegter Kohlrabi & Karotten. 3 Saucen: Erdnuss · süß-sauer · vegane Mayo. 100% plant-based, enough for 3 people. Includes: 6 vegan mini spring rolls · 3 vegan summer rolls · 3 vegan wontons · edamame · pickled kohlrabi & carrots. 3 sauces: peanut · sweet-and-sour · vegan mayo.",
-          "desc_en": "S U P P E N & S A L AT / S O U P S & S A L A D S",
+          "desc_de": "100% pflanzlich, ausreichend für 3 Personen. Enthält: 6 Mini Frühlingsrollen vegan · 3 vegane Sommerrollen · 3 vegane Wantans · Edamame · eingelegter Kohlrabi & Karotten. 3 Saucen: Erdnuss · süß-sauer · vegane Mayo.",
+          "desc_en": "100% plant-based, enough for 3 people. Includes: 6 vegan mini spring rolls · 3 vegan summer rolls · 3 vegan wontons · edamame · pickled kohlrabi & carrots. 3 sauces: peanut · sweet-and-sour · vegan mayo.",
           "allergens": [
             "A",
             "E",
@@ -408,8 +408,8 @@
           "code": "21",
           "name_de": "Regenbogen Salat (vegan)",
           "name_en": "Regenbogen Salat (vegan)",
-          "desc_de": "Bunter Salat mit frischem Gemüse, Tomaten, Mais, Mango, Gurke, Salat, Kräutern, Erdnüssen und geröstetem Sesam.",
-          "desc_en": "Colorful salad with fresh vegetables, tomatoes, corn, mango, cucumber, lettuce, herbs, peanuts and roasted sesame.",
+          "desc_de": "100% pflanzlich. Enthält: 4 Mini Frühlingsrollen vegan · 2 vegane Sommerrollen · 2 vegane Wantan/Gyoza · Edamame · eingelegter Kohlrabi & Karotten. 3 Saucen: Erdnuss · süß-sauer · vegane Mayo.",
+          "desc_en": "100% plant-based. Includes: 4 vegan mini spring rolls · 2 vegan summer rolls · 2 vegan wontons/gyoza · edamame · pickled kohlrabi & carrots. 3 sauces: peanut · sweet-and-sour · vegan mayo.",
           "allergens": [
             "E",
             "F",
@@ -478,7 +478,7 @@
           "name_de": "Grüner Papaya Salat",
           "name_en": "Grüner Papaya Salat",
           "desc_de": "Grüne Papaya, geraspelte Karotten, geröstete Erdnüsse, Röstzwiebeln, Garnelen, Krabbenchips mit hausgemachter Sauce.",
-          "desc_en": "Green papaya, grated carrots, roasted peanuts, fried onions, shrimp, prawn crackers with homemade sauce. KINDERMENÜ / KIDS' MENU",
+          "desc_en": "Green papaya, grated carrots, roasted peanuts, fried onions, shrimp, prawn crackers with homemade sauce.",
           "allergens": [
             "B",
             "D",
@@ -535,7 +535,7 @@
           "name_de": "Hähnchenspieß mit Reis",
           "name_en": "Hähnchenspieß mit Reis",
           "desc_de": "Hähnchenspieß mit kleinem Salat, kleiner Portion Reis und Erdnusssauce.",
-          "desc_en": "Chicken skewer with a small salad, a small portion of rice and peanut sauce. HAUPTGERICHTE / MAIN DISHES DE Alle Hauptgerichte mit Jasminreis, Salat & gerösteten Erdnüssen · Protein 130g EN All main dishes with jasmine rice, salad & roasted peanuts · Protein 130g",
+          "desc_en": "Chicken skewer with a small salad, a small portion of rice and peanut sauce.",
           "allergens": [
             "D",
             "E",
@@ -1526,7 +1526,7 @@
           "name_de": "Baby Buddha — Shaolin Seitan Spieße",
           "name_en": "Baby Buddha — Shaolin Seitan Spieße",
           "desc_de": "Gegrillte Shaolin-Seitan-Spieße, serviert mit Gemüse (Flaschenkürbis, Brokkoli, Blumenkohl, Paprika, grüne Bohnen, Pilze, Karotten) in Erdnusssauce, Salat, gerösteten Erdnüssen und Reis.",
-          "desc_en": "Grilled Shaolin seitan skewers, served with vegetables (bottle gourd, broccoli, cauliflower, bell pepper, green beans, mushrooms, carrots) in peanut sauce, salad, roasted peanuts and rice. PHỞ / RICE NOODLE SOUP DE Stundenlang gekochte Brühe mit Zimt, Sternanis und Gewürzen EN Broth simmered for hours with cinnamon, star anise and spices MIỀN BẮC · NORTHERN VIETNAM Phở gilt als die Seele der vietnamesischen Küche und ist das Herzstück unseres Hauses – nicht ohne Grund trägt unser Restaurant den Namen einer Phở-Küche. Die klare, aromatische Brühe wird über viele Stunden aus Rinderknochen, geröstetem Ingwer und Zwiebeln sowie Zimt, Sternanis und Kardamom gekocht. Serviert mit zarten Reisbandnudeln, feinem Rindfleisch und frischen Kräutern. Phở is considered the soul of Vietnamese cuisine and the heart of our restaurant — it is no coincidence that our restaurant bears the name of a Phở kitchen. The clear, aromatic broth is simmered for many hours from beef bones, roasted ginger and onions together with cinnamon, star anise and cardamom. Served with tender rice noodles, fine slices of beef and fresh herbs.",
+          "desc_en": "Grilled Shaolin seitan skewers, served with vegetables (bottle gourd, broccoli, cauliflower, bell pepper, green beans, mushrooms, carrots) in peanut sauce, salad, roasted peanuts and rice.",
           "allergens": [
             "A",
             "E",
@@ -1699,7 +1699,7 @@
           "name_de": "Phở Bò Sốt Vang — Rotwein-Rindergulasch Phở",
           "name_en": "Phở Bò Sốt Vang — Rotwein-Rindergulasch Phở",
           "desc_de": "Vietnamesische Reisbandnudeln mit aromatischem Rotwein-Rindergulasch in kräftiger Rinderbrühe, gekocht mit Zimt, Chili, Sternanis, Ingwer, Sojasprossen, Frühlingszwiebeln und Koriander.",
-          "desc_en": "Vietnamese rice noodles with aromatic red wine beef stew in a rich beef broth, cooked with cinnamon, chili, star anise, ginger, bean sprouts, spring onions and coriander. BÚN / NOODLE BOWLS MIỀN TRUNG · CENTRAL VIETNAM Bún Bò Huế stammt aus Huế, der einstigen Kaiserstadt Vietnams, und zählt zu den raffiniertesten Gerichten der vietnamesischen Küche. Die kräftige Brühe wird über Stunden mit Zitronengras, Rinderknochen und Gewürzen gekocht und erhält ihre unverwechselbare Tiefe durch eine feine Würzung und hausgemachtes Sa Tế. Serviert mit runden Reisnudeln, zartem Rindfleisch und vietnamesischer Fleischwurst – aromatischer und feuriger als die klassische Phở. Bún Bò Huế originates from Huế, the former imperial city of Vietnam, and is one of the most refined dishes of Vietnamese cuisine. The hearty broth is simmered for hours with lemongrass, beef bones and spices, gaining its distinctive depth from delicate seasoning and homemade Sa Tế. Served with round rice noodles, tender beef and Vietnamese pork sausage — more aromatic and fiery than the classic Phở.",
+          "desc_en": "Vietnamese rice noodles with aromatic red wine beef stew in a rich beef broth, cooked with cinnamon, chili, star anise, ginger, bean sprouts, spring onions and coriander.",
           "allergens": [
             "A",
             "D",
