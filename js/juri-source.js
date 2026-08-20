@@ -39,7 +39,8 @@
   }
   const desktopLinks = header.querySelectorAll('.juri-shell-tools a');
   if (desktopLinks.length === 3) desktopLinks[0].href = 'menu-new.pdf';
-  const drawerMenu = [...drawer.querySelectorAll('a')].find(link => /Speisekarte|Online Bestellung/.test(link.textContent));
+  // Keep the call-to-order link intact on mobile; only the actual menu link opens the PDF.
+  const drawerMenu = [...drawer.querySelectorAll('a')].find(link => link.textContent.trim() === 'Speisekarte');
   if (drawerMenu) drawerMenu.href = 'menu-new.pdf';
   document.body.prepend(drawer);
   document.body.prepend(header);
