@@ -161,7 +161,13 @@ const EXACT_DISH_IMAGES = {
   'lassi:mango lassi': 'assets/juri-menu-v2-95-mango-lassi.png',
   'kaffee:cafe trung': 'assets/juri-menu-v2-96-cafe-trung.png',
   'vorspeise:kleine pho bowl': 'assets/juri-menu-v2-97-kleine-pho-bowl.png',
+  'vorspeise:hoanh thanh chien (5 stk.)': 'assets/juri-menu-v2-31-wantan.png',
+  'vorspeise:tom chien com (2 stk.)': 'assets/juri-menu-v2-40-garnelen-com.png',
+  'vorspeise:ha cao tom (4 stk.)': 'assets/juri-menu-v2-32-dim-sum.png',
+  'vorspeise:schweinespiesse grillte (2 stk.)': 'assets/juri-menu-v2-39-schweinespiesse.png',
   'hauptgerichte:zitronengras & chili': 'assets/juri-menu-v2-98-zitronengras-chili.png',
+  'reis_spezial:sushi bowl': 'assets/juri-menu-v2-58-sommer-bowl.png',
+  'pho:gebratene reisbandnudeln': 'assets/juri-menu-v2-102-rice-band-noodles.png',
   'vegan:hahnchen mit wok-gemuse vegan': 'assets/juri-menu-v2-99-vegan-wok-gemuse.png',
   'extra_beilagen:jasminreis': 'assets/juri-menu-v2-100-jasmine-rice.png',
   'extra_beilagen:reisnudeln': 'assets/juri-menu-v2-101-rice-noodles.png',
@@ -294,7 +300,8 @@ Object.assign(DISH_IMAGES, {
   'mango-cheesecake': 'images/dessert.jpg',
   'matcha-mousse': 'images/dessert.jpg',
   'kugel eis': 'images/dessert.jpg',
-  'kostrizer schwarzbier': 'assets/juri-menu-v2-179-draft-pils.png',
+  'kostritzer schwarzbier': 'assets/juri-menu-v2-174-dark-wheat-beer.png',
+  'warsteiner radler': 'assets/juri-menu-v2-178-radler-shandy.png',
   'konig pilsener': 'assets/juri-menu-v2-179-draft-pils.png',
   'konigpilsener radler': 'assets/juri-menu-v2-178-radler-shandy.png'
 });

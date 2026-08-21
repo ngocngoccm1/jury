@@ -1,7 +1,7 @@
 (() => {
   const loadScript = src => new Promise(resolve => { const script = document.createElement('script'); script.src = src; script.onload = resolve; script.onerror = resolve; document.head.append(script); });
-  const menuOverridesReady = loadScript('js/menu-new.js?v=20260818b');
-  const imageScript = document.createElement('script'); imageScript.src = 'js/menu.js?v=20260818b'; document.head.append(imageScript);
+  const menuOverridesReady = loadScript('js/menu-new.js?v=20260821a');
+  const imageScript = document.createElement('script'); imageScript.src = 'js/menu.js?v=20260821a'; document.head.append(imageScript);
   const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const num = (v) => Number(String(v || 0).replace(/[^0-9,.-]/g, '').replace(',', '.')) || 0;
   const fmt = (v) => `${num(v).toFixed(2).replace('.', ',')} €`;
