@@ -13,8 +13,8 @@
   form.addEventListener('input', sync); form.addEventListener('change', sync); sync();
   form.addEventListener('submit', event => {
     event.preventDefault(); if (!form.reportValidity()) return;
-    const lines = ['Hallo JURI, ich möchte einen Tisch reservieren:', '', `Datum: ${value('bookingDate')}`, `Uhrzeit: ${value('bookingTime')}`, `Gäste: ${value('bookingGuests')}`, `Tischplatzierung: ${value('bookingSeat') || 'Keine Präferenz'}`, `Name: ${value('bookingName')}`, `Telefon: ${value('bookingPhone')}`, `E-Mail: ${value('bookingEmail')}`, `Notiz: ${value('bookingNote') || '-'}`];
-    document.getElementById('reservationMessage').textContent = 'Ihre Reservierungsanfrage wird jetzt an JURI übermittelt.';
+    const lines = ['Hallo JURY, ich möchte einen Tisch reservieren:', '', `Datum: ${value('bookingDate')}`, `Uhrzeit: ${value('bookingTime')}`, `Gäste: ${value('bookingGuests')}`, `Tischplatzierung: ${value('bookingSeat') || 'Keine Präferenz'}`, `Name: ${value('bookingName')}`, `Telefon: ${value('bookingPhone')}`, `E-Mail: ${value('bookingEmail')}`, `Notiz: ${value('bookingNote') || '-'}`];
+    document.getElementById('reservationMessage').textContent = 'Ihre Reservierungsanfrage wird jetzt an JURY übermittelt.';
     location.href = `https://wa.me/4951513609?text=${encodeURIComponent(lines.join('\n'))}`;
   });
 })();

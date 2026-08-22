@@ -1,7 +1,7 @@
 (() => {
   const loadScript = src => new Promise(resolve => { const script = document.createElement('script'); script.src = src; script.onload = resolve; script.onerror = resolve; document.head.append(script); });
-  const menuOverridesReady = loadScript('js/menu-new.js?v=20260821a');
-  const imageScript = document.createElement('script'); imageScript.src = 'js/menu.js?v=20260821a'; document.head.append(imageScript);
+  const menuOverridesReady = loadScript('js/menu-new.js?v=20260822a');
+  const imageScript = document.createElement('script'); imageScript.src = 'js/menu.js?v=20260822a'; document.head.append(imageScript);
   const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const num = (v) => Number(String(v || 0).replace(/[^0-9,.-]/g, '').replace(',', '.')) || 0;
   const fmt = (v) => `${num(v).toFixed(2).replace('.', ',')} €`;
@@ -53,7 +53,7 @@
     if (!dish) throw Error('not found');
     dish.image = requestedImage || 'assets/jury-logo.jpg';
     gallery = [dish.image, 'assets/jury-logo.jpg'];
-    document.title = `${dish.name_de} | JURI Restaurant`;
+    document.title = `${dish.name_de} | JURY Restaurant`;
     document.querySelector('#dishName').textContent = `${dish.code} ${dish.name_de}`;
     document.querySelector('#dishCrumb').textContent = `${dish.code} - ${dish.name_de.replace(/\s+/g, '-')}`;
     const description = document.querySelector('#dishDesc');

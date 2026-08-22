@@ -1,4 +1,4 @@
-/* Shared JURI chrome matching the reference restaurant toolbar. */
+/* Shared JURY chrome matching the reference restaurant toolbar. */
 (() => {
   if (document.getElementById('juriSourceHome') || document.querySelector('.juri-shell-header')) return;
 
@@ -9,7 +9,7 @@
   const header = document.createElement('header');
   header.className = 'juri-shell-header';
   header.innerHTML = `<div class="container juri-shell-header__row">
-    <div class="juri-shell-header__left"><button class="juri-shell-menu" type="button" aria-label="Menü öffnen" aria-expanded="false">${burger}</button><a class="juri-shell-logo" href="index.html" aria-label="JURI Startseite"><span>JURI</span><small>VIETNAMESE · JAPANESE</small></a></div>
+    <div class="juri-shell-header__left"><button class="juri-shell-menu" type="button" aria-label="Menü öffnen" aria-expanded="false">${burger}</button><a class="juri-shell-logo" href="index.html" aria-label="JURY Startseite"><span>JURY</span><small>VIETNAMESE · JAPANESE</small></a></div>
     <nav class="juri-shell-tools" aria-label="Hauptnavigation"><a href="speisekarte.html">MENÜ</a><a href="tel:+4951513609">ONLINE BESTELLUNG</a><a href="tel:+4951513609">RESERVIERUNG</a></nav>
     <a class="juri-shell-cart" href="cart.html" aria-label="Warenkorb">${cart}<b data-shell-cart-count>0</b></a>
   </div>`;
@@ -21,7 +21,7 @@
 
   const footer = document.createElement('footer');
   footer.className = 'juri-shell-footer';
-  footer.innerHTML = `<div class="container"><div class="juri-shell-footer__grid"><div class="juri-shell-footer__brand"><a class="juri-shell-footer__logo" href="index.html">JURI<small>VIETNAMESE · JAPANESE</small></a><h4>Besuchen Sie uns im JURI Restaurant</h4><p>Genießen Sie authentische Aromen und gemütliches Ambiente im JURI Restaurant – für unvergessliche Momente mit Familie und Freunden.</p></div><div><h4>Öffnungszeiten</h4><p>Montag – Sonntag<br>11:00 – 22:00 Uhr</p></div><div><h4>Benutzerlink</h4><nav><a href="ueber-uns.html">Über uns</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav></div><div><h4>Kontaktieren Sie uns</h4><nav><a href="tel:+4951513609">+49 5151 3609</a><a href="https://wa.me/4951513609">WhatsApp</a></nav></div></div><p class="juri-shell-footer__copy">© 2026 JURI Restaurant. Alle Rechte vorbehalten</p></div>`;
+  footer.innerHTML = `<div class="container"><div class="juri-shell-footer__grid"><div class="juri-shell-footer__brand"><a class="juri-shell-footer__logo" href="index.html">JURY<small>VIETNAMESE · JAPANESE</small></a><h4>Besuchen Sie uns im JURY Restaurant</h4><p>Genießen Sie authentische Aromen und gemütliches Ambiente im JURY Restaurant – für unvergessliche Momente mit Familie und Freunden.</p></div><div><h4>Öffnungszeiten</h4><p>Montag – Sonntag<br>11:00 – 22:00 Uhr</p></div><div><h4>Benutzerlink</h4><nav><a href="ueber-uns.html">Über uns</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav></div><div><h4>Kontaktieren Sie uns</h4><nav><a href="tel:+4951513609">+49 5151 3609</a><a href="https://wa.me/4951513609">WhatsApp</a></nav></div></div><p class="juri-shell-footer__copy">© 2026 JURY Restaurant. Alle Rechte vorbehalten</p></div>`;
 
   const dock = document.createElement('nav');
   dock.className = 'juri-mobile-tools';

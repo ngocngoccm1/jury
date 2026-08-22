@@ -44,7 +44,7 @@ function chips(allergens) {
 }
 
 // Only dishes with a matching local photo receive it. Everything else keeps a
-// deliberate JURI-logo placeholder until the restaurant supplies the photo.
+// deliberate JURY-logo placeholder until the restaurant supplies the photo.
 const DISH_IMAGES = {
   'pho viet nam': 'assets/juri-menu-v2-01-pho-viet-nam.png',
   'pho bat da': 'assets/juri-menu-v2-02-pho-bat-da.png',
@@ -358,7 +358,7 @@ function renderDish(it, catVegan, categoryId) {
   const isPlaceholder = image === 'assets/jury-logo.jpg';
   const detailHref = `dish.html?item=${encodeURIComponent(`${categoryId}:${it.code}`)}&image=${encodeURIComponent(image)}`;
   return `<article class="dish" data-vegan="${vegan}" data-search="${searchText}">
-    ${detailHref ? `<a class="dish__detail-link" href="${detailHref}" aria-label="Details: ${esc(it.name_de)}">` : ''}<div class="dish__media${isPlaceholder ? ' dish__media--placeholder' : ''}"><img src="${image}" alt="${isPlaceholder ? 'JURI' : esc(it.name_de)}" loading="lazy" onerror="this.onerror=null;this.src='assets/jury-logo.jpg';this.closest('.dish__media').classList.add('dish__media--placeholder')">${imagePrice}</div>${detailHref ? '</a>' : ''}
+    ${detailHref ? `<a class="dish__detail-link" href="${detailHref}" aria-label="Details: ${esc(it.name_de)}">` : ''}<div class="dish__media${isPlaceholder ? ' dish__media--placeholder' : ''}"><img src="${image}" alt="${isPlaceholder ? 'JURY' : esc(it.name_de)}" loading="lazy" onerror="this.onerror=null;this.src='assets/jury-logo.jpg';this.closest('.dish__media').classList.add('dish__media--placeholder')">${imagePrice}</div>${detailHref ? '</a>' : ''}
     <div class="dish__body">
       <div class="dish__head">
         <div>
@@ -384,7 +384,7 @@ document.addEventListener('click', event => {
 
 function buildSchema(cats) {
   return {
-    '@context': 'https://schema.org', '@type': 'Menu', 'name': 'Speisekarte — JURI Restaurant',
+    '@context': 'https://schema.org', '@type': 'Menu', 'name': 'Speisekarte — JURY Restaurant',
     'hasMenuSection': cats.map(c => ({
       '@type': 'MenuSection', 'name': c.name_de,
       'hasMenuItem': c.items.map(it => {

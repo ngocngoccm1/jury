@@ -1,6 +1,6 @@
-/* Shared Taumi-faithful visual shell for JURI inner pages.
+/* Shared Taumi-faithful visual shell for JURY inner pages.
    The source utility stylesheet is loaded before this file; this layer only
-   exchanges Taumi's identity for JURI's green palette and local content. */
+   exchanges Taumi's identity for JURY's green palette and local content. */
 @font-face{font-family:"JuriZen";src:url("../fonts/taumi-zen-latin.woff2") format("woff2");font-display:swap;font-weight:700}
 
 html:has(body.juri-source-site){overflow-x:clip}

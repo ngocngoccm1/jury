@@ -1,5 +1,5 @@
 /*
- * JURI menu v2026-08-21
+ * JURY menu v2026-08-21
  * Source: in lai 2/menu in 5.pdf (26 pages, supplied by customer).
  *
  * This remains an overlay for data/menu.json so the public menu, dish page
