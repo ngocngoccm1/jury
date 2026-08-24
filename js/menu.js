@@ -408,8 +408,9 @@ fetch('data/menu.json')
   .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
   .then(data => {
     const exclusions = window.JURY_MENU_NEW_EXCLUSIONS || {};
-    const cats = [...data.categories, ...(window.JURY_MENU_NEW_EXTRA_CATEGORIES || [])]
-      .filter(category => !(exclusions.categories || []).includes(category.id))
+    const currentFood = window.JURY_MENU_CUOI_FOOD || [];
+    const cats = [...currentFood, ...data.categories, ...(window.JURY_MENU_NEW_EXTRA_CATEGORIES || [])]
+      .filter(category => !(exclusions.categories || []).includes(category.id) && !(window.JURY_MENU_CUOI_EXCLUDED_CATEGORIES || new Set()).has(category.id))
       .map(category => ({
         ...category,
         items: [...category.items, ...((window.JURY_MENU_NEW_EXTRA_ITEMS || {})[category.id] || [])]

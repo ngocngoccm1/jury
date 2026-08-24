@@ -1,6 +1,6 @@
 /*
- * JURY menu v2026-08-21
- * Source: in lai 2/menu in 5.pdf (26 pages, supplied by customer).
+ * JURY menu v2026-08-24
+ * Source: menu-cuoi.pdf (14 pages, supplied by customer).
  *
  * This remains an overlay for data/menu.json so the public menu, dish page
  * and cart always share one source of truth. `code` is the new printed code.
@@ -57,3 +57,79 @@ window.JURY_MENU_NEW_EXTRA_ITEMS = { biere: [{ code: 'K191', name_de: 'König Pi
 set('biere:K191', { code: '157' }); set('biere:K192', { code: '158' }); ['159', '160', '161'].forEach((code, index) => set(`kaffee:${192 + index}`, { code })); renumber('tee', 198, 162, 5); renumber('schnaps', 203, 167, 7); renumber('wein', 210, 174, 10);
 
 window.JURY_MENU_NEW_EXCLUSIONS = { categories: ['banh_mi'], items: new Set(['suppen_salat:23', 'suppen_salat:24', 'reis_spezial:39', 'gebratene_nudeln:41', 'pho:49', 'pho:51', 'bun:55', 'kaffee:195', 'kaffee:196', 'kaffee:197']) };
+
+// OCR-verified entries from menu-cuoi.pdf.  Keep the source information here
+// rather than inferring it from a similarly named item in the former menu.
+const currentItem = (code, name, price, allergens, description = '') => ({
+  code: String(code), name_de: name, name_en: name, price: euro(price),
+  allergens: allergens ? allergens.split(',').filter(Boolean) : [],
+  desc_de: description, desc_en: description
+});
+const currentVariants = (code, name, allergens, description, entries) => ({
+  code: String(code), name_de: name, name_en: name, desc_de: description,
+  desc_en: description, variants: entries.map(([variant, label, price]) => ({
+    code: variant, label_de: label, label_en: label, price: euro(price),
+    allergens: allergens.split(',').filter(Boolean)
+  }))
+});
+window.JURY_MENU_CUOI_FOOD = [
+  { id: 'vorspeisen-neu', name_de: 'Vorspeisen', name_en: 'Appetizers', items: [
+    currentVariants(1, 'Goi Cuon - Sommerrollen (2 Stk.)', 'B,D,E,F', 'Frisches Reispapier mit Reisnudeln, grüner Gurke, Salat und Rucola. Dazu Erdnusssoße oder Limetten-Dressing.', [['A','Tofu','5,50'],['B','Hühnerfleisch','5,50'],['C','Garnelen','6,50']]),
+    currentItem(2,'Nem Chien - Frühlingsrollen (2 Stk.)','5,50','A,C,D,F','Mit gehacktem Fleisch, Reisnudeln und Gemüse. Dazu frisches Limetten-Dressing.'),
+    currentItem(3,'Minifrühlingsrollen (5 Stk.)','5,50','A,C,E,F','Vegetarische Minifrühlingsrollen mit Erdnüssen und Süß-Sauer-Sauce.'),
+    currentItem(4,'Ga Xien (1 Stk.)','5,50','A,E,F','Gebackener Hähnchenspieß mit Erdnusssauce.'),
+    currentItem(5,'Yakitori Chicken (2 Stk.)','5,90','A,F,H,N','Japanische Hühnerspieße mit Teriyaki-Soße und Sesam.'),
+    currentItem(6,'Wantan Gebacken (5 Stk.)','5,90','A,B,C,F','Gebackener Wantanteig gefüllt mit gehacktem Hühnerfleisch und Garnelen. Dazu Süß-Sauer-Sauce.'),
+    currentItem(7,'Dau Phu Chien Com - Tofu im Reismantel (2 Stk.)','5,50','F','Knusprig gebackener Tofu mit vietnamesischem grünen Puffreismantel, serviert mit Süß-Sauer-Sauce.'),
+    currentItem(8,'Tom Chien Com - Garnelen im Reismantel (2 Stk.)','6,90','B,F','Knusprig gebackene Garnelen mit vietnamesischem grünen Puffreismantel, serviert mit Süß-Sauer-Sauce.'),
+    currentItem(9,'Edamame','5,90','F','Gedämpfte Sojabohnen mit Salz.'),
+    currentVariants(10,'Mango-Salat','B,D,E,F','Mangostreifen, Kräuter, Karotten, Minze, Erdnüsse und Limetten-Dressing, scharf.', [['A','Ohne Garnelen','6,50'],['B','Mit Garnelen','7,50']]),
+    currentItem(11,'Chuka Salat','5,90','A,F,H,N','Seetang, Salat, hausgemachte Sauce und Sesam.'),
+    currentItem(12,'Gyoza (4 Stk.)','5,90','A,E,F','Knusprige Hähnchen-Dumplings mit Süß-Sauer-Soße und Erdnüssen.'),
+    currentItem(13,'Vegane Gyoza (4 Stk.)','5,50','A,F,H','Gedämpfte und angebratene Teigtaschen mit würziger Gemüsefüllung, rein pflanzlich.'),
+    currentItem(14,'Ha Cao Hap - gedämpfte Dumplings (4 Stk.)','5,90','A,B,F','Teigtaschen gefüllt mit Garnelen und Hühnerfleisch, gedämpft im Bambustopf.'),
+    currentItem(15,'Kimchi','4,50','D,F','Koreanisch fermentierter Chinakohl, pikant-würzig und angenehm scharf.'),
+    currentItem(16,'Schweinespieß gegrillt - Thịt xiên nướng (1 Stk.)','4,50','A,F','Gegrillter Schweinespieß, mariniert mit Zitronengras, Knoblauch und feiner Würze.')
+  ] },
+  { id: 'suppen-klein', name_de: 'Suppen (klein)', name_en: 'Small soups', items: [
+    currentItem(17,'Wantan Suppe','5,50','A,B,C,F','Hühnerfleisch und Garnelen in Teigtaschen mit Gemüse, Asia-Kräutern und Reisnudeln.'),
+    currentVariants(18,'Gemüse Suppe','B,F','Verschiedenes Gemüse und Asia-Kräuter mit Glasnudeln.', [['A','Tofu','5,90'],['B','Hühnerfleisch','5,90'],['C','Garnelen','6,90']]),
+    currentVariants(19,'Kokossuppe','B,D,F','Kokosmilch, Zitronengras, Asia-Kräuter, Gemüse und Champignons.', [['A','Tofu','5,90'],['B','Hühnerfleisch','5,90'],['C','Garnelen','6,90']])
+  ] },
+  { id: 'vegan-neu', name_de: 'Vegan', name_en: 'Vegan', items: [
+    currentItem(20,'Shaolin Seitan BBQ Xao Rau','13,90','A,E,F,N','Wok-seared Seitan mit Ingwer, Zitronengras, Gemüse, Salat, Erdnüssen und Reis.'),
+    currentItem(21,'Baby Buddha','13,90','A,E,F','Shaolin-Seitan-Spieße mit gegrilltem Gemüse, Erdnusssoße, Salat, Erdnüssen und Reis.'),
+    currentItem(22,'Bun Dau','12,90','D,E,F','Reisnudeln mit Salat, Erdnüssen, Röstzwiebeln, vietnamesischen Kräutern, Tofu und Limetten-Fischsauce-Dressing.')
+  ] }
+];
+
+const latestProtein = (code, name, allergens) => currentVariants(code, name, allergens, '', [
+  ['A','Tofu','12,50'],['B','Hühnerfleisch','13,50'],['C','Hähnchenkross','14,50'],
+  ['D','Rindfleisch','14,90'],['E','Garnelen','14,90'],['F','Ente kross','15,50'],['G','Lachsfilet','16,90']
+]);
+window.JURY_MENU_CUOI_FOOD.push(
+  { id: 'suppen-gross', name_de: 'Suppen (groß)', name_en: 'Large soups', items: [
+    currentItem(23,'Pho Bo - Rindfleisch','13,90','D,F','Reisbandnudeln, Rindfleischstreifen, Sojakeimlinge und frische asiatische Kräuter.'),
+    currentItem(24,'Pho Ga - Hühnerfleisch','12,90','D,F','Hühnerfleisch mit Reisbandnudeln, Sojakeimlingen und asiatischen Kräutern in feiner Brühe.'),
+    currentVariants(25,'Gemüsesuppe (groß)','B,F','Glasnudeln, Sojakeimlinge und frische asiatische Kräuter in delikater Brühe.', [['A','Tofu','12,50'],['B','Hühnerfleisch','13,90'],['C','Garnelen','14,50']]),
+    currentItem(26,'Wantansuppe (groß)','14,50','A,B,C,F','Wantan mit Hühnerfleisch und Garnelen, frischem Gemüse und Reisnudeln.')
+  ] },
+  { id: 'hauptgerichte-neu', name_de: 'Hauptgerichte', name_en: 'Main dishes', items: [
+    currentItem(27,'Hühnerfleisch mit Erdnuss-Soße (2 Stk.)','14,50','E,F','Gegrillte Hähnchenspieße mit Erdnuss-Soße, Kokosmilch, Salat, Erdnüssen und Reis.'),
+    latestProtein(28,'Gebratener Reis','C,F'), latestProtein(29,'Gebratene Reisbandnudeln','C,F'), latestProtein(30,'Udon Xào - gebratene Udon-Nudeln','A,C,F'),
+    currentItem(31,'Gegrillte Garnelen','16,90','B,F','Gegrillt mit Gemüse und Salat. Mit Reis oder Nudeln und Pfeffersauce.'),
+    latestProtein(32,'Bowls','C,F,N'), currentItem(33,'Bun Nem','12,90','A,C,D,E,F','Gefüllte Reispapierrolle mit Hackfleisch, Morcheln, Glasnudeln, Kräutern, Salat, Erdnüssen und Reisnudeln.'),
+    currentItem(34,'Bún Chả Hà Nội','15,90','D,F','Gegrilltes mariniertes Schweinefleisch mit Reisnudeln, Kräutern und Süß-Sauer-Fischsauce.'),
+    currentItem(35,'Bún Bò Huế','15,90','D,F','Würzige Nudelsuppe aus Huế mit Reisnudeln, Rindfleisch, Zitronengras, Chili, Kräutern und Sojasprossen.')
+  ] },
+  { id: 'wok-neu', name_de: 'Wok-Gerichte', name_en: 'Wok dishes', items: [
+    latestProtein(36,'Sot Mango - Mango-Sauce','E,F'), latestProtein(37,'Sot Curry - Curry-Sauce','E,F,G'), latestProtein(38,'Erdnuss-Soße','E,F'), latestProtein(39,'Rau Xao - gebratenes Gemüse','E,F'), latestProtein(40,'Sa Ot - Zitronengras & Chili','E,F'),
+    currentItem(41,'Bò Lúc Lắc - Shaking Beef','16,90','F','Wok-Rindfleisch mit Knoblauch, Ingwer, vietnamesischem Gemüse und Reisnudeln auf heißer Platte.'),
+    currentItem(42,'Französische Entenbrust','17,50','F','Zarte Entenbrust mit Wok-Gemüse auf heißer Gusseisenplatte, dazu Salat und Reis.')
+  ] },
+  { id: 'kinder-neu', name_de: 'Kinder Menü', name_en: 'Kids menu', items: [
+    currentItem(43,'Chicken Nugget','6,50','A,C','Mit Pommes, Salat, Ketchup und Mayonnaise.'), currentItem(44,'Ga Xien Nho (1 Stk.)','6,90','E,F','Gebackener Hähnchenspieß mit Erdnusssauce und Reis.'), currentItem(45,'Ga Chien Nho (1 Stk.)','7,50','A,C,F','Gebackenes Hähnchenfilet mit Süß-Sauer-Sauce und Reis.'), currentItem(46,'Thit Xien Nho - Schweinespieß (1 Stk.)','7,90','A,F','Gegrillter Schweinespieß mit Reis.'), currentItem(47,'Khoai Tay Chien - Pommes frites','5,50','A,C','Mit Ketchup und Mayonnaise.'), currentItem(48,'Khoai Lang Chien - Süßkartoffel-Pommes','5,50','A,C','Mit Ketchup und Mayonnaise.')
+  ] },
+  { id: 'desserts-neu', name_de: 'Desserts', name_en: 'Desserts', items: [currentItem(49,'3 Kugel Eis','5,50','C,G,H','Drei Kugeln Eis nach Wahl. Verschiedene Sorten, bitte nachfragen.'),currentItem(50,'Chuoi Chien - frittierte Banane','5,50','A,C,E,G,N','Gebackene Banane mit Honig, Erdnüssen und Sesam.'),currentItem(51,'Japanischer Kuchen','6,50','A,C,G','Japanese sticky rice cake. Verschiedene Sorten.') ] }
+);
+window.JURY_MENU_CUOI_EXCLUDED_CATEGORIES = new Set(['vorspeise','sharing_sets','suppen_salat','kindermenue','hauptgerichte','reis_spezial','gebratene_nudeln','vegan','pho','bun','banh_mi','extra_beilagen','saucen_extra']);
