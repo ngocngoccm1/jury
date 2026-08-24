@@ -73,11 +73,12 @@ body.menu-searching .menu-category.search-hidden{display:none}
 .dish__media--placeholder{display:grid;place-items:center;background:var(--olive-600)}
 .dish__media--placeholder img{object-fit:contain;padding:12%;mix-blend-mode:screen}
 .dish__body{display:flex;flex-direction:column;gap:var(--sp-1);flex:1}
-.dish__head{display:flex;justify-content:space-between;align-items:baseline;gap:var(--sp-3)}
+.dish__head{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--sp-3)}
 .dish__head > div:first-child{display:flex;align-items:baseline;gap:.55rem;flex:1;min-width:0}
 .dish__code{font:600 var(--fs-xs)/1 var(--font-sans);letter-spacing:.05em;color:var(--text-faint);flex-shrink:0}
 .dish__name{font-family:var(--font-display);font-weight:500;font-size:var(--fs-h3);
-  line-height:var(--lh-snug);color:var(--ivory-50)}
+  line-height:var(--lh-snug);color:var(--ivory-50);min-width:0;overflow-wrap:anywhere}
+.dish__detail-name{display:block;min-width:0}
 .dish__desc{font-size:var(--fs-sm);color:var(--text-muted);line-height:var(--lh-body)}
 .dish__desc span{display:block}
 /* The restaurant's printed menu presents both translations. Keep the complete
@@ -130,4 +131,4 @@ body.lang-en .dish__desc-de{display:block}
 
 /* loading / error */
 .menu-status{text-align:center;color:var(--text-faint);padding:var(--sp-12) 0}
-@media(max-width:420px){.dish{grid-template-columns:72px minmax(0,1fr);gap:var(--sp-3)}.dish__name{font-size:1.12rem}.dish__head{gap:var(--sp-2)}}
+@media(max-width:420px){.dish{grid-template-columns:72px minmax(0,1fr);gap:var(--sp-3)}.dish__name{font-size:1.12rem}.dish__head{gap:var(--sp-2)}.dish__head > div:first-child{gap:.4rem;align-items:flex-start}.dish__code{padding-top:.2rem}.dish__price-group{margin-top:.1rem}}

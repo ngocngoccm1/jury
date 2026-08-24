@@ -1,6 +1,6 @@
 /*
  * JURY menu v2026-08-24
- * Source: menu-cuoi.pdf (14 pages, supplied by customer).
+ * Source: JURY-Speisekarte-menu.pdf (17 pages, supplied by customer).
  *
  * This remains an overlay for data/menu.json so the public menu, dish page
  * and cart always share one source of truth. `code` is the new printed code.
@@ -133,3 +133,30 @@ window.JURY_MENU_CUOI_FOOD.push(
   { id: 'desserts-neu', name_de: 'Desserts', name_en: 'Desserts', items: [currentItem(49,'3 Kugel Eis','5,50','C,G,H','Drei Kugeln Eis nach Wahl. Verschiedene Sorten, bitte nachfragen.'),currentItem(50,'Chuoi Chien - frittierte Banane','5,50','A,C,E,G,N','Gebackene Banane mit Honig, Erdnüssen und Sesam.'),currentItem(51,'Japanischer Kuchen','6,50','A,C,G','Japanese sticky rice cake. Verschiedene Sorten.') ] }
 );
 window.JURY_MENU_CUOI_EXCLUDED_CATEGORIES = new Set(['vorspeise','sharing_sets','suppen_salat','kindermenue','hauptgerichte','reis_spezial','gebratene_nudeln','vegan','pho','bun','banh_mi','extra_beilagen','saucen_extra']);
+
+// 2026-08-24 replacement menu: the new Sharing Platte is #17, so all
+// following food codes in the OCR data shift by one.
+window.JURY_MENU_CUOI_FOOD.forEach(category => category.items.forEach(item => {
+  if (Number(item.code) >= 17) item.code = String(Number(item.code) + 1);
+}));
+window.JURY_MENU_CUOI_FOOD.splice(1, 0, {
+  id: 'sharing-set-neu', name_de: 'Sharing Set', name_en: 'Sharing set', items: [
+    currentItem(17, 'JURY Sharing Platte', '19,90', 'A,B,C,D,E,F', 'Ohne Schweinefleisch: Hähnchenspieße, vegetarische Mini-Frühlingsrollen, Sommerrollen, Hähnchen-Gyoza, gebackene Wantan sowie eingelegter Kohlrabi und Karotten. Dazu Süß-Sauer-, Erdnuss- und Chili-Limetten-Sauce.')
+  ]
+});
+const currentDesserts = window.JURY_MENU_CUOI_FOOD.find(category => category.id === 'desserts-neu');
+if (currentDesserts) {
+  const [iceCream, banana, cake] = currentDesserts.items;
+  iceCream.price = euro('5,90'); banana.price = euro('4,90'); cake.price = euro('5,90');
+  currentDesserts.items.push(currentVariants(52, 'Mochi Eis (3 Stk.)', 'G', 'Drei Mochi mit Eisfüllung, Geschmack nach Wahl.', [['A','Mango','5,90'],['B','Matcha','5,90'],['C','Erdbeere','5,90']]));
+}
+// Bún Bò Huế was removed in the replacement menu. It offsets the inserted
+// Sharing Set, so codes from Wok dishes onward retain their printed numbers.
+window.JURY_MENU_CUOI_FOOD.forEach(category => {
+  category.items = category.items.filter(item => item.name_de !== 'Bún Bò Huế');
+  category.items.forEach(item => {
+    if (Number(item.code) >= 37 && Number(item.code) <= 52) item.code = String(Number(item.code) - 1);
+    if (item.name_de === 'Bún Chả Hà Nội') item.code = '35';
+  });
+});
+if (currentDesserts) currentDesserts.items.find(item => item.name_de === 'Mochi Eis (3 Stk.)').code = '52';
