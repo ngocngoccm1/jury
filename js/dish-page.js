@@ -30,8 +30,9 @@
   Promise.all([menuOverridesReady, fetch('data/menu.json').then((r) => r.json())]).then(([, data]) => {
     const [cat, code] = String(key || '').split(':');
     const exclusions = window.JURY_MENU_NEW_EXCLUSIONS || {};
-    const categories = [...data.categories, ...(window.JURY_MENU_NEW_EXTRA_CATEGORIES || [])]
-      .filter(category => !(exclusions.categories || []).includes(category.id))
+    const currentFood = window.JURY_MENU_CUOI_FOOD || [];
+    const categories = [...currentFood, ...data.categories, ...(window.JURY_MENU_NEW_EXTRA_CATEGORIES || [])]
+      .filter(category => !(exclusions.categories || []).includes(category.id) && !(window.JURY_MENU_CUOI_EXCLUDED_CATEGORIES || new Set()).has(category.id))
       .map(category => ({
         ...category,
         items: [...category.items, ...((window.JURY_MENU_NEW_EXTRA_ITEMS || {})[category.id] || [])]
