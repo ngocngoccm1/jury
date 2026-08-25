@@ -45,6 +45,9 @@
   document.body.prepend(drawer);
   document.body.prepend(header);
   document.body.append(footer, dock);
+  document.querySelectorAll('a[href="tel:+4951513609"]').forEach(link => {
+    link.textContent = link.textContent.replace('+49 5151 3609', '05151 3609');
+  });
 
   const toggle = open => {
     drawer.classList.toggle('is-open', open);

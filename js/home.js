@@ -25,8 +25,11 @@ document.querySelectorAll('.lang-toggle button').forEach(b =>
 setLang((() => { try { return localStorage.getItem('jury-lang') || 'de'; } catch (e) { return 'de'; } })());
 
 // Temporary direct-call CTAs requested by the restaurant.
-document.querySelectorAll('a[href="bestellen.html"], a[href="reservieren.html"]').forEach(link => {
+document.querySelectorAll('.legacy-home a[href="bestellen.html"], .legacy-home a[href="reservieren.html"]').forEach(link => {
   link.href = 'tel:+4951513609';
+});
+document.querySelectorAll('a[href="tel:+4951513609"]').forEach(link => {
+  link.textContent = link.textContent.replace('+49 5151 3609', '05151 3609');
 });
 
 // --- Scroll reveal (fade-in on scroll) ---
@@ -183,6 +186,18 @@ document.addEventListener('keydown', event => {
 const sourceLunch = [...document.querySelectorAll('#juriSourceHome h3')]
   .find(heading => heading.textContent.trim() === 'Business Lunch');
 sourceLunch?.closest('div.flex.flex-col')?.remove();
+const sourceAboutCards = [
+  ['bestellen.html', 'images/jury/interior-bar.png', 'Online Bestellung', 'Genuss für zuhause'],
+  ['gutschein.html', 'images/jury/interior-timber.png', 'Gutschein', 'Schenken Sie Genuss'],
+  ['bestellen.html', 'images/jury/terrace.png', 'Abholservice', 'Frisch für Sie'],
+  ['speisekarte.html', 'images/jury/interior-tiles.png', 'Japanische Küche', 'Mit Liebe zubereitet'],
+  ['kontakt.html', 'images/jury/interior-mirror.png', 'Serviceerlebnis', 'Bei JURY']
+];
+document.querySelectorAll('.juri-source-about .group').forEach((card, index) => {
+  const [href, src, title, subtitle] = sourceAboutCards[index] || sourceAboutCards[0];
+  card.href = href;
+  card.innerHTML = `<div class="relative rounded-xl overflow-hidden"><img src="${src}" alt="${title}" class="block w-full h-auto object-cover"><div class="absolute bottom-0 left-0 right-0 px-4 py-6 bg-gradient-blur transition-all duration-500 md:opacity-0 md:translate-y-10 md:group-hover:opacity-100 md:group-hover:translate-y-0"><h4 class="text-white">${title}</h4><span class="text-base-02 text-sm">${subtitle}</span></div></div>`;
+});
 document.querySelectorAll('[data-source-dot]').forEach((dot, index) => {
   if (index < 2) {
     dot.parentElement?.remove();
@@ -192,6 +207,24 @@ document.querySelectorAll('[data-source-dot]').forEach((dot, index) => {
   dot.textContent = String(index - 1);
 });
 
+// The homepage remains a visual introduction to the menu. These dish images
+// stay here, while the menu catalogue itself uses the JURY logo until real
+// dish photography is supplied.
+const sourceFeaturedDishes = [
+  ['images/taumi/dish-04.png', 'Desserts'],
+  ['images/taumi/dish-06.png', "Ocean's Best"],
+  ['images/taumi/dish-07.png', 'Pho Bo'],
+  ['images/taumi/dish-08.png', 'Sushi'],
+  ['images/taumi/dish-09.png', 'Getränke'],
+  ['images/taumi/dish-10.png', 'Pho Tofu']
+];
+[...document.querySelectorAll('#juriSourceDishTrack .dish-slide')].forEach((slide, index) => {
+  const [src, label] = sourceFeaturedDishes[index] || sourceFeaturedDishes[0];
+  const image = slide.querySelector('img');
+  const caption = slide.querySelector('p');
+  if (image) { image.src = src; image.alt = label; }
+  if (caption) caption.textContent = label;
+});
 const sourceDishTrack = document.getElementById('juriSourceDishTrack');
 const sourceDishSlides = [...document.querySelectorAll('#juriSourceDishTrack .dish-slide')];
 const sourceDishDots = [...document.querySelectorAll('[data-source-dot]')];

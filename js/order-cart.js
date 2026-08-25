@@ -5,7 +5,7 @@
   const PHONE = '4951513609';
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const money = value => Number(String(value || '').replace(/[^\d,.-]/g, '').replace(',', '.')) || 0;
-  const read = () => { try { const value = JSON.parse(localStorage.getItem(KEY) || '[]'); return Array.isArray(value) ? value : []; } catch (_) { return []; } };
+  const read = () => { try { const value = JSON.parse(localStorage.getItem(KEY) || '[]'); return Array.isArray(value) ? value.map(item => ({...item, image: 'assets/jury-logo.jpg'})) : []; } catch (_) { return []; } };
   const write = items => { try { localStorage.setItem(KEY, JSON.stringify(items)); } catch (_) {} document.dispatchEvent(new CustomEvent('jury-cart-change')); };
   const count = () => read().reduce((sum, item) => sum + Number(item.quantity || 0), 0);
   const total = () => read().reduce((sum, item) => sum + money(item.price) * Number(item.quantity || 0), 0);
@@ -75,7 +75,7 @@
     const shell = document.createElement('div'); shell.className = 'jury-order-shell';
     const catalog = document.createElement('div'); catalog.className = 'jury-order-catalog';
     const top = document.createElement('div'); top.className = 'jury-order-top'; top.innerHTML = '<h1>Speisekarte</h1>';
-    const restaurant = document.createElement('div'); restaurant.className = 'jury-order-restaurant'; restaurant.innerHTML = '<span>📍</span><strong>JURY RESTAURANT HAMELN</strong><span>Kastanienwall 32, 31785 Hameln</span><a href="tel:+4951513609">☎ +49 5151 3609</a>';
+    const restaurant = document.createElement('div'); restaurant.className = 'jury-order-restaurant'; restaurant.innerHTML = '<span>📍</span><strong>JURY RESTAURANT HAMELN</strong><span>Kastanienwall 32, 31785 Hameln</span><a href="tel:+4951513609">☎ 05151 3609</a>';
     filter.parentNode.insertBefore(shell, filter); shell.append(catalog); catalog.append(top); top.append(filter); [restaurant, tabs, menu, legend, reserve].forEach(node => catalog.append(node));
     panel = document.createElement('aside'); panel.className = 'jury-cart-panel'; panel.id = 'juryCart'; shell.append(panel);
     variantModal = document.createElement('div'); variantModal.className = 'jury-variant-modal'; variantModal.hidden = true; variantModal.innerHTML = '<section role="dialog" aria-modal="true" aria-labelledby="juryVariantTitle"><div><h2 id="juryVariantTitle"></h2><button type="button" data-close-variants aria-label="Schließen">×</button></div><p>Bitte wählen Sie eine Variante.</p><div class="jury-variant-options"></div></section>'; document.body.append(variantModal);

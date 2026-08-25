@@ -31,13 +31,13 @@ body.juri-source-site h1,body.juri-source-site h2,body.juri-source-site h3,body.
 
 .juri-shell-drawer{position:fixed;inset:0;z-index:120;visibility:hidden;background:rgba(0,0,0,.45);opacity:0;transition:opacity .3s ease,visibility .3s ease}
 .juri-shell-drawer.is-open{visibility:visible;opacity:1}
-.juri-shell-drawer__panel{position:relative;display:flex;min-height:100%;width:min(86vw,320px);flex-direction:column;gap:20px;padding:64px 16px 20px;background:#202126;box-shadow:0 4px 18px rgba(0,0,0,.36);transform:translateX(-100%);transition:transform .3s ease}
+.juri-shell-drawer__panel{position:relative;display:flex;min-height:100%;width:min(86vw,320px);flex-direction:column;gap:28px;padding:64px 16px 20px;background:#202126;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;box-shadow:0 4px 18px rgba(0,0,0,.36);transform:translateX(-100%);transition:transform .3s ease}
 .juri-shell-drawer.is-open .juri-shell-drawer__panel{transform:translateX(0)}
 .juri-shell-drawer__top{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;padding-bottom:20px;border-bottom:1px solid #e5efcf;color:#e5efcf;font-size:14px;font-style:italic}
 .juri-shell-drawer__close{width:32px;height:32px;border:0;background:transparent;color:#fff;font-size:26px;line-height:1}
-.juri-shell-drawer__panel>a{color:#aaa!important;font-size:16px;font-weight:500}
+.juri-shell-drawer__panel>a{color:#aaa!important;font-size:16px;font-weight:500;line-height:24px;letter-spacing:normal}
 .juri-shell-drawer__panel>a:hover{color:#e5efcf!important}
-.juri-shell-drawer__reserve{margin-top:auto;border-radius:8px;background:#7d9b79!important;color:#fff!important;padding:12px!important;text-align:center}
+.juri-shell-drawer__reserve{margin-top:auto;border-radius:8px;background:#7d9b79!important;color:#fff!important;padding:12px!important;font-size:16px!important;font-weight:500;text-align:center}
 body.juri-shell-open{overflow:hidden}
 
 .juri-source-site main{background:#19201e}

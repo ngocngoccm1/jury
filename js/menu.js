@@ -43,8 +43,8 @@ function chips(allergens) {
   return `<div class="dish__allergens">${allergens.map(a => `<span class="chip">${esc(a)}</span>`).join('')}</div>`;
 }
 
-// Only dishes with a matching local photo receive it. Everything else keeps a
-// deliberate JURY-logo placeholder until the restaurant supplies the photo.
+// All dish imagery remains a deliberate JURY-logo placeholder until the
+// restaurant supplies an approved, real photo for each dish.
 const DISH_IMAGES = {
   'pho viet nam': 'assets/juri-menu-v2-01-pho-viet-nam.png',
   'pho bat da': 'assets/juri-menu-v2-02-pho-bat-da.png',
@@ -94,10 +94,7 @@ const DISH_IMAGES = {
   'chicken-roll': 'assets/juri-menu-v2-45-fried-rolls.png',
   'sashimi sake': 'assets/juri-menu-v2-46-sashimi-sake.png'
 };
-const photoForDish = it => {
-  const key = `${it.name_de || ''} ${it.name_en || ''}`.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[đĐ]/g, 'd').toLowerCase();
-  return Object.entries(DISH_IMAGES).find(([term]) => key.includes(term))?.[1] || 'assets/jury-logo.jpg';
-};
+const photoForDish = () => 'assets/jury-logo.jpg';
 
 const normalizeDishName = value => String(value || '')
   .normalize('NFD')
@@ -351,13 +348,7 @@ Object.assign(DISH_IMAGES, {
   'konigpilsener radler': 'assets/juri-menu-v2-178-radler-shandy.png'
 });
 
-const photoForDishExact = (it, categoryId) => {
-  const exactKey = normalizeDishName(it.name_de || it.name_en || '');
-  const searchKey = normalizeDishName(`${it.name_de || ''} ${it.name_en || ''}`);
-  return EXACT_DISH_IMAGES[`${categoryId}:${exactKey}`]
-    || Object.entries(DISH_IMAGES).find(([term]) => searchKey.includes(normalizeDishName(term)))?.[1]
-    || 'assets/jury-logo.jpg';
-};
+const photoForDishExact = () => 'assets/jury-logo.jpg';
 window.photoForDishExact = photoForDishExact;
 
 // ---------- render ----------

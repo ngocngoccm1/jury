@@ -51,7 +51,7 @@
     const category = categories.find((item) => item.id === cat);
     dish = category?.items.find((item) => String(item.code) === String(code));
     if (!dish) throw Error('not found');
-    dish.image = requestedImage || 'assets/jury-logo.jpg';
+    dish.image = 'assets/jury-logo.jpg';
     gallery = [dish.image, 'assets/jury-logo.jpg'];
     document.title = `${dish.name_de} | JURY Restaurant`;
     document.querySelector('#dishName').textContent = `${dish.code} ${dish.name_de}`;

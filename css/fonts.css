@@ -1,5 +1,15 @@
 /* css/fonts.css — self-hosted variable fonts (latin + latin-ext for ä ö ü ß ơ ư) */
 @font-face{
+  font-family:"Poppins";
+  src:url("../fonts/Poppins-Regular.woff2") format("woff2");
+  font-weight:400;font-display:swap;font-style:normal;
+}
+@font-face{
+  font-family:"Poppins";
+  src:url("../fonts/Poppins-SemiBold.woff2") format("woff2");
+  font-weight:600;font-display:swap;font-style:normal;
+}
+@font-face{
   font-family:"Fraunces";
   src:url("../fonts/Fraunces.woff2") format("woff2");
   font-weight:400 600;font-display:swap;font-style:normal;

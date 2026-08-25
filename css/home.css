@@ -604,17 +604,19 @@ body.source-drawer-open{overflow:hidden}
 .juri-source-book-label{display:block}
 .juri-source-drawer{position:fixed;inset:0;z-index:120;display:grid;grid-template-columns:minmax(0,1fr);visibility:hidden;background:rgba(0,0,0,.45);opacity:0;transition:opacity .3s ease,visibility .3s ease}
 .juri-source-drawer.is-open{visibility:visible;opacity:1}
-.juri-source-drawer__panel{position:relative;display:flex;flex-direction:column;gap:20px;width:min(86vw,390px);min-height:100%;padding:88px 28px 28px;background:#19201e;transform:translateX(-100%);transition:transform .35s ease}
+.juri-source-drawer__panel{position:relative;display:flex;flex-direction:column;gap:28px;width:min(86vw,390px);min-height:100%;padding:88px 28px 28px;background:#19201e;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;transform:translateX(-100%);transition:transform .35s ease}
 .juri-source-drawer.is-open .juri-source-drawer__panel{transform:translateX(0)}
-.juri-source-drawer__panel>a{font-size:22px;line-height:28px;font-weight:700;color:#fff!important}
-.juri-source-drawer__close{position:absolute;top:14px;right:20px;width:40px;height:40px;border:0;background:transparent;color:#fff;font-size:30px;line-height:1}
-.juri-source-drawer__panel .juri-source-drawer__reserve{margin-top:auto;padding:12px;border-radius:8px;background:var(--juri-green);font-size:16px;line-height:24px;text-align:center}
+.juri-source-drawer__panel>a{font-size:16px;line-height:24px;font-weight:500;letter-spacing:normal;color:#fff!important}
+.juri-source-drawer__close{position:absolute;top:14px;right:20px;width:40px;height:40px;border:0;background:transparent;color:#fff;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:32px;font-weight:400;line-height:1}
+.juri-source-drawer__panel .juri-source-drawer__reserve{margin-top:auto;padding:12px;border-radius:8px;background:var(--juri-green);font-size:16px;line-height:24px;font-weight:500;letter-spacing:normal;text-align:center}
 .juri-source-dish-slider{position:relative;height:240px;overflow:visible}
 .juri-source-dish-track{display:flex;height:200px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
 .juri-source-dish-track::-webkit-scrollbar{display:none}
 .juri-source-dish-track .dish-slide{display:block;flex:0 0 185px;height:200px;padding-right:8px;padding-left:8px;scroll-snap-align:start;color:inherit}
 .juri-source-dish-track .dish-slide img{display:block;width:169px;height:169px;object-fit:cover}
 .juri-source-dish-track .dish-slide p{margin-top:10px;color:var(--juri-muted)!important;font-size:14px;line-height:21px;font-weight:500;text-align:center}
+.juri-source-hero img{content:url("../images/jury/interior-hall.png")}
+.juri-source img[alt="Business Lunch"]{content:url("../images/jury/interior-booths.png")}
 .juri-source-dish-dots{height:22px;margin:27px 0 0;padding:0;text-align:center;list-style:none}
 .juri-source-dish-dots li{display:inline-block;width:16px;height:16px;margin:0;padding:0;vertical-align:top}
 .juri-source-dish-dots button{position:relative;display:block;width:20px;height:20px;margin:0;padding:5px;border:0;background:transparent;color:transparent;font-size:0;line-height:0;cursor:pointer}
