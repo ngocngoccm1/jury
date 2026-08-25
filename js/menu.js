@@ -348,7 +348,13 @@ Object.assign(DISH_IMAGES, {
   'konigpilsener radler': 'assets/juri-menu-v2-178-radler-shandy.png'
 });
 
-const photoForDishExact = () => 'assets/jury-logo.jpg';
+const photoForDishExact = (it, categoryId) => {
+  const exactKey = normalizeDishName(it.name_de || it.name_en || '');
+  const searchKey = normalizeDishName(`${it.name_de || ''} ${it.name_en || ''}`);
+  return EXACT_DISH_IMAGES[`${categoryId}:${exactKey}`]
+    || Object.entries(DISH_IMAGES).find(([term]) => searchKey.includes(normalizeDishName(term)))?.[1]
+    || 'assets/jury-logo.jpg';
+};
 window.photoForDishExact = photoForDishExact;
 
 // ---------- render ----------
@@ -390,9 +396,12 @@ function renderDish(it, catVegan, categoryId) {
   }
   const searchText = esc([it.code, it.name_de, it.name_en, it.desc_de].filter(Boolean).join(' ').toLowerCase());
   const imgCode = esc(it.code);
-  const image = photoForDishExact(it, categoryId);
+  // Only the catalogue card is a logo placeholder. The original dish image is
+  // retained in the detail link so opening a dish works exactly as before.
+  const image = 'assets/jury-logo.jpg';
+  const detailImage = photoForDishExact(it, categoryId);
   const isPlaceholder = image === 'assets/jury-logo.jpg';
-  const detailHref = `dish.html?item=${encodeURIComponent(`${categoryId}:${it.code}`)}&image=${encodeURIComponent(image)}`;
+  const detailHref = `dish.html?item=${encodeURIComponent(`${categoryId}:${it.code}`)}&image=${encodeURIComponent(detailImage)}`;
   return `<article class="dish" data-vegan="${vegan}" data-search="${searchText}">
     ${detailHref ? `<a class="dish__detail-link" href="${detailHref}" aria-label="Details: ${esc(it.name_de)}">` : ''}<div class="dish__media${isPlaceholder ? ' dish__media--placeholder' : ''}"><img src="${image}" alt="${isPlaceholder ? 'JURY' : esc(it.name_de)}" loading="lazy" onerror="this.onerror=null;this.src='assets/jury-logo.jpg';this.closest('.dish__media').classList.add('dish__media--placeholder')">${imagePrice}</div>${detailHref ? '</a>' : ''}
     <div class="dish__body">
