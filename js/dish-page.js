@@ -7,7 +7,6 @@
   const fmt = (v) => `${num(v).toFixed(2).replace('.', ',')} €`;
   const params = new URLSearchParams(location.search);
   const key = params.get('item');
-  const requestedImage = params.get('image');
   let dish, selected = null, qty = 1, gallery = [], galleryIndex = 0;
   const imageEl = document.querySelector('#dishImage');
   const thumbEl = document.querySelector('#dishThumb');
@@ -52,8 +51,10 @@
     const category = categories.find((item) => item.id === cat);
     dish = category?.items.find((item) => String(item.code) === String(code));
     if (!dish) throw Error('not found');
-    dish.image = requestedImage || 'assets/jury-logo.jpg';
-    gallery = [dish.image, 'assets/jury-logo.jpg'];
+    // Keep the detail page image consistent with the menu placeholder.
+    // Dish metadata (name, price, description and variants) still comes from the menu data.
+    dish.image = 'assets/jury-logo.jpg';
+    gallery = [dish.image];
     document.title = `${dish.name_de} | JURY Restaurant`;
     document.querySelector('#dishName').textContent = `${dish.code} ${dish.name_de}`;
     document.querySelector('#dishCrumb').textContent = `${dish.code} - ${dish.name_de.replace(/\s+/g, '-')}`;
