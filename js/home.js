@@ -207,16 +207,15 @@ document.querySelectorAll('[data-source-dot]').forEach((dot, index) => {
   dot.textContent = String(index - 1);
 });
 
-// The homepage remains a visual introduction to the menu. These dish images
-// stay here, while the menu catalogue itself uses the JURY logo until real
-// dish photography is supplied.
+// The homepage highlights real JURY dishes, with photographs matched to each
+// dish name so the carousel is useful on both desktop and mobile.
 const sourceFeaturedDishes = [
-  ['images/taumi/dish-04.png', 'Desserts'],
-  ['images/taumi/dish-06.png', "Ocean's Best"],
-  ['images/taumi/dish-07.png', 'Pho Bo'],
-  ['images/taumi/dish-08.png', 'Sushi'],
-  ['images/taumi/dish-09.png', 'Getränke'],
-  ['images/taumi/dish-10.png', 'Pho Tofu']
+  ['images/dishes/pho-bo.png', 'Phở Bò'],
+  ['images/dishes/jury-chicken-tempura.png', 'JURY Chicken Tempura'],
+  ['assets/juri-photo-03-bun-cha.png', 'Bún Chả'],
+  ['assets/juri-photo-17-curry.png', 'Grünes Curry'],
+  ['assets/juri-photo-07-sushi-moriawase.png', 'Sushi Moriawase'],
+  ['assets/juri-photo-15-tofu-lemongrass.png', 'Tofu Zitronengras']
 ];
 [...document.querySelectorAll('#juriSourceDishTrack .dish-slide')].forEach((slide, index) => {
   const [src, label] = sourceFeaturedDishes[index] || sourceFeaturedDishes[0];
